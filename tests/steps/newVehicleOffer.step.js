@@ -4,15 +4,12 @@ const { chromium } = require('playwright');
 const { expect } = require('@playwright/test');
 const { url } = require('../../configDirectory/testConfig');
 
-let browser, context, page, webDashboard, offerPage;
-setDefaultTimeout(60 * 1000);
-Given(`I navigate to the Homepage`, async () => {
+let webDashboard, offerPage;
+
+Given('I navigate to the Homepage', async function () {
     console.log('Launching browser and navigating to the homepage...');
-    browser = await chromium.launch({ headless: false }); 
-    context = await browser.newContext();
-    page = await context.newPage();
-    webDashboard = new WebDashboard(page);
-    offerPage = webDashboard.offerPage;
+    webDashboard = new WebDashboard(this.page);
+    offerPage = webDashboard.getOfferPage();
     await offerPage.goTo(url);
     console.log('Successfully navigated to the Homepage.');
 });
@@ -59,8 +56,10 @@ Then(`the results should match the filter criteria {string}`, async (expectedRes
     }
 });
 
-
 After(async function () {
-    console.log('Closing the browser...');
-    await browser.close();
+    if (this.browser) {
+        await this.browser.close();
+    } else {
+        console.warn("Browser instance was not initialized.");
+    }
 });

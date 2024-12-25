@@ -1,19 +1,22 @@
 {
-    "default": {
-        "paths": [
-            "tests/features/"
-        ],
-        "require": [
-            "tests/steps/*.js"
-        ],
-        "formatOptions": {
-            "snippetInterface": "async-await"
-        },
-        "format": [
-            "html:reports/CucumberReport/cucumber-report.html",
-            "summary",
-            "progress-bar",
-            "json:reports/CucumberReport/cucumber-report.json"
-        ]
+    "default": 
+   {
+      "paths": [
+        "tests/features/"
+      ],
+      "require": [
+        "tests/steps/*.js",          
+        "tests/commonPlatformUtils/hooks.js"  
+      ],
+      "formatOptions": {
+        "snippetInterface": "async-await"
+      },
+      "format": [
+        "html:reports/CucumberReport/cucumber-report.html",
+        "summary",
+        "progress-bar",
+        "json:reports/CucumberReport/cucumber-report.json"
+      ]
     }
-}
+  }
+  

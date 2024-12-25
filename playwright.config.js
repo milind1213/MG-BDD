@@ -14,6 +14,9 @@ module.exports = defineConfig({
 
   use: {
     trace: 'on-first-retry',
+    launchOptions: {
+      args: ["--start-maximized"],
+    }
   },
 
   // Disable last-run.json generation
@@ -23,14 +26,6 @@ module.exports = defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
-    },
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
     },
   ],
 });

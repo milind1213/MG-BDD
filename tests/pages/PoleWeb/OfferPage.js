@@ -1,4 +1,4 @@
-const { Click } = require('../../commonPlatformUtils/CommonPlaywright.js');
+const utils  = require('../../commonPlatformUtils/CommonPlaywright.js');
 class OfferPage {
   constructor(page) {
     this.page = page;
@@ -18,7 +18,7 @@ class OfferPage {
   async clickOnOfferButton() {
     if (await this.viewAllOffersButton.isVisible()) {
       console.log("Clicking on 'View All Offers' button...");
-      await Click(this.viewAllOffersButton);
+      await utils.Click(this.viewAllOffersButton);
     } else {
       console.log("Not Visible'View All Offers' Button.");
     }
@@ -36,7 +36,7 @@ class OfferPage {
            const button = buttons[action.toLowerCase()];
          if (button) {
            if (await button.isVisible()) {
-               await button.click();
+               await utils.Click(button);
                console.log(`Clicked successfully on '${action.charAt(0).toUpperCase() + action.slice(1)} All Cookies' button `);
                return;
              } else {
@@ -62,7 +62,7 @@ class OfferPage {
              window.scrollBy(0, 400);
         });
     
-    Click(this.newVehicleButton);
+       utils.Click(this.newVehicleButton);
       
       } catch (error) {
         console.error("Error clicking on New Vehicle Button:", error);
@@ -75,7 +75,7 @@ class OfferPage {
            await this.page.evaluate(() => {
                window.scrollBy(0, 400);
           });
-        Click(this.preOwnedVehicleButton);
+        utils.Click(this.preOwnedVehicleButton);
         
         } catch (error) {
           console.error("Error clicking on Pre Owned Vehicle Button:", error);
@@ -85,54 +85,37 @@ class OfferPage {
 
       async click_FilterButton() {
         await new Promise(resolve => setTimeout(resolve, 1000));
-        await Click(this.filterButton);
+        await utils.Click(this.filterButton);
       }
 
       async applyFilter(filterText, value) {
-        try {
           const filterLocator = this.page.locator(`//label[contains(@class,'css-c4oe05') and normalize-space(text())='${filterText}']`);
           const checkboxLocator = this.page.locator(`//input[@type="checkbox" and @value='${value}']`);
-          
-          await filterLocator.waitFor({ state: 'visible', timeout: 60000 });
-          await filterLocator.scrollIntoViewIfNeeded();
-          await Click(filterLocator);
-    
+          await utils.Click(filterLocator);
           await checkboxLocator.waitFor({ state: 'visible', timeout: 60000 });
           await checkboxLocator.scrollIntoViewIfNeeded();
-      
+  
+          await utils.Click(checkboxLocator);
+          await this.page.waitForTimeout(5000);
           let isChecked = await checkboxLocator.isChecked();
-      
+        
           if (!isChecked) {
-            await checkboxLocator.click();
-            await checkboxLocator.waitFor({ state: 'attached' }); 
-    
+            await utils.Click(checkboxLocator);
             await this.page.waitForTimeout(500);
             isChecked = await checkboxLocator.isChecked();
-      
-       
-            if (!isChecked) {
-              console.log(`Retrying click for checkbox with value: ${value}`);
-              await checkboxLocator.click();
-              await this.page.waitForTimeout(500);
-              isChecked = await checkboxLocator.isChecked();
-            }
           }
-      
           if (isChecked) {
-            console.log(`Checkbox successfully checked for value: ${value}`);
+               console.log(`Checkbox successfully checked for value: ${value}`);
           } else {
-            console.error(`Failed to check the checkbox for value: ${value}`);
+               console.error(`Failed to check the checkbox for value: ${value}`);
+               throw new Error(`Checkbox was not checked for value: ${value}`);
           }
-        } catch (error) {
-          console.error(`Error applying filter: ${filterText} = ${value}`, error);
-          throw error;
-        }
       }
       
-
+      
   async clickOnViewButton() 
   {
-    await Click(this.viewBtn);
+    await utils.Click(this.viewBtn);
   }
 
   async getResults() {

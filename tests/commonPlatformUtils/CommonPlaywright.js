@@ -1,4 +1,6 @@
-async function Click(locator) 
+
+const utils = {
+async Click(locator) 
 {
   try {
     await locator.evaluate((element) => {
@@ -11,4 +13,7 @@ async function Click(locator)
  }
 }
 
-module.exports = { Click };
+
+
+}
+module.exports = utils;
