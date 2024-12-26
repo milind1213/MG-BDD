@@ -7,41 +7,34 @@ const { url } = require('../../configDirectory/testConfig');
 let webDashboard, offerPage;
 
 Given('I navigate to the Homepage', async function () {
-    console.log('Launching browser and navigating to the homepage...');
     webDashboard = new WebDashboard(this.page);
     offerPage = webDashboard.getOfferPage();
     await offerPage.goTo(url);
-    console.log('Successfully navigated to the Homepage.');
+    console.log('Successfully Navigated to the Homepage.');
 });
 
 Given(`I accept cookies and click on the {string} button`, async (buttonName) => {
-    console.log(`Accepting cookies and clicking on the "${buttonName}" button...`);
     await offerPage.handleCookies("accept");
     await offerPage.clickOnOfferButton();
-    console.log(`Clicked "${buttonName}" button.`);
 });
 
 Given(`I navigate to the {string} and Clicked on {string} button`, async (newVehicle, filterBtn) => {
-    console.log(`Navigating to the "${newVehicle}" section...`);
     await offerPage.clickOnNewVehicleButton();
     await offerPage.click_FilterButton();
-    console.log(`Successfully clicked on "${filterBtn}".`);
 });
 
 When(`I click on the {string} filter and select the checkbox for {string}`, async (label, value) => {
-    console.log(`Applying Filter : `);
-    console.log(` - ${label} : ${value}`);
     await offerPage.applyFilter(label, value);
+    console.log(`Applying Filter :\n - ${label} : ${value}`);
 });
 
 When(`I click the {string} button`, async (buttonName) => {
-    console.log(`I clicked on "${buttonName}" button.`);
     await offerPage.clickOnViewButton();
+    console.log(`I clicked on "${buttonName}" button.`);
 });
 
 
 Then(`the results should match the filter criteria {string}`, async (expectedResult) => {
-    console.log(`Validating that the results match the filter criteria: "${expectedResult}"...`);
     const results = await offerPage.getResults(); 
     if (results.length === 0 || results.includes("No offers found.")) {
         expect(results[0]).toBe(expectedResult);

@@ -8,7 +8,6 @@ class OfferPage {
     this.preOwnedVehicleButton = page.locator('button[aria-controls="tabpanel-Pre-owned offers"]');
     this.filterButton = page.locator('button:has-text("Filter")').nth(0);
     this.viewBtn = page.locator("//*[@class='css-1p2wkou' ]//parent::button[@class='css-i96fc']");
-    this.notFound = page.locator(".css-4kqkq9");
   }
 
   async goTo(url) {
@@ -17,35 +16,39 @@ class OfferPage {
 
   async clickOnOfferButton() {
     if (await this.viewAllOffersButton.isVisible()) {
-      console.log("Clicking on 'View All Offers' button...");
       await utils.Click(this.viewAllOffersButton);
+      console.log("Clicked on [View All Offers] button");
     } else {
-      console.log("Not Visible'View All Offers' Button.");
+      console.log("Not Visible[View All Offer] Button.");
     }
   }
 
-  async handleCookies(action) {
+  async handleCookies(action) 
+  {
     const buttons = { accept: this.page.locator('#onetrust-accept-btn-handler'),
          reject: this.page.locator('#onetrust-reject-all-handler')
-     };
+    };
      const dialog = this.page.locator('div[role="dialog"][aria-label="Welcome"]'); // Cookie consent dialog
          
-     for(let retries = 3; retries > 0; retries--){
-       if (await dialog.isVisible()) {
-           console.log("Cookie consent dialog is visible.");
-           const button = buttons[action.toLowerCase()];
-         if (button) {
-           if (await button.isVisible()) {
-               await utils.Click(button);
-               console.log(`Clicked successfully on '${action.charAt(0).toUpperCase() + action.slice(1)} All Cookies' button `);
-               return;
-             } else {
-               console.warn(`Clicked successfully on '${action.charAt(0).toUpperCase() + action.slice(1)} All Cookies' button`);
+    for(let retries = 3; retries > 0; retries--)
+    {
+      if(await dialog.isVisible()) 
+      {
+        console.log("Cookie consent dialog is visible.");
+        const button = buttons[action.toLowerCase()];
+        if (button) 
+        {
+          if (await button.isVisible()) {
+              await utils.Click(button);
+              console.log(`Clicked successfully on ['${action.charAt(0).toUpperCase() + action.slice(1)} All Cookies]' button `);
+              return;
+            } else {
+              console.warn(`Clicked successfully on ['${action.charAt(0).toUpperCase() + action.slice(1)} All Cookies]' button`);
             }
-          } else {
+         } else {
               console.error(`Unknown action: ${action}`);
          }
-       } else {
+        } else {
               console.log("Cookie Consent Dialog is not visible.");
               await this.page.reload(); 
               console.log(`Reloading the page and retrying...(${retries - 1} retries left)`);
@@ -105,9 +108,9 @@ class OfferPage {
             isChecked = await checkboxLocator.isChecked();
           }
           if (isChecked) {
-               console.log(`Checkbox successfully checked for value: ${value}`);
+               console.log(`Checked for value :[${value}]`);
           } else {
-               console.error(`Failed to check the checkbox for value: ${value}`);
+               console.error(`Failed to Click CheckBox for value: ${value}`);
                throw new Error(`Checkbox was not checked for value: ${value}`);
           }
       }
@@ -118,11 +121,12 @@ class OfferPage {
     await utils.Click(this.viewBtn);
   }
 
-  async getResults() {
+  async getResults() 
+  {
     try {
-        if (await this.notFound.isVisible()) {
-            const notFoundText = await this.notFound.innerText();
-            console.log("No offers found:", notFoundText);
+      if (await this.page.locator(".css-4kqkq9").isVisible()) {
+            const notFoundText = await this.page.locator(".css-4kqkq9").innerText();
+            console.log(`No offers found [: ${notFoundText}]`);
             return [notFoundText]; 
         }
         const filterLocator = this.page.locator("//*[@class='css-7iasm6']//p");
@@ -133,13 +137,13 @@ class OfferPage {
                 console.warn("No filter results found.");
                 return [];
             }
-            console.log("Found results:", texts);
+            console.log("Found results :", texts);
             return texts;
         }
         console.warn("No offers or results found.");
         return [];
       } catch (error) {
-        console.error("Error fetching results:", error);
+        console.error("Error Occurred :", error);
         return []; 
      }
 }

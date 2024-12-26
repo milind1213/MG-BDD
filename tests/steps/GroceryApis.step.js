@@ -4,10 +4,7 @@ const { GroceryPayloads } = require('../pages/PoleAPIs/GroceryApisPayloads.js');
 const axios = require('axios'); // For API requests
 const config = require('../../configDirectory/testConfig');
 
-let response;
-let payload = {};
-let savedToken;
-let itemId
+let response, savedToken, itemId, payload = {};
 
 Given(`The the base API URL is {string}`, (baseURL) => {
     config.BASE_URL = baseURL; 
