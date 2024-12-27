@@ -5,8 +5,8 @@
         "tests/features/"
       ],
       "require": [
-        "tests/steps/*.js",          
-        "tests/commonPlatformUtils/hooks.js"  
+        "tests/steps/*.js",
+        "tests/commonPlatformUtils/hooks.js"
       ],
       "formatOptions": {
         "snippetInterface": "async-await"

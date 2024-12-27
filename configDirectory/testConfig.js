@@ -1,10 +1,8 @@
-// C:\Users\Lenovo\vscode-workplace\MG-BDD\configDirectory\testConfig.js
-
 module.exports = {
   browserType: 'chrome',
-  isHeadless: false,  
-  isRemote: false,   
- 
+  isHeadless: true,
+  isRemote: false,   // Set true for remote, false for local
+  
   // Web Configuration
   url: 'https://www.polestar.com/us',
 

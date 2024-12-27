@@ -14,6 +14,6 @@ async Click(locator)
 }
 
 
-
 }
+
 module.exports = utils;

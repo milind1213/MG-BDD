@@ -14,6 +14,11 @@ class OfferPage {
     await this.page.goto(url);
   }
 
+  async clickOnViewButton() 
+  {
+    await utils.Click(this.viewBtn);
+  }
+
   async clickOnOfferButton() {
     if (await this.viewAllOffersButton.isVisible()) {
       await utils.Click(this.viewAllOffersButton);
@@ -23,6 +28,65 @@ class OfferPage {
     }
   }
 
+  async clickOnPreOwnedVehicleButton() {
+    try {
+         await this.page.evaluate(() => {
+             window.scrollBy(0, 400);
+        });
+      utils.Click(this.preOwnedVehicleButton);
+      
+      } catch (error) {
+        console.error("Error clicking on Pre Owned Vehicle Button:", error);
+        throw error;
+      }
+    }
+
+
+    async click_FilterButton() {
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      await utils.Click(this.filterButton);
+    }
+
+    async applyFilter(filterText, value) {
+        const filterLocator = this.page.locator(`//label[contains(@class,'css-c4oe05') and normalize-space(text())='${filterText}']`);
+        const checkboxLocator = this.page.locator(`//input[@type="checkbox" and @value='${value}']`);
+        await utils.Click(filterLocator);
+        await checkboxLocator.waitFor({ state: 'visible', timeout: 60000 });
+        await checkboxLocator.scrollIntoViewIfNeeded();
+
+        await utils.Click(checkboxLocator);
+        await this.page.waitForTimeout(5000);
+        let isChecked = await checkboxLocator.isChecked();
+      
+        if (!isChecked) {
+          await utils.Click(checkboxLocator);
+          await this.page.waitForTimeout(500);
+          isChecked = await checkboxLocator.isChecked();
+        }
+        if (isChecked) {
+             console.log(`Checked for value :[${value}]`);
+        } else {
+             console.error(`Failed to Click CheckBox for value: ${value}`);
+             throw new Error(`Checkbox was not checked for value: ${value}`);
+        }
+    }
+    
+    
+  async clickOnNewVehicleButton() {
+    try {
+         await this.page.evaluate(() => {
+             window.scrollBy(0, 400);
+        });
+    
+       utils.Click(this.newVehicleButton);
+      
+      } catch (error) {
+        console.error("Error clicking on New Vehicle Button:", error);
+        throw error;
+      }
+    }
+      
+    
   async handleCookies(action) 
   {
     const buttons = { accept: this.page.locator('#onetrust-accept-btn-handler'),
@@ -57,70 +121,7 @@ class OfferPage {
      }
    }
  
-
-
-  async clickOnNewVehicleButton() {
-    try {
-         await this.page.evaluate(() => {
-             window.scrollBy(0, 400);
-        });
-    
-       utils.Click(this.newVehicleButton);
-      
-      } catch (error) {
-        console.error("Error clicking on New Vehicle Button:", error);
-        throw error;
-      }
-    }
-
-    async clickOnPreOwnedVehicleButton() {
-      try {
-           await this.page.evaluate(() => {
-               window.scrollBy(0, 400);
-          });
-        utils.Click(this.preOwnedVehicleButton);
-        
-        } catch (error) {
-          console.error("Error clicking on Pre Owned Vehicle Button:", error);
-          throw error;
-        }
-      }
-
-      async click_FilterButton() {
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        await utils.Click(this.filterButton);
-      }
-
-      async applyFilter(filterText, value) {
-          const filterLocator = this.page.locator(`//label[contains(@class,'css-c4oe05') and normalize-space(text())='${filterText}']`);
-          const checkboxLocator = this.page.locator(`//input[@type="checkbox" and @value='${value}']`);
-          await utils.Click(filterLocator);
-          await checkboxLocator.waitFor({ state: 'visible', timeout: 60000 });
-          await checkboxLocator.scrollIntoViewIfNeeded();
   
-          await utils.Click(checkboxLocator);
-          await this.page.waitForTimeout(5000);
-          let isChecked = await checkboxLocator.isChecked();
-        
-          if (!isChecked) {
-            await utils.Click(checkboxLocator);
-            await this.page.waitForTimeout(500);
-            isChecked = await checkboxLocator.isChecked();
-          }
-          if (isChecked) {
-               console.log(`Checked for value :[${value}]`);
-          } else {
-               console.error(`Failed to Click CheckBox for value: ${value}`);
-               throw new Error(`Checkbox was not checked for value: ${value}`);
-          }
-      }
-      
-      
-  async clickOnViewButton() 
-  {
-    await utils.Click(this.viewBtn);
-  }
-
   async getResults() 
   {
     try {

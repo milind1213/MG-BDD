@@ -2,7 +2,6 @@ const { test, expect } = require('@playwright/test');
 const { GroceryPayloads } = require('./pages/PoleAPIs/GroceryApisPayloads.js');
 const config = require('../configDirectory/testConfig');
 
-
 let accessToken;
 let cartId;
 let itemId;

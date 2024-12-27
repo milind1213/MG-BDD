@@ -2,7 +2,7 @@ const { Given, When, Then } = require('@cucumber/cucumber');
 const { expect } = require('@playwright/test');
 const { GroceryPayloads } = require('../pages/PoleAPIs/GroceryApisPayloads.js');
 const axios = require('axios'); // For API requests
-const config = require('../../configDirectory/testConfig');
+const config = require('../../configDirectory/testConfig.js');
 
 let response, savedToken, itemId, payload = {};
 
