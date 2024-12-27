@@ -11,6 +11,7 @@ async function setupBrowser(browserName, isHeadless) {
 
   if (browserName === 'chrome') {
     browser = await chromium.launch({ headless: isHeadless });
+
   } else if (browserName === 'firefox') {
     browser = await firefox.launch({ headless: isHeadless });
   } else if (browserName === 'webkit') {

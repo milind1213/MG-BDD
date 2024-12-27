@@ -1,15 +1,18 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const { expect } = require('@playwright/test');
+const { ReqrePayloads } = require('../pages/PoleAPIs/ReqresApisPayloads.js');
 
+let payload; 
 Given('I prepare a unique user payload', function () {
-  this.userPayload = { name: `User_${Date.now()}`, job: 'Automation Tester',};
+   payload = ReqrePayloads.userPayload();
+   console.log("User Details Paylaod : ", payload);
 });
 
 When('I send a POST request to {string}', async function (endpoint) {
   if (!this.apiContext) {
-    throw new Error('API context is not initialized');
+      throw new Error('API context is not initialized...');
   }
-  const response = await this.apiContext.post(endpoint,{ data: this.userPayload});
+  const response = await this.apiContext.post(endpoint,{payload});
   this.responseData = await response.json();
   this.statusCode = response.status();
 });
