@@ -1,22 +1,29 @@
 {
-    "default": 
-   {
-      "paths": [
-        "tests/features/"
-      ],
-      "require": [
-        "tests/steps/*.js",
-        "tests/commonPlatformUtils/hooks.js"
-      ],
-      "formatOptions": {
-        "snippetInterface": "async-await"
-      },
-      "format": [
-        "html:reports/CucumberReport/cucumber-report.html",
-        "summary",
-        "progress-bar",
-        "json:reports/CucumberReport/cucumber-report.json"
-      ]
+  "default": {
+    "paths": [
+      "tests/features/"
+    ],
+    "require": [
+      "tests/steps/*.js",
+      "tests/commonPlatformUtils/hooks.js"
+    ],
+    "formatOptions": {
+      "snippetInterface": "async-await"
+    },
+    "format": [
+      "html:reports/CucumberReport/cucumber-report.html",
+      "summary",
+      "progress-bar",
+      "json:reports/CucumberReport/cucumber-report.json"
+    ],
+    "retry": 2,
+    "timeout": 60000,
+    "env": {
+      "LT_USERNAME": "gmilind12",
+      "LT_ACCESS_KEY": "4e5iRSBwffrL12b7sksWidgzBjTKtV5NFJZeFaVcfrsuvXSxJk"
     }
   }
-  
+}
+
+
+

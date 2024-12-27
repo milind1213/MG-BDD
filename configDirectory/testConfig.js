@@ -1,13 +1,15 @@
 module.exports = {
-  // BROWSER CONFIGURATION
+  
+ //BROWSER CONFIGURATION
   browserType: 'chrome',
-  isHeadless: true,
-  isRemote: false,
+  isHeadless: false, 
+  isRemote: true, // true = LambdaTest & false = LocalBrowser
 
   // WEB URL
-  url: 'https://www.polestar.com/us',
+  url: 'https://www.polestar.com/us', // URL for your web application
 
   // API URL
-  baseURL: 'https://reqres.in',
-  BASE_URL: 'https://simple-grocery-store-api.glitch.me',
+  baseURL: 'https://reqres.in', // Base URL for API tests
+  BASE_URL: 'https://simple-grocery-store-api.glitch.me', // Another base URL for API tests
+
 };
