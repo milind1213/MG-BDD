@@ -1,276 +1,72 @@
 [
   {
-    "description": "  As a user of the Polestar website\n  I want to apply filters to new vehicle offers\n  So that I can verify the filter functionality works correctly and display accurate results",
+    "description": "",
     "elements": [
       {
         "description": "",
-        "id": "verify-filter-functionality-for-polestar-offers;verify-filters-for-polestar-polestar-3-(2025-model)-with-long-range-single-motor-options",
-        "keyword": "Scenario Outline",
-        "line": 21,
-        "name": "Verify filters for Polestar Polestar 3 (2025 Model) with Long range Single motor options",
+        "id": "create-user-api-with-unique-payload;successfully-create-a-new-user-with-unique-details",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Successfully create a new user with unique details",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 321570300
+              "duration": 15781700
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 8,
-            "name": "I navigate to the Homepage",
+            "line": 5,
+            "name": "I prepare a unique user payload",
             "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:9"
+              "location": "tests\\steps\\CreateUser_PlaywrightAPIs.step.js:4"
             },
             "result": {
               "status": "passed",
-              "duration": 1966113200
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 9,
-            "name": "I accept cookies and click on the \"View Offers\" button",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:16"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1776792899
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 10,
-            "name": "I navigate to the \"New Vehicle Offers\" and Clicked on \"Filter\" button",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:21"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1360645799
+              "duration": 456999
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 13,
-            "name": "I click on the \"Car\" filter and select the checkbox for \"Polestar 3\"",
+            "line": 6,
+            "name": "I send a POST request to \"api/users\"",
             "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:26"
+              "location": "tests\\steps\\CreateUser_PlaywrightAPIs.step.js:8"
             },
             "result": {
               "status": "passed",
-              "duration": 7411729600
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 14,
-            "name": "I click on the \"Model year\" filter and select the checkbox for \"2025\"",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:26"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 5655782900
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 15,
-            "name": "I click on the \"Powertrain\" filter and select the checkbox for \"Long range Single motor\"",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:26"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 5668480300
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 16,
-            "name": "I click the \"View\" button",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:31"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 133084299
+              "duration": 696161699
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 17,
-            "name": "the results should match the filter criteria \"No offers found.\"",
+            "line": 7,
+            "name": "the response contain a unique \"id\"",
             "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:37"
+              "location": "tests\\steps\\CreateUser_PlaywrightAPIs.step.js:21"
             },
             "result": {
               "status": "passed",
-              "duration": 18767700
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 923999
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 104288000
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 2534599
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@ui",
-            "line": 1
-          }
-        ],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "verify-filter-functionality-for-polestar-offers;verify-filters-for-polestar-polestar-2-(2024-model)-with-all-options",
-        "keyword": "Scenario Outline",
-        "line": 22,
-        "name": "Verify filters for Polestar Polestar 2 (2024 Model) with All options",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 242562000
+              "duration": 8721500
             }
           },
           {
             "arguments": [],
-            "keyword": "Given ",
+            "keyword": "And ",
             "line": 8,
-            "name": "I navigate to the Homepage",
+            "name": "the response include the creation time \"createdAt\"",
             "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:9"
+              "location": "tests\\steps\\CreateUser_PlaywrightAPIs.step.js:26"
             },
             "result": {
               "status": "passed",
-              "duration": 2013770199
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 9,
-            "name": "I accept cookies and click on the \"View Offers\" button",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:16"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4615206699
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 10,
-            "name": "I navigate to the \"New Vehicle Offers\" and Clicked on \"Filter\" button",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:21"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1555281800
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 13,
-            "name": "I click on the \"Car\" filter and select the checkbox for \"Polestar 2\"",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:26"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 6650589800
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 14,
-            "name": "I click on the \"Model year\" filter and select the checkbox for \"2024\"",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:26"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 5770623800
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 15,
-            "name": "I click on the \"Powertrain\" filter and select the checkbox for \"All\"",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:26"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 5753028400
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 16,
-            "name": "I click the \"View\" button",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:31"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 207192000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 17,
-            "name": "the results should match the filter criteria \"No offers found.\"",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:37"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 31219299
+              "duration": 10218300
             }
           },
           {
@@ -278,7 +74,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 646499
+              "duration": 2911100
             }
           },
           {
@@ -286,493 +82,29 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 70001199
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 2547500
+              "duration": 4037299
             }
           }
         ],
         "tags": [
           {
-            "name": "@ui",
-            "line": 1
-          }
-        ],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "verify-filter-functionality-for-polestar-offers;verify-filters-for-polestar-polestar-2-(2025-model)-with-all-options",
-        "keyword": "Scenario Outline",
-        "line": 23,
-        "name": "Verify filters for Polestar Polestar 2 (2025 Model) with All options",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 293133200
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 8,
-            "name": "I navigate to the Homepage",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:9"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1350698399
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 9,
-            "name": "I accept cookies and click on the \"View Offers\" button",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:16"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4273749700
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 10,
-            "name": "I navigate to the \"New Vehicle Offers\" and Clicked on \"Filter\" button",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:21"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1355043900
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 13,
-            "name": "I click on the \"Car\" filter and select the checkbox for \"Polestar 2\"",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:26"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 6798661999
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 14,
-            "name": "I click on the \"Model year\" filter and select the checkbox for \"2025\"",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:26"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 5897275000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 15,
-            "name": "I click on the \"Powertrain\" filter and select the checkbox for \"All\"",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:26"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 5861726600
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 16,
-            "name": "I click the \"View\" button",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:31"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 191219200
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 17,
-            "name": "the results should match the filter criteria \"No offers found.\"",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:37"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 25176399
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 634599
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 71552199
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 956799
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@ui",
-            "line": 1
-          }
-        ],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "verify-filter-functionality-for-polestar-offers;verify-filters-for-polestar-polestar-2-(2024-model)-with-long-range-single-motor-options",
-        "keyword": "Scenario Outline",
-        "line": 24,
-        "name": "Verify filters for Polestar Polestar 2 (2024 Model) with Long range Single motor options",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 234886700
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 8,
-            "name": "I navigate to the Homepage",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:9"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1498185099
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 9,
-            "name": "I accept cookies and click on the \"View Offers\" button",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:16"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3980179100
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 10,
-            "name": "I navigate to the \"New Vehicle Offers\" and Clicked on \"Filter\" button",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:21"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1340263699
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 13,
-            "name": "I click on the \"Car\" filter and select the checkbox for \"Polestar 2\"",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:26"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 6856127399
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 14,
-            "name": "I click on the \"Model year\" filter and select the checkbox for \"2024\"",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:26"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 5730751700
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 15,
-            "name": "I click on the \"Powertrain\" filter and select the checkbox for \"Long range Single motor\"",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:26"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 5726247799
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 16,
-            "name": "I click the \"View\" button",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:31"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 269244200
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 17,
-            "name": "the results should match the filter criteria \"Polestar 2 Long range Single motor\"",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:37"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 26380799
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 609200
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 81421800
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1861999
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@ui",
-            "line": 1
-          }
-        ],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "verify-filter-functionality-for-polestar-offers;verify-filters-for-polestar-polestar-3-(2025-model)-with-all-options",
-        "keyword": "Scenario Outline",
-        "line": 25,
-        "name": "Verify filters for Polestar Polestar 3 (2025 Model) with All options",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 234389299
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 8,
-            "name": "I navigate to the Homepage",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:9"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1354975100
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 9,
-            "name": "I accept cookies and click on the \"View Offers\" button",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:16"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3859437600
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 10,
-            "name": "I navigate to the \"New Vehicle Offers\" and Clicked on \"Filter\" button",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:21"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1380142699
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 13,
-            "name": "I click on the \"Car\" filter and select the checkbox for \"Polestar 3\"",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:26"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 7347106899
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 14,
-            "name": "I click on the \"Model year\" filter and select the checkbox for \"2025\"",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:26"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 5603086699
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 15,
-            "name": "I click on the \"Powertrain\" filter and select the checkbox for \"All\"",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:26"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 5711455399
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 16,
-            "name": "I click the \"View\" button",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:31"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 180327900
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 17,
-            "name": "the results should match the filter criteria \"Polestar 3\"",
-            "match": {
-              "location": "tests\\steps\\newVehicleOffer.step.js:37"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 28727700
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 467000
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 69752200
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1526299
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@ui",
+            "name": "@api",
             "line": 1
           }
         ],
         "type": "scenario"
       }
     ],
-    "id": "verify-filter-functionality-for-polestar-offers",
+    "id": "create-user-api-with-unique-payload",
     "line": 2,
     "keyword": "Feature",
-    "name": "Verify Filter Functionality for Polestar Offers",
+    "name": "Create User API with Unique Payload",
     "tags": [
       {
-        "name": "@ui",
+        "name": "@api",
         "line": 1
       }
     ],
-    "uri": "tests\\features\\newVehicleOffer.feature"
+    "uri": "tests\\features\\createUser.feature"
   }
 ]
