@@ -1,6 +1,7 @@
 const utils = {
  
-  async Click(locator) {
+  async Click(locator) 
+  {
     try {
       await this.highlightLocator(locator);
       await locator.click();
@@ -10,7 +11,8 @@ const utils = {
     }
   },
 
-  async scrollIntoViewAndClick(locator) {
+  async scrollIntoViewAndClick(locator) 
+  {
     try {
       await locator.evaluate((el) => el.scrollIntoView());
       await this.highlightLocator(locator);
@@ -21,14 +23,16 @@ const utils = {
     }
   },
 
-  async scrollClickText(page, textVal) {
+  async scrollClickText(page, textVal) 
+  {
     const locator = `text=${textVal}`;
     await this.highlightLocator(locator);
     await page.locator(locator).scrollIntoViewIfNeeded();
     await page.locator(locator).click();
   },
 
-  async Fill(locator, text) {
+  async Fill(locator, text) 
+  {
     try {
       await this.highlightLocator(locator);
       await locator.fill(text);  
@@ -38,7 +42,8 @@ const utils = {
     }
   },
 
-  async clearAndFill(page, locator, text) {
+  async clearAndFill(page, locator, text) 
+  {
     try {
         await this.highlightLocator(locator);
         await page.locator(locator).fill('');
@@ -48,7 +53,9 @@ const utils = {
     }
 },
 
-async refresh(page) {
+
+async refresh(page) 
+{
   try {
       await page.reload();
   } catch (error) {
@@ -56,7 +63,8 @@ async refresh(page) {
   }
 },
 
-async getText(page, locator) {
+async getText(page, locator) 
+{
   try {
       await waitForElementDisplay(page, locator);
       await highlight(page, locator);
@@ -68,7 +76,8 @@ async getText(page, locator) {
 },
 
 
-async getAttribute(page, locator,attribute) {
+async getAttribute(page, locator,attribute) 
+{
   try {
       const element = await page.locator(locator);
       return await element.getAttribute(attribute) || "null";
@@ -78,7 +87,8 @@ async getAttribute(page, locator,attribute) {
   }
 },
 
-async isLocatorTextDisplayed(page, textVal) {
+async isLocatorTextDisplayed(page, textVal) 
+{
   const locator = `text=${textVal}`;
   try {
       await this.highlightLocator(locator);
@@ -88,7 +98,8 @@ async isLocatorTextDisplayed(page, textVal) {
   }
 },
 
-async isTextInPage(page, text) {
+async isTextInPage(page, text) 
+{
   try {
     const content = await page.content();
     return content.includes(text);
@@ -98,7 +109,8 @@ async isTextInPage(page, text) {
   }
 },
 
-  async waitLocaterVisibility(locator, timeout = 5000) {
+  async waitLocaterVisibility(locator, timeout = 5000) 
+  {
     try {
       await this.highlightLocator(locator);
       await locator.waitFor({ state: 'visible', timeout });
@@ -108,7 +120,8 @@ async isTextInPage(page, text) {
     }
   },
 
-  async waitForLocatorClickable(locator, timeout = 5000) {
+  async waitForLocatorClickable(locator, timeout = 5000) 
+  {
     try {
       await this.highlightLocator(locator);
       await locator.waitFor({ state: 'attached', timeout }); 
@@ -119,7 +132,8 @@ async isTextInPage(page, text) {
     }
   },
 
-  async waitForLocatorPresence(locator, timeout = 5000) {
+  async waitForLocatorPresence(locator, timeout = 5000) 
+  {
     try {
       await this.highlightLocator(locator);
       await locator.waitFor({ state: 'attached', timeout });
@@ -129,7 +143,8 @@ async isTextInPage(page, text) {
     }
   },
 
-  async waitForLocatorDisplay(page, locator, timeout = 30000) {
+  async waitForLocatorDisplay(page, locator, timeout = 30000) 
+  {
     try {
         await page.waitForSelector(locator, { state: 'visible', timeout: timeout });
     } catch (error) {
@@ -138,7 +153,8 @@ async isTextInPage(page, text) {
   },
 
   
-async isLocatorDisplayed(page, locator) {
+async isLocatorDisplayed(page, locator) 
+{
   try {
       await waitForElementDisplay(page, locator);
       await highlight(page, locator);
@@ -149,7 +165,8 @@ async isLocatorDisplayed(page, locator) {
   }
 },
 
-  async isLocatorPresent(locator) {
+  async isLocatorPresent(locator) 
+  {
     try {
       const element = await locator.count();
       return element > 0;
@@ -159,11 +176,16 @@ async isLocatorDisplayed(page, locator) {
     }
   },
 
-  async isSelectorEnabled(page, selector) {
+
+  async isSelectorEnabled(page, selector) 
+ {
     const element = await page.$(selector);
     return await element.isEnabled();
-},
-  async selectDropdownOptionByText(locator, optionText) {
+ },
+
+
+  async selectDropdownOptionByText(locator, optionText) 
+  {
     try {
       await this.highlightLocator(locator);
       await locator.selectOption({ label: optionText });
@@ -173,7 +195,8 @@ async isLocatorDisplayed(page, locator) {
     }
   },
 
-  async scrollUpto(page, locator) {
+  async scrollUpto(page, locator) 
+  {
     try {
         const element = await page.locator(locator);
         await element.scrollIntoViewIfNeeded();
@@ -182,12 +205,14 @@ async isLocatorDisplayed(page, locator) {
     }
   },
 
-  async switchToTab(page, tabNo) {
+  async switchToTab(page, tabNo) 
+  {
     const pages = await page.context().pages();
     await pages[tabNo].bringToFront();
   },
 
-  async switchBackToParentWindowAndCloseChild(page) {
+  async switchBackToParentWindowAndCloseChild(page) 
+  {
     const [parentPage] = await page.context().pages();
     const pages = await page.context().pages();
     for (let i = 1; i < pages.length; i++) {
@@ -199,20 +224,23 @@ async isLocatorDisplayed(page, locator) {
     console.log("Switched back to parent window");
 },
 
-async scrollDownTillLast(page) {
+async scrollDownTillLast(page) 
+{
   await page.evaluate(() => {
       window.scrollBy(0, document.body.scrollHeight);
   });
 },
 
-async pressBack(page, times) {
+async pressBack(page, times) 
+{
   for (let i = 0; i < times; i++) 
   {
       await page.goBack();
   }
 },
 
-async uploadFile(page, locator, filePath) {
+async uploadFile(page, locator, filePath) 
+{
   try {
       const input = await page.locator(locator);
       this.highlightLocator(input);
@@ -224,14 +252,16 @@ async uploadFile(page, locator, filePath) {
 },
 
 
-async getRandomPhoneNumber() {
+async getRandomPhoneNumber() 
+{
   const part1 = Math.floor(Math.random() * 900) + 100;
   const part2 = Math.floor(Math.random() * 900) + 100;
   const part3 = Math.floor(Math.random() * 9000) + 1000;
   return `+91${part1}${part2}${part3}`;
 },
 
-async getRandomEmail() {
+async getRandomEmail() 
+{
   const usernameLength = Math.floor(Math.random() * 4) + 3;
   let username = '';
   const alphabet = 'abcdefghijklmnopqrstuvwxyz';
@@ -243,14 +273,16 @@ async getRandomEmail() {
   return `${username}@${domain}`;
 },
 
-async getRandomNumberInRange(min, max) {
+async getRandomNumberInRange(min, max) 
+{
   if (min >= max) {
       throw new Error("Max must be greater than min");
   }
   return Math.floor(Math.random() * (max - min + 1)) + min;
 },
 
-async generateRandomText(length) {
+async generateRandomText(length) 
+{
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   let result = '';
   for (let i = 0; i < length; i++) {
@@ -259,13 +291,15 @@ async generateRandomText(length) {
   return result;
 },
 
-async getBrowserConsoleLogs(page) {
+async getBrowserConsoleLogs(page) 
+{
   const logs = [];
   page.on('console', msg => logs.push(msg.text()));
   return logs;
 },
 
-async handleAlert(page, action = 'accept') {
+async handleAlert(page, action = 'accept') 
+{
   page.on('dialog', async dialog => {
       if (action === 'accept') {
           await dialog.accept();
@@ -275,20 +309,24 @@ async handleAlert(page, action = 'accept') {
   });
 },
 
-async setCookie(page, cookie) {
+async setCookie(page, cookie)
+{
   await page.context().addCookies([cookie]);
 },
 
-async getCookies(page) {
+async getCookies(page) 
+{
   return await page.context().cookies();
 },
 
-async hoverOverElement(page, selector) {
+async hoverOverElement(page, selector) 
+{
   const element = await page.$(selector);
   await element.hover();
 },
 
-async waitLocaotorToContainText(page, selector, text, timeout = 5000) {
+async waitLocaotorToContainText(page, selector, text, timeout = 5000) 
+{
   try {
       await page.waitForSelector(selector, { visible: true, timeout });
       const elementText = await page.$eval(selector, el => el.textContent);
@@ -302,19 +340,22 @@ async waitLocaotorToContainText(page, selector, text, timeout = 5000) {
   }
 },
 
-async switchToIframe(page, iframeSelector) {
+async switchToIframe(page, iframeSelector) 
+{
   const iframeElement = await page.$(iframeSelector);
   const iframe = await iframeElement.contentFrame();
   return iframe;
 },
 
-async getLocatorPosition(page, selector) {
+async getLocatorPosition(page, selector) 
+{
   const element = await page.$(selector);
   const box = await element.boundingBox();
   return box;
 },
 
-async selectDropdown(page, selector, option) {
+async selectDropdown(page, selector, option) 
+{
   try {
       await page.waitForSelector(selector);
       if (option.value) {
@@ -332,13 +373,12 @@ async selectDropdown(page, selector, option) {
 },
 
 
-async highlightLocator(locator) {
+async highlightLocator(locator) 
+{
   await locator.evaluate((element) => {
     element.style.border = "2px solid red"; // Red border
   });
 }
-
-
 
 };
 module.exports = utils;

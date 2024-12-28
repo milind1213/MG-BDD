@@ -13,11 +13,11 @@
     "format": [
       "html:reports/CucumberReport/cucumber-report.html",
       "summary",
-      "progress-bar",
-      "json:reports/CucumberReport/cucumber-report.json"
+      "progress-bar"
     ],
-    "retry": 2,
+    "retry":1,
     "timeout": 60000,
+    "parallel":2,
     "env": {
       "LT_USERNAME": "gmilind12",
       "LT_ACCESS_KEY": "4e5iRSBwffrL12b7sksWidgzBjTKtV5NFJZeFaVcfrsuvXSxJk"

@@ -1,62 +1,73 @@
 const { chromium, firefox, webkit } = require('playwright');
-const playwright = require('playwright'); // For LambdaTest
-const { lambdatest } = require('../../configDirectory/testConfig');
-
-const LAMBDATEST_USERNAME = 'gmilind12';  
-const LAMBDATEST_ACCESS_KEY = '4e5iRSBwffrL12b7sksWidgzBjTKtV5NFJZeFaVcfrsuvXSxJk';
-
-
-async function setup(isRemote, browserName, isHeadless) {
-  if (isRemote) {
-    console.log('Running tests on LambdaTest...');
-    return await setupLambdaTest(browserName, isHeadless);
-  } else {
-    console.log('Running tests locally with Playwright...');
-    return await setupBrowser(browserName, isHeadless);
+const playwright = require('playwright'); 
+const { request } = require('@playwright/test');
+const config = require('../../configDirectory/testConfig.js'); 
+const lambdatestCapabilities = require('../../configDirectory/testCapabilties.js'); 
+async function setup(isRemote, isApi, browserName, isHeadless) 
+{
+  if(isRemote) {
+     console.log('Running tests on LambdaTest...');
+     return await setupLambdaTest(isApi, browserName, isHeadless);
+  }  else {
+     console.log('Running tests locally with Playwright...');
+     return await setBrowser(isApi, browserName, isHeadless);
   }
 }
-
 
 // Local Playwright browser setup
-async function setupBrowser(browserName = 'chromium', isHeadless = true) {
-  const browserTypes = { chromium, firefox, webkit };
-  const browserType = browserTypes[browserName.toLowerCase()];
+async function setBrowser(isApi, browserName = 'chromium', isHeadless = true) 
+{
+  if (!isApi) {
+    const browserTypes = { chromium, firefox, webkit };
+    const browserType = browserTypes[browserName.toLowerCase()];
 
-  if (!browserType) {
-    throw new Error(`Unsupported browser: ${browserName}`);
+    if (!browserType) {
+      throw new Error(`Unsupported browser: ${browserName}`);
+    }
+
+    const browser = await browserType.launch({ headless: isHeadless });
+    const context = await browser.newContext();
+    const page = await context.newPage();
+
+    console.log(`Local browser '${browserName}' initialized successfully.`);
+    return { browser, context, page };
+  } 
+   else 
+  {
+    console.log('Initializing API context...');
+    this.apiContext = await request.newContext({ baseURL: config.baseURL });
+    return { context: this.apiContext };
   }
-
-  const browser = await browserType.launch({ headless: isHeadless });
-  const context = await browser.newContext();
-  const page = await context.newPage();
-
-  console.log(`Local browser '${browserName}' initialized successfully.`);
-  return { browser, context, page };
 }
 
+async function setupLambdaTest(isApi, browserName, isHeadless) {
+  try {
+    const capabilitiesList = lambdatestCapabilities.getCapabilities(browserName, isHeadless);
+    const capabilities = capabilitiesList[0]; 
+    if (!capabilities) {
+      throw new Error(`No capabilities found for LambdaTest test with browser: ${browserName}`);
+    }
 
-async function setupLambdaTest(browserName, isHeadless) {
-  const capabilities = {
-    browserName: browserName.charAt(0).toUpperCase() + browserName.slice(1), // Capitalize browser name
-    browserVersion: 'latest',
-    'LT:Options': {
-      platform: 'Windows 10',
-      build: 'Playwright Build', // Customize build name
-      name: 'Playwright Test',  // Customize test name
-      user: LAMBDATEST_USERNAME,
-      accessKey: LAMBDATEST_ACCESS_KEY,
-      headless: isHeadless,
-    },
-  };
+    const wsEndpoint = `wss://cdp.lambdatest.com/playwright?capabilities=${encodeURIComponent(JSON.stringify(capabilities))}`;
+    console.log('Connecting to LambdaTest WebSocket...');
+    const browser = await playwright.chromium.connect({ wsEndpoint });
+    const context = await browser.newContext();
+    const page = await context.newPage();
 
-  const wsEndpoint = `wss://cdp.lambdatest.com/playwright?capabilities=${encodeURIComponent(JSON.stringify(capabilities))}`;
-  const browser = await playwright.chromium.connect({ wsEndpoint });
-  const context = await browser.newContext();
-  const page = await context.newPage();
-  page.setViewportSize({ width: 1280, height: 720 });
-  console.log(`LambdaTest browser '${browserName}' initialized successfully.`);
-  return { browser, context, page };
-
+    page.setViewportSize({ width: 1280, height: 720 });
+    console.log(`LambdaTest browser '${browserName}' initialized successfully.`);
+  
+    if (isApi) {
+      const apiContext = await request.newContext({ baseURL: config.baseURL });
+      console.log('LambdaTest API context initialized successfully.');
+      return {apiContext};
+    } else {
+      return { browser, context, page };
+    }
+  } catch (error) {
+    console.error(`Error setting up LambdaTest: ${error.message}`);
+    throw error; 
+  }
 }
 
 module.exports = { setup };
