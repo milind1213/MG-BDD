@@ -1,14 +1,13 @@
 const { Given, When, Then, After, setDefaultTimeout } = require('@cucumber/cucumber');
 const { WebDashboard } = require('../pages/PoleWeb/WebDashboard');
 const { expect } = require('@playwright/test');
-const { url } = require('../../configDirectory/testConfig');
+require('dotenv').config({ path: './configDirectory/.env' });
 
 let webDashboard, offerPage;
-
 Given('I navigate to the Homepage', async function (){
     webDashboard = new WebDashboard(this.page);
     offerPage = webDashboard.getOfferPage();
-    await offerPage.goTo(url);
+    await offerPage.goTo(process.env.PROD_WEB_URL);
     console.log('Successfully Navigated to the Homepage.');
 });
 

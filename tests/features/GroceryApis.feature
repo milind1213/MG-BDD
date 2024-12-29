@@ -1,4 +1,4 @@
-@smoke
+@a
 Feature: Groceries API Test Suite
   To verify the functionality of the groceries API endpoints
   I want to test the end-to-end workflow including token generation, product management, cart, and order operations.

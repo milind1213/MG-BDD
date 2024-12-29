@@ -1,6 +1,6 @@
 module.exports = {
 
-// Browser configuration (LambdaTest = true) 
+// Browser configuration ( LambdaTest = true) 
    browserType: 'chrome',
    isHeadless: false, 
    isRemote: false,   

@@ -2,8 +2,7 @@ const axios = require('axios');
 
 async function createJiraTicket(testName, errorDetails) 
 {
-    const jiraUrl = `https://mgsmilind.atlassian.net/rest/api/3/issue`;
-    
+    const jiraUrl = process.env.JIRA_API_URL;
     const issueData = 
     {
         fields: {
@@ -20,7 +19,8 @@ async function createJiraTicket(testName, errorDetails)
         // Make a request to create the Jira issue
         const response = await axios.post(jiraUrl, issueData, {
             auth: {
-            
+                username: process.env.JIRA_EMAIL,
+                password: process.env.JIRA_API_TOKEN,
             },
             headers: {
                 'Content-Type': 'application/json',

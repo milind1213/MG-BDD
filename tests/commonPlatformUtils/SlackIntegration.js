@@ -2,7 +2,7 @@ const { WebClient } = require('@slack/web-api');
 const fs = require('fs');
 const path = require('path');
 
-async function sendExecutionReportToSlack(reportDirectory, reportHeader, slackChannel, slackOAuthToken) {
+async function sendExecutionReportToSlack(reportDirectory, reportHeader,slack_Channel_ID, slackOAuthToken) {
   const client = new WebClient(slackOAuthToken);
   const filePath = path.join(reportDirectory);
   
@@ -15,7 +15,7 @@ async function sendExecutionReportToSlack(reportDirectory, reportHeader, slackCh
     const fileStream = fs.createReadStream(filePath);
     
     const response = await client.files.uploadV2({
-      channel_id: slackChannel, 
+      channel_id: slack_Channel_ID, 
       initial_comment: reportHeader || 'Cucumber Test Execution Report',
       file: fileStream,
       filename: 'cucumber-report.html', 
