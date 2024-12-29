@@ -1,0 +1,26 @@
+{
+  "name": "mg-bdd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js --parallel 3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.1.1",
+    "@cucumber/html-formatter": "^21.7.0",
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.2",
+    "playwright": "^1.49.1"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cucumber-html-reporter": "^6.0.0",
+    "dotenv": "^16.4.7",
+    "expect": "^29.7.0",
+    "mg-bdd": "file:"
+  }
+}
