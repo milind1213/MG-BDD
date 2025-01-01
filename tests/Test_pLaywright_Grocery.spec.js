@@ -1,6 +1,5 @@
 const { test, expect } = require('@playwright/test');
 const { GroceryPayloads } = require('./pages/PoleAPIs/GroceryApisPayloads.js');
-const config = require('../configDirectory/testConfig.js');
 require('dotenv').config({ path: './configDirectory/.env' });
 
 let accessToken;

@@ -91,7 +91,6 @@ async isLocatorTextDisplayed(page, textVal)
 {
   const locator = `text=${textVal}`;
   try {
-      await this.highlightLocator(locator);
       return await page.locator(locator).isVisible();
   } catch (error) {
       return false;
@@ -112,7 +111,6 @@ async isTextInPage(page, text)
   async waitLocaterVisibility(locator, timeout = 5000) 
   {
     try {
-      await this.highlightLocator(locator);
       await locator.waitFor({ state: 'visible', timeout });
     } catch (error) {
       console.error(`Failed to wait for element visibility: ${locator}, error: ${error.message}`);
@@ -123,7 +121,6 @@ async isTextInPage(page, text)
   async waitForLocatorClickable(locator, timeout = 5000) 
   {
     try {
-      await this.highlightLocator(locator);
       await locator.waitFor({ state: 'attached', timeout }); 
       await locator.waitFor({ state: 'enabled', timeout });
     } catch (error) {
@@ -135,7 +132,6 @@ async isTextInPage(page, text)
   async waitForLocatorPresence(locator, timeout = 5000) 
   {
     try {
-      await this.highlightLocator(locator);
       await locator.waitFor({ state: 'attached', timeout });
     } catch (error) {
       console.error(`Failed to wait for element presence: ${locator}, error: ${error.message}`);

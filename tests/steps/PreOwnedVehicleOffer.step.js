@@ -1,7 +1,6 @@
 const { Given, When, Then, After, setDefaultTimeout } = require('@cucumber/cucumber');
 const { WebDashboard } = require('../pages/PoleWeb/WebDashboard');
 const { expect } = require('@playwright/test');
-const { url } = require('../../configDirectory/testConfig');
 require('dotenv').config({ path: './configDirectory/.env' });
 let webDashboard, offerPage;
 

@@ -2,9 +2,9 @@ const { Given, When, Then } = require('@cucumber/cucumber');
 const { expect } = require('@playwright/test');
 const { GroceryPayloads } = require('../pages/PoleAPIs/GroceryApisPayloads.js');
 const axios = require('axios'); // For API requests
-const config = require('../../configDirectory/testConfig.js');
+//const config = require('../../configDirectory/testConfig.js');
 require('dotenv').config({ path: './configDirectory/.env' });
-let response, savedToken, itemId, payload = {};
+let response, savedToken, ENDPOINT, itemId, payload = {};
 
 Given(`The the base API URL is {string}`, (baseURL) => {
     process.env.BASE_URL_2 = baseURL; 
@@ -30,8 +30,8 @@ Then(`The response body should have {string} as {string}.`, (key, value) => {
 });
 
 Given(`The API endpoint {string}`, (endpoint) => {
-    config.ENDPOINT = endpoint;
-    console.log(`API endpoint set to: ${config.ENDPOINT}`);
+    ENDPOINT = endpoint;
+    console.log(`API endpoint set to:`,endpoint);
 });
 
 Given(`I generate the payload for token creation with client name {string}`, (clientName) => {
@@ -40,7 +40,7 @@ Given(`I generate the payload for token creation with client name {string}`, (cl
 });
 
 When(`I send a POST request`, async () => {
-    const url = `${process.env.BASE_URL_2}${config.ENDPOINT}`;
+    const url = `${process.env.BASE_URL_2}${ENDPOINT}`;
     console.log(`Sending a POST request to ${url} with payload:`, payload);
     response = await axios.post(url, payload);
 });

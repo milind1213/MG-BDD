@@ -1,5 +1,4 @@
 require('dotenv').config({ path: './configDirectory/.env' });
-const config = require('./testConfig');
 // Lambdatest Capabilities for multiple browsers and OS
 
   module.exports = {

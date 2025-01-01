@@ -29,7 +29,8 @@ async function createJiraTicket(testName, errorDetails)
 
         const issueKey = response.data.key;
         console.log(`Jira ticket created: ${issueKey}`);
-    } catch (error) {
+    } catch (error) 
+    {
         console.error('Failed to create Jira ticket:', error.response?.data || error.message);
     }
 }
