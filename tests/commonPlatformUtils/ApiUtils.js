@@ -1,59 +1,56 @@
 const { request } = require('@playwright/test');
 const axios = require('axios');
 require('dotenv').config({ path: './configDirectory/.env' });
-
-
-// Axios REST API Configuration
 class axioUtils {
    constructor() 
    {
-    this.headers = {};
-    this.cookies = {};
-    this.queryParams = {};
-    this.pathParams = {};
-  }
+      this.headers = {};
+      this.cookies = {};
+      this.queryParams = {};
+     this.pathParams = {};
+   }
 
   // Create request configuration for Axios
   static requestConfig(baseURL, endpoint, config) 
   {
-    const axiosConfig = {
-      baseURL: baseURL,
-      url: endpoint,
-      headers: { ...config.headers },
-      params: { ...config.queryParams },
-      timeout: 10000,
-    };
+     const axiosConfig = {
+       baseURL: baseURL,
+       url: endpoint,
+       headers: { ...config.headers },
+       params: { ...config.queryParams },
+       timeout: 10000,
+     };
 
-   if (config.pathParams) 
-   {
-      axiosConfig.url = endpoint.replace(/{([^}]+)}/g, (_, key) => config.pathParams[key]);
-   }
-    return axiosConfig;
+     if (config.pathParams) 
+     {
+        axiosConfig.url = endpoint.replace(/{([^}]+)}/g, (_, key) => config.pathParams[key]);
+     }
+     return axiosConfig;
   }
 
   // GET request
-  static async GET(baseURL, endpoint, config) 
-  {
-     const axiosConfig = this.requestConfig(baseURL, endpoint, config);
-   try {
-     const response = await axios.get(axiosConfig.url, axiosConfig);
-     return response.data;
-   } catch (error) 
+   static async GET(baseURL, endpoint, config) 
    {
-     throw error;
-   }
+      const axiosConfig = this.requestConfig(baseURL, endpoint, config);
+     try {
+       const response = await axios.get(axiosConfig.url, axiosConfig);
+       return response.data;
+    }  catch (error) 
+    {
+      throw error;
+    }
   }
 
   // POST request
   static async POST(baseURL, endpoint, config, body) 
   {
     const axiosConfig = this.requestConfig(baseURL, endpoint, config);
-   try {
-     const response = await axios.post(axiosConfig.url, body, axiosConfig);
-     return response.data;
-   } catch (error) 
+    try {
+      const response = await axios.post(axiosConfig.url, body, axiosConfig);
+      return response.data;
+   }  catch (error) 
    {
-     throw error;
+      throw error;
    }
   }
 
@@ -109,12 +106,4 @@ class axioUtils {
 
 }
 
-// Playwright API Context Setup
-async function setApiContext() 
-{
-  const apiContext = await request.newContext({ baseURL: process.env.BASE_URL_1 });
-  console.log('API Playwright Context initialized successfully.');
-  return apiContext;
-}
-
-module.exports = { setApiContext, axioUtils };
+module.exports = { axioUtils };

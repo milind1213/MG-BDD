@@ -5,6 +5,9 @@ require('dotenv').config({ path: './configDirectory/.env' });
 
 async function launchBrowser(isRemote, browserName, isHeadless) 
 {  
+  const mode = isHeadless ? 'Headless' : 'Headed';
+  console.log(`Initializing UI Playwright Context on '${browserName}' Browser initialized in ${mode} Mode.`);
+
   if (isRemote) 
   {
     console.log(`====== Test Execution Environment: LambdaTest Remote =======`);
@@ -34,7 +37,7 @@ async function initializeBrowser(browserName, isHeadless = true)
   const context = await browser.newContext();
   const page = await context.newPage();
 
-  page.setViewportSize({ width: 1280, height: 720 });
+  page.setViewportSize({ width: 1280, height: 800 });
   return { browser, context, page };
 }
 
@@ -66,4 +69,25 @@ async function initializeLambdaTest(browserName, isHeadless)
   }
 }
 
-module.exports = { launchBrowser };
+async function closeBrowserInstances(page, context, browser) 
+{
+  if (page)
+  {
+    console.log('Closing the Active Browser Page...');
+    await page.close(); 
+  }
+
+  if (context) 
+  {
+    console.log('Closing the Browser Context...');
+    await context.close(); 
+  }
+
+  if (browser) 
+  {
+    console.log('Shutting Down the Browser Instance...');
+    await browser.close(); 
+  }
+}
+
+module.exports = { launchBrowser,closeBrowserInstances };

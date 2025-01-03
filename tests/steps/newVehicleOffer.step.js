@@ -48,11 +48,3 @@ Then(`the results should match the filter criteria {string}`, async (expectedRes
         console.log(`Validation passed: All results contain "${expectedResult}".`);
     }
 });
-
-After(async function () {
-    if (this.browser) {
-        await this.browser.close();
-    } else {
-        console.warn("Browser instance was not initialized.");
-    }
-});

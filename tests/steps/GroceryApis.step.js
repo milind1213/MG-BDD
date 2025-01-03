@@ -1,16 +1,14 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const { expect } = require('@playwright/test');
-const { GroceryPayloads } = require('../pages/PoleAPIs/GroceryApisPayloads.js');
-const axios = require('axios'); // For API requests
-//const config = require('../../configDirectory/testConfig.js');
+const { GroceryPayloads } = require('../pages/rest_api_pages/GroceryPayloads.js');
+const axios = require('axios');
 require('dotenv').config({ path: './configDirectory/.env' });
-let response, savedToken, ENDPOINT, itemId, payload = {};
+
+let response, savedToken, endPoint, itemId, payload = {};
 
 Given(`The the base API URL is {string}`, (baseURL) => {
-    process.env.BASE_URL_2 = baseURL; 
-    console.log(`The base API URL is set to:${process.env.BASE_URL_2}`);
+    console.log(`The base API URL is set to:${baseURL}`);
 });
-
 
 When(`I send a GET request to the endpoint {string}.`, async (endpoint) => {
     const url = `${process.env.BASE_URL_2}${endpoint}`;
@@ -30,17 +28,17 @@ Then(`The response body should have {string} as {string}.`, (key, value) => {
 });
 
 Given(`The API endpoint {string}`, (endpoint) => {
-    ENDPOINT = endpoint;
-    console.log(`API endpoint set to:`,endpoint);
+    endPoint = endpoint;
+    console.log(`API endpoint set to:`,endPoint);
 });
 
 Given(`I generate the payload for token creation with client name {string}`, (clientName) => {
-    payload = GroceryPayloads.generateTokenPayload(clientName);
+    payload = GroceryPayloads.generateToken(clientName);
     console.log('Generated payload for token creation:', payload);
 });
 
 When(`I send a POST request`, async () => {
-    const url = `${process.env.BASE_URL_2}${ENDPOINT}`;
+    const url = `${process.env.BASE_URL_2}${endPoint}`;
     console.log(`Sending a POST request to ${url} with payload:`, payload);
     response = await axios.post(url, payload);
 });
@@ -91,5 +89,3 @@ Then('The response body should contain a list of products.', async function () {
     console.log('Fetch All Products Response:', products);
     expect(products.length).toBeGreaterThan(0);
 });
-
-

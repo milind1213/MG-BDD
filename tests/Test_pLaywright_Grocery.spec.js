@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const { GroceryPayloads } = require('./pages/PoleAPIs/GroceryApisPayloads.js');
+const { GroceryPayloads } = require('./pages/rest_api_pages/GroceryPayloads.js');
 require('dotenv').config({ path: './configDirectory/.env' });
 
 let accessToken;
@@ -25,7 +25,7 @@ test.describe.serial('Groceries API Test Suite', () => {
   });
 
   test('Generate access token', async ({ request }) => {
-    const payload = GroceryPayloads.generateTokenPayload();
+    const payload = GroceryPayloads.generateToken();
     console.log('Generating Access Token with Payload:', payload);
 
     const response = await request.post(`${process.env.BASE_URL_2}/api-clients`, { data: payload });
@@ -68,7 +68,7 @@ test.describe.serial('Groceries API Test Suite', () => {
 
   test('Add item to cart', async ({ request }) => {
     expect(cartId).toBeDefined();
-    const payload = GroceryPayloads.addItemPayload();
+    const payload = GroceryPayloads.addItem();
     console.log('Adding Item to Cart with Payload:', payload);
 
     const response = await request.post(`${process.env.BASE_URL_2}/carts/${cartId}/items`, { data: payload });
@@ -84,7 +84,7 @@ test.describe.serial('Groceries API Test Suite', () => {
     expect(cartId).toBeDefined();
     expect(itemId).toBeDefined();
 
-    const payload = GroceryPayloads.updateCartItemPayload(3);
+    const payload = GroceryPayloads.updateCartItem(3);
     console.log('Updating Cart Item Quantity with Payload:', payload);
 
     const response = await request.patch(`${process.env.BASE_URL_2}/carts/${cartId}/items/${itemId}`, { data: payload });
@@ -97,7 +97,7 @@ test.describe.serial('Groceries API Test Suite', () => {
     expect(cartId).toBeDefined();
     expect(accessToken).toBeDefined();
 
-    const payload = GroceryPayloads.createOrderPayload(cartId, 'Test User');
+    const payload = GroceryPayloads.createOrder(cartId, 'Test User');
     console.log('Creating Order with Payload:', payload);
 
     const response = await request.post(`${process.env.BASE_URL_2}/orders/`, {
@@ -129,7 +129,7 @@ test.describe.serial('Groceries API Test Suite', () => {
     expect(orderId).toBeDefined();
     expect(accessToken).toBeDefined();
 
-    const payload = GroceryPayloads.updateOrderPayload('Updated User');
+    const payload = GroceryPayloads.updateOrder('Updated User');
     console.log('Updating Order Customer Name with Payload:', payload);
 
     const response = await request.patch(`${process.env.BASE_URL_2}/orders/${orderId}`, {
