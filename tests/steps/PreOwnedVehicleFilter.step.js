@@ -20,7 +20,6 @@ Given(`I accepted cookies and click on the View Offers button`, async function()
 
 Given(`I navigate to the Pre-Owned Vehicle Offers section and Clicked on Filter button`, async () => {
     await offerPage.clickOnPreOwnedVehicleButton();
-   // await homePage.goTo("https://www.polestar.com/us/offers/pre-owned");
     await offerPage.click_FilterButton();
 });
 
