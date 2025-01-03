@@ -1,20 +1,21 @@
 const { Given, When, Then, After, setDefaultTimeout } = require('@cucumber/cucumber');
-const { WebDashboard } = require('../pages/PoleWeb/WebDashboard');
+const { WebDashboard } = require('../pages/web_pages/WebDashboard');
 const { expect } = require('@playwright/test');
 require('dotenv').config({ path: './configDirectory/.env' });
 
-let webDashboard, offerPage;
+let webDashboard, offerPage ,homePage;
 Given('I navigate to the Homepage', async function (){
     webDashboard = new WebDashboard(this.page);
     offerPage = webDashboard.getOfferPage();
-    await offerPage.goTo(process.env.PROD_WEB_URL);
+    homePage = webDashboard.getHomePage();
+    await homePage.goTo(process.env.PROD_WEB_URL);
     console.log('Successfully Navigated to the Homepage.');
 });
 
 Given(`I accept cookies and click on the {string} button`, async (buttonName) => {
-    await offerPage.handleCookies("accept");
+    await homePage.handleCookies("accept");
     console.log(`Accepted Cookies and Cliecking on the ${buttonName} to the Homepage.`);
-    await offerPage.clickOnOfferButton();
+    await homePage.clickOnOfferButton();
 });
 
 Given(`I navigate to the {string} and Clicked on {string} button`, async (newVehicle, filterBtn) => {

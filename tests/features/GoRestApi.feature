@@ -41,5 +41,3 @@ Feature: User Management API
      When  A Delete request is made to delete the user with the saved ID
      Then  The system should respond with a 204 No Content status
      And   The user should no longer exist in the system
-
-

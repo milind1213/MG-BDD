@@ -1,11 +1,7 @@
 const { test, expect } = require('@playwright/test');
 const { GroceryPayloads } = require('./pages/rest_api_pages/GroceryPayloads.js');
 require('dotenv').config({ path: './configDirectory/.env' });
-
-let accessToken;
-let cartId;
-let itemId;
-let orderId;
+let accessToken,cartId,itemId,orderId;
 
 test.describe.serial('Groceries API Test Suite', () => {
   test.beforeAll(async () => {

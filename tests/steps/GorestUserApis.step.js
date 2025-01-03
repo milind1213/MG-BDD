@@ -1,18 +1,10 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const { expect } = require('@playwright/test');
-const { GroceryPayloads } = require('../pages/rest_api_pages/GroceryPayloads.js');
 require('dotenv').config({ path: './configDirectory/.env' });
 const axios = require('axios');
 
 let token, response,updatedUserData;
 let userID ;
-
-// Function for Genrate Random Email
-function generateRandomEmail() 
-{
-  const randomString = Math.random().toString(10).substring(2, 5);
-  return `user${randomString}@example.com`;
-}
 
 Given('The API is initialized with the base URL', async function ()
 {
@@ -230,6 +222,13 @@ When('A Patch request is made to update the user with the saved ID', async funct
     }
   });
   
+
+  // Function for Genrate Random Email
+function generateRandomEmail() 
+{
+  const randomString = Math.random().toString(10).substring(2, 5);
+  return `user${randomString}@example.com`;
+}
 
 
 
