@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const { GroceryPayloads } = require('./pages/rest_api_pages/GroceryPayloads.js');
+const { GroceryPayloads } = require('./pages/api_pages/GroceryPayloads.js');
 require('dotenv').config({ path: './configDirectory/.env' });
 let accessToken,cartId,itemId,orderId;
 

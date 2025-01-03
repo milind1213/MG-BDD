@@ -5,7 +5,7 @@ Feature: Groceries API Test Suite
 
   Background:
      Given  The the base API URL is "https://simple-grocery-store-api.glitch.me"
-      
+
   Scenario: Check if the server is up and running via API
      When   I send a GET request to the endpoint "/status".
      Then   The response status code should be 200.

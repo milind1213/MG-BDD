@@ -11,7 +11,7 @@
       "snippetInterface": "async-await"
     },
     "format": [
-      "html:reports/CucumberReport/cucumber-report.html",
+      "html:reports/cucumber-report/CucumberReport.html",
       "summary",
       "progress-bar"
     ],
