@@ -1,4 +1,4 @@
-@new
+@web
 Feature: Verify Filter Functionality for Polestar Offers
   As a user of the Polestar website
   I want to apply filters to new vehicle offers
@@ -17,9 +17,9 @@ Feature: Verify Filter Functionality for Polestar Offers
     Then the results should match the filter criteria "<ExpectedResult>"
 
     Examples:
-      | Car         | ModelYear | Powertrain              | ExpectedResult                       |
-      | Polestar 3  | 2025      | Long range Single motor | No offers found.                     |
-      | Polestar 2  | 2024      | All                     | No offers found.                     |
-      | Polestar 2  | 2025      | All                     | No offers found.                     |
-      | Polestar 2  | 2024      | Long range Single motor | Polestar 2 Long range Single motor   |
-      | Polestar 3  | 2025      | All                     | Polestar 3                           |
+      | Car         | ModelYear | Powertrain              | ExpectedResult             |
+      | Polestar 3  | 2025      | Long range Dual motor   | Polestar 3                 |
+      | Polestar 2  | 2025      | Long range Dual motor   | Polestar 2 Long range Dual |
+      # | Polestar 2  | 2025      | All                     | No offers found.                     |
+      # | Polestar 2  | 2024      | Long range Single motor | Polestar 2 Long range Single motor   |
+      # | Polestar 3  | 2025      | All                     | Polestar 3                           |

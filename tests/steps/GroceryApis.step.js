@@ -1,6 +1,6 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const { expect } = require('@playwright/test');
-const { GroceryPayloads } = require('../pages/rest_api_pages/GroceryPayloads.js');
+const { GroceryPayloads } = require('../pages/api_pages/GroceryPayloads.js');
 const axios = require('axios');
 require('dotenv').config({ path: './configDirectory/.env' });
 

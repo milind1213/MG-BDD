@@ -3,31 +3,44 @@ class OfferPage {
   constructor(page) {
     this.page = page;
     this.acceptAllCookiesButton = page.locator("//*[@id='onetrust-accept-btn-handler' and text()='Accept All Cookies']");
-    this.newVehicleButton = page.locator("span[title='New vehicle offers']");
-    this.preOwnedVehicleButton = page.locator('button[aria-controls="tabpanel-Pre-owned offers"]');
+    this.newVehicleButton = page.locator("//*[@class='css-k52nb0' and text()='Pre-owned offers']");
+    this.preOwnedVehicleButton = page.locator('button:has-text("Pre-owned offers")');
     this.filterButton = page.locator('button:has-text("Filter")').nth(0);
     this.viewBtn = page.locator("//*[@class='css-1p2wkou' ]//parent::button[@class='css-i96fc']");
   }
 
-  async clickOnPreOwnedVehicleButton() {
-    try {
-         await this.page.evaluate(() => {
-             window.scrollBy(0, 400);
-        });
-      utils.Click(this.preOwnedVehicleButton);
-      
-      } catch (error) {
-        console.error("Error clicking on Pre Owned Vehicle Button:", error);
-        throw error;
+  async clickOnPreOwnedVehicleButton() 
+  {
+      await this.page.evaluate(() => {
+        window.scrollBy(0, 400); 
+      });
+      const preOwnedButton = this.preOwnedVehicleButton;
+      await utils.Click(preOwnedButton);
+      let ariaSelected = await preOwnedButton.getAttribute('aria-selected');
+     
+      let attempts = 0;
+      while (ariaSelected !== 'true' && attempts < 3) 
+      {
+         console.log(`Pre-Owned Button Click Action Retrying...`);
+         attempts++;
+         await utils.Click(preOwnedButton);
+         await this.page.waitForTimeout(2000); 
+         ariaSelected = await preOwnedButton.getAttribute('aria-selected');
+       }
+      if (ariaSelected !== 'true') {
+         throw new Error('Failed to select Pre-owned offers button');
       }
     }
+  
 
-    async click_FilterButton() {
+    async click_FilterButton() 
+    {
       await new Promise(resolve => setTimeout(resolve, 1000));
       await utils.Click(this.filterButton);
     }
 
-    async applyFilter(filterText, value) {
+    async applyFilter(filterText, value) 
+    {
         const filterLocator = this.page.locator(`//label[contains(@class,'css-c4oe05') and normalize-space(text())='${filterText}']`);
         const checkboxLocator = this.page.locator(`//input[@type="checkbox" and @value='${value}']`);
         await utils.Click(filterLocator);
@@ -35,7 +48,7 @@ class OfferPage {
         await checkboxLocator.scrollIntoViewIfNeeded();
 
         await utils.Click(checkboxLocator);
-        await this.page.waitForTimeout(5000);
+        await this.page.waitForTimeout(3000);
         let isChecked = await checkboxLocator.isChecked();
       
         if (!isChecked) {
@@ -49,12 +62,13 @@ class OfferPage {
              console.error(`Failed to Click CheckBox for value: ${value}`);
              throw new Error(`Checkbox was not checked for value: ${value}`);
         }
-    }
+     }
     
     
-  async clickOnNewVehicleButton() {
+  async clickOnNewVehicleButton() 
+  {
     try {
-         await this.page.evaluate(() => {
+         await this.page.evaluate(()=>{
              window.scrollBy(0, 400);
         });
     
@@ -71,7 +85,8 @@ class OfferPage {
     await utils.Click(this.viewBtn);
   }
   
-  async getResults() {
+  async getResults() 
+  {
     try {
      if (await this.page.locator(".css-4kqkq9").isVisible()) {
           const notFoundText = await this.page.locator(".css-4kqkq9").innerText();
@@ -96,7 +111,7 @@ class OfferPage {
          console.error("Error Occurred :", error);
          return []; 
      }
-}
+  }
   
   async getOfferResults() 
   {

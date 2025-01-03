@@ -1,8 +1,9 @@
 const { Before, After, setDefaultTimeout, Status } = require('@cucumber/cucumber');
 const { launchBrowser, closeBrowserInstances} = require('./BrowserConfigManager');
-const { sendExecutionReportToSlack } = require('./SlackIntegrationUtil');
-const { createJiraTicket } = require('./JiraIntegrationUtil');
+const { sendExecutionReportToSlack } = require('./SlackReportingUtils');
+const { createJiraTicket } = require('./JiraIssueReporter');
 require('dotenv').config({ path: './configDirectory/.env' });
+const path = require('path');
 
 setDefaultTimeout(60 * 1000);
 
@@ -10,16 +11,20 @@ Before(async function (scenario)
 {
   const scenarioName = scenario.pickle.name.toLowerCase();
   const tags = scenario.pickle.tags.map(tag => tag.name.toLowerCase());
-  console.log(`Setting up for Scenario : ${scenarioName}`);
+  const featureFilePath = scenario.gherkinDocument.uri.toLowerCase();
+  const featureFileName = path.basename(featureFilePath);
 
-  if (!scenarioName.includes('api') || tags.includes('@api'))
+  console.log(`Executing tests from feature file : [${featureFileName}]`);
+  console.log(`Setting up for Scenario : [${scenarioName}]`);
+
+  if (!featureFileName.includes('api') && !scenarioName.includes('api') && !tags.includes('@api'))
   {
      const { browser, page, context } = await launchBrowser(process.env.IS_REMOTE === 'true', process.env.BROWSER_TYPE, process.env.IS_HEADLESS === 'true'); 
      this.browser = browser;
      this.page = page;
      this.context = context;
   }
-}); 
+});
 
 After(async function (scenario) 
 {

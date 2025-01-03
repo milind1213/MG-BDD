@@ -6,7 +6,7 @@ async function createJiraTicket(testName, errorDetails)
     const issueData = 
     {
         fields: {
-            project: { key: 'MGS',},
+            project: { key: process.env.JIRA_PROJECT_KEY,},
             summary: `Test Failed: ${testName}`,
             description: { type: 'doc', version: 1,
             content: [ { type: 'paragraph', content: [{ type: 'text',text: `Test failed during execution on LambdaTest.`},]},
@@ -16,7 +16,6 @@ async function createJiraTicket(testName, errorDetails)
     };
 
     try {
-        // Make a request to create the Jira issue
         const response = await axios.post(jiraUrl, issueData, {
             auth: {
                 username: process.env.JIRA_EMAIL,
