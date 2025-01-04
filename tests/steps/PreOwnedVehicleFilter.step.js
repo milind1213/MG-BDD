@@ -5,11 +5,11 @@ require('dotenv').config({ path: './configDirectory/.env' });
 let webDashboard, offerPage;
 
 Given(`I Landed on the Polestar Homepage`, async function (){
-       webDashboard = new WebDashboard(this.page);
-       offerPage = webDashboard.getOfferPage();
-       homePage = webDashboard.getHomePage();
-       await homePage.goTo(process.env.PROD_WEB_URL);
-       console.log('Successfully Navigated to the Homepage.');
+    webDashboard = new WebDashboard(this.page);
+    offerPage = webDashboard.getOfferPage();
+    homePage = webDashboard.getHomePage();
+    await homePage.goTo(process.env.PROD_WEB_URL);
+    console.log('Successfully Navigated to the Homepage.');
 });
 
 Given(`I accepted cookies and click on the View Offers button`, async function(){

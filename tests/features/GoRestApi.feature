@@ -1,4 +1,4 @@
-@api
+@a1
 Feature: GoRest User Management APIs
   As a tester, I want to validate the core operations of the Gorest user Management APIs
   so that I can ensure it functions correctly for listing, creating, updating, and deleting users.
@@ -25,16 +25,16 @@ Feature: GoRest User Management APIs
     And   I save the user ID for later
 
   Scenario: Update the user details By Using the "Update User" API
-    Given The user details for update are
+   Given The user details for update are
       | Name              | Email                           | Status |
       | Allasani Peddana  | allasani.peddana@1234.com | active |
     When A Patch request is made to update the user with the saved ID
     Then The system should respond with 200 OK status
-    And The response should include the following details:
+    And  The response should include the following details:
       | Name             | Email                           | Status |
       | Allasani Peddana | allasani.peddana@1234.com | active |
-    And The user ID should remain the same
-    And The updated user details should be reflected
+    And  The user ID should remain the same
+    And  The updated user details should be reflected
 
 
   Scenario Outline: Delete the user via "Delete User" API

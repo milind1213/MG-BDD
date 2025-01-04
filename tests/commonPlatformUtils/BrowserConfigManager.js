@@ -68,6 +68,7 @@ async function initializeLambdaTest(browserName, isHeadless)
   }
 }
 
+
 async function closeBrowserInstances(page, context, browser) 
 {
   if (page)

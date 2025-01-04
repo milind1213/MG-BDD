@@ -14,9 +14,9 @@ Before(async function (scenario)
   const featureFilePath = scenario.gherkinDocument.uri.toLowerCase();
   const featureFileName = path.basename(featureFilePath);
 
-  console.log(`Executing tests from feature file : [${featureFileName}]`);
+  console.log(`Executing Scenarios from Feature Files: [${featureFileName}]`);
   console.log(`Setting up for Scenario : [${scenarioName}]`);
-
+  
   if (!featureFileName.includes('api') && !scenarioName.includes('api') && !tags.includes('@api'))
   {
      const { browser, page, context } = await launchBrowser(process.env.IS_REMOTE === 'true', process.env.BROWSER_TYPE, process.env.IS_HEADLESS === 'true'); 
@@ -50,7 +50,7 @@ After(async function (scenario)
 
   if (process.env.SEND_SLACK_REPORT === 'true') 
   {
-    const reportDirectory = process.cwd() + '/reports/CucumberReport/cucumber-report.html';
+    const reportDirectory = process.cwd() + '/reports/cucumber-report/CucumberReport.html';
     console.log('Sending execution report to Slack:', reportDirectory);
     await sendExecutionReportToSlack(reportDirectory, process.env.REPORT_HEADER, process.env.SLACK_CHANEL_ID, process.env.SLACK_TOKEN);
   }

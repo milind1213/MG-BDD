@@ -11,14 +11,15 @@ const utils = {
     }
   },
 
-  async doubleClick(locator) {
-    try {
-      await this.highlightLocator(locator);
-      await locator.dblclick();
+  async doubleClick(locator) 
+  {
+     try {
+       await this.highlightLocator(locator);
+       await locator.dblclick();
       } catch (error) {
-      console.error(`Failed to double-click the element: ${locator}, error: ${error.message}`);
-      throw error;  
-    }
+       console.error(`Failed to double-click the element: ${locator}, error: ${error.message}`);
+       throw error;  
+     }
   },
 
   async ClickWithForce(locator, forceClick = true) {
