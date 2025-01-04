@@ -31,27 +31,27 @@ After(async function (scenario)
   if (this.page && scenario.result.status === Status.FAILED) 
   {
      const testName = scenario.pickle.name;
-     console.log(`Taking screenshot for failed scenario: ${testName}`);
+     console.log(`Taking Screenshot for Failed Scenario: ${testName}`);
   
      const screenshotBase64 = await this.page.screenshot({ encoding: 'base64' });
      this.attach(screenshotBase64, 'image/png');
 
    if (process.env.IS_REMOTE === 'true') {
-        const errorDetails = `Test failed in feature: ${scenario.sourceLocation?.uri}\nError: ${scenario.result?.errorMessage || 'Unknown error'}`;
+        const errorDetails = `Test Failed in Feature: ${scenario.sourceLocation?.uri}\nError: ${scenario.result?.errorMessage || 'Unknown error'}`;
         await createJiraTicket(testName, errorDetails);  
      }
   }
 
   if (this.page || this.context || this.browser)
   {
-      console.log('Cleaning up browser session...');
+      console.log('Cleaning Up Browser Session...');
       await closeBrowserInstances(this.page, this.context, this.browser);
   }
 
   if (process.env.SEND_SLACK_REPORT === 'true') 
   {
     const reportDirectory = process.cwd() + '/reports/cucumber-report/CucumberReport.html';
-    console.log('Sending execution report to Slack:', reportDirectory);
+    console.log('Sending Execution Report to Slack:', reportDirectory);
     await sendExecutionReportToSlack(reportDirectory, process.env.REPORT_HEADER, process.env.SLACK_CHANEL_ID, process.env.SLACK_TOKEN);
   }
 

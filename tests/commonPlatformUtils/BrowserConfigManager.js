@@ -34,10 +34,9 @@ async function initializeBrowser(browserName, isHeadless = true)
     throw new Error(`Unsupported browser: ${browserName}`);
   }
   const browser = await browserType.launch({ headless: isHeadless });
-  const context = await browser.newContext();
+  const context = await browser.newContext({permissions:[],viewport: { width: 1280, height: 800 },});
+  
   const page = await context.newPage();
-
-  page.setViewportSize({ width: 1280, height: 800 });
   return { browser, context, page };
 }
 
