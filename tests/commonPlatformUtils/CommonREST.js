@@ -1,5 +1,5 @@
 const axios = require('axios');
-const qs = require('qs'); // Query String module to serialize data
+const qs = require('qs'); // For Serialize data
 
 class AxioUtils {
    constructor(baseURL) {
