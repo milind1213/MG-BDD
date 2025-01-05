@@ -26,7 +26,6 @@ const utils = {
     try {
       await this.highlightLocator(locator);
       await locator.click({ force: forceClick });
-
     } catch (error) {
       console.error(`Failed to click the element: ${locator}, error: ${error.message}`);
       throw error;  

@@ -1,7 +1,8 @@
 const { chromium, firefox, webkit } = require('playwright');
 const playwright = require('playwright'); 
 const lambdatestCapabilities = require('../../configDirectory/testCapabilties.js');
-require('dotenv').config({ path: './configDirectory/.env' });
+
+
 
 async function launchBrowser(isRemote, browserName, isHeadless) 
 {  
@@ -72,7 +73,7 @@ async function closeBrowserInstances(page, context, browser)
 {
   if (page)
   {
-    console.log('Closing the Active Browser Page...');
+    console.log('Closing the Browser Page...');
     await page.close(); 
   }
 
@@ -84,7 +85,7 @@ async function closeBrowserInstances(page, context, browser)
 
   if (browser) 
   {
-    console.log('Shutting Down the Browser Instance...');
+    console.log('Closing the Browser Instance...');
     await browser.close(); 
   }
 }

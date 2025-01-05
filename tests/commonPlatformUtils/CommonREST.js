@@ -11,6 +11,11 @@ class AxioUtils {
     this.headers = { ...this.headers, ...headers };
   }
 
+  waitFor(seconds) 
+  {
+    return new Promise((resolve) => setTimeout(resolve, seconds * 1000));
+  }
+  
   async GET(endpoint)
   {
   try {
@@ -100,10 +105,6 @@ class AxioUtils {
      console.log(`Response Contains the Key: ${key}`);
   }
 
-  waitFor(seconds) 
-  {
-    return new Promise((resolve) => setTimeout(resolve, seconds * 1000));
-  }
 
 }
 

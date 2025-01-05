@@ -2,8 +2,10 @@ const { Before, After, setDefaultTimeout, Status } = require('@cucumber/cucumber
 const { launchBrowser, closeBrowserInstances} = require('./BrowserConfigManager');
 const { sendExecutionReportToSlack } = require('./SlackReportingUtils');
 const { createJiraTicket } = require('./JiraIssueReporter');
-require('dotenv').config({ path: './configDirectory/.env' });
 const path = require('path');
+const config = require('./CommonConstant.js');
+
+
 
 setDefaultTimeout(60 * 1000);
 
@@ -19,7 +21,7 @@ Before(async function (scenario)
   
   if (!featureFileName.includes('api') && !scenarioName.includes('api') && !tags.includes('@api'))
   {
-     const { browser, page, context } = await launchBrowser(process.env.IS_REMOTE === 'true', process.env.BROWSER_TYPE, process.env.IS_HEADLESS === 'true'); 
+     const { browser, page, context } = await launchBrowser(config.IS_REMOTE, config.BROWSER_TYPE,config.IS_HEADLESS); 
      this.browser = browser;
      this.page = page;
      this.context = context;
@@ -36,7 +38,7 @@ After(async function (scenario)
      const screenshotBase64 = await this.page.screenshot({ encoding: 'base64' });
      this.attach(screenshotBase64, 'image/png');
 
-   if (process.env.IS_REMOTE === 'true') {
+   if (config.IS_REMOTE === 'true') {
         const errorDetails = `Test Failed in Feature: ${scenario.sourceLocation?.uri}\nError: ${scenario.result?.errorMessage || 'Unknown error'}`;
         await createJiraTicket(testName, errorDetails);  
      }
@@ -48,7 +50,7 @@ After(async function (scenario)
       await closeBrowserInstances(this.page, this.context, this.browser);
   }
 
-  if (process.env.SEND_SLACK_REPORT === 'true') 
+  if (config.SEND_SLACK_REPORT === 'true') 
   {
     const reportDirectory = process.cwd() + '/reports/cucumber-report/CucumberReport.html';
     console.log('Sending Execution Report to Slack:', reportDirectory);

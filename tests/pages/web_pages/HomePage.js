@@ -30,11 +30,6 @@ class HomePage {
     }
   }
 
-  async getPageTitle()
-  {
-    const title = await this.page.title();
-    return title;
-  }
   
   async checkPageTitleContains(expectedText) 
   {

@@ -28,4 +28,5 @@ class WebDashboard{
     return this.homePage;
   }
 }
+
 module.exports = { WebDashboard };
