@@ -1,5 +1,6 @@
 const axios = require('axios');
-const config = require('./CommonConstant.js');
+const config = require('../tests/commonPlatformUtils/CommonConstant');
+
 
 async function createJiraTicket(testName, errorDetails) 
 {

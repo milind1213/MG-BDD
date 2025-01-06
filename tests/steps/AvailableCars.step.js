@@ -109,9 +109,9 @@ When(`I apply the following filters from car selection page :`,async (dataTable)
          } else {
              console.log(`Unknown filter type for ${label}`);
          }
-       } else {
+        } else {
            console.log(`No value provided for filter: ${label}. Skipping.`);
-       }
+        }
       }  
     }
 });
@@ -120,9 +120,22 @@ Then("I Click on the results button", async function () {
   await availableCarsPage.clickResultButton();
 });
 
-Then("I should see cars that match the selected filters", async function () {
-  const filters = await availableCarsPage.aapliedFilters.all();
-  const filterLocatortext = await Promise.all(filters.map(async (el) => await el.textContent()));
-  console.log(filterLocatortext);
-});
+Then('I should see cars that match the selected filters:', async function (dataTable) {
+  const expectedFilters = dataTable.hashes()[0];
+  const appliedFiltersElements = await availableCarsPage.appliedFilters.all();
+  const appliedFiltersTexts = await Promise.all(appliedFiltersElements.map(async (el) => await el.textContent()) );
 
+  console.log('Applied Filters:', appliedFiltersTexts);
+  for (const [label, value] of Object.entries(expectedFilters)) 
+  {
+   if (value && value.trim()) 
+   {
+      const isFilterPresent = appliedFiltersTexts.some((filterText) => filterText.includes(value));
+     if (!isFilterPresent) 
+     {
+        throw new Error(`Filter mismatch: Expected "${value}" for "${label}", but it was not found in the results.`);
+     }
+    }
+  }
+  console.log('All filters match successfully.');
+});

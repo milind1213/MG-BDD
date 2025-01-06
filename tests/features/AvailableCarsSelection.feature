@@ -23,8 +23,10 @@ Feature: Shopping for Cars and Selecting the Available Car Model
      When I apply the following filters from car selection page : 
        | Exterior    | Version    | Packs      | Options    | Interior    | Wheels     |
        | <Exterior>  | <Version>  | <Packs>    | <Options>  | <Interior>  | <Wheels>   |
-     And  I Click on the results button  
-     Then I should see cars that match the selected filters
+     And I Click on the results button  
+    Then I should see cars that match the selected filters:
+       | Exterior    | Version    | Packs      | Options    | Interior    | Wheels     |
+       | <Exterior>  | <Version>  | <Packs>    | <Options>  | <Interior>  | <Wheels>   |
     Examples:
     # Case 1: Select all options for exterior, version, packs, options, interior, and wheels
        | Exterior  | Version               | Packs       | Options                     | Interior                | Wheels           |
@@ -39,9 +41,9 @@ Feature: Shopping for Cars and Selecting the Available Car Model
        | Snow      |                       | Performance |                             | Charcoal Nappa leather  | 20" Performance  |
        | Vapour    |                       | Pilot       | Harman Kardon premium sound | Zinc Nappa leather      |                  |
     # Case 4: Test all versions with specific interior and wheels combination
-       | Snow      | Long range Dual motor | Performance |                              | Charcoal Nappa leather  | 20" Performance |
-       |           | Long range Dual motor | Performance |                              | Slate WeaveTech         | 20" Performance |
-       | Storm     | Long range Dual motor | Pilot       |                              | Charcoal Nappa leather  | 20" Performance |
+       | Snow      | Long range Dual motor | Performance |                              | Charcoal Nappa leather | 20" Performance |
+       | Midnight  | Long range Dual motor | Performance |                              | Slate WeaveTech        | 20" Performance |
+       | Storm     | Long range Dual motor | Pilot       |                              | Charcoal Nappa leather | 20" Performance |
 
     Scenario: Verify Default Filters for Car Details by Pin Code and Address
      When I enter zip code and select an address from the suggestions
