@@ -3,27 +3,52 @@ const utils = require('../../commonPlatformUtils/CommonPlaywright.js');
 class HomePage {
   constructor(page) {
     this.page = page;
+    this.buttons = { 
+    accept: this.page.locator('#onetrust-accept-btn-handler'),
+    reject: this.page.locator('#onetrust-reject-all-handler')};
     this.viewAllOffersButton = page.locator(".css-2a8qrw");
     this.dialog = page.locator('div[role="dialog"][aria-label="Welcome"]'); // Cookie consent dialog
-    this.buttons = { 
-      accept: this.page.locator('#onetrust-accept-btn-handler'),
-      reject: this.page.locator('#onetrust-reject-all-handler')
-    };
-  }
+  }  
 
   async goTo(url) 
   {
     await this.page.goto(url);
   }
 
+  async clickHeader(header) 
+  {
+    const headerLocator = this.page.locator(".css-1lfoa71", { hasText: header });
+    await utils.Click(headerLocator);
+  }
+  
+  async clickShoppingToolOption(option) 
+  {
+    try {
+        await utils.Click(this.page.locator(`//a[@class='css-4c83wv' and contains(text(),'${option}')]`));
+    } catch (error) {
+        console.error(`Option "${option}" not found:`, error);
+    }
+  }
+
+  
+  async checkPageTitleContains(expectedText) 
+  {
+    const title = await this.page.title();
+    if (title.includes(expectedText)) {
+        console.log(`Page title contains the expected text: "${expectedText}"`);
+    } else {
+        console.error(`Page title does not contain the expected text. Actual title: "${title}"`);
+    }
+  }
+
   async clickOnOfferButton() 
   {
-   if (await this.viewAllOffersButton.isVisible()) 
+    if (await this.viewAllOffersButton.isVisible()) 
     {
-       await utils.Click(this.viewAllOffersButton);
-       console.log("Clicked on [View All Offers] button");
-    } else {
-       console.log("Not Visible [View All Offers] Button.");
+        await utils.Click(this.viewAllOffersButton);
+        console.log("Clicked on [View All Offers] button");
+     } else {
+        console.log("Not Visible [View All Offers] Button.");
     }
   }
 

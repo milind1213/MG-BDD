@@ -1,18 +1,18 @@
 const { Given, When, Then } = require("@cucumber/cucumber");
 const qs = require("qs");
 const { expect } = require("@playwright/test");
-require("dotenv").config({ path: "./configDirectory/.env" });
 const AxioUtils = require("../commonPlatformUtils/CommonREST");
+const config = require('../commonPlatformUtils/CommonConstant.js');
 
 let token, response, updatedUserData, userID;
-const utils = new AxioUtils(process.env.BASE_URL_3);
+const utils = new AxioUtils(config.BASE_URL_3);
 
 Given("The API is initialized with the base URL", async function () {
-   console.log(`Initializing the Base URL: ${process.env.BASE_URL_3}`);
+   console.log(`Initializing the Base URL: ${config.BASE_URL_3}`);
 });
 
 Given("Authentication is performed with a valid access token",async function () {
-    token = process.env.GOREST_TOKEN;
+    token = config.GOREST_TOKEN;
     utils.setHeaders({ Authorization: `Bearer ${token}` });
     console.log(`Authentication performed with Token: ${token}`);
 });

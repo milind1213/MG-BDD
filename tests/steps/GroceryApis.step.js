@@ -3,13 +3,14 @@ const { expect } = require('@playwright/test');
 const { GroceryPayloads } = require('../pages/api_pages/GroceryPayloads.js');
 const axios = require('axios');
 const AxioUtils = require('../commonPlatformUtils/CommonREST');
-require('dotenv').config({ path: './configDirectory/.env' });
+const config = require('../commonPlatformUtils/CommonConstant.js');
+
 
 let response, savedToken, endPoint, itemId, payload = {};
-const utils = new AxioUtils(process.env.BASE_URL_2);
+const utils = new AxioUtils(config.BASE_URL_2);
 
 Given('The Grocery baseURL is initialized', async function () {
-    const baseURL = process.env.BASE_URL_2;
+    const baseURL = config.BASE_URL_2;
     console.log(`The base API URL is set to:${baseURL}`);
 });
 

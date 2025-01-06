@@ -1,14 +1,15 @@
 const { Given, When, Then, After, setDefaultTimeout } = require('@cucumber/cucumber');
 const { WebDashboard } = require('../pages/web_pages/WebDashboard');
 const { expect } = require('@playwright/test');
-require('dotenv').config({ path: './configDirectory/.env' });
+const config = require('../commonPlatformUtils/CommonConstant.js');
+
 let webDashboard, offerPage;
 
 Given(`I Landed on the Polestar Homepage`, async function (){
     webDashboard = new WebDashboard(this.page);
     offerPage = webDashboard.getOfferPage();
     homePage = webDashboard.getHomePage();
-    await homePage.goTo(process.env.PROD_WEB_URL);
+    await homePage.goTo(config.PROD_WEB_URL);
     console.log('Successfully Navigated to the Homepage.');
 });
 

@@ -26,7 +26,6 @@ const utils = {
     try {
       await this.highlightLocator(locator);
       await locator.click({ force: forceClick });
-
     } catch (error) {
       console.error(`Failed to click the element: ${locator}, error: ${error.message}`);
       throw error;  
@@ -51,15 +50,17 @@ const utils = {
     await this.highlightLocator(locator);
     await page.locator(locator).scrollIntoViewIfNeeded();
     await page.locator(locator).click();
+    await page.waitForTimeout(2000);
   },
 
   async Fill(locator, text) 
   {
     try {
+      await locator.waitFor({ state: 'visible' });
       await this.highlightLocator(locator);
       await locator.fill(text);  
     } catch (error) {
-      console.error(`Failed to send keys to element: ${locator}, error: ${error.message}`);
+      console.error(`Failed to Enter Value : ${locator}, error: ${error.message}`);
       throw error;
     }
   },
@@ -84,18 +85,30 @@ async refresh(page)
   }
 },
 
-async getText(page, locator) 
+async getText(page, locator, timeout = 5000) 
 {
   try {
-      await waitForElementDisplay(page, locator);
-      await highlight(page, locator);
-      return await page.locator(locator).textContent();
+    const element = page.locator(locator);
+    await element.waitFor({ state: 'visible', timeout });
+    return await element.textContent();
   } catch (error) {
-      console.error(`Failed to get text from element [${locator}]`);
-      return null;
+    console.error(`Error fetching text from element [${locator}]:`, error.message);
+    return null;
   }
 },
 
+async getTexts(page, locator, timeout = 5000) 
+{
+  try {
+    const elements = page.locator(locator);
+    await elements.first().waitFor({ state: 'visible', timeout });
+    const texts = await elements.allTextContents();
+    return texts;
+  } catch (error) {
+    console.error(`Error fetching texts from elements [${locator}]:`, error.message);
+    return [];
+  }
+},
 
 async getAttribute(page, locator,attribute) 
 {
@@ -107,6 +120,7 @@ async getAttribute(page, locator,attribute)
       return "null";
   }
 },
+
 
 async isLocatorTextDisplayed(page, textVal) 
 {

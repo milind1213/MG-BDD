@@ -1,7 +1,8 @@
 const { chromium, firefox, webkit } = require('playwright');
 const playwright = require('playwright'); 
 const lambdatestCapabilities = require('../../configDirectory/testCapabilties.js');
-require('dotenv').config({ path: './configDirectory/.env' });
+
+
 
 async function launchBrowser(isRemote, browserName, isHeadless) 
 {  
@@ -34,10 +35,9 @@ async function initializeBrowser(browserName, isHeadless = true)
     throw new Error(`Unsupported browser: ${browserName}`);
   }
   const browser = await browserType.launch({ headless: isHeadless });
-  const context = await browser.newContext();
+  const context = await browser.newContext({permissions:[],viewport: { width: 1280, height: 720 },});
+  
   const page = await context.newPage();
-
-  page.setViewportSize({ width: 1280, height: 800 });
   return { browser, context, page };
 }
 
@@ -73,7 +73,7 @@ async function closeBrowserInstances(page, context, browser)
 {
   if (page)
   {
-    console.log('Closing the Active Browser Page...');
+    console.log('Closing the Browser Page...');
     await page.close(); 
   }
 
@@ -85,7 +85,7 @@ async function closeBrowserInstances(page, context, browser)
 
   if (browser) 
   {
-    console.log('Shutting Down the Browser Instance...');
+    console.log('Closing the Browser Instance...');
     await browser.close(); 
   }
 }
