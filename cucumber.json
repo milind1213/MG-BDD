@@ -1,11 +1,13 @@
 {
   "default": {
     "paths": [
-      "tests/features/"
+      "tests/features/api",
+      "tests/features/web"
     ],
     "require": [
-      "tests/steps/*.js",
-      "tests/commonPlatformUtils/Hooks.js"
+      "tests/step-definitions/api-steps/*.js",
+      "tests/step-definitions/web-steps/*.js",
+      "tests/common-platform-utils/hooks.js"
     ],
     "formatOptions": {
       "snippetInterface": "async-await"
@@ -15,9 +17,9 @@
       "summary",
       "progress-bar"
     ],
-    "retry":3,
+    "retry":2,
     "timeout": 60000,
-    "parallel": 4,
+    "parallel":4,
       "env": {
       "LT_USERNAME": "gmilind12",
       "LT_ACCESS_KEY": "4e5iRSBwffrL12b7sksWidgzBjTKtV5NFJZeFaVcfrsuvXSxJk"

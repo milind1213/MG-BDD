@@ -1,4 +1,5 @@
-require('dotenv').config({ path: './configDirectory/.env' });
+require('dotenv').config({ path: './config-directory/.env' });
+
 class CommonConstants {
    
     static PROD_WEB_URL = process.env.prod_Url;

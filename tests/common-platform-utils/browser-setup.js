@@ -1,8 +1,6 @@
 const { chromium, firefox, webkit } = require('playwright');
 const playwright = require('playwright'); 
-const lambdatestCapabilities = require('../../configDirectory/testCapabilties.js');
-
-
+const lambdatestCapabilities = require('../../config-directory/test-capablities.js');
 
 async function launchBrowser(isRemote, browserName, isHeadless) 
 {  

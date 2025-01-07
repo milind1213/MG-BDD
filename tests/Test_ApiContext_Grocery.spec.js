@@ -1,6 +1,7 @@
 const { test, expect } = require('@playwright/test');
-const { GroceryPayloads } = require('./pages/api_pages/GroceryPayloads.js');
-const config = require('./commonPlatformUtils/CommonConstant.js');
+const { GroceryPayloads } = require('./page-objects/api-pages/grocery-payloads.js');
+const config = require('./common-platform-utils/common-constants.js');
+
 let accessToken,cartId,itemId,orderId;
 
 test.describe.serial('Groceries API Test Suite', () => {

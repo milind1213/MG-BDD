@@ -1,7 +1,7 @@
 const {Given,When,Then, After,setDefaultTimeout } = require("@cucumber/cucumber");
-const { WebDashboard } = require("../pages/web_pages/WebDashboard");
 const { expect } = require("@playwright/test");
-const config = require("../commonPlatformUtils/CommonConstant.js");
+const config =  require('../../common-platform-utils/common-constants.js');
+const { WebDashboard } = require('../../page-objects/web-pages/web-dashboard');
 
 let webDashboard, availableCarsPage, selectedRetailerName;
 let modelYears, powertrains, prices;
@@ -46,7 +46,7 @@ Then("I verify the default {string} car model displayed in filter",async functio
   }
 );
 
-Then("I see car Modelyear, Powertrain and prices in dollars",async function () {
+Then("I see car Modelyear, Powertrain, and prices in dollars",async function () {
     modelYears = await availableCarsPage.availableCarsModelYears.all();
     powertrains = await availableCarsPage.availableCarsPowertrains.all();
     prices = await availableCarsPage.availableCarsPrices.all();
@@ -65,7 +65,7 @@ Then("I click on the {string} button", async function (expectedCarModel) {
   await availableCarsPage.clickShowMore();
 });
 
-Then("I should see more car options with Modelyear, Powertrain and price details",async function () {
+Then("I should see more car options with Modelyear, Powertrain, and price details",async function () {
     modelYears = await availableCarsPage.availableCarsModelYears.all();
     powertrains = await availableCarsPage.availableCarsPowertrains.all();
     prices = await availableCarsPage.availableCarsPrices.all();
@@ -86,13 +86,13 @@ Then("I verify the default sort {string} filter applied",async function (default
   }
 );
 
-Then('I Apply Price {string} Filter the the Cars Dispaly should be {string} Sorted order', async function(priceFilter, expectedOrder) {
+Then('I Apply Price {string} Filter the Cars Display should be {string} Sorted order', async function(priceFilter, expectedOrder) {
     await availableCarsPage.applySortFilter(priceFilter);
     prices = await availableCarsPage.availableCarsPrices.all();
     const priceTexts = await Promise.all(prices.map(async (el) => await el.textContent()));
     const priceNumbers = priceTexts.map((price) =>parseInt(price.replace(/[$,]/g, ""), 10));
     const actualorder = config.checkOrder(priceNumbers);
-    expect(actualorder).toBe(expectedOrder);
+    expect(actualorder).toBe(expectedOrder); 
   }
 );
 
@@ -117,20 +117,20 @@ When(`I apply the following filters from car selection page :`,async (dataTable)
 });
 
 Then("I Click on the results button", async function () {
-  await availableCarsPage.clickResultButton();
+  await availableCarsPage.closeFilter();
 });
 
 Then('I should see cars that match the selected filters:', async function (dataTable) {
   const expectedFilters = dataTable.hashes()[0];
-  const appliedFiltersElements = await availableCarsPage.appliedFilters.all();
-  const appliedFiltersTexts = await Promise.all(appliedFiltersElements.map(async (el) => await el.textContent()) );
+  const elements = await availableCarsPage.aapliedFiltersLocator.all();
+  const appliedFilters = await Promise.all(elements.map(async (el) => await el.textContent()) );
+  console.log('Applied Filters:', appliedFilters);
 
-  console.log('Applied Filters:', appliedFiltersTexts);
   for (const [label, value] of Object.entries(expectedFilters)) 
   {
    if (value && value.trim()) 
    {
-      const isFilterPresent = appliedFiltersTexts.some((filterText) => filterText.includes(value));
+     const isFilterPresent = appliedFilters.some((filter) => filter.includes(value));
      if (!isFilterPresent) 
      {
         throw new Error(`Filter mismatch: Expected "${value}" for "${label}", but it was not found in the results.`);

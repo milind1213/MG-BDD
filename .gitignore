@@ -3,3 +3,4 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /.env
+/test-results/

@@ -1,10 +1,9 @@
 
-const { OfferPage } = require('./OfferPage');
-const { HomePage } = require('./HomePage');
-const { AvailableCarsPage } = require('./AvailableCarsPage');
+const { OfferPage } = require('./offer-page');
+const { HomePage } = require('./home-page');
+const { AvailableCarsPage } = require('./available-cars-page');
 
 class WebDashboard{
-  
   constructor(page) 
   {
     this.page = page;

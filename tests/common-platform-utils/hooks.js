@@ -1,9 +1,9 @@
 const { Before, After, setDefaultTimeout, Status } = require('@cucumber/cucumber');
-const { launchBrowser, closeBrowserInstances} = require('./BrowserConfigManager');
+const { launchBrowser, closeBrowserInstances} = require('./browser-setup');
 const SlackReportingUtils = require('../../utils/SlackReportingUtils');
 const createJiraTicket = require('../../utils/JiraIssueReporter');
 const path = require('path');
-const config = require('./CommonConstant.js');
+const config = require('./common-constants.js');
 
 setDefaultTimeout(60 * 1000);
 

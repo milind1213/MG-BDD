@@ -1,5 +1,7 @@
-const utils  = require('../../commonPlatformUtils/CommonPlaywright.js');
+const utils  = require('../../common-platform-utils/common-playwright.js');
+
 class AvailableCarsPage {
+  
   constructor(page) 
   {
     this.page = page;
@@ -20,7 +22,7 @@ class AvailableCarsPage {
     this.sortFilterOptions = page.locator("//*[@id='sort-by-list']//button[contains(@id,'sort-by')]");
     this.filterButton = page.locator(".css-1832an4");
     this.closeFilterBtn = page.locator("button[title='close'] span[class='css-62qso3'] svg");
-    this.aapliedFilters = page.locator("//*[@class='css-7z186q']//span[@class='css-1f7amts']");
+    this.aapliedFiltersLocator = page.locator(".css-15llhoi span:nth-child(1)");
     this.resultsButton = page.locator("//*[@class='css-1lfoa71' and text()='results']");
   }
 
@@ -37,6 +39,13 @@ class AvailableCarsPage {
     await utils.scrollIntoViewAndClick(this.resultsButton);
   }
 
+  async closeFilter()
+  {
+    console.log("Clicking on Result Button");
+    await utils.scrollIntoViewAndClick(this.closeFilterBtn);
+    await this.page.waitForSelector('.css-15llhoi span:nth-child(1)', { state: 'visible' });
+  }
+
   async applyFeatureFilter(label, value) {
     try {
         const checkBoxLocator = await this.page.locator(`//p[contains(.,'${label}')]/following::span[contains(.,'${value}')]`).first();
@@ -46,8 +55,8 @@ class AvailableCarsPage {
         await this.page.waitForTimeout(3000); 
         let isChecked = await checkBoxLocator.isChecked();
         if (!isChecked) {
-            await utils.Click(checkBoxLocator); // Try clicking again if not checked
-            await this.page.waitForTimeout(2000); // Allow for DOM update
+            await utils.Click(checkBoxLocator); 
+            await this.page.waitForTimeout(2000);
             isChecked = await checkBoxLocator.isChecked();
         }
         
@@ -115,7 +124,7 @@ class AvailableCarsPage {
 
   async clickShowMore()
   {
-     await utils.scrollIntoViewAndClick(this.showMoreButton); //scrollClickText();
+     await utils.scrollIntoViewAndClick(this.showMoreButton);
      await this.page.waitForTimeout(3000);
   }
   
@@ -155,18 +164,19 @@ class AvailableCarsPage {
     await utils.Fill(this.pincodeInput,pinCode);
     await this.pincodeInput.press('Space');
     await this.page.waitForTimeout(10000); 
+    await this.page.waitForSelector('.css-jxfe2:nth-child(2)', { state: 'visible' });
     const suggestion= await this.addressSuggestions.nth(0).innerText();
-     if (!suggestion.includes('No result available'||'Loading')) 
-     {
-       await utils.Click(this.addressSuggestions.nth(0));
+    if (!suggestion.includes('No result available'||'Loading')) 
+    {
+       await utils.Click(this.addressSuggestions.nth(1));
        console.log('Clicked on valid suggestion');
        return; 
-     } else {
+    } else {
        console.log("Not Found Suggestions");
-     }
+    }
    }
 
-   async getTitleText()
+  async getTitleText()
   {
     const avalableCarsText = await utils.getText(this.avalableCarsTextLoc);
     return avalableCarsText;

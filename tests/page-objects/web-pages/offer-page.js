@@ -1,5 +1,7 @@
-const utils  = require('../../commonPlatformUtils/CommonPlaywright.js');
+const utils  = require('../../common-platform-utils/common-playwright.js');
+
 class OfferPage {
+  
   constructor(page) {
     this.page = page;
     this.acceptAllCookiesButton = page.locator("//*[@id='onetrust-accept-btn-handler' and text()='Accept All Cookies']");

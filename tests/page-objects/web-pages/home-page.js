@@ -1,8 +1,9 @@
-const utils = require('../../commonPlatformUtils/CommonPlaywright.js');
+const utils  = require('../../common-platform-utils/common-playwright.js');
 
 class HomePage {
   constructor(page) {
     this.page = page;
+    
     this.buttons = { 
     accept: this.page.locator('#onetrust-accept-btn-handler'),
     reject: this.page.locator('#onetrust-reject-all-handler')};

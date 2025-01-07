@@ -1,4 +1,4 @@
-require("dotenv").config({ path: "./configDirectory/.env" });
+require("dotenv").config({ path: "./config-directory/.env" });
 module.exports = {
   getCapabilities: (browserName, isHeadless) => {
     const capabilitiesList = [
