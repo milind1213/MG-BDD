@@ -1,4 +1,4 @@
-@web
+@web3
 Feature: Verify Filter Functionality for Polestar Offers
   As a user of the Polestar website
   I want to apply filters to Pre Owned vehicle offers

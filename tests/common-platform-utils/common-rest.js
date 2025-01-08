@@ -1,5 +1,6 @@
 const axios = require('axios');
 const qs = require('qs'); // For Serialize data
+const log = require('../../utils/logger');
 
 class AxioUtils {
    constructor(baseURL) {
@@ -24,6 +25,7 @@ class AxioUtils {
 
     } catch (error) {
       console.error('GET Request Failed:', error.message);
+      log('GET Request Failed:', error.message);
       throw error;
     }
   }
@@ -36,6 +38,7 @@ class AxioUtils {
       
     } catch (error) {
       console.error('POST request failed:', error.message);
+      log('POST Request Failed:', error.message);
       throw error;
     }
   }
@@ -47,6 +50,7 @@ class AxioUtils {
       return response;
      } catch (error) {
       console.error('PUT Request failed:', error.message);
+      log('PUT Request Failed:', error.message);
       throw error;
      }
   }
@@ -58,6 +62,7 @@ class AxioUtils {
        return response;
      } catch (error) {
        console.error('PATCH request failed:', error.message);
+       log('PATCH Request Failed:', error.message);
        throw error;
      }
   }
@@ -69,6 +74,7 @@ class AxioUtils {
        return response;
      } catch (error) {
        console.error('DELETE request failed:', error.message);
+       log('DELETE Request Failed:', error.message);
        throw error;
      }
   }
@@ -80,6 +86,7 @@ class AxioUtils {
        const response = await axios.post(`${this.baseURL}${endpoint}`,formData,{headers: {...this.headers,'Content-Type': 'application/x-www-form-urlencoded',},});
        return response;
      } catch (error) {
+       log('POST Form Request failed:', error.message);
        console.error('POST Form Request failed:', error.message);
        throw error;
      }
@@ -89,17 +96,17 @@ class AxioUtils {
   {
     if (response.status !== expectedCode) 
     {
-         console.error(`Expected status ${expectedCode}, but got ${response.status}`);
+         log(`Expected status ${expectedCode}, but got ${response.status}`);
          throw new Error(`Status code mismatch: Expected ${expectedCode}, got ${response.status}`);
     }
-    console.log(`Status Code ${response.status} Matches the Expected ${expectedCode}`);
+     log(`Status Code ${response.status} Matches the Expected ${expectedCode}`);
   }
 
   checkResponseKey(response, key) 
   {
     if (!response.data || !response.data.hasOwnProperty(key)) 
     {
-       console.error(`Response Does Not Contain the Key: ${key}`);
+       log(`Response Does Not Contain the Key: ${key}`);
        throw new Error(`Missing Expected Key: ${key}`);
     }
      console.log(`Response Contains the Key: ${key}`);

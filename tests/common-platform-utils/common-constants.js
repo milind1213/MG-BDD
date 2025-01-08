@@ -33,10 +33,10 @@ class CommonConstants {
 
     static BrowserType = {
         CHROME: 'chrome',
+        CHROMIUM:'chromium',
         FIREFOX: 'firefox',
         EDGE: 'edge',
         WEBKIT:'webkit',
-        CHROMIUM:'chromium',
     };
 
     static CarModels = {

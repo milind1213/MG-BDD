@@ -1,4 +1,5 @@
 const utils  = require('../../common-platform-utils/common-playwright.js');
+const log = require('../../../utils/logger');
 
 class AvailableCarsPage {
   
@@ -28,20 +29,20 @@ class AvailableCarsPage {
 
   async clickOnFilter()
   {
-    console.log("Clicking on Filter Button");
+    log("Clicking on Filter Button");
     await utils.Click(this.filterButton);
     this.page.waitForTimeout(5000);
   }
 
   async clickResultButton()
   {
-    console.log("Clicking on Result Button");
+    log("Clicking on Result Button");
     await utils.scrollIntoViewAndClick(this.resultsButton);
   }
 
   async closeFilter()
   {
-    console.log("Clicking on Result Button");
+    log("Clicking on Result Button");
     await utils.scrollIntoViewAndClick(this.closeFilterBtn);
     await this.page.waitForSelector('.css-15llhoi span:nth-child(1)', { state: 'visible' });
   }
@@ -51,22 +52,27 @@ class AvailableCarsPage {
         const checkBoxLocator = await this.page.locator(`//p[contains(.,'${label}')]/following::span[contains(.,'${value}')]`).first();
         await checkBoxLocator.waitFor({ state: 'visible', timeout: 60000 });
         await checkBoxLocator.scrollIntoViewIfNeeded();
+        
+        log("checking the [checkbox]");
         await utils.Click(checkBoxLocator);
+
         await this.page.waitForTimeout(3000); 
         let isChecked = await checkBoxLocator.isChecked();
         if (!isChecked) {
+            log("checking the [checkbox]");
             await utils.Click(checkBoxLocator); 
+
             await this.page.waitForTimeout(2000);
             isChecked = await checkBoxLocator.isChecked();
         }
         
         if (isChecked) {
-            console.log(`Successfully Selected: [${value}]`);
+            log(`Successfully Selected: [${value}]`);
         } else {
             throw new Error(`Failed to Click for: ${value}`);
         }
     } catch (error) {
-        console.error(`Error applying filter: ${label} - ${value}`, error);
+        log(`Error applying filter: ${label} - ${value}`, error);
     }
   }
 
@@ -77,18 +83,22 @@ class AvailableCarsPage {
       const exteriorLocator = await this.page.locator(`//p[text()='${value}']`);
       await exteriorLocator.waitFor({ state: 'visible', timeout: 60000 });
       await exteriorLocator.scrollIntoViewIfNeeded(); 
+      
+      log(`clcking on the [${value}] filter option`);
       await utils.Click(exteriorLocator); 
+
       await this.page.waitForSelector('button[aria-pressed="true"]', { timeout: 10000 });
-      console.log(`Successfully applied exterior filter: ${value}`);
+      log(`Successfully applied exterior filter: ${value}`);
+
    } catch (error) {
-      console.error(`Error Applying Exterior filter: ${value}`, error);
+      log(`Error Applying Exterior filter: ${value}`, error);
    }
   }
 
 
   async closeFilter()
   {
-    console.log("Clicking on Filters Cross Button");
+    log("Clicking on close cross button");
     await utils.Click(this.closeFilterBtn);
   }
 
@@ -102,7 +112,7 @@ class AvailableCarsPage {
     if (isOptionVisible) 
     {
         await utils.Click(filterOptionLocator);
-        console.log(`Applied sort filter: ${option}`);
+        log(`Applied sort filter: ${option}`);
         await this.page.waitForTimeout(3000);
     } else {
         throw new Error(`Sort filter option "${option}" not found`);
@@ -124,6 +134,7 @@ class AvailableCarsPage {
 
   async clickShowMore()
   {
+    log(`Clicking on the [Show More] button`);
      await utils.scrollIntoViewAndClick(this.showMoreButton);
      await this.page.waitForTimeout(3000);
   }
@@ -131,7 +142,7 @@ class AvailableCarsPage {
   async clickContiunWithAddressButton()
   {
     await utils.Click(this.selectedRetailerButton);
-    console.log("Clicked on Continue Arrow");
+    log("Clicked on Continue Arrow");
   }
 
   
@@ -149,30 +160,37 @@ class AvailableCarsPage {
 
   async clickMyLocationButton()
   {
+    log(`Clicking on the [Use My location] button`);
      await utils.Click(this.useMyLocationButton);
   }
 
   async locationErrorText() 
   {
      const errorText = await utils.getText(this.page, '.css-3ak29v');
+     log(`Location Error :`,errorText);
      return errorText; 
   }
  
 
   async enterPinCodeAndSelectAddress(pinCode) 
   {
+    log(`Entering the pinocde [${pinCode}] in inputfield.`);
     await utils.Fill(this.pincodeInput,pinCode);
+    
+    log(`Pressing the [Space] Key`);
     await this.pincodeInput.press('Space');
+
     await this.page.waitForTimeout(10000); 
     await this.page.waitForSelector('.css-jxfe2:nth-child(2)', { state: 'visible' });
     const suggestion= await this.addressSuggestions.nth(0).innerText();
+
     if (!suggestion.includes('No result available'||'Loading')) 
     {
+       log('Clicking on valid Suggestion');
        await utils.Click(this.addressSuggestions.nth(1));
-       console.log('Clicked on valid suggestion');
        return; 
     } else {
-       console.log("Not Found Suggestions");
+       log("Not Found Suggestions");
     }
    }
 

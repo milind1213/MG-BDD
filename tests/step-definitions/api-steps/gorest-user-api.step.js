@@ -1,51 +1,52 @@
 const { Given, When, Then } = require("@cucumber/cucumber");
 const qs = require("qs");
 const { expect } = require("@playwright/test");
-const AxioUtils = require('../../common-platform-utils/commonREST-utils.js');
+const AxioUtils = require('../../common-platform-utils/common-rest.js');
 const config = require('../../common-platform-utils/common-constants.js');
+const log = require('../../../utils/logger');
+
 
 let token, response, updatedUserData, userID;
 const utils = new AxioUtils(config.BASE_URL_3);
 
 Given("The API is initialized with the base URL", async function () {
-   console.log(`Initializing the Base URL: ${config.BASE_URL_3}`);
+   log(`Initializing the Base URL: ${config.BASE_URL_3}`);
 });
 
 Given("Authentication is performed with a valid access token",async function () {
     token = config.GOREST_TOKEN;
     utils.setHeaders({ Authorization: `Bearer ${token}` });
-    console.log(`Authentication performed with Token: ${token}`);
+    log(`Authentication performed with Token: ${token}`);
 });
 
 When("A Get Request is made to retrieve the list of users", async function () {
     response = await utils.GET("/users");
-    console.log("List of users response:", response.data);
 });
 
 Then("The system should respond with a {int} OK status",async function (statusCode) {
-     console.log(`Checking if the response status is ${statusCode}`);
+     log(`Checking if the response status is ${statusCode}`);
      utils.checkStatusCode(response, statusCode);
 });
 
 Then("The response should contain a list of users", async function () {
-     console.log("Verifying if the response contains a list of users");
+     log("Verifying if the response contains a list of users");
      expect(Array.isArray(response.data)).toBe(true);
 });
 
 Given("The user details are:", function (dataTable) {
     const userData = dataTable.hashes()[0];
     this.userDetails = {
-       name: userData.Name,
-       gender: userData.Gender,
-       email: generateRandomEmail(),
-       status: userData.Status,
-     };
-    console.log("User details:", this.userDetails);
+        name  : userData.Name ,
+        gender: userData.Gender,
+        email : generateRandomEmail(),
+        status: userData.Status, 
+    };
+    log("User details:", this.userDetails);
 });
 
 When("A Post request is made to create a new user", async function () {
      response = await utils.POST("/users", this.userDetails);
-     console.log("User creation response:", response.data);
+     log("User creation response:", response.data);
 });
 
 
@@ -67,31 +68,31 @@ Then("The user ID should be saved for future use", function () {
       if (!userID) {
          throw new Error("User ID is not available in the response. Check the creation step.");
       }
-    console.log("User ID saved for future use:", userID);
+     log("User ID saved for future use:", userID);
 });
 
 Then("I save the user ID for later", function () {
-      console.log("User ID for later use:", userID);
+     log("User ID for later use:", userID);
 });
 
 Given("The user details for update are", async function (dataTable) {
      updatedUserData = dataTable.hashes();
-     console.log("User Data For Updation:", updatedUserData);
+     log("User Data For Updation:", updatedUserData);
 });
 
 When("A Patch request is made to update the user with the saved ID",async function () {
       const randomEmail = generateRandomEmail();
-      this.generatedEmail = randomEmail; // Save email for later use
+      this.generatedEmail = randomEmail;
       const updateData = {
-        name: updatedUserData[0].Name,
-        email: randomEmail,
+        name  : updatedUserData[0].Name,
+        email : randomEmail,
         status: updatedUserData[0].Status,
       };
     
-      console.log("Sending PATCH request with data:", updateData);
+      log("Sending PATCH request with data:", updateData);
       
       response = await utils.PATCH(`/users/${userID}`, updateData);
-      console.log("Updated Response:", response.data);
+      log("Updated Response:", response.data);
   });
 
 Then("The system should respond with {int} OK status", async function (statusCode) {
@@ -104,14 +105,14 @@ Then("The response should include the following details:",async function (dataTa
 
      expectedData.forEach((row) => {
       const expectedName = row.Name.trim().toLowerCase();
-      const expectedStatus = row.Status.trim().toLowerCase();
+      const expeStatus   = row.Status.trim().toLowerCase();
 
-      const actualName = responseBody.name.trim().toLowerCase();
-      const actualEmail = responseBody.email.trim().toLowerCase();
+      const actualName   = responseBody.name.trim().toLowerCase();
+      const actualEmail  = responseBody.email.trim().toLowerCase();
       const actualStatus = responseBody.status.trim().toLowerCase();
 
       expect(expectedName).toBe(actualName);
-      expect(expectedStatus).toBe(actualStatus);
+      expect(expeStatus).toBe(actualStatus);
       expect(this.generatedEmail.toLowerCase()).toBe(actualEmail);});
 });
 
@@ -129,7 +130,7 @@ Then("The updated user details should be reflected", async function () {
 
 When("A Delete request is made to delete the user with the saved ID",async function () {
      response = await utils.DELETE(`/users/${userID}`);
-     console.log("Delete Response:", response.status);
+     log("Delete Response:", response.status);
   }
 );
 
@@ -141,7 +142,7 @@ Then( "The system should respond with a {int} No Content status", async function
 Then("The user should no longer exist in the system", async function () {
    const response = await utils.GET(`/users/${userID}`).catch((error) => error.response);
    if (response && response.status === 404) {
-       console.log("User successfully deleted: 404 Not Found");
+       log("User successfully deleted: 404 Not Found");
    } else {
        throw new Error("User still exists or there was an unexpected error");
    }
@@ -156,16 +157,16 @@ function generateRandomEmail() {
 Given("Authenticating is with a Invalid access token",async function () {
      const wrongtoken = "b2fbe010fb4b65888da6514dc07c1579232f1c1a9";
      utils.setHeaders({ Authorization: `Bearer ${wrongtoken}` });
-     console.log(`Authentication performed with Token: ${wrongtoken}`);
+     log(`Authentication performed with Token: ${wrongtoken}`);
  });
 
  When("A Post Request is made to to Create an new user with Invalid token", async function () {
      try {
       response = await utils.POST("/users", this.userDetails);
-      console.log("User creation response:", response.message);
+      log("User creation response:", response.message);
      } catch (error){
       response = error.response   
-      console.log("Error response data:", error.response.data);
+      log("Error response data:", error.response.data);
      }
  });
 
@@ -180,16 +181,16 @@ Given("Authenticating is with a Invalid access token",async function () {
 Given("Authenticating is with a empty access token",async function () {
      const emptytoken = "";
      utils.setHeaders({ Authorization: `Bearer ${emptytoken}` });
-     console.log(`Authentication performed with Token: ${token}`);
+     log(`Authentication performed with Token: ${token}`);
 });
 
 When("A Post Request is made to to Create an new user with empty token", async function () {
      try {
       response = await utils.POST("/users", this.userDetails);
-      console.log("User creation response:", response.message);
+      log("User creation response:", response.message);
      } catch (error){
       response = error.response   
-      console.log("Error response data:", error.response.data);
+      log("Error response data:", error.response.data);
      }
 });
 
@@ -238,7 +239,7 @@ When("A PATCH request is made to update the user with ID {string}", async functi
      } catch (error) {
          response = error.response;
      }
-     console.log("Update user response:", response?.status, response?.data);
+     log("Update user response:", response?.status, response?.data);
  });
 
 
@@ -248,7 +249,7 @@ When("A PATCH request is made to update the user with ID {string}", async functi
 
 
  Then("The user update api response should include an error message indicating {string}", function (expectedErrorMessage) {
-     console.log(response.data.message);
+     log(response.data.message);
      expect(response.data.message).toContain(expectedErrorMessage);
  });
 
@@ -259,7 +260,7 @@ When("A PATCH request is made to update the user with ID {string}", async functi
      } catch (error){
       response = error.response;
      }
-      console.log("Delete Response:", response.data);
+      log("Delete Response:", response.data);
     }
  );
 
@@ -270,16 +271,18 @@ When("A PATCH request is made to update the user with ID {string}", async functi
 
  Then("The delete api response should include an error message", function () {
      if (response) {
-         console.log("Error Status:", response.status);
-         console.log("Error Data:", response.data);
+         log("Error Status:", response.status);
+         log("Error Data:", response.data);
          if (response.status === 404) {
-             console.log("Received expected 404 Not Found status.");
-             console.log("Error Message:", response.data.message || "Resource not found.");
+             log("Received expected 404 Not Found status.");
+             log("Error Message:", response.data.message || "Resource not found.");
          } else {
              console.warn("Unexpected status code:", response.status);
+             log("Unexpected status code:", response.status);
          }
      } else {
          console.warn("No response received.");
+         log("No response received.");
      }
       expect(response.status).toBe(404); 
 });
@@ -293,7 +296,7 @@ When("A PATCH request is made to update the user with ID {string}", async functi
         email: userData.Email,
         status: userData.Status,
       };
-     console.log("User details:", this.InvalidUserDetails);
+     log("User details:", this.InvalidUserDetails);
  });
 
 
@@ -303,7 +306,7 @@ When("A PATCH request is made to update the user with ID {string}", async functi
       } catch (error) {
           response = error.response; 
           console.error("Error response status:", response?.status);
-          console.error("Error response data:", response?.data);
+          log("Error response status:", response?.status);
       }
  });
 

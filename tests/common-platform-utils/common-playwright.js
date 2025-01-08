@@ -282,46 +282,6 @@ async uploadFile(page, locator, filePath)
   }
 },
 
-
-async getRandomPhoneNumber() 
-{
-  const part1 = Math.floor(Math.random() * 900) + 100;
-  const part2 = Math.floor(Math.random() * 900) + 100;
-  const part3 = Math.floor(Math.random() * 9000) + 1000;
-  return `+91${part1}${part2}${part3}`;
-},
-
-async getRandomEmail() 
-{
-  const usernameLength = Math.floor(Math.random() * 4) + 3;
-  let username = '';
-  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
-  for (let i = 0; i < usernameLength; i++) {
-      username += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-  }
-  const domains = ["gmail.com", "yahoo.com", "hotmail.com", "example.com"];
-  const domain = domains[Math.floor(Math.random() * domains.length)];
-  return `${username}@${domain}`;
-},
-
-async getRandomNumberInRange(min, max) 
-{
-  if (min >= max) {
-      throw new Error("Max must be greater than min");
-  }
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-},
-
-async generateRandomText(length) 
-{
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let result = '';
-  for (let i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() * characters.length));
-  }
-  return result;
-},
-
 async getBrowserConsoleLogs(page) 
 {
   const logs = [];

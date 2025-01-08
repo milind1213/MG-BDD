@@ -2,6 +2,7 @@ const {Given,When,Then, After,setDefaultTimeout } = require("@cucumber/cucumber"
 const { expect } = require("@playwright/test");
 const config =  require('../../common-platform-utils/common-constants.js');
 const { WebDashboard } = require('../../page-objects/web-pages/web-dashboard');
+const log = require('../../../utils/logger');
 
 let webDashboard, availableCarsPage, selectedRetailerName;
 let modelYears, powertrains, prices;
@@ -11,16 +12,16 @@ Given("I launch the URL and land on the homepage", async function () {
   homePage = webDashboard.getHomePage();
   availableCarsPage = webDashboard.getAvailableCarsPage();
   await homePage.goTo(config.PROD_WEB_URL);
-  console.log("Successfully Navigated to the Homepage.");
+  log("Successfully Navigated to the Homepage.");
 });
 
 Given("I accept cookies from the homepage", async function () {
   await homePage.handleCookies("accept");
-  console.log(`Accepted Cookies on Homepage.`);
+  og(`Accepted Cookies on Homepage.`);
 });
 
 Given("I click on {string} from the homepage", async function (shoppingTools) {
-  console.log(`Clicking on the [${shoppingTools}] on Homepage.`);
+  log(`licking on the [${shoppingTools}] on Homepage.`);
   await homePage.clickHeader(shoppingTools);
 });
 
@@ -39,7 +40,7 @@ Then("I should continue with the selected Retailer address", async function () {
 
 Then("I verify the default {string} car model displayed in filter",async function (expectedCarModel) {
     const actualCarModel = await availableCarsPage.getDefaultFilterCarModel();
-    console.log("Default Filter Model : ", actualCarModel);
+    log("Default Filter Model : ", actualCarModel);
     expect(actualCarModel).toBe(expectedCarModel);
     await this.page.reload();
     await this.page.waitForTimeout(5000);
@@ -55,7 +56,7 @@ Then("I see car Modelyear, Powertrain, and prices in dollars",async function () 
     const powertrainTexts = await Promise.all(powertrains.map(async (el) => await el.textContent()));
     const priceTexts = await Promise.all(prices.map(async (el) => await el.textContent()));
 
-    console.log(`ModelYears:, [${modelYearTexts.length}], Powertrains: [${powertrainTexts.length}] , Prices: [${priceTexts.length}]`);
+    log(`ModelYears:, [${modelYearTexts.length}], Powertrains: [${powertrainTexts.length}] , Prices: [${priceTexts.length}]`);
     expect(modelYears.length).toBe(powertrains.length);
     expect(modelYears.length).toBe(prices.length);
   }
@@ -74,7 +75,7 @@ Then("I should see more car options with Modelyear, Powertrain, and price detail
     const powertrainTexts = await Promise.all(powertrains.map(async (el) => await el.textContent()));
     const priceTexts = await Promise.all(prices.map(async (el) => await el.textContent()));
 
-    console.log(`ModelYears:, [${modelYearTexts.length}], Powertrains: [${powertrainTexts.length}] , Prices: [${priceTexts.length}]`);
+    log(`ModelYears:, [${modelYearTexts.length}], Powertrains: [${powertrainTexts.length}] , Prices: [${priceTexts.length}]`);
     expect(modelYearTexts.length).toBe(powertrainTexts.length);
     expect(modelYearTexts.length).toBe(priceTexts.length);
   }
@@ -107,10 +108,10 @@ When(`I apply the following filters from car selection page :`,async (dataTable)
          } else if (["Version", "Packs", "Options", "Interior", "Wheels"].includes(label)) {
              await availableCarsPage.applyFeatureFilter(label, value);
          } else {
-             console.log(`Unknown filter type for ${label}`);
+             log(`Unknown filter type for ${label}`);
          }
         } else {
-           console.log(`No value provided for filter: ${label}. Skipping.`);
+          log(`No value provided for filter: ${label}. Skipping.`);
         }
       }  
     }
@@ -137,5 +138,5 @@ Then('I should see cars that match the selected filters:', async function (dataT
      }
     }
   }
-  console.log('All filters match successfully.');
+  log('All filters match successfully.');
 });

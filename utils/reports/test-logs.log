@@ -1,0 +1,26 @@
+[01-08-25 00:46:22 a] [ INFO ] - Executing Scenarios from Feature Files: [available-cars-page.feature]
+[01-08-25 00:46:22 a] [ INFO ] - Setting up for Scenario : [verify 'sort by' filters functionality]
+[01-08-25 00:46:22 a] [ INFO ] - Launching the [chrome] Browser in [Headed] Mode.
+[01-08-25 00:46:22 a] [ INFO ] - ====== Test Execution Environment : Local ========
+[01-08-25 00:46:22 a] [ INFO ] - Executing Scenarios from Feature Files: [available-cars-page.feature]
+[01-08-25 00:46:22 a] [ INFO ] - Setting up for Scenario : [verify 'sort by' filters functionality]
+[01-08-25 00:46:22 a] [ INFO ] - Launching the [chrome] Browser in [Headed] Mode.
+[01-08-25 00:46:22 a] [ INFO ] - ====== Test Execution Environment : Local ========
+[01-08-25 00:46:23 a] [ INFO ] - [Navigating to URL] - https://www.polestar.com/us
+[01-08-25 00:46:23 a] [ INFO ] - [Navigating to URL] - https://www.polestar.com/us
+[01-08-25 00:46:27 a] [ INFO ] - Cookie consent dialog is not visible.
+[01-08-25 00:46:27 a] [ INFO ] - Reloading the page and retrying...(2 retries left)
+[01-08-25 00:46:27 a] [ INFO ] - Cookie consent dialog is not visible.
+[01-08-25 00:46:27 a] [ INFO ] - Reloading the page and retrying...(2 retries left)
+[01-08-25 00:46:30 a] [ INFO ] - Cookie consent dialog is visible.
+[01-08-25 00:46:30 a] [ INFO ] - Cookie consent dialog is visible.
+[01-08-25 00:46:30 a] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
+[01-08-25 00:46:30 a] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
+[01-08-25 00:46:32 a] [ INFO ] - Entering the pinocde [43213] in inputfield.
+[01-08-25 00:46:32 a] [ INFO ] - Entering the pinocde [43213] in inputfield.
+[01-08-25 00:46:42 a] [ INFO ] - Pressing the [Space] Key
+[01-08-25 00:46:42 a] [ INFO ] - Pressing the [Space] Key
+[01-08-25 00:46:52 a] [ INFO ] - Clicking on valid Suggestion
+[01-08-25 00:46:52 a] [ INFO ] - Clicking on valid Suggestion
+[01-08-25 00:46:53 a] [ INFO ] - Clicked on Continue Arrow
+[01-08-25 00:46:53 a] [ INFO ] - Clicked on Continue Arrow

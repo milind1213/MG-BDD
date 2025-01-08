@@ -25,21 +25,21 @@ Feature: GoRest User Management APIs
     And   I save the user ID for later
 
   Scenario: Update the user details By Using the "Update User" API
-   Given The user details for update are
+   Given  The user details for update are
       | Name              | Email                           | Status |
       | Allasani Peddana  | allasani.peddana@1234.com | active |
-    When A Patch request is made to update the user with the saved ID
-    Then The system should respond with 200 OK status
-    And  The response should include the following details:
+    When  A Patch request is made to update the user with the saved ID
+    Then  The system should respond with 200 OK status
+    And   The response should include the following details:
       | Name             | Email                           | Status |
       | Allasani Peddana | allasani.peddana@1234.com | active |
-    And  The user ID should remain the same
-    And  The updated user details should be reflected
+    And   The user ID should remain the same
+    And   The updated user details should be reflected
 
   Scenario Outline: Delete the user via "Delete User" API
-     When  A Delete request is made to delete the user with the saved ID
-     Then  The system should respond with a 204 No Content status
-     And   The user should no longer exist in the system
+    When  A Delete request is made to delete the user with the saved ID
+    Then  The system should respond with a 204 No Content status
+     And  The user should no longer exist in the system
 
   Scenario: Create a new user with an invalid access token
     Given Authenticating is with a Invalid access token
@@ -54,17 +54,17 @@ Feature: GoRest User Management APIs
     And   The response should include an error message indicating "Authentication failed" with empty token
 
   Scenario: Retrieve the list of users with an invalid endpoint
-    When   A GET request is made to an invalid endpoint "/users-invalid"
-    Then   The system should respond with a 404 Not Found status with invalid endpoint
-    And    The response should include an error message indicating "Resource not found"
+    When  A GET request is made to an invalid endpoint "/users-invalid"
+    Then  The system should respond with a 404 Not Found status with invalid endpoint
+    And   The response should include an error message indicating "Resource not found"
 
   Scenario: Update a user with an invalid user ID
-    Given  The user details for update are
+    Given The user details for update are
       | Name              | Email                           | Status |
       | Allasani Peddana  | allasani.peddana@1234.com       | Active |
-    When   A PATCH request is made to update the user with ID "invalid-id"
-    Then   The system should respond with a 404 Not Found status with invalid id
-    And    The user update api response should include an error message indicating "Resource not found" 
+    When  A PATCH request is made to update the user with ID "invalid-id"
+    Then  The system should respond with a 404 Not Found status with invalid id
+    And   The user update api response should include an error message indicating "Resource not found" 
 
   Scenario: Delete a user with a non-existent user ID
     When  A DELETE request is made to delete the user with ID ""
@@ -72,12 +72,12 @@ Feature: GoRest User Management APIs
     And   The delete api response should include an error message
 
   Scenario: Create a user with an invalid email format
-    Given  The details for create user:
+    Given The details for create user:
       | Name               | Gender | Email            | Status |
       | Tenali Ramakrishna | Male   | invalid-email.com| Active |
-    When   A POST request is made to create a new user with Invalid email format
-    Then   The system should respond with a 422 Unprocessable Entity status
-    And    The response should include an error message for the invalid email format
+    When  A POST request is made to create a new user with Invalid email format
+    Then  The system should respond with a 422 Unprocessable Entity status
+    And   The response should include an error message for the invalid email format
   
 
 

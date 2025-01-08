@@ -2,6 +2,8 @@ const { Given, When, Then, After, setDefaultTimeout } = require('@cucumber/cucum
 const { expect } = require('@playwright/test');
 const config =  require('../../common-platform-utils/common-constants.js');
 const { WebDashboard } = require('../../page-objects/web-pages/web-dashboard');
+const log = require('../../../utils/logger');
+
 let webDashboard, offerPage;
 
 Given(`I Landed on the Polestar Homepage`, async function (){
@@ -9,12 +11,12 @@ Given(`I Landed on the Polestar Homepage`, async function (){
     offerPage = webDashboard.getOfferPage();
     homePage = webDashboard.getHomePage();
     await homePage.goTo(config.PROD_WEB_URL);
-    console.log('Successfully Navigated to the Homepage.');
+    log('Successfully Navigated to the Homepage.');
 });
 
 Given(`I accepted cookies and click on the View Offers button`, async function(){
     await homePage.handleCookies("accept");
-    console.log(`Accepted Cookies and Cliecking on the 'View Offers' Button.`);
+    log(`Accepted Cookies and Cliecking on the 'View Offers' Button.`);
     await homePage.clickOnOfferButton();
 })
 
@@ -25,13 +27,13 @@ Given(`I navigate to the Pre-Owned Vehicle Offers section and Clicked on Filter 
 
 When(`I click on the {string} filter and select the checkbox option for {string}`,  async (label, value) => {
     await offerPage.applyFilter(label, value);
-    console.log(`Applying Filter :\n - ${label} : ${value}`);
+    log(`Applying Filter :\n - ${label} : ${value}`);
 });
 
 
 When(`I click the {string} button.`, async (buttonName) => {
     await offerPage.clickOnViewButton();
-    console.log(`I clicked on "${buttonName}" button.`);
+    log(`I clicked on "${buttonName}" button.`);
 });
 
 
@@ -39,13 +41,13 @@ Then(`the results should match the filter criteria {string}.`, async(expectedRes
     const results = await offerPage.getResults(); 
     if (results.length === 0 || results.includes("No offers found.")) {
         expect(results[0]).toBe(expectedResult);
-        console.log(`Validation passed: No offers found as expected ("${expectedResult}").`);
+        log(`Validation passed: No offers found as expected ("${expectedResult}").`);
     } else {
         expect(results).not.toBeNull();
         expect(results.length).toBeGreaterThan(0, 'No results were found.');
         results.forEach((result, index) => {
             expect(result).toContain(expectedResult, `Mismatch at index ${index}: "${result}" does not contain "${expectedResult}".`);
         });
-        console.log(`Validation passed: All results contain "${expectedResult}".`);
+        log(`Validation passed: All results contain "${expectedResult}".`);
     }
 });

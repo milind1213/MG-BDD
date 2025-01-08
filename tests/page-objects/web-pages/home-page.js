@@ -1,4 +1,5 @@
 const utils  = require('../../common-platform-utils/common-playwright.js');
+const log = require('../../../utils/logger');
 
 class HomePage {
   constructor(page) {
@@ -13,6 +14,7 @@ class HomePage {
 
   async goTo(url) 
   {
+    log(`[Navigating to URL] - ${url}`);
     await this.page.goto(url);
   }
 
@@ -27,7 +29,7 @@ class HomePage {
     try {
         await utils.Click(this.page.locator(`//a[@class='css-4c83wv' and contains(text(),'${option}')]`));
     } catch (error) {
-        console.error(`Option "${option}" not found:`, error);
+        log(`Option "${option}" not found:`, error);
     }
   }
 
@@ -36,9 +38,9 @@ class HomePage {
   {
     const title = await this.page.title();
     if (title.includes(expectedText)) {
-        console.log(`Page title contains the expected text: "${expectedText}"`);
+        log(`Page title contains the expected text: "${expectedText}"`);
     } else {
-        console.error(`Page title does not contain the expected text. Actual title: "${title}"`);
+        log(`Page title does not contain the expected text. Actual title: "${title}"`);
     }
   }
 
@@ -47,9 +49,9 @@ class HomePage {
     if (await this.viewAllOffersButton.isVisible()) 
     {
         await utils.Click(this.viewAllOffersButton);
-        console.log("Clicked on [View All Offers] button");
+        log("Clicked on [View All Offers] button");
      } else {
-        console.log("Not Visible [View All Offers] Button.");
+        log("Not Visible [View All Offers] Button.");
     }
   }
 
@@ -58,6 +60,7 @@ class HomePage {
     const button = this.buttons[action.toLowerCase()];
     if (!button)
     {
+      log(`Unknown action: ${action}`);
       console.error(`Unknown action: ${action}`);
       return;
     }
@@ -66,23 +69,23 @@ class HomePage {
     {
       if (await this.dialog.isVisible()) 
       {
-           console.log("Cookie consent dialog is visible.");
+           log("Cookie consent dialog is visible.");
         if (await button.isVisible())
         {
            await utils.Click(button);
-           console.log(`Clicked successfully on ['${action.charAt(0).toUpperCase() + action.slice(1)} All Cookies]' button`);
+           log(`Clicked successfully on ['${action.charAt(0).toUpperCase() + action.slice(1)} All Cookies]' button`);
            return;
          } else {
            console.warn(`Button for action '${action}' is not visible, retrying...`);
          }
        } else {
-           console.log("Cookie consent dialog is not visible.");
+           log("Cookie consent dialog is not visible.");
         if (retries > 1) {
-           console.log(`Reloading the page and retrying...(${retries - 1} retries left)`);
+           log(`Reloading the page and retrying...(${retries - 1} retries left)`);
            await this.page.reload();
            await this.page.waitForTimeout(2000);
         } else {
-          console.log("Max retries reached. Unable to handle cookies.");
+           log("Max retries reached. Unable to handle cookies.");
         }
        }
       }

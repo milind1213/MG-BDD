@@ -1,4 +1,4 @@
-@api
+@api2
 Feature: Groceries API Test Suite
    To verify the functionality of the Groceries API,
    Including Token Generation, Product Management, Cart, and Order Operations.
@@ -29,18 +29,18 @@ Feature: Groceries API Test Suite
       And    The response body should contain a list of products.
 
    Scenario: Access Token Generation with Invalid Client Name
-      Given I create a token for client " "
-      When I send a POST request to "/api-clients"
-      Then I should receive a 400 Bad Request status code
-      And The response body should contain an error message indicating "Invalid or missing client name."
+      Given  I create a token for client " "
+      When   I send a POST request to "/api-clients"
+      Then   I should receive a 400 Bad Request status code
+      And    The response body should contain an error message indicating "Invalid or missing client name."
 
    Scenario: Fetching Product by Nonexistent ID
-      Given I send a GET request to the NonExist Product ID endpoint "/products/9999999"
-      Then The response status code should be 404 Not Found
-      And The response body should contain an error message indicating "No product with id 9999999." with NonExistentId Request
+      Given  I send a GET request to the NonExist Product ID endpoint "/products/9999999"
+      Then   The response status code should be 404 Not Found
+      And    The response body should contain an error message indicating "No product with id 9999999." with NonExistentId Request
 
    Scenario: Fetching Product with Invalid ID Format
-      Given I send a GET request to the endpoint "/products/abc123".
-      Then The response status code should be 400 Bad Request
-      And The response body should contain an error message indicating "The product id must be a number." with Invalid ID
+      Given  I send a GET request to the endpoint "/products/abc123".
+      Then   The response status code should be 400 Bad Request
+      And    The response body should contain an error message indicating "The product id must be a number." with Invalid ID
 
