@@ -24,7 +24,7 @@ Setting up the Environment :
 Step 1: Install Node.js and npm
 To see if Node is installed, type in Terminal: node -v
 To see if NPM is installed, type in Terminal: npm -v
-In order to update Node and NPM, type in Terminal : npm install -g npm@latest
+In order to update Node and NPM, type in Terminal :   
 
 Step 2: Clone the Repository and Install Dependencies
 To Clone Clone the repository,type in termianl : git clone https://github.com/milind1213/MG-BDD.git

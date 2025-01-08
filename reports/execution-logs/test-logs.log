@@ -1,153 +1,131 @@
-[08-01-25 8:03:27 PM] [ INFO ] - Executing Scenarios from Feature Files: [gorest-user-api.feature]
-[08-01-25 8:03:27 PM] [ INFO ] - Setting up for Scenario : [retrive the list of users via using "list users" api]
-[08-01-25 8:03:27 PM] [ INFO ] - Initializing the Base URL: https://gorest.co.in/public/v2
-[08-01-25 8:03:27 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a931952d37f8c30de7a78b938
-[08-01-25 8:03:29 PM] [ INFO ] - Checking if the response status is 200
-[08-01-25 8:03:29 PM] [ INFO ] - Status Code 200 Matches the Expected 200
-[08-01-25 8:03:29 PM] [ INFO ] - Verifying if the response contains a list of users
-[08-01-25 8:03:29 PM] [ INFO ] - Executing Scenarios from Feature Files: [gorest-user-api.feature]
-[08-01-25 8:03:29 PM] [ INFO ] - Setting up for Scenario : [create a new user by using the "create user" api]
-[08-01-25 8:03:29 PM] [ INFO ] - Initializing the Base URL: https://gorest.co.in/public/v2
-[08-01-25 8:03:29 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a931952d37f8c30de7a78b938
-[08-01-25 8:03:29 PM] [ INFO ] - User details:
-[08-01-25 8:03:29 PM] [ INFO ] - User creation response:
-[08-01-25 8:03:29 PM] [ INFO ] - Status Code 201 Matches the Expected 201
-[08-01-25 8:03:29 PM] [ INFO ] - User ID saved for future use:
-[08-01-25 8:03:29 PM] [ INFO ] - User ID for later use:
-[08-01-25 8:03:29 PM] [ INFO ] - Executing Scenarios from Feature Files: [gorest-user-api.feature]
-[08-01-25 8:03:29 PM] [ INFO ] - Setting up for Scenario : [update the user details by using the "update user" api]
-[08-01-25 8:03:29 PM] [ INFO ] - Initializing the Base URL: https://gorest.co.in/public/v2
-[08-01-25 8:03:29 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a931952d37f8c30de7a78b938
-[08-01-25 8:03:29 PM] [ INFO ] - User Data For Updation:
-[08-01-25 8:03:29 PM] [ INFO ] - Sending PATCH request with data:
-[08-01-25 8:03:30 PM] [ INFO ] - Updated Response:
-[08-01-25 8:03:30 PM] [ INFO ] - Status Code 200 Matches the Expected 200
-[08-01-25 8:03:30 PM] [ INFO ] - Executing Scenarios from Feature Files: [gorest-user-api.feature]
-[08-01-25 8:03:30 PM] [ INFO ] - Setting up for Scenario : [delete the user via "delete user" api]
-[08-01-25 8:03:30 PM] [ INFO ] - Initializing the Base URL: https://gorest.co.in/public/v2
-[08-01-25 8:03:30 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a931952d37f8c30de7a78b938
-[08-01-25 8:03:30 PM] [ INFO ] - Delete Response:
-[08-01-25 8:03:30 PM] [ INFO ] - Status Code 204 Matches the Expected 204
-[08-01-25 8:03:31 PM] [ INFO ] - GET Request Failed:
-[08-01-25 8:03:31 PM] [ INFO ] - User successfully deleted: 404 Not Found
-[08-01-25 8:03:31 PM] [ INFO ] - Executing Scenarios from Feature Files: [gorest-user-api.feature]
-[08-01-25 8:03:31 PM] [ INFO ] - Setting up for Scenario : [create a new user with an invalid access token]
-[08-01-25 8:03:31 PM] [ INFO ] - Initializing the Base URL: https://gorest.co.in/public/v2
-[08-01-25 8:03:31 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a931952d37f8c30de7a78b938
-[08-01-25 8:03:31 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a9
-[08-01-25 8:03:33 PM] [ INFO ] - POST Request Failed:
-[08-01-25 8:03:33 PM] [ INFO ] - Error response data:
-[08-01-25 8:03:33 PM] [ INFO ] - Executing Scenarios from Feature Files: [gorest-user-api.feature]
-[08-01-25 8:03:33 PM] [ INFO ] - Setting up for Scenario : [create a new user with an empty access token]
-[08-01-25 8:03:33 PM] [ INFO ] - Initializing the Base URL: https://gorest.co.in/public/v2
-[08-01-25 8:03:33 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a931952d37f8c30de7a78b938
-[08-01-25 8:03:33 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a931952d37f8c30de7a78b938
-[08-01-25 8:03:33 PM] [ INFO ] - POST Request Failed:
-[08-01-25 8:03:33 PM] [ INFO ] - Error response data:
-[08-01-25 8:03:33 PM] [ INFO ] - Executing Scenarios from Feature Files: [gorest-user-api.feature]
-[08-01-25 8:03:33 PM] [ INFO ] - Setting up for Scenario : [retrieve the list of users with an invalid endpoint]
-[08-01-25 8:03:33 PM] [ INFO ] - Initializing the Base URL: https://gorest.co.in/public/v2
-[08-01-25 8:03:33 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a931952d37f8c30de7a78b938
-[08-01-25 8:03:34 PM] [ INFO ] - GET Request Failed:
-[08-01-25 8:03:34 PM] [ INFO ] - Status Code 404 Matches the Expected 404
-[08-01-25 8:03:34 PM] [ INFO ] - Executing Scenarios from Feature Files: [gorest-user-api.feature]
-[08-01-25 8:03:34 PM] [ INFO ] - Setting up for Scenario : [update a user with an invalid user id]
-[08-01-25 8:03:34 PM] [ INFO ] - Initializing the Base URL: https://gorest.co.in/public/v2
-[08-01-25 8:03:34 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a931952d37f8c30de7a78b938
-[08-01-25 8:03:34 PM] [ INFO ] - User Data For Updation:
-[08-01-25 8:03:39 PM] [ INFO ] - PATCH Request Failed:
-[08-01-25 8:03:39 PM] [ INFO ] - Update user response:
-[08-01-25 8:03:39 PM] [ INFO ] - Status Code 404 Matches the Expected 404
-[08-01-25 8:03:39 PM] [ INFO ] - Resource not found
-[08-01-25 8:03:39 PM] [ INFO ] - Executing Scenarios from Feature Files: [gorest-user-api.feature]
-[08-01-25 8:03:39 PM] [ INFO ] - Setting up for Scenario : [delete a user with a non-existent user id]
-[08-01-25 8:03:39 PM] [ INFO ] - Initializing the Base URL: https://gorest.co.in/public/v2
-[08-01-25 8:03:39 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a931952d37f8c30de7a78b938
-[08-01-25 8:03:39 PM] [ INFO ] - DELETE Request Failed:
-[08-01-25 8:03:39 PM] [ INFO ] - Delete Response:
-[08-01-25 8:03:39 PM] [ INFO ] - Status Code 404 Matches the Expected 404
-[08-01-25 8:03:39 PM] [ INFO ] - Error Status:
-[08-01-25 8:03:39 PM] [ INFO ] - Error Data:
-[08-01-25 8:03:39 PM] [ INFO ] - Received expected 404 Not Found status.
-[08-01-25 8:03:39 PM] [ INFO ] - Error Message:
-[08-01-25 8:03:39 PM] [ INFO ] - Executing Scenarios from Feature Files: [gorest-user-api.feature]
-[08-01-25 8:03:39 PM] [ INFO ] - Setting up for Scenario : [create a user with an invalid email format]
-[08-01-25 8:03:39 PM] [ INFO ] - Initializing the Base URL: https://gorest.co.in/public/v2
-[08-01-25 8:03:39 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a931952d37f8c30de7a78b938
-[08-01-25 8:03:39 PM] [ INFO ] - User details:
-[08-01-25 8:03:40 PM] [ INFO ] - POST Request Failed:
-[08-01-25 8:03:40 PM] [ INFO ] - Error response status:
-[08-01-25 8:03:40 PM] [ INFO ] - Executing Scenarios from Feature Files: [grocery-apis.feature]
-[08-01-25 8:03:40 PM] [ INFO ] - Setting up for Scenario : [check if the server is up and running via api]
-[08-01-25 8:03:40 PM] [ INFO ] - The base API URL is set to:https://simple-grocery-store-api.glitch.me
-[08-01-25 8:03:43 PM] [ INFO ] - Server Status Response :
-[08-01-25 8:03:43 PM] [ INFO ] - Checking if the response status is 200
-[08-01-25 8:03:43 PM] [ INFO ] - Status Code 200 Matches the Expected 200
-[08-01-25 8:03:43 PM] [ INFO ] - Executing Scenarios from Feature Files: [grocery-apis.feature]
-[08-01-25 8:03:43 PM] [ INFO ] - Setting up for Scenario : [validate the access token generation api functionality]
-[08-01-25 8:03:43 PM] [ INFO ] - The base API URL is set to:https://simple-grocery-store-api.glitch.me
-[08-01-25 8:03:44 PM] [ INFO ] - Status Code 201 Matches the Expected 201
-[08-01-25 8:03:44 PM] [ INFO ] - Executing Scenarios from Feature Files: [grocery-apis.feature]
-[08-01-25 8:03:44 PM] [ INFO ] - Setting up for Scenario : [verify the api functionaliy to fetch a specific products by id]
-[08-01-25 8:03:44 PM] [ INFO ] - The base API URL is set to:https://simple-grocery-store-api.glitch.me
-[08-01-25 8:03:44 PM] [ INFO ] - Server Status Response :
-[08-01-25 8:03:44 PM] [ INFO ] - Checking if the response status is 200
-[08-01-25 8:03:44 PM] [ INFO ] - Status Code 200 Matches the Expected 200
-[08-01-25 8:03:44 PM] [ INFO ] - Executing Scenarios from Feature Files: [grocery-apis.feature]
-[08-01-25 8:03:44 PM] [ INFO ] - Setting up for Scenario : [validate the api functionality to fetch the complete list of products.]
-[08-01-25 8:03:44 PM] [ INFO ] - The base API URL is set to:https://simple-grocery-store-api.glitch.me
-[08-01-25 8:03:44 PM] [ INFO ] - Actual Status Code:
-[08-01-25 8:03:45 PM] [ INFO ] - Checking if the response status is 200
-[08-01-25 8:03:45 PM] [ INFO ] - Status Code 200 Matches the Expected 200
-[08-01-25 8:03:45 PM] [ INFO ] - Fetch All Products Response:
-[08-01-25 8:03:45 PM] [ INFO ] - Executing Scenarios from Feature Files: [grocery-apis.feature]
-[08-01-25 8:03:45 PM] [ INFO ] - Setting up for Scenario : [access token generation with invalid client name]
-[08-01-25 8:03:45 PM] [ INFO ] - The base API URL is set to:https://simple-grocery-store-api.glitch.me
-[08-01-25 8:03:45 PM] [ INFO ] - POST Request Failed:
-[08-01-25 8:03:45 PM] [ INFO ] - Error Response Data:
-[08-01-25 8:03:45 PM] [ INFO ] - Status Code 400 Matches the Expected 400
-[08-01-25 8:03:45 PM] [ INFO ] - Executing Scenarios from Feature Files: [grocery-apis.feature]
-[08-01-25 8:03:45 PM] [ INFO ] - Setting up for Scenario : [fetching product by nonexistent id]
-[08-01-25 8:03:45 PM] [ INFO ] - The base API URL is set to:https://simple-grocery-store-api.glitch.me
-[08-01-25 8:03:45 PM] [ INFO ] - GET Request Failed:
-[08-01-25 8:03:45 PM] [ INFO ] - Error Response Data:
-[08-01-25 8:03:45 PM] [ INFO ] - Status Code 404 Matches the Expected 404
-[08-01-25 8:03:45 PM] [ INFO ] - Executing Scenarios from Feature Files: [grocery-apis.feature]
-[08-01-25 8:03:45 PM] [ INFO ] - Setting up for Scenario : [fetching product with invalid id format]
-[08-01-25 8:03:45 PM] [ INFO ] - The base API URL is set to:https://simple-grocery-store-api.glitch.me
-[08-01-25 8:03:46 PM] [ INFO ] - GET Request Failed:
-[08-01-25 8:03:46 PM] [ INFO ] - Error Response Data:
-[08-01-25 8:03:46 PM] [ INFO ] - Status Code 400 Matches the Expected 400
-[08-01-25 8:03:46 PM] [ INFO ] - Executing Scenarios from Feature Files: [available-cars-page.feature]
-[08-01-25 8:03:46 PM] [ INFO ] - Setting up for Scenario : [verify 'sort by' filters functionality]
-[08-01-25 8:03:46 PM] [ INFO ] - Launching the [chrome] Browser in [Headed] Mode.
-[08-01-25 8:03:46 PM] [ INFO ] - ====== Test Execution Environment : Local ========
-[08-01-25 8:03:46 PM] [ INFO ] - [Navigating to URL] - https://www.polestar.com/us
-[08-01-25 8:03:59 PM] [ INFO ] - Successfully Navigated to the Homepage.
-[08-01-25 8:03:59 PM] [ INFO ] - Cookie consent dialog is not visible.
-[08-01-25 8:03:59 PM] [ INFO ] - Reloading the page and retrying...(2 retries left)
-[08-01-25 8:04:02 PM] [ INFO ] - Cookie consent dialog is not visible.
-[08-01-25 8:04:02 PM] [ INFO ] - Reloading the page and retrying...(1 retries left)
-[08-01-25 8:04:05 PM] [ INFO ] - Cookie consent dialog is visible.
-[08-01-25 8:04:05 PM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
-[08-01-25 8:04:05 PM] [ INFO ] - Accepted Cookies on Homepage.
-[08-01-25 8:04:05 PM] [ INFO ] - licking on the [Shopping tools] on Homepage.
-[08-01-25 8:04:13 PM] [ INFO ] - Entering the pinocde [43213] in inputfield.
-[08-01-25 8:04:43 PM] [ INFO ] - Taking Screenshot for Failed Scenario: Verify 'Sort By' filters functionality
-[08-01-25 8:04:43 PM] [ INFO ] - Closing all Active Browser Sessions...!
-[08-01-25 8:04:43 PM] [ INFO ] - Closing the Browser [Page] 
-[08-01-25 8:04:43 PM] [ INFO ] - Closing the Browser [Context] 
-[08-01-25 8:04:43 PM] [ INFO ] - Closing the Browser [Browser] 
-[08-01-25 8:04:44 PM] [ INFO ] - Executing Scenarios from Feature Files: [available-cars-page.feature]
-[08-01-25 8:04:44 PM] [ INFO ] - Setting up for Scenario : [verify 'sort by' filters functionality]
-[08-01-25 8:04:44 PM] [ INFO ] - Launching the [chrome] Browser in [Headed] Mode.
-[08-01-25 8:04:44 PM] [ INFO ] - ====== Test Execution Environment : Local ========
-[08-01-25 8:04:44 PM] [ INFO ] - [Navigating to URL] - https://www.polestar.com/us
-[08-01-25 8:04:46 PM] [ INFO ] - Successfully Navigated to the Homepage.
-[08-01-25 8:04:46 PM] [ INFO ] - Cookie consent dialog is not visible.
-[08-01-25 8:04:46 PM] [ INFO ] - Reloading the page and retrying...(2 retries left)
-[08-01-25 8:04:48 PM] [ INFO ] - Cookie consent dialog is visible.
-[08-01-25 8:04:48 PM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
-[08-01-25 8:04:48 PM] [ INFO ] - Accepted Cookies on Homepage.
-[08-01-25 8:04:48 PM] [ INFO ] - licking on the [Shopping tools] on Homepage.
-[08-01-25 8:04:50 PM] [ INFO ] - Entering the pinocde [43213] in inputfield.
+[08-01-25 11:48:53 PM] [ INFO ] - Executing Scenarios from Feature Files: [gorest-user-api.feature]
+[08-01-25 11:48:53 PM] [ INFO ] - Executing Scenarios from Feature Files: [gorest-user-api.feature]
+[08-01-25 11:48:53 PM] [ INFO ] - Setting up for Scenario : [retrive the list of users via using "list users" api]
+[08-01-25 11:48:53 PM] [ INFO ] - Initializing the Base URL: https://gorest.co.in/public/v2
+[08-01-25 11:48:53 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a931952d37f8c30de7a78b938
+[08-01-25 11:48:53 PM] [ INFO ] - Setting up for Scenario : [create a new user by using the "create user" api]
+[08-01-25 11:48:53 PM] [ INFO ] - Initializing the Base URL: https://gorest.co.in/public/v2
+[08-01-25 11:48:53 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a931952d37f8c30de7a78b938
+[08-01-25 11:48:53 PM] [ INFO ] - User details:
+[08-01-25 11:48:54 PM] [ INFO ] - User creation response:
+[08-01-25 11:48:54 PM] [ INFO ] - Status Code 201 Matches the Expected 201
+[08-01-25 11:48:54 PM] [ INFO ] - User ID saved for future use:
+[08-01-25 11:48:54 PM] [ INFO ] - User ID for later use:
+[08-01-25 11:48:54 PM] [ INFO ] - Executing Scenarios from Feature Files: [gorest-user-api.feature]
+[08-01-25 11:48:54 PM] [ INFO ] - Setting up for Scenario : [update the user details by using the "update user" api]
+[08-01-25 11:48:54 PM] [ INFO ] - Initializing the Base URL: https://gorest.co.in/public/v2
+[08-01-25 11:48:54 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a931952d37f8c30de7a78b938
+[08-01-25 11:48:54 PM] [ INFO ] - User Data For Updation:
+[08-01-25 11:48:54 PM] [ INFO ] - Sending PATCH request with data:
+[08-01-25 11:48:55 PM] [ INFO ] - Checking if the response status is 200
+[08-01-25 11:48:55 PM] [ INFO ] - Status Code 200 Matches the Expected 200
+[08-01-25 11:48:55 PM] [ INFO ] - Verifying if the response contains a list of users
+[08-01-25 11:48:55 PM] [ INFO ] - Executing Scenarios from Feature Files: [gorest-user-api.feature]
+[08-01-25 11:48:55 PM] [ INFO ] - Setting up for Scenario : [delete the user via "delete user" api]
+[08-01-25 11:48:55 PM] [ INFO ] - Initializing the Base URL: https://gorest.co.in/public/v2
+[08-01-25 11:48:55 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a931952d37f8c30de7a78b938
+[08-01-25 11:48:56 PM] [ INFO ] - Updated Response:
+[08-01-25 11:48:56 PM] [ INFO ] - Status Code 200 Matches the Expected 200
+[08-01-25 11:48:56 PM] [ INFO ] - Executing Scenarios from Feature Files: [gorest-user-api.feature]
+[08-01-25 11:48:56 PM] [ INFO ] - Setting up for Scenario : [create a new user with an invalid access token]
+[08-01-25 11:48:56 PM] [ INFO ] - Initializing the Base URL: https://gorest.co.in/public/v2
+[08-01-25 11:48:56 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a931952d37f8c30de7a78b938
+[08-01-25 11:48:56 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a9
+[08-01-25 11:48:57 PM] [ INFO ] - POST Request Failed:
+[08-01-25 11:48:57 PM] [ INFO ] - DELETE Request Failed:
+[08-01-25 11:48:57 PM] [ INFO ] - Executing Scenarios from Feature Files: [gorest-user-api.feature]
+[08-01-25 11:48:57 PM] [ INFO ] - Setting up for Scenario : [delete the user via "delete user" api]
+[08-01-25 11:48:57 PM] [ INFO ] - Initializing the Base URL: https://gorest.co.in/public/v2
+[08-01-25 11:48:57 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a931952d37f8c30de7a78b938
+[08-01-25 11:48:57 PM] [ INFO ] - Error response data:
+[08-01-25 11:48:57 PM] [ INFO ] - Executing Scenarios from Feature Files: [gorest-user-api.feature]
+[08-01-25 11:48:57 PM] [ INFO ] - Setting up for Scenario : [create a new user with an empty access token]
+[08-01-25 11:48:57 PM] [ INFO ] - Initializing the Base URL: https://gorest.co.in/public/v2
+[08-01-25 11:48:57 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a931952d37f8c30de7a78b938
+[08-01-25 11:48:57 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a931952d37f8c30de7a78b938
+[08-01-25 11:48:57 PM] [ INFO ] - DELETE Request Failed:
+[08-01-25 11:48:57 PM] [ INFO ] - POST Request Failed:
+[08-01-25 11:48:57 PM] [ INFO ] - Error response data:
+[08-01-25 11:48:57 PM] [ INFO ] - Executing Scenarios from Feature Files: [gorest-user-api.feature]
+[08-01-25 11:48:57 PM] [ INFO ] - Executing Scenarios from Feature Files: [gorest-user-api.feature]
+[08-01-25 11:48:57 PM] [ INFO ] - Setting up for Scenario : [delete the user via "delete user" api]
+[08-01-25 11:48:57 PM] [ INFO ] - Initializing the Base URL: https://gorest.co.in/public/v2
+[08-01-25 11:48:57 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a931952d37f8c30de7a78b938
+[08-01-25 11:48:57 PM] [ INFO ] - Setting up for Scenario : [retrieve the list of users with an invalid endpoint]
+[08-01-25 11:48:57 PM] [ INFO ] - Initializing the Base URL: https://gorest.co.in/public/v2
+[08-01-25 11:48:57 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a931952d37f8c30de7a78b938
+[08-01-25 11:48:58 PM] [ INFO ] - DELETE Request Failed:
+[08-01-25 11:48:58 PM] [ INFO ] - Executing Scenarios from Feature Files: [gorest-user-api.feature]
+[08-01-25 11:48:58 PM] [ INFO ] - Setting up for Scenario : [delete the user via "delete user" api]
+[08-01-25 11:48:58 PM] [ INFO ] - Initializing the Base URL: https://gorest.co.in/public/v2
+[08-01-25 11:48:58 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a931952d37f8c30de7a78b938
+[08-01-25 11:48:58 PM] [ INFO ] - GET Request Failed:
+[08-01-25 11:48:58 PM] [ INFO ] - Status Code 404 Matches the Expected 404
+[08-01-25 11:48:58 PM] [ INFO ] - Executing Scenarios from Feature Files: [gorest-user-api.feature]
+[08-01-25 11:48:58 PM] [ INFO ] - Setting up for Scenario : [update a user with an invalid userid]
+[08-01-25 11:48:58 PM] [ INFO ] - Initializing the Base URL: https://gorest.co.in/public/v2
+[08-01-25 11:48:58 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a931952d37f8c30de7a78b938
+[08-01-25 11:48:58 PM] [ INFO ] - User Data For Updation:
+[08-01-25 11:48:58 PM] [ INFO ] - DELETE Request Failed:
+[08-01-25 11:48:58 PM] [ INFO ] - Executing Scenarios from Feature Files: [gorest-user-api.feature]
+[08-01-25 11:48:58 PM] [ INFO ] - Setting up for Scenario : [delete a user with a non-existent or empty user id]
+[08-01-25 11:48:58 PM] [ INFO ] - Initializing the Base URL: https://gorest.co.in/public/v2
+[08-01-25 11:48:58 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a931952d37f8c30de7a78b938
+[08-01-25 11:48:58 PM] [ INFO ] - PATCH Request Failed:
+[08-01-25 11:48:58 PM] [ INFO ] - Update user response:
+[08-01-25 11:48:58 PM] [ INFO ] - Status Code 404 Matches the Expected 404
+[08-01-25 11:48:58 PM] [ INFO ] - Resource not found
+[08-01-25 11:48:58 PM] [ INFO ] - Executing Scenarios from Feature Files: [gorest-user-api.feature]
+[08-01-25 11:48:58 PM] [ INFO ] - Setting up for Scenario : [create a user with an invalid email format]
+[08-01-25 11:48:58 PM] [ INFO ] - Initializing the Base URL: https://gorest.co.in/public/v2
+[08-01-25 11:48:58 PM] [ INFO ] - Authentication performed with Token: b2fbe010fb4b65888da6514dc07c1579232f1c1a931952d37f8c30de7a78b938
+[08-01-25 11:48:58 PM] [ INFO ] - User details:
+[08-01-25 11:48:58 PM] [ INFO ] - DELETE Request Failed:
+[08-01-25 11:48:58 PM] [ INFO ] - Delete Response:
+[08-01-25 11:48:58 PM] [ INFO ] - Status Code 404 Matches the Expected 404
+[08-01-25 11:48:58 PM] [ INFO ] - Error Status:
+[08-01-25 11:48:58 PM] [ INFO ] - Error Data:
+[08-01-25 11:48:58 PM] [ INFO ] - Received expected 404 Not Found status.
+[08-01-25 11:48:58 PM] [ INFO ] - Error Message:
+[08-01-25 11:48:58 PM] [ INFO ] - Executing Scenarios from Feature Files: [grocery-apis.feature]
+[08-01-25 11:48:58 PM] [ INFO ] - Setting up for Scenario : [check if the server is up and running via api]
+[08-01-25 11:48:58 PM] [ INFO ] - The base API URL is set to:https://simple-grocery-store-api.glitch.me
+[08-01-25 11:48:59 PM] [ INFO ] - POST Request Failed:
+[08-01-25 11:48:59 PM] [ INFO ] - Error response status:
+[08-01-25 11:48:59 PM] [ INFO ] - Executing Scenarios from Feature Files: [grocery-apis.feature]
+[08-01-25 11:48:59 PM] [ INFO ] - Setting up for Scenario : [validate the access token generation api functionality]
+[08-01-25 11:48:59 PM] [ INFO ] - The base API URL is set to:https://simple-grocery-store-api.glitch.me
+[08-01-25 11:49:02 PM] [ INFO ] - Status Code 201 Matches the Expected 201
+[08-01-25 11:49:02 PM] [ INFO ] - Executing Scenarios from Feature Files: [grocery-apis.feature]
+[08-01-25 11:49:02 PM] [ INFO ] - Setting up for Scenario : [verify the api functionaliy to fetch a specific products by id]
+[08-01-25 11:49:02 PM] [ INFO ] - The base API URL is set to:https://simple-grocery-store-api.glitch.me
+[08-01-25 11:49:03 PM] [ INFO ] - Server Status Response :
+[08-01-25 11:49:03 PM] [ INFO ] - Server Status Response :
+[08-01-25 11:49:03 PM] [ INFO ] - Checking if the response status is 200
+[08-01-25 11:49:03 PM] [ INFO ] - Checking if the response status is 200
+[08-01-25 11:49:03 PM] [ INFO ] - Status Code 200 Matches the Expected 200
+[08-01-25 11:49:03 PM] [ INFO ] - Executing Scenarios from Feature Files: [grocery-apis.feature]
+[08-01-25 11:49:03 PM] [ INFO ] - Status Code 200 Matches the Expected 200
+[08-01-25 11:49:03 PM] [ INFO ] - Executing Scenarios from Feature Files: [grocery-apis.feature]
+[08-01-25 11:49:03 PM] [ INFO ] - Setting up for Scenario : [validate the api functionality to fetch the complete list of products.]
+[08-01-25 11:49:03 PM] [ INFO ] - The base API URL is set to:https://simple-grocery-store-api.glitch.me
+[08-01-25 11:49:03 PM] [ INFO ] - Actual Status Code:
+[08-01-25 11:49:03 PM] [ INFO ] - Setting up for Scenario : [access token generation with missing or invalid client name]
+[08-01-25 11:49:03 PM] [ INFO ] - The base API URL is set to:https://simple-grocery-store-api.glitch.me
+[08-01-25 11:49:03 PM] [ INFO ] - Checking if the response status is 200
+[08-01-25 11:49:03 PM] [ INFO ] - Status Code 200 Matches the Expected 200
+[08-01-25 11:49:03 PM] [ INFO ] - Fetch All Products Response:
+[08-01-25 11:49:03 PM] [ INFO ] - Executing Scenarios from Feature Files: [grocery-apis.feature]
+[08-01-25 11:49:03 PM] [ INFO ] - Setting up for Scenario : [fetching product by nonexistent id]
+[08-01-25 11:49:03 PM] [ INFO ] - The base API URL is set to:https://simple-grocery-store-api.glitch.me
+[08-01-25 11:49:03 PM] [ INFO ] - POST Request Failed:
+[08-01-25 11:49:03 PM] [ INFO ] - Error Response Data:
+[08-01-25 11:49:03 PM] [ INFO ] - Status Code 400 Matches the Expected 400
+[08-01-25 11:49:03 PM] [ INFO ] - Executing Scenarios from Feature Files: [grocery-apis.feature]
+[08-01-25 11:49:03 PM] [ INFO ] - Setting up for Scenario : [fetching product with invalid id format]
+[08-01-25 11:49:03 PM] [ INFO ] - The base API URL is set to:https://simple-grocery-store-api.glitch.me
+[08-01-25 11:49:03 PM] [ INFO ] - GET Request Failed:
+[08-01-25 11:49:03 PM] [ INFO ] - Error Response Data:
+[08-01-25 11:49:04 PM] [ INFO ] - GET Request Failed:
+[08-01-25 11:49:04 PM] [ INFO ] - Error Response Data:
+[08-01-25 11:49:04 PM] [ INFO ] - Status Code 400 Matches the Expected 400

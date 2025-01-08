@@ -1,4 +1,4 @@
-@api1
+@api
 Feature: GoRest User Management APIs
   As a tester, I want to validate the core operations of the Gorest user Management APIs
   so that I can ensure it functions correctly for listing, creating, updating, and deleting users.
@@ -47,18 +47,18 @@ Feature: GoRest User Management APIs
     Then  The system should respond with a 401 Unauthorized status
     And   The response should include an error message indicating "Invalid token" with invalid token
 
-  Scenario: Create a new user with an Empty access token
+  Scenario: Create a new user with an Empty Access Token
     Given Authenticating is with a empty access token
     When  A Post Request is made to to Create an new user with empty token
     Then  The system should respond with a 401 Unauthorized status
     And   The response should include an error message indicating "Authentication failed" with empty token
 
-  Scenario: Retrieve the list of users with an invalid endpoint
+  Scenario: Retrieve the list of users with an Invalid Endpoint
     When  A GET request is made to an invalid endpoint "/users-invalid"
     Then  The system should respond with a 404 Not Found status with invalid endpoint
     And   The response should include an error message indicating "Resource not found"
 
-  Scenario: Update a user with an invalid user ID
+  Scenario: Update a user with an invalid UserID
     Given The user details for update are
       | Name              | Email                           | Status |
       | Allasani Peddana  | allasani.peddana@1234.com       | Active |
@@ -66,7 +66,7 @@ Feature: GoRest User Management APIs
     Then  The system should respond with a 404 Not Found status with invalid id
     And   The user update api response should include an error message indicating "Resource not found" 
 
-  Scenario: Delete a user with a non-existent user ID
+  Scenario: Delete a user with a non-existent or Empty User ID
     When  A DELETE request is made to delete the user with ID ""
     Then  The system should respond with a 404 Not Found status with empty id
     And   The delete api response should include an error message

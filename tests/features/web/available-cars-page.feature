@@ -1,4 +1,4 @@
-@web
+
 Feature: Shopping for Cars and Selecting the Available Car Model
 
  Background:
