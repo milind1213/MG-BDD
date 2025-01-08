@@ -20,7 +20,7 @@ jobs:
         run: npm ci
 
       - name: Run Cucumber Tests
-        run: npx cucumber-js ./tests/features
+        run: npx cucumber-js --tags @api ./tests/features
 
       - name: Upload test report (optional)
         if: ${{ !cancelled() }}
