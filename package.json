@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npx cucumber-js ./tests/features" ,
-    "regression-web": "npx cucumber-js --tags @web ./tests/features",
-    "smoke-api": "npx cucumber-js --tags @api ./tests/features"
+    "test:web": "npx cucumber-js --tags @web ./tests/features",
+    "test:api": "npx cucumber-js --tags @api ./tests/features"
   },
   "keywords": [],
   "author": "",
