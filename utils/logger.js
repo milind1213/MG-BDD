@@ -3,14 +3,12 @@ const fs = require("fs");
 const log4js = require("log4js");
 
 const logsPath = path.join(__dirname, "..", "reports", "execution-logs", "test-logs.log");
-// Open the file in write mode to overwrite it
-fs.writeFileSync(logsPath, "", { flag: "w" });
+fs.writeFileSync(logsPath, "", { flag: "w" }); // Open the file in write mode to overwrite it
 
-// Custom function to format the date in `dd-MM-yy hh:mm:ss AM/PM`
 function getFormattedDate() {
   const date = new Date();
   const day = String(date.getDate()).padStart(2, "0");
-  const month = String(date.getMonth() + 1).padStart(2, "0"); // Months are 0-indexed
+  const month = String(date.getMonth() + 1).padStart(2, "0");
   const year = String(date.getFullYear()).slice(-2);
   const hours = date.getHours() % 12 || 12;
   const minutes = String(date.getMinutes()).padStart(2, "0");
@@ -21,42 +19,56 @@ function getFormattedDate() {
 
 // Configure log4js
 log4js.configure({
-  appenders: {
-    file: {
+  appenders: 
+  {
+    file: 
+    {
       type: "file",
       filename: logsPath,
-      layout: {
-        type: "pattern",
-        pattern: "[%x{timestamp}] [ %p ] - %m", // Use the custom token for the timestamp
-        tokens: {
-          timestamp: getFormattedDate, // Map the custom function to the token
-        },
+      layout:
+      {
+         type: "pattern",
+         pattern: "[%x{timestamp}] [ %p ] - %m",
+         tokens: 
+         {
+          timestamp: getFormattedDate,
+         },
       },
     },
-    console: {
+
+    console: 
+    {
       type: "stdout",
-      layout: {
+      layout:
+       {
         type: "pattern",
-        pattern: "[%x{timestamp}] [ %p ] - %m", // Use the same custom token
-        tokens: {
+        pattern: "[%x{timestamp}] [ %p ] - %m",
+        tokens: 
+        {
           timestamp: getFormattedDate,
         },
       },
     },
   },
-  categories: {
-    default: { appenders: ["file", "console"], level: "info" },
+
+  categories: 
+  {
+    default: { 
+      appenders: ["file", "console"], 
+      level: "info" 
+    },
   },
 });
 
 const logger = log4js.getLogger();
-
-function log(message) {
+function log(message) 
+{
   logger.info(message);
 }
 
-// Gracefully shut down the logger when the process exits
-process.on("exit", () => {
+
+process.on("exit", () => 
+{
   log4js.shutdown(() => console.log("Logs flushed to file."));
 });
 

@@ -71,7 +71,7 @@ Then("The user ID should be saved for future use", function () {
      log("User ID saved for future use:", userID);
 });
 
-Then("I save the user ID for later", function () {
+Then("I save the user ID for later", function  () {
      log("User ID for later use:", userID);
 });
 

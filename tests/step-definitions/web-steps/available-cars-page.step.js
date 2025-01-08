@@ -17,7 +17,7 @@ Given("I launch the URL and land on the homepage", async function () {
 
 Given("I accept cookies from the homepage", async function () {
   await homePage.handleCookies("accept");
-  og(`Accepted Cookies on Homepage.`);
+  log(`Accepted Cookies on Homepage.`);
 });
 
 Given("I click on {string} from the homepage", async function (shoppingTools) {
@@ -31,6 +31,7 @@ Given("I select the {string} option.", async function (availableCars) {
 
 When("I enter zip code and select an address from the suggestions",async function () {
     await availableCarsPage.enterPinCodeAndSelectAddress("43213");
+    availableCarsPage
   }
 );
 

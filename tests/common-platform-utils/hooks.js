@@ -1,6 +1,6 @@
 const { Before, After, setDefaultTimeout, Status } = require('@cucumber/cucumber');
 const { launchBrowser, closeBrowserInstances} = require('./browser-setup');
-const SlackReportingUtils = require('../../utils/slack-reporting-utils');
+const SlackReportingUtils = require('../../utils/slack-reporting');
 const log = require('../../utils/logger');
 const config = require('./common-constants.js');
 const path = require('path');
@@ -52,6 +52,7 @@ After(async function (scenario)
   if (config.SEND_SLACK_REPORT === 'true') 
   {
     const reportDirectory = process.cwd() + '/reports/cucumber-report/CucumberReport.html';
+
     log('Sending Execution Report to Slack:', reportDirectory);
     await sendExecutionReportToSlack(reportDirectory, process.env.REPORT_HEADER, process.env.SLACK_CHANEL_ID, process.env.SLACK_TOKEN);
   }

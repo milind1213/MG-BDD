@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js --parallel 5"
+    "test": "cucumber-js --parallel 5",
+  "test-web": "cucumber-js tests/features/web --tags '@web' --format summary --format progress-bar"
+,
+   "test-api": "cucumber-js --tags '@api'",
+    "report": "npx cucumber-html-reporter --source reports/cucumber-report/CucumberReport.json --output reports/cucumber-report/CucumberReport.html --theme bootstrap",
+    "install-playwright": "npx playwright install --with-deps"
   },
-  "keywords": [],
+  "keywords": [], 
   "author": "",
   "license": "ISC",
   "description": "",
@@ -14,7 +19,7 @@
     "@cucumber/html-formatter": "^21.7.0",
     "@playwright/test": "^1.49.1",
     "@types/node": "^22.10.2",
-    "playwright": "^1.49.1"
+    "playwright":  "^1.49.1"
   },
   "dependencies": {
     "@faker-js/faker": "^9.3.0",

@@ -19,7 +19,7 @@
     ],
     "retry":2,
     "timeout": 60000,
-    "parallel":2,
+    "parallel":1,
       "env": {
       "LT_USERNAME": "gmilind12",
       "LT_ACCESS_KEY": "4e5iRSBwffrL12b7sksWidgzBjTKtV5NFJZeFaVcfrsuvXSxJk"

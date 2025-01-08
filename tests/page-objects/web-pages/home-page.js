@@ -69,7 +69,7 @@ class HomePage {
     {
       if (await this.dialog.isVisible()) 
       {
-           log("Cookie consent dialog is visible.");
+         log("Cookie consent dialog is visible.");
         if (await button.isVisible())
         {
            await utils.Click(button);
@@ -90,7 +90,6 @@ class HomePage {
        }
       }
     }
-
 
 }
 
