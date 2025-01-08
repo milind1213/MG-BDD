@@ -18,7 +18,7 @@
       "summary",
       "progress-bar"
     ],
-    "retry":3,
+    "retry":2,
     "timeout": 60000,
     "parallel":1
   }
