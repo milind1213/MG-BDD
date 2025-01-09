@@ -26,16 +26,56 @@ class HomePage {
     await utils.Click(headerLocator); 
   }
   
+  // async clickShoppingToolOption(option) {
+  //   try {
+  //       const locator = `//a[@class='css-4c83wv' and contains(text(),'${option}')]`;
+  //       const element = this.page.locator(locator);
+  //       await element.waitFor({ state: 'visible' });
+  //       await utils.clickWithRetries(element);
+  //   } catch (error) {
+  //       log(`Option "${option}" not found or could not be clicked:`, error);
+  //   }
+  // }
+
+
+
   async clickShoppingToolOption(option) {
     try {
         const locator = `//a[@class='css-4c83wv' and contains(text(),'${option}')]`;
         const element = this.page.locator(locator);
-        await element.waitFor({ state: 'visible' });
-        await utils.clickWithRetries(element);
+
+        // Wait for the element to be attached to the DOM and stable
+        await element.waitFor({
+            state: 'attached',
+            timeout: 10000, // Increase timeout if needed
+        });
+
+        // Scroll the element into view explicitly (Playwright does this automatically, but adding for safety)
+        await element.scrollIntoViewIfNeeded();
+
+        // Check if the element is blocked by any other element
+        const isIntersected = await element.evaluate((el) => {
+            const rect = el.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            const elementFromPoint = document.elementFromPoint(centerX, centerY);
+            return elementFromPoint === el || el.contains(elementFromPoint);
+        });
+
+        if (!isIntersected) {
+            throw new Error('Element is obstructed by another element.');
+        }
+
+        // Attempt click with retries for dynamic elements
+        await element.click({ timeout: 10000, force: false });
+
+        log(`Successfully clicked the "${option}" option.`);
     } catch (error) {
         log(`Option "${option}" not found or could not be clicked:`, error);
+        throw error; // Optionally, rethrow the error for further handling
     }
-  }
+}
+
 
   async checkPageTitleContains(expectedText) 
   {
