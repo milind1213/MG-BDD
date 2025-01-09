@@ -10,7 +10,8 @@ class HomePage {
     reject: this.page.locator('#onetrust-reject-all-handler')};
     this.viewAllOffersButton = page.locator(".css-2a8qrw");
     this.dialog = page.locator('div[role="dialog"][aria-label="Welcome"]'); // Cookie consent dialog
-  }  
+    this.availablecars = page.locator("#LRik6sCsS2a9j9B-FsyNbw")
+  } 
 
   async goTo(url) 
   {
@@ -21,19 +22,25 @@ class HomePage {
   async clickHeader(header) 
   {
     const headerLocator = this.page.locator(".css-1lfoa71", { hasText: header });
-    await utils.Click(headerLocator);
-  }
-  
-  async clickShoppingToolOption(option) 
-  {
+    await utils.waitLocaterVisibility(headerLocator);
+    await utils.Click(headerLocator);  
+  async clickShoppingToolOption(option) {
     try {
-        await utils.Click(this.page.locator(`//a[@class='css-4c83wv' and contains(text(),'${option}')]`));
+        const locator = `//a[@class='css-4c83wv' and contains(text(),'${option}')]`;
+        if (option === "Available cars") {
+          await this.page.locator(this.availablecars).scrollIntoViewIfNeeded();
+          await this.page.locator(this.availablecars).waitFor({ state: 'visible' });
+          await utils.Click(this.availablecars);
+          return;
+        }
+        const element = this.page.locator(locator);
+        await element.waitFor({ state: 'visible' });
+        await utils.Click(element);
     } catch (error) {
-        log(`Option "${option}" not found:`, error);
+        log(`Option "${option}" not found or could not be clicked:`, error);
     }
   }
 
-  
   async checkPageTitleContains(expectedText) 
   {
     const title = await this.page.title();

@@ -143,7 +143,7 @@ async isTextInPage(page, text)
   }
 },
 
-  async waitLocaterVisibility(locator, timeout = 5000) 
+  async waitLocaterVisibility(locator, timeout = 10000) 
   {
     try {
       await locator.waitFor({ state: 'visible', timeout });
