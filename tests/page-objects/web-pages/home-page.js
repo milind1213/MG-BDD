@@ -23,19 +23,15 @@ class HomePage {
   {
     const headerLocator = this.page.locator(".css-1lfoa71", { hasText: header });
     await utils.waitLocaterVisibility(headerLocator);
-    await utils.Click(headerLocator);  
+    await utils.Click(headerLocator); 
+  }
+  
   async clickShoppingToolOption(option) {
     try {
         const locator = `//a[@class='css-4c83wv' and contains(text(),'${option}')]`;
-        if (option === "Available cars") {
-          await this.page.locator(this.availablecars).scrollIntoViewIfNeeded();
-          await this.page.locator(this.availablecars).waitFor({ state: 'visible' });
-          await utils.Click(this.availablecars);
-          return;
-        }
         const element = this.page.locator(locator);
         await element.waitFor({ state: 'visible' });
-        await utils.Click(element);
+        await utils.clickWithRetries(element);
     } catch (error) {
         log(`Option "${option}" not found or could not be clicked:`, error);
     }
