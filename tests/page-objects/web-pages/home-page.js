@@ -45,37 +45,37 @@ class HomePage {
         const element = this.page.locator(locator);
 
         // Wait for the element to be attached to the DOM and stable
-        await element.waitFor({
-            state: 'attached',
-            timeout: 10000, // Increase timeout if needed
-        });
+        await element.waitFor({ state: 'visible', timeout: 30000 });
 
-        // Scroll the element into view explicitly (Playwright does this automatically, but adding for safety)
+        // Scroll element into view explicitly
         await element.scrollIntoViewIfNeeded();
 
-        // Check if the element is blocked by any other element
-        const isIntersected = await element.evaluate((el) => {
+        // Check if the element is obscured or intercepted by another element
+        const isObstructed = await element.evaluate((el) => {
             const rect = el.getBoundingClientRect();
             const centerX = rect.left + rect.width / 2;
             const centerY = rect.top + rect.height / 2;
-            const elementFromPoint = document.elementFromPoint(centerX, centerY);
-            return elementFromPoint === el || el.contains(elementFromPoint);
+            const elementAtPoint = document.elementFromPoint(centerX, centerY);
+            return elementAtPoint !== el && !el.contains(elementAtPoint);
         });
 
-        if (!isIntersected) {
-            throw new Error('Element is obstructed by another element.');
+        if (isObstructed) {
+            throw new Error(`Element "${option}" is obstructed by another element.`);
         }
 
-        // Attempt click with retries for dynamic elements
-        await element.click({ timeout: 10000, force: false });
+        // Use force click as a fallback if all else fails
+        await element.click({ timeout: 10000, force: true });
 
         log(`Successfully clicked the "${option}" option.`);
     } catch (error) {
         log(`Option "${option}" not found or could not be clicked:`, error);
-        throw error; // Optionally, rethrow the error for further handling
+
+        // Take a screenshot for debugging
+        await this.page.screenshot({ path: `error-${option}.png` });
+
+        throw error; // Rethrow the error for further handling
     }
 }
-
 
   async checkPageTitleContains(expectedText) 
   {
