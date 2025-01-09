@@ -1,5 +1,3 @@
-# GitHub Actions Workflow: Automate Web & API Tests with Cucumber.js
-
 name: Test Automation
 on:
   push:
@@ -33,21 +31,13 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      # Run all cucumber Scenarios
+      # Install Playwright browsers
+      - name: Install Playwright Browsers
+        run: npx playwright install
+
+      # Run all cucumber scenarios
       - name: Run Cucumber Tests
         run: npx cucumber-js ./tests/features
-
-      # Alternatively, run api tests with @api tag
-      # - name: Run API Tests
-      #   run: npx cucumber-js --tags '@web' ./tests/features
-
-      # To run web tests with  @web tag
-      # - name: Run web Tests
-      #   run: npx cucumber-js --tags '@web' ./tests/features
-
-      # Run All tests in parallel for faster execution (optional)
-      # - name: Run Tests in Parallel
-      #   run: npx cucumber-js --parallel 4 ./tests/features
 
       # Upload the Cucumber test report as an artifact
       - name: Upload Test Report
