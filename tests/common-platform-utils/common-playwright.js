@@ -53,6 +53,29 @@ const utils = {
     await page.waitForTimeout(2000);
   },
 
+  async clickWithRetries(locator, retries = 3) 
+  {
+    for (let attempt = 1; attempt <= retries; attempt++) {
+        try {
+            await locator.scrollIntoViewIfNeeded();
+            await locator.click();
+            log(`Successfully clicked on attempt ${attempt}`);
+            return;
+        } catch (error) {
+            log(`Attempt ${attempt} failed. Retrying...`);
+            await this.page.waitForTimeout(500);
+        }
+    }
+    throw new Error(`Failed to click after ${retries} attempts`);
+},
+
+
+
+
+
+
+
+
   async Fill(locator, text) 
   {
     try {
@@ -143,7 +166,7 @@ async isTextInPage(page, text)
   }
 },
 
-  async waitLocaterVisibility(locator, timeout = 5000) 
+  async waitLocaterVisibility(locator, timeout = 10000) 
   {
     try {
       await locator.waitFor({ state: 'visible', timeout });

@@ -16,7 +16,7 @@ Given(`I Landed on the Polestar Homepage`, async function (){
 
 Given(`I accepted cookies and click on the View Offers button`, async function(){
     await homePage.handleCookies("accept");
-    log(`Accepted Cookies and Cliecking on the 'View Offers' Button.`);
+    log(`Accepted Cookies and Cliecking on the [View Offers] button.`);
     await homePage.clickOnOfferButton();
 })
 
@@ -27,13 +27,12 @@ Given(`I navigate to the Pre-Owned Vehicle Offers section and Clicked on Filter 
 
 When(`I click on the {string} filter and select the checkbox option for {string}`,  async (label, value) => {
     await offerPage.applyFilter(label, value);
-    log(`Applying Filter :\n - ${label} : ${value}`);
+    log(`Applying Filter :\n - [${label}] : [${value}]`);
 });
-
 
 When(`I click the {string} button.`, async (buttonName) => {
     await offerPage.clickOnViewButton();
-    log(`I clicked on "${buttonName}" button.`);
+    log(`I clicked on [${buttonName}] button.`);
 });
 
 

@@ -1,4 +1,4 @@
-@api2
+@api
 Feature: Groceries API Test Suite
    To verify the functionality of the Groceries API,
    Including Token Generation, Product Management, Cart, and Order Operations.
@@ -28,7 +28,7 @@ Feature: Groceries API Test Suite
       Then   The response status code should be 200.
       And    The response body should contain a list of products.
 
-   Scenario: Access Token Generation with Invalid Client Name
+   Scenario: Access Token Generation with Missing or Invalid Client Name
       Given  I create a token for client " "
       When   I send a POST request to "/api-clients"
       Then   I should receive a 400 Bad Request status code

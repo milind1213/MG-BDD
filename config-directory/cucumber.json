@@ -9,23 +9,17 @@
       "tests/step-definitions/web-steps/*.js",
       "tests/common-platform-utils/hooks.js"
     ],
+    "dryRun":false,
     "formatOptions": {
       "snippetInterface": "async-await"
     },
     "format": [
-      "html:reports/cucumber-report/CucumberReport.html",
-      "summary",
-      "progress-bar"
+      "html:reports/cucumber-report.html",
+      "json:reports/cucumber-report.json",
+      "summary"
     ],
-    "retry":2,
+    "retry":1,
     "timeout": 60000,
-    "parallel":2,
-      "env": {
-      "LT_USERNAME": "gmilind12",
-      "LT_ACCESS_KEY": "4e5iRSBwffrL12b7sksWidgzBjTKtV5NFJZeFaVcfrsuvXSxJk"
-    }
+    "parallel":1
   }
 }
-
-
-

@@ -111,8 +111,8 @@ class AvailableCarsPage {
     const isOptionVisible = await filterOptionLocator.isVisible();
     if (isOptionVisible) 
     {
+        log(`Clicking on sort filter: ${option}`);
         await utils.Click(filterOptionLocator);
-        log(`Applied sort filter: ${option}`);
         await this.page.waitForTimeout(3000);
     } else {
         throw new Error(`Sort filter option "${option}" not found`);
@@ -187,7 +187,7 @@ class AvailableCarsPage {
     if (!suggestion.includes('No result available'||'Loading')) 
     {
        log('Clicking on valid Suggestion');
-       await utils.Click(this.addressSuggestions.nth(1));
+       await utils.Click(this.addressSuggestions.nth(0));
        return; 
     } else {
        log("Not Found Suggestions");

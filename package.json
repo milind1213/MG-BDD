@@ -1,19 +1,27 @@
 {
-  "name": "mg-bdd",
+  "name": "demo-autoamtion-framework",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js --parallel 5"
+    "test:all": "npx cucumber-js --config config-directory/cucumber.json  && node generate-report.js ./tests/features",
+    "test:web": "npx cucumber-js --tags @web --config config-directory/cucumber.json && node generate-report.js",
+    "test:api": "npx cucumber-js --tags @api --parallel 1 --config config-directory/cucumber.json  && node generate-report.js",
+    "test:web-or-api": "npx cucumber-js --tags \"@web or @api\" --config config-directory/cucumber.json  && node generate-report.js",
+    "test:web-And-api": "npx cucumber-js --tags \"@web and @api\" --config config-directory/cucumber.json  && node generate-report.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Milind G",
   "license": "ISC",
-  "description": "",
+  "description": "Overview :\r This framework combines Playwright for browser automation and Cucumber.js for (BDD), enabling seamless web and API testing. The modular design ensures flexibility and scalability, offering robust testing for web applications and APIs.",
   "devDependencies": {
-    "@cucumber/cucumber": "^11.1.1",
+    "@cucumber/cucumber": "^11.2.0",
+    "@cucumber/cucumber-expressions": "^18.0.1",
+    "@cucumber/gherkin": "^30.0.4",
     "@cucumber/html-formatter": "^21.7.0",
     "@playwright/test": "^1.49.1",
     "@types/node": "^22.10.2",
+    "cucumber": "^6.0.7",
+    "lru-cache": "^11.0.2",
     "playwright": "^1.49.1"
   },
   "dependencies": {
@@ -29,5 +37,17 @@
     "mg-bdd": "file:",
     "path": "^0.12.7",
     "qs": "^6.13.1"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/milind1213/MG-BDD.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/milind1213/MG-BDD/issues"
+  },
+  "homepage": "https://github.com/milind1213/MG-BDD#readme"
 }

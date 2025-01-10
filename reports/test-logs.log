@@ -1,0 +1,66 @@
+[11-01-25 12:35:15 AM] [ INFO ] - ====== Executing the Scenarios from Feature: [new-cars-filter.feature] ======
+[11-01-25 12:35:15 AM] [ INFO ] - Setting up for Scenario: [verify filters for polestar polestar 3 (2025 model) with long range dual motor options]
+[11-01-25 12:35:15 AM] [ INFO ] - Launching the [chrome] Browser in [Headless] Mode.
+[11-01-25 12:35:16 AM] [ INFO ] - [Navigating to URL] - https://www.polestar.com/us
+[11-01-25 12:35:20 AM] [ INFO ] - Successfully Navigated to the Homepage.
+[11-01-25 12:35:20 AM] [ INFO ] - Cookie consent dialog is visible.
+[11-01-25 12:35:20 AM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
+[11-01-25 12:35:20 AM] [ INFO ] - Accepted Cookies and Cliecking on the [View Offers] to the Homepage.
+[11-01-25 12:35:21 AM] [ INFO ] - Clicked on [View All Offers] button
+[11-01-25 12:35:21 AM] [ INFO ] - Successfully Clicked on the [New Vehicle Offers[] and [Filter[] buttons.
+[11-01-25 12:35:22 AM] [ INFO ] - Clicking on the [Filter] button
+[11-01-25 12:35:23 AM] [ INFO ] - Clicking on the [Car] Locator
+[11-01-25 12:35:24 AM] [ INFO ] - Clicking on the [Polestar 3] checkbox
+[11-01-25 12:35:27 AM] [ INFO ] - Checked for value :[Polestar 3]
+[11-01-25 12:35:27 AM] [ INFO ] - Applying Filter :
+ - [Car] : [Polestar 3]
+[11-01-25 12:35:27 AM] [ INFO ] - Clicking on the [Model year] Locator
+[11-01-25 12:35:28 AM] [ INFO ] - Clicking on the [2025] checkbox
+[11-01-25 12:35:31 AM] [ INFO ] - Checked for value :[2025]
+[11-01-25 12:35:31 AM] [ INFO ] - Applying Filter :
+ - [Model year] : [2025]
+[11-01-25 12:35:31 AM] [ INFO ] - Clicking on the [Powertrain] Locator
+[11-01-25 12:35:32 AM] [ INFO ] - Clicking on the [Long range Dual motor] checkbox
+[11-01-25 12:35:35 AM] [ INFO ] - Checked for value :[Long range Dual motor]
+[11-01-25 12:35:35 AM] [ INFO ] - Applying Filter :
+ - [Powertrain] : [Long range Dual motor]
+[11-01-25 12:35:35 AM] [ INFO ] - I clicked on [View] button.
+[11-01-25 12:35:35 AM] [ INFO ] - Found results :
+[11-01-25 12:35:35 AM] [ INFO ] - Validation passed: All results contain [Polestar 3].
+[11-01-25 12:35:35 AM] [ INFO ] - Closing all Active Browser Sessions...!
+[11-01-25 12:35:35 AM] [ INFO ] - Closing the Browser [Page] 
+[11-01-25 12:35:35 AM] [ INFO ] - Closing the Browser [Context] 
+[11-01-25 12:35:35 AM] [ INFO ] - Closing the Browser [Browser] 
+[11-01-25 12:35:35 AM] [ INFO ] - ====== Executing the Scenarios from Feature: [new-cars-filter.feature] ======
+[11-01-25 12:35:35 AM] [ INFO ] - Setting up for Scenario: [verify filters for polestar polestar 2 (2025 model) with long range dual motor options]
+[11-01-25 12:35:35 AM] [ INFO ] - Launching the [chrome] Browser in [Headless] Mode.
+[11-01-25 12:35:36 AM] [ INFO ] - [Navigating to URL] - https://www.polestar.com/us
+[11-01-25 12:35:38 AM] [ INFO ] - Successfully Navigated to the Homepage.
+[11-01-25 12:35:38 AM] [ INFO ] - Cookie consent dialog is visible.
+[11-01-25 12:35:38 AM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
+[11-01-25 12:35:38 AM] [ INFO ] - Accepted Cookies and Cliecking on the [View Offers] to the Homepage.
+[11-01-25 12:35:39 AM] [ INFO ] - Clicked on [View All Offers] button
+[11-01-25 12:35:39 AM] [ INFO ] - Successfully Clicked on the [New Vehicle Offers[] and [Filter[] buttons.
+[11-01-25 12:35:40 AM] [ INFO ] - Clicking on the [Filter] button
+[11-01-25 12:35:40 AM] [ INFO ] - Clicking on the [Car] Locator
+[11-01-25 12:35:41 AM] [ INFO ] - Clicking on the [Polestar 2] checkbox
+[11-01-25 12:35:45 AM] [ INFO ] - Checked for value :[Polestar 2]
+[11-01-25 12:35:45 AM] [ INFO ] - Applying Filter :
+ - [Car] : [Polestar 2]
+[11-01-25 12:35:45 AM] [ INFO ] - Clicking on the [Model year] Locator
+[11-01-25 12:35:45 AM] [ INFO ] - Clicking on the [2025] checkbox
+[11-01-25 12:35:48 AM] [ INFO ] - Checked for value :[2025]
+[11-01-25 12:35:48 AM] [ INFO ] - Applying Filter :
+ - [Model year] : [2025]
+[11-01-25 12:35:48 AM] [ INFO ] - Clicking on the [Powertrain] Locator
+[11-01-25 12:35:49 AM] [ INFO ] - Clicking on the [Long range Dual motor] checkbox
+[11-01-25 12:35:52 AM] [ INFO ] - Checked for value :[Long range Dual motor]
+[11-01-25 12:35:52 AM] [ INFO ] - Applying Filter :
+ - [Powertrain] : [Long range Dual motor]
+[11-01-25 12:35:52 AM] [ INFO ] - I clicked on [View] button.
+[11-01-25 12:35:52 AM] [ INFO ] - Found results :
+[11-01-25 12:35:52 AM] [ INFO ] - Validation passed: All results contain [Polestar 2 Long range Dual].
+[11-01-25 12:35:52 AM] [ INFO ] - Closing all Active Browser Sessions...!
+[11-01-25 12:35:52 AM] [ INFO ] - Closing the Browser [Page] 
+[11-01-25 12:35:52 AM] [ INFO ] - Closing the Browser [Context] 
+[11-01-25 12:35:52 AM] [ INFO ] - Closing the Browser [Browser] 

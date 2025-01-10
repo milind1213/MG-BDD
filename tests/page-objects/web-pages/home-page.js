@@ -10,7 +10,8 @@ class HomePage {
     reject: this.page.locator('#onetrust-reject-all-handler')};
     this.viewAllOffersButton = page.locator(".css-2a8qrw");
     this.dialog = page.locator('div[role="dialog"][aria-label="Welcome"]'); // Cookie consent dialog
-  }  
+    this.availablecars = page.locator("#LRik6sCsS2a9j9B-FsyNbw")
+  } 
 
   async goTo(url) 
   {
@@ -21,19 +22,61 @@ class HomePage {
   async clickHeader(header) 
   {
     const headerLocator = this.page.locator(".css-1lfoa71", { hasText: header });
-    await utils.Click(headerLocator);
+    await utils.waitLocaterVisibility(headerLocator);
+    await utils.Click(headerLocator); 
   }
   
-  async clickShoppingToolOption(option) 
-  {
-    try {
-        await utils.Click(this.page.locator(`//a[@class='css-4c83wv' and contains(text(),'${option}')]`));
-    } catch (error) {
-        log(`Option "${option}" not found:`, error);
-    }
-  }
+  // async clickShoppingToolOption(option) {
+  //   try {
+  //       const locator = `//a[@class='css-4c83wv' and contains(text(),'${option}')]`;
+  //       const element = this.page.locator(locator);
+  //       await element.waitFor({ state: 'visible' });
+  //       await utils.clickWithRetries(element);
+  //   } catch (error) {
+  //       log(`Option "${option}" not found or could not be clicked:`, error);
+  //   }
+  // }
 
-  
+
+
+  async clickShoppingToolOption(option) {
+    try {
+        const locator = `//a[@class='css-4c83wv' and contains(text(),'${option}')]`;
+        const element = this.page.locator(locator);
+
+        // Wait for the element to be attached to the DOM and stable
+        await element.waitFor({ state: 'visible', timeout: 30000 });
+
+        // Scroll element into view explicitly
+        await element.scrollIntoViewIfNeeded();
+
+        // Check if the element is obscured or intercepted by another element
+        const isObstructed = await element.evaluate((el) => {
+            const rect = el.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            const elementAtPoint = document.elementFromPoint(centerX, centerY);
+            return elementAtPoint !== el && !el.contains(elementAtPoint);
+        });
+
+        if (isObstructed) {
+            throw new Error(`Element "${option}" is obstructed by another element.`);
+        }
+
+        // Use force click as a fallback if all else fails
+        await element.click({ timeout: 10000, force: true });
+
+        log(`Successfully clicked the "${option}" option.`);
+    } catch (error) {
+        log(`Option "${option}" not found or could not be clicked:`, error);
+
+        // Take a screenshot for debugging
+        await this.page.screenshot({ path: `error-${option}.png` });
+
+        throw error; // Rethrow the error for further handling
+    }
+}
+
   async checkPageTitleContains(expectedText) 
   {
     const title = await this.page.title();
@@ -69,7 +112,7 @@ class HomePage {
     {
       if (await this.dialog.isVisible()) 
       {
-           log("Cookie consent dialog is visible.");
+         log("Cookie consent dialog is visible.");
         if (await button.isVisible())
         {
            await utils.Click(button);
@@ -90,7 +133,6 @@ class HomePage {
        }
       }
     }
-
 
 }
 

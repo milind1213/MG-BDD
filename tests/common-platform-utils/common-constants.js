@@ -22,8 +22,6 @@ class CommonConstants {
     static BROWSER_VERSION = process.env.browser_Version;
     static BUILD_NAME = process.env.build_Name;
     static TEST_NAME = process.env.test_Name;
-    static LAMBDA_USERNAME = process.env.lambdaTest_UserName;
-    static LAMBDA_ACCESS_KEY = process.env.lambdatest_AccesKey;
     static JIRA_BASE_URL = process.env.jira_baseUrl;
     static JIRA_API_URL = process.env.jira_ApiUrl;
     static JIRA_EMAIL = process.env.ji_Email;
@@ -45,7 +43,6 @@ class CommonConstants {
         POLESTAR_4:'Polestar 4',
         POLESTAR_5:'Polestar 5',
     };
-
 
    // Utility Methods
     static generateRandomTextFromAscii(length) {
