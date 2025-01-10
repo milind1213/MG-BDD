@@ -41,8 +41,9 @@ Then("I should continue with the selected Retailer address", async function () {
 
 Then("I verify the default {string} car model displayed in filter",async function (expectedCarModel) {
     const actualCarModel = await availableCarsPage.getDefaultFilterCarModel();
-    log("Default Filter Model : ", actualCarModel);
+    log(`Default Filter Model : [${actualCarModel}]`);
     expect(actualCarModel).toBe(expectedCarModel);
+    log(`Vlidated Expected Car Modle [${actualCarModel}] with Actual [${expectedCarModel}] Car Model`);
     await this.page.reload();
     await this.page.waitForTimeout(5000);
   }
@@ -85,6 +86,7 @@ Then("I should see more car options with Modelyear, Powertrain, and price detail
 Then("I verify the default sort {string} filter applied",async function (defaultFilter) {
     const actual = await availableCarsPage.getDefaultSortFilterText();
     expect(actual).toBe(defaultFilter);
+    log(`Vlidated Expected default filter [${defaultFilter}] with Actual [${actual}]`);
   }
 );
 
@@ -95,6 +97,7 @@ Then('I Apply Price {string} Filter the Cars Display should be {string} Sorted o
     const priceNumbers = priceTexts.map((price) =>parseInt(price.replace(/[$,]/g, ""), 10));
     const actualorder = config.checkOrder(priceNumbers);
     expect(actualorder).toBe(expectedOrder); 
+    log(`Vlidated Expected Displying order [${expectedOrder}] with Actual displaying [${actualorder}] order`);
   }
 );
 
@@ -126,7 +129,7 @@ Then('I should see cars that match the selected filters:', async function (dataT
   const expectedFilters = dataTable.hashes()[0];
   const elements = await availableCarsPage.aapliedFiltersLocator.all();
   const appliedFilters = await Promise.all(elements.map(async (el) => await el.textContent()) );
-  console.log('Applied Filters:', appliedFilters);
+  console.log(`Applied Filters : [${appliedFilters}]`);
 
   for (const [label, value] of Object.entries(expectedFilters)) 
   {
@@ -135,7 +138,7 @@ Then('I should see cars that match the selected filters:', async function (dataT
      const isFilterPresent = appliedFilters.some((filter) => filter.includes(value));
      if (!isFilterPresent) 
      {
-        throw new Error(`Filter mismatch: Expected "${value}" for "${label}", but it was not found in the results.`);
+        throw new Error(`Filter mismatch: Expected [${value}] for [${label}], but it was not found in the results.`);
      }
     }
   }

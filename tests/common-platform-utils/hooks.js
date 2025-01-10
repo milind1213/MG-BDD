@@ -14,9 +14,9 @@ Before(async function (scenario)
   const tags = scenario.pickle.tags.map(tag => tag.name.toLowerCase());
   const featureFilePath = scenario.gherkinDocument.uri.toLowerCase();
   const featureFileName = path.basename(featureFilePath);
-
-  log(`Executing Scenarios from Feature Files: [${featureFileName}]`);
-  log(`Setting up for Scenario : [${scenarioName}]`);
+ 
+  log(`====== Executing the Scenarios from Feature: [${featureFileName}] ======`);
+  log(`Setting up for Scenario: [${scenarioName}]`);
   
   if (!featureFileName.includes('api') && !scenarioName.includes('api') && !tags.includes('@api'))
   {

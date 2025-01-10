@@ -2,7 +2,7 @@ const path = require("path");
 const fs = require("fs");
 const log4js = require("log4js");
 
-const logsPath = path.join(__dirname, "..", "reports", "execution-logs", "test-logs.log");
+const logsPath = path.join(__dirname, "..", "reports","test-logs.log");
 fs.writeFileSync(logsPath, "", { flag: "w" }); // Open the file in write mode to overwrite it
 
 function getFormattedDate() {

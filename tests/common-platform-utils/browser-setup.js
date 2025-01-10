@@ -6,7 +6,6 @@ async function launchBrowser(browserName = 'chromium', isHeadless = true) {
   const mode = isHeadless ? 'Headless' : 'Headed';
   log(`Launching the [${browserName}] Browser in [${mode}] Mode.`);
 
-  log('====== Test Execution Environment : Local ========');
   return await initializeBrowser(browserName, isHeadless);
 }
 

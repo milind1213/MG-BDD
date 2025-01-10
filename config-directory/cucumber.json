@@ -14,9 +14,9 @@
       "snippetInterface": "async-await"
     },
     "format": [
+      "json:reports/cucumber-report.json",
       "html:reports/cucumber-report.html",
-      "summary",
-      "progress-bar"
+      "summary"
     ],
     "retry":1,
     "timeout": 60000,

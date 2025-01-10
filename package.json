@@ -2,20 +2,22 @@
   "name": "mg-bdd",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "test": "npx cucumber-js ./tests/features" ,
-    "test:web": "npx cucumber-js --tags @web ./tests/features",
-    "test:api": "npx cucumber-js --tags @api ./tests/features"
-  },
+ "scripts": {
+  "test:all": "npx cucumber-js --config config-directory/cucumber.json ./tests/features",
+  "test:web": "npx cucumber-js --tags @web --config config-directory/cucumber.json --format json:reports/web-report.json --format html:reports/web-report.html",
+  "test:api": "npx cucumber-js --tags @api --parallel 1 --config config-directory/cucumber.json --format json:reports/api-report.json --format html:reports/api-report.html",
+  "test:ok": "concurrently \"npm run test:web\" \"npm run test:api\""
+},
   "keywords": [],
-  "author": "",
+  "author": "Milind G",
   "license": "ISC",
-  "description": "Overview :\r This framework combines Playwright for browser automation and Cucumber.js for Behavior-Driven Development (BDD), enabling seamless web and API testing. It fosters collaboration among technical and non-technical teams with human-readable Gherkin syntax. The modular design ensures flexibility and scalability, offering robust testing for web applications and APIs.",
+  "description": "Overview :\r This framework combines Playwright for browser automation and Cucumber.js for (BDD), enabling seamless web and API testing. The modular design ensures flexibility and scalability, offering robust testing for web applications and APIs.",
   "devDependencies": {
     "@cucumber/cucumber": "^11.1.1",
     "@cucumber/html-formatter": "^21.7.0",
     "@playwright/test": "^1.49.1",
     "@types/node": "^22.10.2",
+    "concurrently": "^9.1.2",
     "cucumber": "^6.0.7",
     "playwright": "^1.49.1"
   },

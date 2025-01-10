@@ -24,7 +24,6 @@ When("A Get Request is made to retrieve the list of users", async function () {
 });
 
 Then("The system should respond with a {int} OK status",async function (statusCode) {
-     log(`Checking if the response status is ${statusCode}`);
      utils.checkStatusCode(response, statusCode);
 });
 
@@ -41,12 +40,12 @@ Given("The user details are:", function (dataTable) {
         email : generateRandomEmail(),
         status: userData.Status, 
     };
-    log("User details:", this.userDetails);
+    log("User details: " + JSON.stringify(this.userDetails));
 });
 
 When("A Post request is made to create a new user", async function () {
      response = await utils.POST("/users", this.userDetails);
-     log("User creation response:", response.data);
+     log("User creation response:", +  + JSON.stringify(response.data));
 });
 
 
@@ -68,16 +67,16 @@ Then("The user ID should be saved for future use", function () {
       if (!userID) {
          throw new Error("User ID is not available in the response. Check the creation step.");
       }
-     log("User ID saved for future use:", userID);
+      log("User ID saved for future use:" + JSON.stringify(userID));
 });
 
-Then("I save the user ID for later", function  () {
-     log("User ID for later use:", userID);
+Then("I save the user ID for later", function () {
+     log("User ID for later use:",  + JSON.stringify(userID));
 });
 
 Given("The user details for update are", async function (dataTable) {
      updatedUserData = dataTable.hashes();
-     log("User Data For Updation:", updatedUserData);
+     log("User Data For Updation:",  + JSON.stringify(updatedUserData));
 });
 
 When("A Patch request is made to update the user with the saved ID",async function () {
@@ -92,7 +91,7 @@ When("A Patch request is made to update the user with the saved ID",async functi
       log("Sending PATCH request with data:", updateData);
       
       response = await utils.PATCH(`/users/${userID}`, updateData);
-      log("Updated Response:", response.data);
+      log("Updated Response:",  + JSON.stringify(response.data));
   });
 
 Then("The system should respond with {int} OK status", async function (statusCode) {
@@ -130,7 +129,7 @@ Then("The updated user details should be reflected", async function () {
 
 When("A Delete request is made to delete the user with the saved ID",async function () {
      response = await utils.DELETE(`/users/${userID}`);
-     log("Delete Response:", response.status);
+     log("Delete Response:",  + JSON.stringify(response.status));
   }
 );
 
@@ -163,10 +162,10 @@ Given("Authenticating is with a Invalid access token",async function () {
  When("A Post Request is made to to Create an new user with Invalid token", async function () {
      try {
       response = await utils.POST("/users", this.userDetails);
-      log("User creation response:", response.message);
+      log("User creation response:",  + JSON.stringify(response.message));
      } catch (error){
       response = error.response   
-      log("Error response data:", error.response.data);
+      log("Error response data:",  + JSON.stringify(error.response.data));
      }
  });
 
@@ -187,10 +186,10 @@ Given("Authenticating is with a empty access token",async function () {
 When("A Post Request is made to to Create an new user with empty token", async function () {
      try {
       response = await utils.POST("/users", this.userDetails);
-      log("User creation response:", response.message);
+      log("User creation response:",  + JSON.stringify(response.message));
      } catch (error){
       response = error.response   
-      log("Error response data:", error.response.data);
+      log("Error response data:", + JSON.stringify(error.response.data));
      }
 });
 
@@ -239,7 +238,7 @@ When("A PATCH request is made to update the user with ID {string}", async functi
      } catch (error) {
          response = error.response;
      }
-     log("Update user response:", response?.status, response?.data);
+     log("Update user response:",  + JSON.stringify(response?.status, response?.data));
  });
 
 
@@ -249,7 +248,7 @@ When("A PATCH request is made to update the user with ID {string}", async functi
 
 
  Then("The user update api response should include an error message indicating {string}", function (expectedErrorMessage) {
-     log(response.data.message);
+     log( + JSON.stringify(response.data.message));
      expect(response.data.message).toContain(expectedErrorMessage);
  });
 
@@ -260,7 +259,7 @@ When("A PATCH request is made to update the user with ID {string}", async functi
      } catch (error){
       response = error.response;
      }
-      log("Delete Response:", response.data);
+      log("Delete Response:",  + JSON.stringify(response.data));
     }
  );
 
@@ -275,7 +274,7 @@ When("A PATCH request is made to update the user with ID {string}", async functi
          log("Error Data:", response.data);
          if (response.status === 404) {
              log("Received expected 404 Not Found status.");
-             log("Error Message:", response.data.message || "Resource not found.");
+             log("Error Message:",  + JSON.stringify(response.data.message) || "Resource not found.");
          } else {
              console.warn("Unexpected status code:", response.status);
              log("Unexpected status code:", response.status);
@@ -296,7 +295,7 @@ When("A PATCH request is made to update the user with ID {string}", async functi
         email: userData.Email,
         status: userData.Status,
       };
-     log("User details:", this.InvalidUserDetails);
+     log("User details:", + JSON.stringify(this.InvalidUserDetails));
  });
 
 
@@ -320,4 +319,3 @@ When("A PATCH request is made to update the user with ID {string}", async functi
      expect(emailError).not.toBeUndefined();
      expect(emailError.message).toContain("is invalid");
  });
-

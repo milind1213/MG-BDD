@@ -16,24 +16,24 @@ Given('I navigate to the Homepage', async function (){
 
 Given(`I accept cookies and click on the {string} button`, async (buttonName) => {
     await homePage.handleCookies("accept");
-    log(`Accepted Cookies and Cliecking on the ${buttonName} to the Homepage.`);
+    log(`Accepted Cookies and Cliecking on the [${buttonName}] to the Homepage.`);
     await homePage.clickOnOfferButton();
 });
 
 Given(`I navigate to the {string} and Clicked on {string} button`, async (newVehicle, filterBtn) => {
     await offerPage.clickOnNewVehicleButton();
-    log(`Successfully Clicked on the ${newVehicle} and ${filterBtn} buttons.`);
+    log(`Successfully Clicked on the [${newVehicle}[] and [${filterBtn}[] buttons.`);
     await offerPage.click_FilterButton();
 });
 
 When(`I click on the {string} filter and select the checkbox for {string}`, async (label, value) => {
     await offerPage.applyFilter(label, value);
-    log(`Applying Filter :\n - ${label} : ${value}`);
+    log(`Applying Filter :\n - [${label}] : [${value}]`);
 });
 
 When(`I click the {string} button`, async (buttonName) => {
     await offerPage.clickOnViewButton();
-    log(`I clicked on "${buttonName}" button.`);
+    log(`I clicked on [${buttonName}] button.`);
 });
 
 
@@ -46,8 +46,8 @@ Then(`the results should match the filter criteria {string}`, async (expectedRes
         expect(results).not.toBeNull();
         expect(results.length).toBeGreaterThan(0, 'No results were found.');
         results.forEach((result, index) => {
-            expect(result).toContain(expectedResult, `Mismatch at index ${index}: "${result}" does not contain "${expectedResult}".`);
+            expect(result).toContain(expectedResult, `Mismatch at index [${index}]: [${result}] does not contain [${expectedResult}].`);
         });
-        log(`Validation passed: All results contain "${expectedResult}".`);
+        log(`Validation passed: All results contain [${expectedResult}].`);
     }
 });

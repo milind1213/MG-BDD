@@ -1,0 +1,290 @@
+[
+  {
+    "description": "  As a user of the Polestar website\n  I want to apply filters to new vehicle offers\n  So that I can verify the filter functionality works correctly and display accurate results",
+    "elements": [
+      {
+        "description": "",
+        "id": "verify-filter-functionality-for-polestar-offers;verify-filters-for-polestar-polestar-3-(2025-model)-with-long-range-dual-motor-options",
+        "keyword": "Scenario Outline",
+        "line": 21,
+        "name": "Verify filters for Polestar Polestar 3 (2025 Model) with Long range Dual motor options",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 447326400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "I navigate to the Homepage",
+            "match": {
+              "location": "tests\\step-definitions\\web-steps\\new-cars-filter.steps.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4117648400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I accept cookies and click on the \"View Offers\" button",
+            "match": {
+              "location": "tests\\step-definitions\\web-steps\\new-cars-filter.steps.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3369039199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "I navigate to the \"New Vehicle Offers\" and Clicked on \"Filter\" button",
+            "match": {
+              "location": "tests\\step-definitions\\web-steps\\new-cars-filter.steps.js:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1257697599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "I click on the \"Car\" filter and select the checkbox for \"Polestar 3\"",
+            "match": {
+              "location": "tests\\step-definitions\\web-steps\\new-cars-filter.steps.js:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4633932600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I click on the \"Model year\" filter and select the checkbox for \"2025\"",
+            "match": {
+              "location": "tests\\step-definitions\\web-steps\\new-cars-filter.steps.js:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3736243399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "I click on the \"Powertrain\" filter and select the checkbox for \"Long range Dual motor\"",
+            "match": {
+              "location": "tests\\step-definitions\\web-steps\\new-cars-filter.steps.js:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3748035900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "I click the \"View\" button",
+            "match": {
+              "location": "tests\\step-definitions\\web-steps\\new-cars-filter.steps.js:34"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 142887999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "the results should match the filter criteria \"Polestar 3\"",
+            "match": {
+              "location": "tests\\step-definitions\\web-steps\\new-cars-filter.steps.js:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 45357200
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 110537899
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@web",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "verify-filter-functionality-for-polestar-offers;verify-filters-for-polestar-polestar-2-(2025-model)-with-long-range-dual-motor-options",
+        "keyword": "Scenario Outline",
+        "line": 22,
+        "name": "Verify filters for Polestar Polestar 2 (2025 Model) with Long range Dual motor options",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 667031999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "I navigate to the Homepage",
+            "match": {
+              "location": "tests\\step-definitions\\web-steps\\new-cars-filter.steps.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1836002799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I accept cookies and click on the \"View Offers\" button",
+            "match": {
+              "location": "tests\\step-definitions\\web-steps\\new-cars-filter.steps.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3488368000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "I navigate to the \"New Vehicle Offers\" and Clicked on \"Filter\" button",
+            "match": {
+              "location": "tests\\step-definitions\\web-steps\\new-cars-filter.steps.js:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1270400299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "I click on the \"Car\" filter and select the checkbox for \"Polestar 2\"",
+            "match": {
+              "location": "tests\\step-definitions\\web-steps\\new-cars-filter.steps.js:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4617138899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I click on the \"Model year\" filter and select the checkbox for \"2025\"",
+            "match": {
+              "location": "tests\\step-definitions\\web-steps\\new-cars-filter.steps.js:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3734800400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "I click on the \"Powertrain\" filter and select the checkbox for \"Long range Dual motor\"",
+            "match": {
+              "location": "tests\\step-definitions\\web-steps\\new-cars-filter.steps.js:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3720894299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "I click the \"View\" button",
+            "match": {
+              "location": "tests\\step-definitions\\web-steps\\new-cars-filter.steps.js:34"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 181865600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "the results should match the filter criteria \"Polestar 2 Long range Dual\"",
+            "match": {
+              "location": "tests\\step-definitions\\web-steps\\new-cars-filter.steps.js:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 20189500
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 124077799
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@web",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "verify-filter-functionality-for-polestar-offers",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Verify Filter Functionality for Polestar Offers",
+    "tags": [
+      {
+        "name": "@web",
+        "line": 1
+      }
+    ],
+    "uri": "tests\\features\\web\\new-cars-filter.feature"
+  }
+]

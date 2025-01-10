@@ -1,0 +1,1234 @@
+[
+  {
+    "description": "  As a tester, I want to validate the core operations of the Gorest user Management APIs\n  so that I can ensure it functions correctly for listing, creating, updating, and deleting users.",
+    "elements": [
+      {
+        "description": "",
+        "id": "gorest-user-management-apis;retrive-the-list-of-users-via-using-\"list-users\"-api",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "Retrive the List of users via using \"List Users\" API",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 5753300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "The API is initialized with the base URL",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10669900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Authentication is performed with a valid access token",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2155999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "A Get Request is made to retrieve the list of users",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3679196199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "The system should respond with a 200 OK status",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6502600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "The response should contain a list of users",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6296599
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 549799
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "gorest-user-management-apis;create-a-new-user-by-using-the-\"create-user\"-api",
+        "keyword": "Scenario",
+        "line": 15,
+        "name": "Create a new user By Using the \"Create User\" API",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 797100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "The API is initialized with the base URL",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1604500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Authentication is performed with a valid access token",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 707000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Name",
+                      "Gender",
+                      "Email",
+                      "Status"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Tenali Ramakrishna",
+                      "Male",
+                      "tenali.ramakrishna@abdce.com",
+                      "Active"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Given ",
+            "line": 16,
+            "name": "The user details are:",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2455800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "A Post request is made to create a new user",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:46"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 213357399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "The system should respond with a 201 Created status",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3779899
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Name",
+                      "Status"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Tenali Ramakrishna",
+                      "Active"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "And ",
+            "line": 21,
+            "name": "The response should include the following:",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:56"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3653800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 24,
+            "name": "The user ID should be saved for future use",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:65"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2032899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 25,
+            "name": "I save the user ID for later",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:73"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1112899
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 195900
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "gorest-user-management-apis;update-the-user-details-by-using-the-\"update-user\"-api",
+        "keyword": "Scenario",
+        "line": 27,
+        "name": "Update the user details By Using the \"Update User\" API",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 261700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "The API is initialized with the base URL",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 164899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Authentication is performed with a valid access token",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 233000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Name",
+                      "Email",
+                      "Status"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Allasani Peddana",
+                      "allasani.peddana@1234.com",
+                      "active"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Given ",
+            "line": 28,
+            "name": "The user details for update are",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:77"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 157000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 31,
+            "name": "A Patch request is made to update the user with the saved ID",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:82"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 247679699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 32,
+            "name": "The system should respond with 200 OK status",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:97"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3991300
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Name",
+                      "Email",
+                      "Status"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Allasani Peddana",
+                      "allasani.peddana@1234.com",
+                      "active"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "And ",
+            "line": 33,
+            "name": "The response should include the following details:",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:101"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2787800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 36,
+            "name": "The user ID should remain the same",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:119"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2074899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 37,
+            "name": "The updated user details should be reflected",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:123"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3107300
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 158499
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "gorest-user-management-apis;delete-the-user-via-\"delete-user\"-api",
+        "keyword": "Scenario Outline",
+        "line": 39,
+        "name": "Delete the user via \"Delete User\" API",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 627900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "The API is initialized with the base URL",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 492099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Authentication is performed with a valid access token",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 423399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 40,
+            "name": "A Delete request is made to delete the user with the saved ID",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:130"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 216108400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 41,
+            "name": "The system should respond with a 204 No Content status",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:136"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 822500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 42,
+            "name": "The user should no longer exist in the system",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:141"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 198007200
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 68000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "gorest-user-management-apis;create-a-new-user-with-an-invalid-access-token",
+        "keyword": "Scenario",
+        "line": 44,
+        "name": "Create a new user with an invalid access token",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 215699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "The API is initialized with the base URL",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 99599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Authentication is performed with a valid access token",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 119200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 45,
+            "name": "Authenticating is with a Invalid access token",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:156"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 492099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 46,
+            "name": "A Post Request is made to to Create an new user with Invalid token",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:162"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 173415299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 47,
+            "name": "The system should respond with a 401 Unauthorized status",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:172"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 784399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 48,
+            "name": "The response should include an error message indicating \"Invalid token\" with invalid token",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:176"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2504200
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 100599
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "gorest-user-management-apis;create-a-new-user-with-an-empty-access-token",
+        "keyword": "Scenario",
+        "line": 50,
+        "name": "Create a new user with an Empty Access Token",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 200799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "The API is initialized with the base URL",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 91100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Authentication is performed with a valid access token",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 63699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 51,
+            "name": "Authenticating is with a empty access token",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:180"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 788999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 52,
+            "name": "A Post Request is made to to Create an new user with empty token",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:186"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 167666700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 53,
+            "name": "The system should respond with a 401 Unauthorized status",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:172"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 598299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 54,
+            "name": "The response should include an error message indicating \"Authentication failed\" with empty token",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4394499
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 114900
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "gorest-user-management-apis;retrieve-the-list-of-users-with-an-invalid-endpoint",
+        "keyword": "Scenario",
+        "line": 56,
+        "name": "Retrieve the list of users with an Invalid Endpoint",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 593600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "The API is initialized with the base URL",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 307900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Authentication is performed with a valid access token",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 325600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 57,
+            "name": "A GET request is made to an invalid endpoint \"/users-invalid\"",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:201"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 175398400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 58,
+            "name": "The system should respond with a 404 Not Found status with invalid endpoint",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:210"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3282200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 59,
+            "name": "The response should include an error message indicating \"Resource not found\"",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:214"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3942700
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 179000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "gorest-user-management-apis;update-a-user-with-an-invalid-userid",
+        "keyword": "Scenario",
+        "line": 61,
+        "name": "Update a user with an invalid UserID",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 430400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "The API is initialized with the base URL",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 181199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Authentication is performed with a valid access token",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 200800
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Name",
+                      "Email",
+                      "Status"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Allasani Peddana",
+                      "allasani.peddana@1234.com",
+                      "Active"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Given ",
+            "line": 62,
+            "name": "The user details for update are",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:77"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 496799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 65,
+            "name": "A PATCH request is made to update the user with ID \"invalid-id\"",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:227"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 182336999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 66,
+            "name": "The system should respond with a 404 Not Found status with invalid id",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:245"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2103300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 67,
+            "name": "The user update api response should include an error message indicating \"Resource not found\"",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:250"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2572600
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 126399
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "gorest-user-management-apis;delete-a-user-with-a-non-existent-or-empty-user-id",
+        "keyword": "Scenario",
+        "line": 69,
+        "name": "Delete a user with a non-existent or Empty User ID",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 390500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "The API is initialized with the base URL",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 166400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Authentication is performed with a valid access token",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 129299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 70,
+            "name": "A DELETE request is made to delete the user with ID \"\"",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:256"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 167823499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 71,
+            "name": "The system should respond with a 404 Not Found status with empty id",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:267"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1922599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 72,
+            "name": "The delete api response should include an error message",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:271"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1464300
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 122100
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "gorest-user-management-apis;create-a-user-with-an-invalid-email-format",
+        "keyword": "Scenario",
+        "line": 74,
+        "name": "Create a user with an invalid email format",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 301800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "The API is initialized with the base URL",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 172899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Authentication is performed with a valid access token",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 138799
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Name",
+                      "Gender",
+                      "Email",
+                      "Status"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Tenali Ramakrishna",
+                      "Male",
+                      "invalid-email.com",
+                      "Active"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Given ",
+            "line": 75,
+            "name": "The details for create user:",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:290"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 748700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 78,
+            "name": "A POST request is made to create a new user with Invalid email format",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:302"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 199084899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 79,
+            "name": "The system should respond with a 422 Unprocessable Entity status",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:312"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1109599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 80,
+            "name": "The response should include an error message for the invalid email format",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\gorest-user-api.step.js:316"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1175400
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 76700
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "gorest-user-management-apis",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "GoRest User Management APIs",
+    "tags": [
+      {
+        "name": "@api",
+        "line": 1
+      }
+    ],
+    "uri": "tests\\features\\api\\gorest-user-api.feature"
+  }
+]
