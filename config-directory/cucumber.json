@@ -14,8 +14,8 @@
       "snippetInterface": "async-await"
     },
     "format": [
-      "json:reports/cucumber-report.json",
       "html:reports/cucumber-report.html",
+      "json:reports/cucumber-report.json",
       "summary"
     ],
     "retry":1,
@@ -23,7 +23,3 @@
     "parallel":1
   }
 }
-
-
-
-
