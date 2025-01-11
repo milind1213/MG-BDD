@@ -2,7 +2,7 @@ name: Automated Workflow
 
 on:
   schedule:
-    - cron: '15 9 * * *'  # This will trigger the workflow every day at 9:15 AM UTC (2:45 PM IST)
+    - cron: '25 9 * * *'  # This will trigger the workflow every day at 9:15 AM UTC (2:45 PM IST)
 
 jobs:
   test:
