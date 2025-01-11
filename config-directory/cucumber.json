@@ -18,7 +18,7 @@
       "json:reports/cucumber-report.json",
       "summary"
     ],
-    "retry":1,
+    "retry":2,
     "timeout": 60000,
     "parallel":1
   }

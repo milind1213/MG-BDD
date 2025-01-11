@@ -9,7 +9,7 @@ class CommonConstants {
     static BROWSER_TYPE = process.env.browser_Name;
     static IS_HEADLESS = process.env.isHeadless === 'true';
     static IS_REMOTE = process.env.isRemote === 'true';
-    static GOREST_TOKEN = process.env.gorest_Token;
+    static GOREST_TOKEN = process.env.token;
     static MGS_USERNAME = process.env.userName;
     static MGS_PASSWORD = process.env.password;
     static SEND_SLACK_REPORT = process.env.send_Slack_Report === 'true';
@@ -35,6 +35,7 @@ class CommonConstants {
         POLESTAR_4:'Polestar 4',
         POLESTAR_5:'Polestar 5',
     };
+
 
    // Utility Methods
     static generateRandomTextFromAscii(length) {
