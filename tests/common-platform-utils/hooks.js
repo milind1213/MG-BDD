@@ -64,12 +64,7 @@ AfterAll(async function ()
     {
       const reportPath = process.cwd() + '/reports/cucumber-report/CucumberReport.html';
       log('Sending Execution Report to Slack:', reportPath);
-      await sendExecutionReportToSlack.sendExecutionReportToSlack
-      (
-        reportPath,config.REPORT_HEADER, 
-        config.SLACK_CHANEL_ID,
-        config.SLACK_TOKEN
-      );
+      await sendExecutionReportToSlack.sendExecutionReportToSlack(reportPath,config.REPORT_HEADER, config.SLACK_CHANEL_ID,config.SLACK_TOKEN);
     }
 });
 
