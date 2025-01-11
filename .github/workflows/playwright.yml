@@ -1,15 +1,8 @@
-name: Test Automation
+name: Automated Workflow
 
 on:
-  # Trigger the workflow when changes are pushed to the main branch
-  push:
-    branches:
-      - main  # You can change this to another branch if needed
-
-  # Trigger the workflow on a scheduled basis
   schedule:
-    - cron: '52 8 * * *'  # 2:22 PM IST (8:52 AM UTC)
-
+    - cron: '15 9 * * *'  # This will trigger the workflow every day at 9:15 AM UTC (2:45 PM IST)
 
 jobs:
   test:
