@@ -1,6 +1,26 @@
 const { WebClient } = require('@slack/web-api');
 const fs = require('fs');
 const path = require('path');
+const log = require('../utils/logger');
+
+let slackClient;
+// Initialize Slack WebClient
+async function initialize(slackToken, channelId) {
+  if (!slackToken || !channelId) {
+    throw new Error('Slack token or channel ID is missing. Please check environment variables.');
+  }
+  try {
+    slackClient = new WebClient(slackToken);
+    const response = await slackClient.conversations.info({ channel: channelId });
+    if (!response.ok) {
+      throw new Error(`Failed to verify Slack channel: ${response.error}`);
+    }
+    console.log('Slack client initialized successfully.');
+  } catch (error) {
+    console.error(`Error initializing Slack client: ${error.message}`);
+    throw error;
+  }
+}
 
 async function sendExecutionReportToSlack(reportDirectory, reportHeader,slack_Channel_ID, slackOAuthToken) 
 {
@@ -16,7 +36,7 @@ async function sendExecutionReportToSlack(reportDirectory, reportHeader,slack_Ch
       return true; 
     }
       retries--;
-      console.log('File Not found, Retrying In (5) seconds...');
+      log('File Not found, Retrying In (5) seconds...');
       await new Promise(resolve => setTimeout(resolve, 5000));
     }
      console.error(`File Not Found After ${retries} Retries...`);
@@ -27,7 +47,7 @@ async function sendExecutionReportToSlack(reportDirectory, reportHeader,slack_Ch
   if (!fileExists) return;
 
   try {
-    console.log('Sending Report to Slack...');
+    log('Sending Report to Slack...');
     const fileStream = fs.createReadStream(filePath);
 
     const response = await client.files.uploadV2({
@@ -39,9 +59,9 @@ async function sendExecutionReportToSlack(reportDirectory, reportHeader,slack_Ch
     
     if (response.files && response.files.length > 0 && response.files[0].id) 
     {
-        console.log('Report Sent successfully:', response.files[0].id);
+        log('Report Sent successfully:', response.files[0].id);
         const fileUrl = response.files[0].permalink_public;
-        console.log('File URL:', fileUrl);
+        log('File URL:', fileUrl);
     } else {
         console.error('Failed to upload the report to Slack:', response);
     }
@@ -50,4 +70,4 @@ async function sendExecutionReportToSlack(reportDirectory, reportHeader,slack_Ch
    }
 }
 
-module.exports = { sendExecutionReportToSlack };
+module.exports = {initialize,sendExecutionReportToSlack };

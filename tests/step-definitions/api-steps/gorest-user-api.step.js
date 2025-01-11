@@ -1,12 +1,13 @@
 const { Given, When, Then } = require("@cucumber/cucumber");
 const qs = require("qs");
 const { expect } = require("@playwright/test");
-const AxioUtils = require('../../common-platform-utils/common-rest.js');
+const ApiUtils = require('../../common-platform-utils/common-rest.js');
 const config = require('../../common-platform-utils/common-constants.js');
 const log = require('../../../utils/logger');
 
+
 let token, response, updatedUserData, userID;
-const utils = new AxioUtils(config.BASE_URL_3);
+const utils = new ApiUtils(config.BASE_URL_3);
 
 Given("The API is initialized with the base URL", async function () {
    log(`Initializing the Base URL: ${config.BASE_URL_3}`);

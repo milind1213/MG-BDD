@@ -7,13 +7,14 @@ const path = require('path');
 
 setDefaultTimeout(60 * 1000);
 
-BeforeAll(async function () {
- log('=========== [ Starting the test execution ] =============');
+BeforeAll(async function () 
+{
+  log('=========== [ Starting the test execution ] =============');
   if (config.SEND_SLACK_REPORT === 'true') {
-    log('Initializing Slack Reporting ...');
-    await SlackReportingUtils.initialize(process.env.SLACK_TOKEN, process.env.SLACK_CHANEL_ID);
-  }
-  log('Environment is ready for Test execution..');
+     log('Initializing Slack Reporting ...');
+     await SlackReportingUtils.initialize(config.SLACK_TOKEN,config.SLACK_CHANEL_ID);
+    }
+  log('Environment is Ready for Test execution..');
 });
 
 
@@ -54,30 +55,22 @@ After(async function (scenario)
     await closeBrowserInstances(this.page, this.context, this.browser);
   }
 
-  if (config.SEND_SLACK_REPORT === 'true') 
-  {
-    const reportDirectory = process.cwd() + '/reports/cucumber-report/CucumberReport.html';
-
-    log('Sending Execution Report to Slack:', reportDirectory);
-    await sendExecutionReportToSlack(reportDirectory, process.env.REPORT_HEADER, process.env.SLACK_CHANEL_ID, process.env.SLACK_TOKEN);
-  }
-
 });
 
 AfterAll(async function () 
 {
-  log('============ Test execution completed ==================== ');
+  log('============ Test execution completed ====================');
   if (config.SEND_SLACK_REPORT === 'true') 
     {
-      const reportPath = path.resolve(process.cwd(), 'reports/cucumber-report.html');
-      log(`Sending final execution report to Slack: ${reportDirectory}`);
-      await SlackReportingUtils.sendReport(
-      reportPath,
-      process.env.REPORT_HEADER,
-      process.env.SLACK_CHANEL_ID,
-      process.env.SLACK_TOKEN
-     );
-   }
+      const reportPath = process.cwd() + '/reports/cucumber-report/CucumberReport.html';
+      log('Sending Execution Report to Slack:', reportPath);
+      await sendExecutionReportToSlack.sendExecutionReportToSlack
+      (
+        reportPath,config.REPORT_HEADER, 
+        config.SLACK_CHANEL_ID,
+        config.SLACK_TOKEN
+      );
+    }
 });
 
 

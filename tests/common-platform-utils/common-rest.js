@@ -2,7 +2,7 @@ const axios = require('axios');
 const qs = require('qs'); // For Serialize data
 const log = require('../../utils/logger');
 
-class AxioUtils {
+class ApiUtils {
    constructor(baseURL) {
      this.baseURL = baseURL;
      this.headers = {};
@@ -115,4 +115,4 @@ class AxioUtils {
 
 }
 
-module.exports = AxioUtils;
+module.exports = ApiUtils;

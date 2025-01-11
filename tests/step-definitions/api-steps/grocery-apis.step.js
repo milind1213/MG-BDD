@@ -1,13 +1,13 @@
 const { Given, When, Then } = require("@cucumber/cucumber");
 const { expect } = require("@playwright/test");
 const axios = require("axios");
-const AxioUtils = require("../../common-platform-utils/common-rest.js");
+const ApiUtils = require("../../common-platform-utils/common-rest.js");
 const config = require("../../common-platform-utils/common-constants.js");
 const {GroceryPayloads} = require("../../page-objects/api-objects/grocery-payloads.js");
 const log = require('../../../utils/logger');
 
 let response,savedToken,endPoint,itemId,payload = {};
-const utils = new AxioUtils(config.BASE_URL_2);
+const utils = new ApiUtils(config.BASE_URL_2);
 
 Given("The Grocery baseURL is initialized", async function () {
   const baseURL = config.BASE_URL_2;
