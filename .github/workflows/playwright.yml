@@ -10,6 +10,7 @@ on:
   schedule:
     - cron: '52 8 * * *'  # 2:22 PM IST (8:52 AM UTC)
 
+
 jobs:
   test:
     runs-on: ubuntu-latest
