@@ -1,5 +1,680 @@
 [
   {
+    "description": "   To verify the functionality of the Groceries API,\n   Including Token Generation, Product Management, Cart, and Order Operations.",
+    "elements": [
+      {
+        "description": "",
+        "id": "groceries-api-test-suite;check-if-the-server-is-up-and-running-via-api",
+        "keyword": "Scenario",
+        "line": 9,
+        "name": "Check if the server is up and running via API",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1675500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "The Grocery baseURL is initialized",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12903800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "I send a GET request to the endpoint \"/status\".",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4145827900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "The response status code should be 200.",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6539399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "The response body should have \"status\" as \"UP\".",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 14791000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 752700
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          },
+          {
+            "name": "@sanity",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "groceries-api-test-suite;validate-the-access-token-generation-api-functionality",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "Validate the Access token Generation API functionality",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2676600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "The Grocery baseURL is initialized",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2395400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 15,
+            "name": "I create a token for client \"TestClient\"",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4659200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "I send a POST request to \"/api-clients\"",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:78"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 566263399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "I should receive a 201 status code",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:46"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3514400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "The response should contain \"accessToken\"",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:50"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5023299
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 252199
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          },
+          {
+            "name": "@sanity",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "groceries-api-test-suite;verify-the-api-functionaliy-to-fetch-a-specific-products-by-id",
+        "keyword": "Scenario",
+        "line": 20,
+        "name": "Verify the API functionaliy to fetch a specific products by ID",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1666900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "The Grocery baseURL is initialized",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 830600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 21,
+            "name": "I send a GET request to the endpoint \"/products/4643\".",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 286238600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 22,
+            "name": "The response status code should be 200.",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2363899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 23,
+            "name": "The Featch Api response body should have 4643.",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:57"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3032400
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 310699
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          },
+          {
+            "name": "@sanity",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "groceries-api-test-suite;validate-the-api-functionality-to-fetch-the-complete-list-of-products.",
+        "keyword": "Scenario",
+        "line": 25,
+        "name": "Validate the API functionality to fetch the complete list of products.",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1635699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "The Grocery baseURL is initialized",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 748999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 26,
+            "name": "The Featch All Product API endpoint is \"/products\"",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:63"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3952099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 27,
+            "name": "I send a GET request to the Featching All produtcts",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:68"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 393031100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 28,
+            "name": "The response status code should be 200.",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1621399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "The response body should contain a list of products.",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:72"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2894400
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 158199
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          },
+          {
+            "name": "@sanity",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "groceries-api-test-suite;access-token-generation-with-missing-or-invalid-client-name",
+        "keyword": "Scenario",
+        "line": 31,
+        "name": "Access Token Generation with Missing or Invalid Client Name",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1134100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "The Grocery baseURL is initialized",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 738800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 32,
+            "name": "I create a token for client \" \"",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 674199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 33,
+            "name": "I send a POST request to \"/api-clients\"",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:78"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 302935300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 34,
+            "name": "I should receive a 400 Bad Request status code",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:87"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3468600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 35,
+            "name": "The response body should contain an error message indicating \"Invalid or missing client name.\"",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:91"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4535100
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 267499
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          },
+          {
+            "name": "@sanity",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "groceries-api-test-suite;fetching-product-by-nonexistent-id",
+        "keyword": "Scenario",
+        "line": 37,
+        "name": "Fetching Product by Nonexistent ID",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1453099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "The Grocery baseURL is initialized",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 659800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 38,
+            "name": "I send a GET request to the NonExist Product ID endpoint \"/products/9999999\"",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:97"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 395784500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 39,
+            "name": "The response status code should be 404 Not Found",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:106"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4972900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 40,
+            "name": "The response body should contain an error message indicating \"No product with id 9999999.\" with NonExistentId Request",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:110"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7015199
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 179500
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          },
+          {
+            "name": "@sanity",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "groceries-api-test-suite;fetching-product-with-invalid-id-format",
+        "keyword": "Scenario",
+        "line": 42,
+        "name": "Fetching Product with Invalid ID Format",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 3365700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "The Grocery baseURL is initialized",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1236499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 43,
+            "name": "I send a GET request to the endpoint \"/products/abc123\".",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 384348599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "The response status code should be 400 Bad Request",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:116"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2860599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 45,
+            "name": "The response body should contain an error message indicating \"The product id must be a number.\" with Invalid ID",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:120"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4835900
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 163499
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          },
+          {
+            "name": "@sanity",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "groceries-api-test-suite",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Groceries API Test Suite",
+    "tags": [
+      {
+        "name": "@api",
+        "line": 1
+      },
+      {
+        "name": "@sanity",
+        "line": 1
+      }
+    ],
+    "uri": "tests\\features\\api\\grocery-apis.feature"
+  },
+  {
     "description": "  As a user of the Polestar website\n  I want to apply filters to new vehicle offers\n  So that I can verify the filter functionality works correctly and display accurate results",
     "elements": [
       {
@@ -14,7 +689,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 364576100
+              "duration": 658509699
             }
           },
           {
@@ -27,7 +702,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4562760299
+              "duration": 2060469800
             }
           },
           {
@@ -40,7 +715,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1103425200
+              "duration": 3859505600
             }
           },
           {
@@ -53,7 +728,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1241082400
+              "duration": 1255649299
             }
           },
           {
@@ -66,7 +741,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4654868899
+              "duration": 4643679500
             }
           },
           {
@@ -79,7 +754,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3769711099
+              "duration": 3718931400
             }
           },
           {
@@ -92,7 +767,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3733524699
+              "duration": 3631702099
             }
           },
           {
@@ -105,7 +780,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 188382399
+              "duration": 187240200
             }
           },
           {
@@ -118,7 +793,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 43904800
+              "duration": 25902600
             }
           },
           {
@@ -126,13 +801,17 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 150580099
+              "duration": 166740200
             }
           }
         ],
         "tags": [
           {
             "name": "@web",
+            "line": 1
+          },
+          {
+            "name": "@sanity",
             "line": 1
           }
         ],
@@ -150,7 +829,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 458516800
+              "duration": 487110199
             }
           },
           {
@@ -163,7 +842,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2293743200
+              "duration": 1908473900
             }
           },
           {
@@ -176,7 +855,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 918199099
+              "duration": 3553654900
             }
           },
           {
@@ -189,7 +868,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1213337900
+              "duration": 1203471499
             }
           },
           {
@@ -202,7 +881,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4609830600
+              "duration": 4616943800
             }
           },
           {
@@ -215,7 +894,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3716200300
+              "duration": 3719833900
             }
           },
           {
@@ -228,7 +907,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3665113199
+              "duration": 3749568399
             }
           },
           {
@@ -241,7 +920,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 183747999
+              "duration": 184481200
             }
           },
           {
@@ -254,7 +933,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20655900
+              "duration": 27691700
             }
           },
           {
@@ -262,13 +941,17 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 131855100
+              "duration": 137319100
             }
           }
         ],
         "tags": [
           {
             "name": "@web",
+            "line": 1
+          },
+          {
+            "name": "@sanity",
             "line": 1
           }
         ],
@@ -282,6 +965,10 @@
     "tags": [
       {
         "name": "@web",
+        "line": 1
+      },
+      {
+        "name": "@sanity",
         "line": 1
       }
     ],

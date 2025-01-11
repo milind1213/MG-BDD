@@ -69,13 +69,6 @@ const utils = {
     throw new Error(`Failed to click after ${retries} attempts`);
 },
 
-
-
-
-
-
-
-
   async Fill(locator, text) 
   {
     try {

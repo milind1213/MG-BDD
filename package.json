@@ -1,13 +1,12 @@
 {
-  "name": "demo-autoamtion-framework",
+  "name": "autoamtion-report",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test:all": "npx cucumber-js --config config-directory/cucumber.json  && node generate-report.js ./tests/features",
     "test:web": "npx cucumber-js --tags @web --config config-directory/cucumber.json && node generate-report.js",
     "test:api": "npx cucumber-js --tags @api --parallel 1 --config config-directory/cucumber.json  && node generate-report.js",
-    "test:web-or-api": "npx cucumber-js --tags \"@web or @api\" --config config-directory/cucumber.json  && node generate-report.js",
-    "test:web-And-api": "npx cucumber-js --tags \"@web and @api\" --config config-directory/cucumber.json  && node generate-report.js"
+    "test:sanity": "npx cucumber-js --tags \"@sanity or @sanity\" --config config-directory/cucumber.json  && node generate-report.js"
   },
   "keywords": [],
   "author": "Milind G",

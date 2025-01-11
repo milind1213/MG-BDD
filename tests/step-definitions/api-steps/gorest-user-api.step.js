@@ -5,7 +5,6 @@ const AxioUtils = require('../../common-platform-utils/common-rest.js');
 const config = require('../../common-platform-utils/common-constants.js');
 const log = require('../../../utils/logger');
 
-
 let token, response, updatedUserData, userID;
 const utils = new AxioUtils(config.BASE_URL_3);
 
@@ -146,12 +145,6 @@ Then("The user should no longer exist in the system", async function () {
        throw new Error("User still exists or there was an unexpected error");
    }
 });
-
-// Function to generate random email
-function generateRandomEmail() {
-  const randomString = Math.random().toString(10).substring(2, 5);
-  return `user${randomString}@example.com`;
-}
 
 Given("Authenticating is with a Invalid access token",async function () {
      const wrongtoken = "b2fbe010fb4b65888da6514dc07c1579232f1c1a9";
@@ -319,3 +312,11 @@ When("A PATCH request is made to update the user with ID {string}", async functi
      expect(emailError).not.toBeUndefined();
      expect(emailError.message).toContain("is invalid");
  });
+
+
+ // Function to generate random email
+function generateRandomEmail() {
+    const randomString = Math.random().toString(10).substring(2, 5);
+    return `user${randomString}@example.com`;
+  }
+  

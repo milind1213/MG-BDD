@@ -1,4 +1,4 @@
-@api
+@api @sanity
 Feature: Groceries API Test Suite
    To verify the functionality of the Groceries API,
    Including Token Generation, Product Management, Cart, and Order Operations.

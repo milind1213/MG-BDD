@@ -29,14 +29,6 @@ class CommonConstants {
     static JIRA_API_TOKEN = process.env.jira_Api_Token;
 
 
-    static BrowserType = {
-        CHROME: 'chrome',
-        CHROMIUM:'chromium',
-        FIREFOX: 'firefox',
-        EDGE: 'edge',
-        WEBKIT:'webkit',
-    };
-
     static CarModels = {
         POLESTAR_2:'Polestar 2',
         POLESTAR_3:'Polestar 3',
@@ -54,6 +46,7 @@ class CommonConstants {
         return result;
     }
 
+    
     static generateRandomText(length) {
         let result = '';
         const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';

@@ -43,7 +43,7 @@ jobs:
 
       # Run Cucumber Tests
       - name: Run Cucumber Tests
-        run: npm run test:web-or-api  # Or use the appropriate script based on your needs
+        run: npm run test:sanity  # Or use the appropriate script based on your needs
 
       # Upload the Cucumber test report as an artifact
       - name: Upload Test Report
