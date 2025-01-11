@@ -19,6 +19,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
+
       # Cache node_modules to speed up future builds
       - name: Cache Node.js modules
         uses: actions/cache@v4
@@ -44,10 +45,14 @@ jobs:
       - name: Run Cucumber Tests
         run: npm run test:sanity  # Or use the appropriate script based on your needs
 
-      # Upload the Cucumber test report as an artifact
-      - name: Upload Test Report
+      # List files in reports directory (debugging step)
+      - name: List files in reports directory
+        run: ls -R reports
+
+      # Upload the Cucumber HTML and JSON test reports as artifacts
+      - name: Upload Test Reports
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v4
         with:
-          name: cucumber-report
-          path: reports/cucumber-report/
+          name: cucumber-reports
+          path: reports/cucumber-report/*
