@@ -2,7 +2,7 @@ name: Test Automation
 
 on:
   schedule:
-    - cron: '45 8 * * *'  # 2:15 PM IST (8:45 AM UTC)
+    - cron: '48 8 * * *'  # 2:15 PM IST (8:45 AM UTC)
 
 jobs:
   test:
