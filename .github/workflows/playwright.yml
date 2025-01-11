@@ -1,12 +1,14 @@
 name: Test Automation
 
 on:
+
   # push:
   #   branches: [main]
 
   schedule:
-    - cron: '18 8 * * *'  # Run every day at 2:00 AM UTC
-
+    - cron: '40 8 * * *'  # 2:10 PM IST (8:30 AM UTC)
+    - cron: '45 8 * * *'  # 2:15 PM IST (8:40 AM UTC)
+    
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -46,7 +48,7 @@ jobs:
 
       # Run Cucumber Tests
       - name: Run Cucumber Tests
-        run: npm run test:sanity  # Or use the appropriate script based on your needs
+        run: npm run test:sanity
 
       # List files in reports directory (debugging step)
       - name: List files in reports directory
