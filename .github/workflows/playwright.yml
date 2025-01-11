@@ -1,8 +1,11 @@
 name: Automated Workflow
 
 on:
+  push:
+    branches:
+      - main  # Run on push to the main branch
   schedule:
-    - cron: '30 9 * * *'  # This will trigger the workflow every day at 9:15 AM UTC (2:45 PM IST)
+    - cron: '30 3 * * *'  # Trigger Every day at 9:00 AM IST (3:30 AM UTC)
 
 jobs:
   test:
