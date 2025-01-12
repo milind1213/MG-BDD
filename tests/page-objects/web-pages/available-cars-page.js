@@ -111,11 +111,11 @@ class AvailableCarsPage {
     const isOptionVisible = await filterOptionLocator.isVisible();
     if (isOptionVisible) 
     {
-        log(`Clicking on sort filter: ${option}`);
+        log(`Clicking on sort filter: [${option}]`);
         await utils.Click(filterOptionLocator);
         await this.page.waitForTimeout(3000);
     } else {
-        throw new Error(`Sort filter option "${option}" not found`);
+        throw new Error(`Sort filter option [${option}] not found`);
     }
   }
 

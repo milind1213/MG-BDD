@@ -15,7 +15,7 @@ class HomePage {
 
   async goTo(url) 
   {
-    log(`[Navigating to URL] - ${url}`);
+    log(`Navigating to URL: [${url}]`);
     await this.page.goto(url);
   }
 

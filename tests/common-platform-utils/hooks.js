@@ -11,9 +11,8 @@ BeforeAll(async function ()
 {
   log('=========== [ Starting the test execution ] =============');
   if (config.SEND_SLACK_REPORT === 'true') {
-     log('Initializing Slack Reporting ...');
-     await SlackReportingUtils.initialize(config.SLACK_TOKEN,config.SLACK_CHANEL_ID);
-    }
+       await slack-reporting.initialize(config.SLACK_TOKEN,config.SLACK_CHANEL_ID);
+     }
   log('Environment is Ready for Test execution..');
 });
 

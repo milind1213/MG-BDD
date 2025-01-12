@@ -22,7 +22,7 @@ Given(`I accept cookies and click on the {string} button`, async (buttonName) =>
 
 Given(`I navigate to the {string} and Clicked on {string} button`, async (newVehicle, filterBtn) => {
     await offerPage.clickOnNewVehicleButton();
-    log(`Successfully Clicked on the [${newVehicle}[] and [${filterBtn}[] buttons.`);
+    log(`Successfully Clicked on the [${newVehicle}] and [${filterBtn}] buttons.`);
     await offerPage.click_FilterButton();
 });
 

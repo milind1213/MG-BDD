@@ -14,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 748500
+              "duration": 956500
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3420799
+              "duration": 5045399
             }
           },
           {
@@ -40,7 +40,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5002238999
+              "duration": 1763058200
             }
           },
           {
@@ -53,7 +53,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2385699
+              "duration": 1949700
             }
           },
           {
@@ -66,7 +66,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3445499
+              "duration": 4076999
             }
           },
           {
@@ -74,15 +74,11 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 147799
+              "duration": 368399
             }
           }
         ],
         "tags": [
-          {
-            "name": "@api",
-            "line": 1
-          },
           {
             "name": "@sanity",
             "line": 1
@@ -102,7 +98,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 753099
+              "duration": 848300
             }
           },
           {
@@ -115,7 +111,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 512499
+              "duration": 748799
             }
           },
           {
@@ -128,7 +124,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1016800
+              "duration": 2076000
             }
           },
           {
@@ -141,7 +137,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 397401499
+              "duration": 802776799
             }
           },
           {
@@ -154,7 +150,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1076299
+              "duration": 1644199
             }
           },
           {
@@ -167,7 +163,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1950299
+              "duration": 1218299
             }
           },
           {
@@ -175,15 +171,11 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 65899
+              "duration": 51100
             }
           }
         ],
         "tags": [
-          {
-            "name": "@api",
-            "line": 1
-          },
           {
             "name": "@sanity",
             "line": 1
@@ -203,7 +195,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 381999
+              "duration": 955299
             }
           },
           {
@@ -216,7 +208,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 498500
+              "duration": 509500
             }
           },
           {
@@ -229,7 +221,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 248333799
+              "duration": 293724099
             }
           },
           {
@@ -242,7 +234,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1532600
+              "duration": 1348300
             }
           },
           {
@@ -255,7 +247,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1122800
+              "duration": 1464299
             }
           },
           {
@@ -263,15 +255,11 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 49199
+              "duration": 48299
             }
           }
         ],
         "tags": [
-          {
-            "name": "@api",
-            "line": 1
-          },
           {
             "name": "@sanity",
             "line": 1
@@ -291,7 +279,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1755299
+              "duration": 799700
             }
           },
           {
@@ -304,7 +292,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 721800
+              "duration": 305200
             }
           },
           {
@@ -317,7 +305,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1640800
+              "duration": 1933500
             }
           },
           {
@@ -330,7 +318,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 329987300
+              "duration": 366238600
             }
           },
           {
@@ -343,7 +331,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1340999
+              "duration": 1652100
             }
           },
           {
@@ -356,7 +344,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1278800
+              "duration": 1334000
             }
           },
           {
@@ -364,15 +352,11 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 48899
+              "duration": 46699
             }
           }
         ],
         "tags": [
-          {
-            "name": "@api",
-            "line": 1
-          },
           {
             "name": "@sanity",
             "line": 1
@@ -392,7 +376,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 795600
+              "duration": 1094700
             }
           },
           {
@@ -405,7 +389,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 391200
+              "duration": 477300
             }
           },
           {
@@ -418,7 +402,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 166599
+              "duration": 152699
             }
           },
           {
@@ -431,7 +415,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 260167399
+              "duration": 276132800
             }
           },
           {
@@ -444,7 +428,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1329499
+              "duration": 899699
             }
           },
           {
@@ -457,7 +441,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1517399
+              "duration": 1142200
             }
           },
           {
@@ -465,15 +449,11 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 41899
+              "duration": 39499
             }
           }
         ],
         "tags": [
-          {
-            "name": "@api",
-            "line": 1
-          },
           {
             "name": "@sanity",
             "line": 1
@@ -493,7 +473,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1049799
+              "duration": 521200
             }
           },
           {
@@ -506,7 +486,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 773100
+              "duration": 586900
             }
           },
           {
@@ -519,7 +499,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 244747199
+              "duration": 318693500
             }
           },
           {
@@ -532,7 +512,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1245799
+              "duration": 1139000
             }
           },
           {
@@ -545,7 +525,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1667900
+              "duration": 1271200
             }
           },
           {
@@ -553,15 +533,11 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 37000
+              "duration": 53899
             }
           }
         ],
         "tags": [
-          {
-            "name": "@api",
-            "line": 1
-          },
           {
             "name": "@sanity",
             "line": 1
@@ -581,7 +557,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1156600
+              "duration": 703800
             }
           },
           {
@@ -594,7 +570,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 370700
+              "duration": 414999
             }
           },
           {
@@ -607,7 +583,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 251795100
+              "duration": 298365899
             }
           },
           {
@@ -620,7 +596,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1084499
+              "duration": 771799
             }
           },
           {
@@ -633,7 +609,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1397300
+              "duration": 1008899
             }
           },
           {
@@ -641,15 +617,11 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 33999
+              "duration": 31199
             }
           }
         ],
         "tags": [
-          {
-            "name": "@api",
-            "line": 1
-          },
           {
             "name": "@sanity",
             "line": 1
@@ -663,10 +635,6 @@
     "keyword": "Feature",
     "name": "Groceries API Test Suite",
     "tags": [
-      {
-        "name": "@api",
-        "line": 1
-      },
       {
         "name": "@sanity",
         "line": 1
@@ -689,7 +657,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 768341199
+              "duration": 282390199
             }
           },
           {
@@ -702,7 +670,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5619874599
+              "duration": 2768426500
             }
           },
           {
@@ -715,7 +683,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3392084600
+              "duration": 3582324000
             }
           },
           {
@@ -728,7 +696,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1136023100
+              "duration": 1125588099
             }
           },
           {
@@ -741,7 +709,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4527909800
+              "duration": 4442915799
             }
           },
           {
@@ -754,7 +722,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3595479200
+              "duration": 3589796399
             }
           },
           {
@@ -767,7 +735,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3582401799
+              "duration": 3571272000
             }
           },
           {
@@ -780,7 +748,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 90305299
+              "duration": 81967000
             }
           },
           {
@@ -793,7 +761,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14915600
+              "duration": 18639499
             }
           },
           {
@@ -801,15 +769,11 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 81941100
+              "duration": 57679700
             }
           }
         ],
         "tags": [
-          {
-            "name": "@web",
-            "line": 1
-          },
           {
             "name": "@sanity",
             "line": 1
@@ -829,7 +793,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 288355500
+              "duration": 300759500
             }
           },
           {
@@ -842,7 +806,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1660025499
+              "duration": 4364547099
             }
           },
           {
@@ -855,7 +819,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3192760099
+              "duration": 3802177700
             }
           },
           {
@@ -868,7 +832,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1112581700
+              "duration": 1135603499
             }
           },
           {
@@ -881,7 +845,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4522600800
+              "duration": 4445347600
             }
           },
           {
@@ -894,7 +858,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3552956500
+              "duration": 3577366200
             }
           },
           {
@@ -907,7 +871,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3629823499
+              "duration": 3589874900
             }
           },
           {
@@ -920,7 +884,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 104388099
+              "duration": 74545200
             }
           },
           {
@@ -933,7 +897,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 27080799
+              "duration": 20461799
             }
           },
           {
@@ -941,15 +905,11 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 66611499
+              "duration": 54132799
             }
           }
         ],
         "tags": [
-          {
-            "name": "@web",
-            "line": 1
-          },
           {
             "name": "@sanity",
             "line": 1
@@ -963,10 +923,6 @@
     "keyword": "Feature",
     "name": "Verify Filter Functionality for Polestar Offers",
     "tags": [
-      {
-        "name": "@web",
-        "line": 1
-      },
       {
         "name": "@sanity",
         "line": 1
