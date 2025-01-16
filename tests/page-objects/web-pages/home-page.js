@@ -25,32 +25,13 @@ class HomePage {
     await utils.waitLocaterVisibility(headerLocator);
     await utils.Click(headerLocator); 
   }
-  
-  // async clickShoppingToolOption(option) {
-  //   try {
-  //       const locator = `//a[@class='css-4c83wv' and contains(text(),'${option}')]`;
-  //       const element = this.page.locator(locator);
-  //       await element.waitFor({ state: 'visible' });
-  //       await utils.clickWithRetries(element);
-  //   } catch (error) {
-  //       log(`Option "${option}" not found or could not be clicked:`, error);
-  //   }
-  // }
-
-
 
   async clickShoppingToolOption(option) {
     try {
         const locator = `//a[@class='css-4c83wv' and contains(text(),'${option}')]`;
         const element = this.page.locator(locator);
-
-        // Wait for the element to be attached to the DOM and stable
         await element.waitFor({ state: 'visible', timeout: 30000 });
-
-        // Scroll element into view explicitly
         await element.scrollIntoViewIfNeeded();
-
-        // Check if the element is obscured or intercepted by another element
         const isObstructed = await element.evaluate((el) => {
             const rect = el.getBoundingClientRect();
             const centerX = rect.left + rect.width / 2;
@@ -63,17 +44,12 @@ class HomePage {
             throw new Error(`Element "${option}" is obstructed by another element.`);
         }
 
-        // Use force click as a fallback if all else fails
         await element.click({ timeout: 10000, force: true });
-
         log(`Successfully clicked the "${option}" option.`);
     } catch (error) {
         log(`Option "${option}" not found or could not be clicked:`, error);
-
-        // Take a screenshot for debugging
         await this.page.screenshot({ path: `error-${option}.png` });
-
-        throw error; // Rethrow the error for further handling
+        throw error; 
     }
 }
 

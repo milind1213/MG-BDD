@@ -1,4 +1,4 @@
-
+@api
 Feature: GoRest User Management APIs
   As a tester, I want to validate the core operations of the Gorest user Management APIs
   so that I can ensure it functions correctly for listing, creating, updating, and deleting users.

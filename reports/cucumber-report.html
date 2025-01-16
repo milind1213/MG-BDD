@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Cucumber Feature Report</title>
-    <link rel="icon" href="https://www.lambdatest.com/favicon.ico" >
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" >
-    <style type="text/css">
-      .panel-heading {
+
+<head>
+  <title>Cucumber Feature Report</title>
+  <link rel="icon" href="https://www.lambdatest.com/favicon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style type="text/css">
+    .panel-heading {
     padding: 0;
 }
 
@@ -260,6 +261,10 @@ pre {
     color: #616161;
 }
 
+.stepname {
+    word-wrap: break-word;
+}
+
 .feature-passed {
     display: block;
 }
@@ -284,119 +289,181 @@ pre {
     min-width: 100%;
 }
 
+.ellipsis {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all .2s linear;
+    white-space: nowrap;
+    padding:.5rem 1rem;
+}
+.ellipsis:focus, .ellipsis:hover {
+  color:transparent;
+}
+.ellipsis:focus:after,.ellipsis:hover:after{
+    content:attr(data-text);
+    overflow: visible;
+    text-overflow: inherit;
+    background: #fff;
+    position: absolute;
+    left:auto;
+    top:auto;
+    width: auto;
+    max-width: 100%;
+    border: 1px solid #eaebec;
+    padding: 0 .5rem;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.28);
+    white-space: normal;
+    word-wrap: break-word;
+    display:block;
+    color:black;
+    margin-top:-1.25rem;
+    z-index: 1;
+  }
 
-/** Issue in google-charts tooltip - https://github.com/google/google-visualization-issues/issues/2162 */
-.google-visualization-tooltip { pointer-events:none; }
-      
-.count-wrapper{
-  display: flex;
-  gap: 15px;
-}
-.card{
-  border: 1px solid #f5f5f5;
-  padding: 15px;
-  color: #fff;
-  border-radius: 5px;
-  flex: 1;
-}
-.generated-on{
-  margin-right: 10px;
-}
-.card h4{
-  font-size: 15px;
-}
-.red-box{
-  background: #d9534e;
-}
-.blue-box{
-  background: #0074ff;
-}
-.yellow-box{
-  background: #f0ad4e;
-}
-.saffron-box{
-  background: #ff9933;
-}
-.green-box{
-  background: #5cb85b;
-}
-.gray-box{
-  background: #999;
-}
-.amb-box{
-  background: #218bcf;
-}
-.undefined-box{
-  background: #22c2e2;
-}
-.mb-20px{
-  margin-bottom: 20px;
-}
-    </style>
-    <meta charset="UTF-8">
-  </head>
-  <body>
+    /** Issue in google-charts tooltip - https://github.com/google/google-visualization-issues/issues/2162 */
+    .google-visualization-tooltip {
+      pointer-events: none;
+    }
 
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
+    .count-wrapper {
+      display: flex;
+      gap: 15px;
+    }
+
+    .card {
+      border: 1px solid #f5f5f5;
+      padding: 15px;
+      color: #fff;
+      border-radius: 5px;
+      flex: 1;
+    }
+
+    .generated-on {
+      margin-right: 10px;
+    }
+
+    .card h4 {
+      font-size: 15px;
+    }
+
+    .red-box {
+      background: #d9534e;
+    }
+
+    .blue-box {
+      background: #0074ff;
+    }
+
+    .yellow-box {
+      background: #f0ad4e;
+    }
+
+    .saffron-box {
+      background: #ff9933;
+    }
+
+    .green-box {
+      background: #5cb85b;
+    }
+
+    .gray-box {
+      background: #999;
+    }
+
+    .amb-box {
+      background: #218bcf;
+    }
+
+    .undefined-box {
+      background: #22c2e2;
+    }
+
+    .mb-20px {
+      margin-bottom: 20px;
+    }
+  </style>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+
+  <div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
         
-          <a class="navbar-brand">Cucumberjs Report</a>
-          <div class="project-name visible-md visible-lg">automation-execution-report</div>
-          <div class="label-container">
-                <div class="generated-on">
-                  Sun Jan 12 2025 12:46:31 GMT+0530 (India Standard Time)
-                </div>
+          <a class="navbar-brand">
+            Cucumberjs Report
+          </a>
+          <div class="project-name visible-md visible-lg">
+            automation-execution-report
           </div>
-        </div>
+          <div class="label-container">
+            <div class="generated-on">
+              Thu Jan 16 2025 12:02:56 GMT+0530 (India Standard Time)
+            </div>
+          </div>
       </div>
     </div>
+  </div>
 
-    <div class="container">
+  <div class="container">
 
-      <div class="count-wrapper mb-20px">
-        <div class="card blue-box">
-          <div class="feature-title">
-            <h4>All Scenarios</h2>
-          </div>
-          <div class="feature-value">
-            <h5>
-              9
-            </h5>
-          </div>
+    <div class="count-wrapper mb-20px">
+      <div class="card blue-box">
+        <div class="feature-title">
+          <h4>All Scenarios</h2>
         </div>
-        <div class="card green-box">
-          <div class="feature-title">
-            <h4>Passed Scenarios</h2>
-          </div>
-          <div class="feature-value">
-            <h5>
-              9
-            </h5>
-          </div>
+        <div class="feature-value">
+          <h5>
+            9
+          </h5>
         </div>
-        <div class="card red-box">
-          <div class="feature-title">
-            <h4>Failed Scenarios</h2>
-          </div>
-          <div class="feature-value">
-            <h5>
-              0
-            </h5>
-          </div>
-        </div>
-        
-        
-        
-        
-        
       </div>
-      <div class="row">
-        <div class="chart col-lg-6 col-md-6" id="piechart_features"></div>
-        <div class="chart col-lg-6 col-md-6" id="piechart_scenarios"></div>
+      <div class="card green-box">
+        <div class="feature-title">
+          <h4>Passed Scenarios</h2>
+        </div>
+        <div class="feature-value">
+          <h5>
+            9
+          </h5>
+        </div>
       </div>
-
+      <div class="card red-box">
+        <div class="feature-title">
+          <h4>Failed Scenarios</h2>
+        </div>
+        <div class="feature-value">
+          <h5>
+            0
+          </h5>
+        </div>
+      </div>
       
+          
+              
+                  
+                      
+    </div>
+    <div class="row">
+      <div class="chart col-lg-6 col-md-6" id="piechart_features"></div>
+      <div class="chart col-lg-6 col-md-6" id="piechart_scenarios"></div>
+    </div>
+
+    <div>
+      <p class="text-left">
+        Execution Time: 55s 668ms
+      </p>
+      <p class="text-right">
+        <a id="expand_all">Expand All</a>
+        <span> | </span>
+        <a id="collapse_all">Collapse All</a>
+      </p>
+    </div>
+
+    
       <div class="panel panel-default">
         <div class="panel-heading open">
           <h4 class="panel-title">
@@ -411,62 +478,69 @@ pre {
           <div class="panel-body">
             <div class="row">
               
-             
-              
-              
-              <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <div class=pull-left>
-                    <strong> App Version: </strong>1.0.0
-                  </div>
-              </div>
-              
-              
-              
-              <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <div class=pull-right-lg>
-                    <strong> Test Environment: </strong>QA
-                  </div>
-              </div>
-              
-              
-              
-              <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <div class=pull-left>
-                    <strong> Browser: </strong>Chrome 112.0
-                  </div>
-              </div>
-              
-              
-              
-              <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <div class=pull-right-lg>
-                    <strong> Platform: </strong>win32 10.0.22631
-                  </div>
-              </div>
-              
-              
-              
-              <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <div class=pull-left>
-                    <strong> Parallel: </strong>Scenarios
-                  </div>
-              </div>
-              
-              
-              
-              <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <div class=pull-right-lg>
-                    <strong> Executed: </strong>Milind G
-                  </div>
-              </div>
-              
+                
+                  
+                    
+                      <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class=pull-left>
+                          <strong>
+                            App Version:
+                          </strong>
+                          1.1.0
+                        </div>
+                      </div>
+                      
+                  
+                    
+                      <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class=pull-right-lg>
+                          <strong>
+                            Test Environment:
+                          </strong>
+                          QA-Envirment
+                        </div>
+                      </div>
+                      
+                  
+                    
+                      <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class=pull-left>
+                          <strong>
+                            Browser:
+                          </strong>
+                          chrome
+                        </div>
+                      </div>
+                      
+                  
+                    
+                      <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class=pull-right-lg>
+                          <strong>
+                            Platform:
+                          </strong>
+                          win32 10.0.22631
+                        </div>
+                      </div>
+                      
+                  
+                    
+                      <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class=pull-left>
+                          <strong>
+                            Executed:
+                          </strong>
+                          Milind Ghongade
+                        </div>
+                      </div>
+                      
             </div>
           </div>
         </div>
       </div>
       
 
-      
+        
 
 
 <div class="row" xmlns="http://www.w3.org/1999/html">
@@ -480,14 +554,20 @@ pre {
                 <h4 class="panel-title">
                     
                     <div class="tags"> <span class="tag">@sanity</span>
+                         <span class="tag">@api</span>
                         
                     </div>
                     
-                    <a data-toggle="collapse" href="#collapseFeatureautomation_execution_report41c9c004-760d-4602-9a87-9029ea863c17">
+                    <a data-toggle="collapse" href="#collapseFeatureautomation_execution_report1e9c1096-147c-49af-9743-66bdfc1b9a83">
                         <i class="glyphicon glyphicon-chevron-right"></i>
                         <i class="glyphicon glyphicon-chevron-down"></i>
                         <b>Feature:</b>Groceries API Test Suite
                         <span class="label-container">
+
+                        
+
+                        <span>18s 950ms</span>
+                                
               <span class="label label-success"
                                                          title="7 Scenarios Passed">7</span>
               
@@ -499,7 +579,7 @@ pre {
                     </a>
                 </h4>
             </div>
-            <div id="collapseFeatureautomation_execution_report41c9c004-760d-4602-9a87-9029ea863c17" class="panel-collapse collapse">
+            <div id="collapseFeatureautomation_execution_report1e9c1096-147c-49af-9743-66bdfc1b9a83" class="panel-collapse collapse">
                 <div class="panel-body">
                     
                     <div class="description">   To verify the functionality of the Groceries API,<br/>   Including Token Generation, Product Management, Cart, and Order Operations.</div>
@@ -514,16 +594,17 @@ pre {
                                 <div class="tags">
                                 </div>
                                 
-                                <a data-toggle="collapse" href="#collapseScenarioautomation_execution_reporta6481500-2b47-4f0c-aab2-6cfe6adeedad">
+                                <a data-toggle="collapse" href="#collapseScenarioautomation_execution_report111608ef-d63b-4eb5-83ef-8b26315fb657">
                                     <div>
 
                                         <div style="padding-right: 30px">
                                             <i class="glyphicon glyphicon-chevron-right"></i>
                                             <i class="glyphicon glyphicon-chevron-down"></i>
-                                            <b>Scenario:</b>Check if the server is up and running via API
+                                            <b>Scenario:</b><div class="ellipsis" data-text="Check if the server is up and running via API">Check if the server is up and running via API</div>
                                         </div>
                                         <div>
                             <span class="label-container ">
+                                <span>4s 234ms</span>
                               
                               <span class="label label-success"
                                                                title="4 Steps Passed">4</span>
@@ -539,7 +620,7 @@ pre {
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseScenarioautomation_execution_reporta6481500-2b47-4f0c-aab2-6cfe6adeedad"
+                        <div id="collapseScenarioautomation_execution_report111608ef-d63b-4eb5-83ef-8b26315fb657"
                              class="panel-collapse collapse">
                             <div class="panel-body">
                                 <div></div>
@@ -558,11 +639,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Given </span>
-                          <span> The Grocery baseURL is initialized</span>
+                          <span class="stepname"> The Grocery baseURL is initialized</span>
                             
                           
                               <span class="step-duration">
-                               5ms
+                               7ms
                               </span>
                             
                          
@@ -596,11 +677,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">When </span>
-                          <span> I send a GET request to the endpoint &quot;/status&quot;.</span>
+                          <span class="stepname"> I send a GET request to the endpoint &quot;/status&quot;.</span>
                             
                           
                               <span class="step-duration">
-                               1s 763ms
+                               4s 219ms
                               </span>
                             
                          
@@ -634,11 +715,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Then </span>
-                          <span> The response status code should be 200.</span>
+                          <span class="stepname"> The response status code should be 200.</span>
                             
                           
                               <span class="step-duration">
-                               1ms
+                               3ms
                               </span>
                             
                          
@@ -672,7 +753,7 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">And </span>
-                          <span> The response body should have &quot;status&quot; as &quot;UP&quot;.</span>
+                          <span class="stepname"> The response body should have &quot;status&quot; as &quot;UP&quot;.</span>
                             
                           
                               <span class="step-duration">
@@ -714,16 +795,17 @@ pre {
                                 <div class="tags">
                                 </div>
                                 
-                                <a data-toggle="collapse" href="#collapseScenarioautomation_execution_report6a72baa7-56ec-4341-8812-83130dd2cdab">
+                                <a data-toggle="collapse" href="#collapseScenarioautomation_execution_report141a275d-5212-4af9-bd3e-6da5ac31fe76">
                                     <div>
 
                                         <div style="padding-right: 30px">
                                             <i class="glyphicon glyphicon-chevron-right"></i>
                                             <i class="glyphicon glyphicon-chevron-down"></i>
-                                            <b>Scenario:</b>Validate the Access token Generation API functionality
+                                            <b>Scenario:</b><div class="ellipsis" data-text="Validate the Access token Generation API functionality">Validate the Access token Generation API functionality</div>
                                         </div>
                                         <div>
                             <span class="label-container ">
+                                <span>4s 668ms</span>
                               
                               <span class="label label-success"
                                                                title="5 Steps Passed">5</span>
@@ -739,7 +821,7 @@ pre {
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseScenarioautomation_execution_report6a72baa7-56ec-4341-8812-83130dd2cdab"
+                        <div id="collapseScenarioautomation_execution_report141a275d-5212-4af9-bd3e-6da5ac31fe76"
                              class="panel-collapse collapse">
                             <div class="panel-body">
                                 <div></div>
@@ -758,11 +840,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Given </span>
-                          <span> The Grocery baseURL is initialized</span>
+                          <span class="stepname"> The Grocery baseURL is initialized</span>
                             
                           
                               <span class="step-duration">
-                               < 1ms
+                               7ms
                               </span>
                             
                          
@@ -796,7 +878,83 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Given </span>
-                          <span> I create a token for client &quot;TestClient&quot;</span>
+                          <span class="stepname"> I create a token for client &quot;TestClient&quot;</span>
+                            
+                          
+                              <span class="step-duration">
+                               5ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">When </span>
+                          <span class="stepname"> I send a POST request to &quot;/api-clients&quot;</span>
+                            
+                          
+                              <span class="step-duration">
+                               4s 649ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Then </span>
+                          <span class="stepname"> I should receive a 201 status code</span>
                             
                           
                               <span class="step-duration">
@@ -833,88 +991,12 @@ pre {
                                     
                                     
                                     <span class="text">
-                        <span class="keyword highlight">When </span>
-                          <span> I send a POST request to &quot;/api-clients&quot;</span>
-                            
-                          
-                              <span class="step-duration">
-                               802ms
-                              </span>
-                            
-                         
-                            
-                          
-                          <!-- Adding data table data-->
-                          
-                      </span>
-                                
-                                
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                </div>
-                                </p>
-                                
-                                
-                                
-                                <p class="scenario-container">
-                                <div class="row steps">
-                                    
-                                    
-                                    <span class="label label-success" title="Success"><i
-                                            class="glyphicon glyphicon-ok"></i></span>
-                                    
-                                    
-                                    <span class="text">
-                        <span class="keyword highlight">Then </span>
-                          <span> I should receive a 201 status code</span>
-                            
-                          
-                              <span class="step-duration">
-                               1ms
-                              </span>
-                            
-                         
-                            
-                          
-                          <!-- Adding data table data-->
-                          
-                      </span>
-                                
-                                
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                </div>
-                                </p>
-                                
-                                
-                                
-                                <p class="scenario-container">
-                                <div class="row steps">
-                                    
-                                    
-                                    <span class="label label-success" title="Success"><i
-                                            class="glyphicon glyphicon-ok"></i></span>
-                                    
-                                    
-                                    <span class="text">
                         <span class="keyword highlight">And </span>
-                          <span> The response should contain &quot;accessToken&quot;</span>
+                          <span class="stepname"> The response should contain &quot;accessToken&quot;</span>
                             
                           
                               <span class="step-duration">
-                               1ms
+                               3ms
                               </span>
                             
                          
@@ -952,16 +1034,17 @@ pre {
                                 <div class="tags">
                                 </div>
                                 
-                                <a data-toggle="collapse" href="#collapseScenarioautomation_execution_reportc272dfc9-d156-4f6f-9740-bb6506fd836b">
+                                <a data-toggle="collapse" href="#collapseScenarioautomation_execution_reportb39699ac-66e2-437b-a91c-3c639717144d">
                                     <div>
 
                                         <div style="padding-right: 30px">
                                             <i class="glyphicon glyphicon-chevron-right"></i>
                                             <i class="glyphicon glyphicon-chevron-down"></i>
-                                            <b>Scenario:</b>Verify the API functionaliy to fetch a specific products by ID
+                                            <b>Scenario:</b><div class="ellipsis" data-text="Verify the API functionaliy to fetch a specific products by ID">Verify the API functionaliy to fetch a specific products by ID</div>
                                         </div>
                                         <div>
                             <span class="label-container ">
+                                <span>4s 573ms</span>
                               
                               <span class="label label-success"
                                                                title="4 Steps Passed">4</span>
@@ -977,7 +1060,7 @@ pre {
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseScenarioautomation_execution_reportc272dfc9-d156-4f6f-9740-bb6506fd836b"
+                        <div id="collapseScenarioautomation_execution_reportb39699ac-66e2-437b-a91c-3c639717144d"
                              class="panel-collapse collapse">
                             <div class="panel-body">
                                 <div></div>
@@ -996,11 +1079,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Given </span>
-                          <span> The Grocery baseURL is initialized</span>
+                          <span class="stepname"> The Grocery baseURL is initialized</span>
                             
                           
                               <span class="step-duration">
-                               < 1ms
+                               4ms
                               </span>
                             
                          
@@ -1034,11 +1117,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Given </span>
-                          <span> I send a GET request to the endpoint &quot;/products/4643&quot;.</span>
+                          <span class="stepname"> I send a GET request to the endpoint &quot;/products/4643&quot;.</span>
                             
                           
                               <span class="step-duration">
-                               293ms
+                               4s 564ms
                               </span>
                             
                          
@@ -1072,11 +1155,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Then </span>
-                          <span> The response status code should be 200.</span>
+                          <span class="stepname"> The response status code should be 200.</span>
                             
                           
                               <span class="step-duration">
-                               1ms
+                               2ms
                               </span>
                             
                          
@@ -1110,11 +1193,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">And </span>
-                          <span> The Featch Api response body should have 4643.</span>
+                          <span class="stepname"> The Featch Api response body should have 4643.</span>
                             
                           
                               <span class="step-duration">
-                               1ms
+                               2ms
                               </span>
                             
                          
@@ -1152,16 +1235,17 @@ pre {
                                 <div class="tags">
                                 </div>
                                 
-                                <a data-toggle="collapse" href="#collapseScenarioautomation_execution_report9d6b4e56-2b04-4309-a015-3a75a38afa66">
+                                <a data-toggle="collapse" href="#collapseScenarioautomation_execution_report648b0af9-f968-43a4-b09b-8439a638049e">
                                     <div>
 
                                         <div style="padding-right: 30px">
                                             <i class="glyphicon glyphicon-chevron-right"></i>
                                             <i class="glyphicon glyphicon-chevron-down"></i>
-                                            <b>Scenario:</b>Validate the API functionality to fetch the complete list of products.
+                                            <b>Scenario:</b><div class="ellipsis" data-text="Validate the API functionality to fetch the complete list of products.">Validate the API functionality to fetch the complete list of products.</div>
                                         </div>
                                         <div>
                             <span class="label-container ">
+                                <span>4s 130ms</span>
                               
                               <span class="label label-success"
                                                                title="5 Steps Passed">5</span>
@@ -1177,7 +1261,7 @@ pre {
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseScenarioautomation_execution_report9d6b4e56-2b04-4309-a015-3a75a38afa66"
+                        <div id="collapseScenarioautomation_execution_report648b0af9-f968-43a4-b09b-8439a638049e"
                              class="panel-collapse collapse">
                             <div class="panel-body">
                                 <div></div>
@@ -1196,11 +1280,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Given </span>
-                          <span> The Grocery baseURL is initialized</span>
+                          <span class="stepname"> The Grocery baseURL is initialized</span>
                             
                           
                               <span class="step-duration">
-                               < 1ms
+                               7ms
                               </span>
                             
                          
@@ -1234,11 +1318,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Given </span>
-                          <span> The Featch All Product API endpoint is &quot;/products&quot;</span>
+                          <span class="stepname"> The Featch All Product API endpoint is &quot;/products&quot;</span>
                             
                           
                               <span class="step-duration">
-                               1ms
+                               5ms
                               </span>
                             
                          
@@ -1272,11 +1356,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">When </span>
-                          <span> I send a GET request to the Featching All produtcts</span>
+                          <span class="stepname"> I send a GET request to the Featching All produtcts</span>
                             
                           
                               <span class="step-duration">
-                               366ms
+                               4s 112ms
                               </span>
                             
                          
@@ -1310,7 +1394,7 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Then </span>
-                          <span> The response status code should be 200.</span>
+                          <span class="stepname"> The response status code should be 200.</span>
                             
                           
                               <span class="step-duration">
@@ -1348,11 +1432,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">And </span>
-                          <span> The response body should contain a list of products.</span>
+                          <span class="stepname"> The response body should contain a list of products.</span>
                             
                           
                               <span class="step-duration">
-                               1ms
+                               2ms
                               </span>
                             
                          
@@ -1390,16 +1474,17 @@ pre {
                                 <div class="tags">
                                 </div>
                                 
-                                <a data-toggle="collapse" href="#collapseScenarioautomation_execution_report7f39596f-23c8-4252-8b3f-b913d363e011">
+                                <a data-toggle="collapse" href="#collapseScenarioautomation_execution_reported6fb4e6-0c23-4916-ae4d-6222450c70f6">
                                     <div>
 
                                         <div style="padding-right: 30px">
                                             <i class="glyphicon glyphicon-chevron-right"></i>
                                             <i class="glyphicon glyphicon-chevron-down"></i>
-                                            <b>Scenario:</b>Access Token Generation with Missing or Invalid Client Name
+                                            <b>Scenario:</b><div class="ellipsis" data-text="Access Token Generation with Missing or Invalid Client Name">Access Token Generation with Missing or Invalid Client Name</div>
                                         </div>
                                         <div>
                             <span class="label-container ">
+                                <span>589ms</span>
                               
                               <span class="label label-success"
                                                                title="5 Steps Passed">5</span>
@@ -1415,7 +1500,7 @@ pre {
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseScenarioautomation_execution_report7f39596f-23c8-4252-8b3f-b913d363e011"
+                        <div id="collapseScenarioautomation_execution_reported6fb4e6-0c23-4916-ae4d-6222450c70f6"
                              class="panel-collapse collapse">
                             <div class="panel-body">
                                 <div></div>
@@ -1434,7 +1519,7 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Given </span>
-                          <span> The Grocery baseURL is initialized</span>
+                          <span class="stepname"> The Grocery baseURL is initialized</span>
                             
                           
                               <span class="step-duration">
@@ -1472,11 +1557,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Given </span>
-                          <span> I create a token for client &quot; &quot;</span>
+                          <span class="stepname"> I create a token for client &quot; &quot;</span>
                             
                           
                               <span class="step-duration">
-                               < 1ms
+                               1ms
                               </span>
                             
                          
@@ -1510,11 +1595,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">When </span>
-                          <span> I send a POST request to &quot;/api-clients&quot;</span>
+                          <span class="stepname"> I send a POST request to &quot;/api-clients&quot;</span>
                             
                           
                               <span class="step-duration">
-                               276ms
+                               582ms
                               </span>
                             
                          
@@ -1548,11 +1633,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Then </span>
-                          <span> I should receive a 400 Bad Request status code</span>
+                          <span class="stepname"> I should receive a 400 Bad Request status code</span>
                             
                           
                               <span class="step-duration">
-                               < 1ms
+                               1ms
                               </span>
                             
                          
@@ -1586,11 +1671,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">And </span>
-                          <span> The response body should contain an error message indicating &quot;Invalid or missing client name.&quot;</span>
+                          <span class="stepname"> The response body should contain an error message indicating &quot;Invalid or missing client name.&quot;</span>
                             
                           
                               <span class="step-duration">
-                               1ms
+                               3ms
                               </span>
                             
                          
@@ -1628,16 +1713,17 @@ pre {
                                 <div class="tags">
                                 </div>
                                 
-                                <a data-toggle="collapse" href="#collapseScenarioautomation_execution_report575d1fdb-6193-43b9-98c8-e4c3a4e164dc">
+                                <a data-toggle="collapse" href="#collapseScenarioautomation_execution_report26a1821c-5441-4bbf-a73e-de78fe1640d5">
                                     <div>
 
                                         <div style="padding-right: 30px">
                                             <i class="glyphicon glyphicon-chevron-right"></i>
                                             <i class="glyphicon glyphicon-chevron-down"></i>
-                                            <b>Scenario:</b>Fetching Product by Nonexistent ID
+                                            <b>Scenario:</b><div class="ellipsis" data-text="Fetching Product by Nonexistent ID">Fetching Product by Nonexistent ID</div>
                                         </div>
                                         <div>
                             <span class="label-container ">
+                                <span>492ms</span>
                               
                               <span class="label label-success"
                                                                title="4 Steps Passed">4</span>
@@ -1653,7 +1739,7 @@ pre {
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseScenarioautomation_execution_report575d1fdb-6193-43b9-98c8-e4c3a4e164dc"
+                        <div id="collapseScenarioautomation_execution_report26a1821c-5441-4bbf-a73e-de78fe1640d5"
                              class="panel-collapse collapse">
                             <div class="panel-body">
                                 <div></div>
@@ -1672,7 +1758,7 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Given </span>
-                          <span> The Grocery baseURL is initialized</span>
+                          <span class="stepname"> The Grocery baseURL is initialized</span>
                             
                           
                               <span class="step-duration">
@@ -1710,11 +1796,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Given </span>
-                          <span> I send a GET request to the NonExist Product ID endpoint &quot;/products/9999999&quot;</span>
+                          <span class="stepname"> I send a GET request to the NonExist Product ID endpoint &quot;/products/9999999&quot;</span>
                             
                           
                               <span class="step-duration">
-                               318ms
+                               485ms
                               </span>
                             
                          
@@ -1748,7 +1834,7 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Then </span>
-                          <span> The response status code should be 404 Not Found</span>
+                          <span class="stepname"> The response status code should be 404 Not Found</span>
                             
                           
                               <span class="step-duration">
@@ -1786,11 +1872,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">And </span>
-                          <span> The response body should contain an error message indicating &quot;No product with id 9999999.&quot; with NonExistentId Request</span>
+                          <span class="stepname"> The response body should contain an error message indicating &quot;No product with id 9999999.&quot; with NonExistentId Request</span>
                             
                           
                               <span class="step-duration">
-                               1ms
+                               4ms
                               </span>
                             
                          
@@ -1828,16 +1914,17 @@ pre {
                                 <div class="tags">
                                 </div>
                                 
-                                <a data-toggle="collapse" href="#collapseScenarioautomation_execution_reportb6008623-8340-4fd9-84c8-3e4a99a0c50a">
+                                <a data-toggle="collapse" href="#collapseScenarioautomation_execution_report6e6292e6-5a85-48ae-b153-ce1b1cef3d30">
                                     <div>
 
                                         <div style="padding-right: 30px">
                                             <i class="glyphicon glyphicon-chevron-right"></i>
                                             <i class="glyphicon glyphicon-chevron-down"></i>
-                                            <b>Scenario:</b>Fetching Product with Invalid ID Format
+                                            <b>Scenario:</b><div class="ellipsis" data-text="Fetching Product with Invalid ID Format">Fetching Product with Invalid ID Format</div>
                                         </div>
                                         <div>
                             <span class="label-container ">
+                                <span>261ms</span>
                               
                               <span class="label label-success"
                                                                title="4 Steps Passed">4</span>
@@ -1853,7 +1940,7 @@ pre {
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseScenarioautomation_execution_reportb6008623-8340-4fd9-84c8-3e4a99a0c50a"
+                        <div id="collapseScenarioautomation_execution_report6e6292e6-5a85-48ae-b153-ce1b1cef3d30"
                              class="panel-collapse collapse">
                             <div class="panel-body">
                                 <div></div>
@@ -1872,7 +1959,7 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Given </span>
-                          <span> The Grocery baseURL is initialized</span>
+                          <span class="stepname"> The Grocery baseURL is initialized</span>
                             
                           
                               <span class="step-duration">
@@ -1910,11 +1997,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Given </span>
-                          <span> I send a GET request to the endpoint &quot;/products/abc123&quot;.</span>
+                          <span class="stepname"> I send a GET request to the endpoint &quot;/products/abc123&quot;.</span>
                             
                           
                               <span class="step-duration">
-                               298ms
+                               254ms
                               </span>
                             
                          
@@ -1948,11 +2035,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Then </span>
-                          <span> The response status code should be 400 Bad Request</span>
+                          <span class="stepname"> The response status code should be 400 Bad Request</span>
                             
                           
                               <span class="step-duration">
-                               < 1ms
+                               2ms
                               </span>
                             
                          
@@ -1986,11 +2073,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">And </span>
-                          <span> The response body should contain an error message indicating &quot;The product id must be a number.&quot; with Invalid ID</span>
+                          <span class="stepname"> The response body should contain an error message indicating &quot;The product id must be a number.&quot; with Invalid ID</span>
                             
                           
                               <span class="step-duration">
-                               1ms
+                               3ms
                               </span>
                             
                          
@@ -2037,14 +2124,20 @@ pre {
                 <h4 class="panel-title">
                     
                     <div class="tags"> <span class="tag">@sanity</span>
+                         <span class="tag">@web</span>
                         
                     </div>
                     
-                    <a data-toggle="collapse" href="#collapseFeatureautomation_execution_reportb0455322-f44e-45fd-a288-7abb04171048">
+                    <a data-toggle="collapse" href="#collapseFeatureautomation_execution_report3646ff22-42aa-4ca4-8e22-638c62ba232e">
                         <i class="glyphicon glyphicon-chevron-right"></i>
                         <i class="glyphicon glyphicon-chevron-down"></i>
                         <b>Feature:</b>Verify Filter Functionality for Polestar Offers
                         <span class="label-container">
+
+                        
+
+                        <span>36s 717ms</span>
+                                
               <span class="label label-success"
                                                          title="2 Scenarios Passed">2</span>
               
@@ -2056,7 +2149,7 @@ pre {
                     </a>
                 </h4>
             </div>
-            <div id="collapseFeatureautomation_execution_reportb0455322-f44e-45fd-a288-7abb04171048" class="panel-collapse collapse">
+            <div id="collapseFeatureautomation_execution_report3646ff22-42aa-4ca4-8e22-638c62ba232e" class="panel-collapse collapse">
                 <div class="panel-body">
                     
                     <div class="description">  As a user of the Polestar website<br/>  I want to apply filters to new vehicle offers<br/>  So that I can verify the filter functionality works correctly and display accurate results</div>
@@ -2071,16 +2164,17 @@ pre {
                                 <div class="tags">
                                 </div>
                                 
-                                <a data-toggle="collapse" href="#collapseScenarioautomation_execution_report2212ea5a-6231-4669-9573-f27a548fc68a">
+                                <a data-toggle="collapse" href="#collapseScenarioautomation_execution_report73774ec8-ab08-4a35-8620-66388f02eea3">
                                     <div>
 
                                         <div style="padding-right: 30px">
                                             <i class="glyphicon glyphicon-chevron-right"></i>
                                             <i class="glyphicon glyphicon-chevron-down"></i>
-                                            <b>Scenario Outline:</b>Verify filters for Polestar Polestar 3 (2025 Model) with Long range Dual motor options
+                                            <b>Scenario Outline:</b><div class="ellipsis" data-text="Verify filters for Polestar Polestar 3 (2025 Model) with Long range Dual motor options">Verify filters for Polestar Polestar 3 (2025 Model) with Long range Dual motor options</div>
                                         </div>
                                         <div>
                             <span class="label-container ">
+                                <span>17s 974ms</span>
                               
                               <span class="label label-success"
                                                                title="8 Steps Passed">8</span>
@@ -2096,7 +2190,7 @@ pre {
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseScenarioautomation_execution_report2212ea5a-6231-4669-9573-f27a548fc68a"
+                        <div id="collapseScenarioautomation_execution_report73774ec8-ab08-4a35-8620-66388f02eea3"
                              class="panel-collapse collapse">
                             <div class="panel-body">
                                 <div></div>
@@ -2115,11 +2209,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Given </span>
-                          <span> I navigate to the Homepage</span>
+                          <span class="stepname"> I navigate to the Homepage</span>
                             
                           
                               <span class="step-duration">
-                               2s 768ms
+                               1s 670ms
                               </span>
                             
                          
@@ -2153,11 +2247,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">And </span>
-                          <span> I accept cookies and click on the &quot;View Offers&quot; button</span>
+                          <span class="stepname"> I accept cookies and click on the &quot;View Offers&quot; button</span>
                             
                           
                               <span class="step-duration">
-                               3s 582ms
+                               3s 390ms
                               </span>
                             
                          
@@ -2191,11 +2285,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">And </span>
-                          <span> I navigate to the &quot;New Vehicle Offers&quot; and Clicked on &quot;Filter&quot; button</span>
+                          <span class="stepname"> I navigate to the &quot;New Vehicle Offers&quot; and Clicked on &quot;Filter&quot; button</span>
                             
                           
                               <span class="step-duration">
-                               1s 125ms
+                               1s 147ms
                               </span>
                             
                          
@@ -2229,11 +2323,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">When </span>
-                          <span> I click on the &quot;Car&quot; filter and select the checkbox for &quot;Polestar 3&quot;</span>
+                          <span class="stepname"> I click on the &quot;Car&quot; filter and select the checkbox for &quot;Polestar 3&quot;</span>
                             
                           
                               <span class="step-duration">
-                               4s 442ms
+                               4s 492ms
                               </span>
                             
                          
@@ -2267,11 +2361,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">And </span>
-                          <span> I click on the &quot;Model year&quot; filter and select the checkbox for &quot;2025&quot;</span>
+                          <span class="stepname"> I click on the &quot;Model year&quot; filter and select the checkbox for &quot;2025&quot;</span>
                             
                           
                               <span class="step-duration">
-                               3s 589ms
+                               3s 580ms
                               </span>
                             
                          
@@ -2305,11 +2399,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">And </span>
-                          <span> I click on the &quot;Powertrain&quot; filter and select the checkbox for &quot;Long range Dual motor&quot;</span>
+                          <span class="stepname"> I click on the &quot;Powertrain&quot; filter and select the checkbox for &quot;Long range Dual motor&quot;</span>
                             
                           
                               <span class="step-duration">
-                               3s 571ms
+                               3s 603ms
                               </span>
                             
                          
@@ -2343,11 +2437,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">And </span>
-                          <span> I click the &quot;View&quot; button</span>
+                          <span class="stepname"> I click the &quot;View&quot; button</span>
                             
                           
                               <span class="step-duration">
-                               81ms
+                               73ms
                               </span>
                             
                          
@@ -2381,11 +2475,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Then </span>
-                          <span> the results should match the filter criteria &quot;Polestar 3&quot;</span>
+                          <span class="stepname"> the results should match the filter criteria &quot;Polestar 3&quot;</span>
                             
                           
                               <span class="step-duration">
-                               18ms
+                               15ms
                               </span>
                             
                          
@@ -2423,16 +2517,17 @@ pre {
                                 <div class="tags">
                                 </div>
                                 
-                                <a data-toggle="collapse" href="#collapseScenarioautomation_execution_report833af549-2cef-4730-a05a-0d34289849ee">
+                                <a data-toggle="collapse" href="#collapseScenarioautomation_execution_report45bcafa0-04d4-4314-a35e-5a51af1e189e">
                                     <div>
 
                                         <div style="padding-right: 30px">
                                             <i class="glyphicon glyphicon-chevron-right"></i>
                                             <i class="glyphicon glyphicon-chevron-down"></i>
-                                            <b>Scenario Outline:</b>Verify filters for Polestar Polestar 2 (2025 Model) with Long range Dual motor options
+                                            <b>Scenario Outline:</b><div class="ellipsis" data-text="Verify filters for Polestar Polestar 2 (2025 Model) with Long range Dual motor options">Verify filters for Polestar Polestar 2 (2025 Model) with Long range Dual motor options</div>
                                         </div>
                                         <div>
                             <span class="label-container ">
+                                <span>18s 743ms</span>
                               
                               <span class="label label-success"
                                                                title="8 Steps Passed">8</span>
@@ -2448,7 +2543,7 @@ pre {
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseScenarioautomation_execution_report833af549-2cef-4730-a05a-0d34289849ee"
+                        <div id="collapseScenarioautomation_execution_report45bcafa0-04d4-4314-a35e-5a51af1e189e"
                              class="panel-collapse collapse">
                             <div class="panel-body">
                                 <div></div>
@@ -2467,11 +2562,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Given </span>
-                          <span> I navigate to the Homepage</span>
+                          <span class="stepname"> I navigate to the Homepage</span>
                             
                           
                               <span class="step-duration">
-                               4s 364ms
+                               2s 308ms
                               </span>
                             
                          
@@ -2505,11 +2600,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">And </span>
-                          <span> I accept cookies and click on the &quot;View Offers&quot; button</span>
+                          <span class="stepname"> I accept cookies and click on the &quot;View Offers&quot; button</span>
                             
                           
                               <span class="step-duration">
-                               3s 802ms
+                               3s 533ms
                               </span>
                             
                          
@@ -2543,11 +2638,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">And </span>
-                          <span> I navigate to the &quot;New Vehicle Offers&quot; and Clicked on &quot;Filter&quot; button</span>
+                          <span class="stepname"> I navigate to the &quot;New Vehicle Offers&quot; and Clicked on &quot;Filter&quot; button</span>
                             
                           
                               <span class="step-duration">
-                               1s 135ms
+                               1s 128ms
                               </span>
                             
                          
@@ -2581,11 +2676,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">When </span>
-                          <span> I click on the &quot;Car&quot; filter and select the checkbox for &quot;Polestar 2&quot;</span>
+                          <span class="stepname"> I click on the &quot;Car&quot; filter and select the checkbox for &quot;Polestar 2&quot;</span>
                             
                           
                               <span class="step-duration">
-                               4s 445ms
+                               4s 510ms
                               </span>
                             
                          
@@ -2619,11 +2714,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">And </span>
-                          <span> I click on the &quot;Model year&quot; filter and select the checkbox for &quot;2025&quot;</span>
+                          <span class="stepname"> I click on the &quot;Model year&quot; filter and select the checkbox for &quot;2025&quot;</span>
                             
                           
                               <span class="step-duration">
-                               3s 577ms
+                               3s 581ms
                               </span>
                             
                          
@@ -2657,11 +2752,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">And </span>
-                          <span> I click on the &quot;Powertrain&quot; filter and select the checkbox for &quot;Long range Dual motor&quot;</span>
+                          <span class="stepname"> I click on the &quot;Powertrain&quot; filter and select the checkbox for &quot;Long range Dual motor&quot;</span>
                             
                           
                               <span class="step-duration">
-                               3s 589ms
+                               3s 583ms
                               </span>
                             
                          
@@ -2695,11 +2790,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">And </span>
-                          <span> I click the &quot;View&quot; button</span>
+                          <span class="stepname"> I click the &quot;View&quot; button</span>
                             
                           
                               <span class="step-duration">
-                               74ms
+                               76ms
                               </span>
                             
                          
@@ -2733,11 +2828,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Then </span>
-                          <span> the results should match the filter criteria &quot;Polestar 2 Long range Dual&quot;</span>
+                          <span class="stepname"> the results should match the filter criteria &quot;Polestar 2 Long range Dual&quot;</span>
                             
                           
                               <span class="step-duration">
-                               20ms
+                               19ms
                               </span>
                             
                          
@@ -2777,38 +2872,46 @@ pre {
 
 
 
-    </div>
+          
+  </div>
 
 
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-        google.load("visualization", "1", {packages: ["corechart"]});
-        google.setOnLoadCallback(function() {drawChart({
-                                                            "title" : "Features",
-                                                            "failed" : 0,
-                                                            "passed" : 2,
-                                                            "notdefined" : 0,
-                                                            "pending" : 0,
-                                                            "skipped" : 0,
-                                                            "ambiguous" : 0
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+    google.load("visualization", "1", { packages: ["corechart"] });
+    google.setOnLoadCallback(function () {
+      drawChart({
+        "title": "Features",
+        "failed": 0,
+        "passed": 2,
+        "notdefined": 0,
+        "pending": 0,
+        "skipped": 0,
+        "ambiguous": 0
                                                         })
-                                            });
-        google.setOnLoadCallback(function() {drawChart({
-                                                            "title" : "Scenarios",
-                                                            "failed" : 0,
-                                                            "passed" : 9,
-                                                            "rerun" : 0,
-                                                            "notdefined" : 0,
-                                                            "pending" : 0,
-                                                            "skipped" : 0,
-                                                            "ambiguous" : 0
+    });
+    google.setOnLoadCallback(function () {
+      drawChart({
+        "title": "Scenarios",
+        "failed": 0,
+        "passed": 9,
+        "rerun": 0,
+        "notdefined": 0,
+        "pending": 0,
+        "skipped": 0,
+        "ambiguous": 0
                                                         })
-                                            });
-    </script>
-    <script>
+    });
+  </script>
+  <script>
       $(document).ready(function () {
   $('.collapse')
     .on('hide.bs.collapse', function (e) {
@@ -2825,6 +2928,28 @@ pre {
   let timestamp = $generated.text();
   $generated.text('Report generated ' + moment(timestamp).fromNow());
   $generated.prop('title', new Date(timestamp).toISOString());
+});
+
+$(document).ready(function () {
+  const $collapsibleItems = $('[data-toggle="collapse"]');
+  const $collapseAllBtn = $('#collapse_all');
+  const $expandAllBtn = $('#expand_all');
+
+  const collapseAll = function () {
+    $collapsibleItems.each(function () {
+      $($(this).attr('href')).collapse('hide');
+    });
+  };
+
+  const expandAll = function () {
+    $collapsibleItems.each(function () {
+      $($(this).attr('href')).collapse('show');
+    });
+  };
+
+  $collapseAllBtn.on('click', collapseAll);
+  $expandAllBtn.on('click', expandAll);
+
 });
 
 function toggle(className) {
@@ -2913,6 +3038,7 @@ function toggle(className) {
   }
 });
 
-    </script>
-  </body>
+  </script>
+</body>
+
 </html>

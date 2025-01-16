@@ -6,12 +6,10 @@ class CommonConstants {
     static BASE_URL_1 = process.env.base_URL1;
     static BASE_URL_2 = process.env.base_URL2;
     static BASE_URL_3 = process.env.base_URL3;
+    static GOREST_TOKEN = process.env.token;
     static BROWSER_TYPE = process.env.browser_Name;
     static IS_HEADLESS = process.env.isHeadless === 'true';
     static IS_REMOTE = process.env.isRemote === 'true';
-    static GOREST_TOKEN = process.env.token;
-    static MGS_USERNAME = process.env.userName;
-    static MGS_PASSWORD = process.env.password;
     static SEND_SLACK_REPORT = process.env.send_Slack_Report === 'true';
     static SLACK_TOKEN = process.env.slackToken;
     static SLACK_CHANNEL_ID = process.env.slack_Chanel_ID;
@@ -27,7 +25,8 @@ class CommonConstants {
     static JIRA_EMAIL = process.env.ji_Email;
     static JIRA_PROJECT_KEY = process.env.jira_Project_Key;
     static JIRA_API_TOKEN = process.env.jira_Api_Token;
-
+    static PROJECT_NAME = 'DEMO PROJECT';
+    
 
     static CarModels = {
         POLESTAR_2:'Polestar 2',
@@ -47,7 +46,6 @@ class CommonConstants {
         return result;
     }
 
-    
     static generateRandomText(length) {
         let result = '';
         const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';

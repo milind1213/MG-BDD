@@ -46,11 +46,11 @@ jobs:
 
       # Run Cucumber Tests
       - name: Run Cucumber Tests
-        run: npm run test:sanity  # Or use the appropriate script based on your needs
+        run: npm run test:sanity 
 
       # Generate enhanced cucumber report
       - name: Generate Cucumber HTML Report
-        run: node generate-report.js  # Executes the script to generate the HTML report
+        run: node generate-report.js 
 
       # List files in reports directory (debugging step)
       - name: List files in reports directory
