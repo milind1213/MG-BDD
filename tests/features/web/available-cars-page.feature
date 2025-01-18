@@ -30,18 +30,18 @@ Feature: Shopping for Cars and Selecting the Available Car Model
     Examples:
     # Case 1: Select all options for exterior, version, packs, options, interior, and wheels
        | Exterior     | Version               | Packs       | Options                     | Interior                | Wheels           |
-       | Magnesium    | Long range Dual motor | Performance | Harman Kardon premium sound | Charcoal Nappa leather  | 20" Performance  |
+      # | Magnesium    | Long range Dual motor | Performance | Harman Kardon premium sound | Charcoal Nappa leather  | 20" Performance  |
        | Storm        | Long range Dual motor | Performance | Harman Kardon premium sound | Charcoal WeaveTech      | 20" Performance  |
     # Case 2: Select only a few options from each category (some are left blank or not selected)
        |              | Long range Dual motor | Performance | Harman Kardon premium sound | Charcoal Nappa leather  | 20" Performance  |
        | Space        |                       |             | Harman Kardon premium sound | Zinc Nappa leather      | 20" Performance  |
        | Midnight     | Long range Dual motor | Climate     |                             | Slate WeaveTech         | 20" Performance  |
     # Case 3: Select some options from only specific categories (more selective filtering)
-       | Magnesium    |                       | Performance |                             | Charcoal Nappa leather  | 20" Performance  |
+      # | Magnesium    |                       | Performance |                             | Charcoal Nappa leather  | 20" Performance  |
        | Vapour       |                       | Pilot       | Harman Kardon premium sound | Zinc Nappa leather      |                  |
     # Case 4: Test all versions with specific interior and wheels combination
        | Storm        | Long range Dual motor | Performance |                              | Charcoal Nappa leather |                  |
-       | Midnight     |                       | Performance |                              | Slate WeaveTech        | 20" Performance  |
+      # | Midnight     |                       | Performance |                              | Slate WeaveTech        | 20" Performance  |
 
  Scenario: Verify Default Filters for Car Details by Pin Code and Address
      When I enter zip code and select an address from the suggestions

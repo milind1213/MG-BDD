@@ -85,7 +85,7 @@ class OfferPage extends PlaywrightActions {
              window.scrollBy(0, 400);
         });
     
-       utils.Click(this.newVehicleButton);
+       this.Click(this.newVehicleButton);
       
       } catch (error) {
         log(`Error clicking on New Vehicle Button:`,error);
