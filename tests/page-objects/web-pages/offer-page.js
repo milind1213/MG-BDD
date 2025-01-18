@@ -1,15 +1,23 @@
-const utils  = require('../../common-platform-utils/common-playwright.js');
+const PlaywrightActions  = require('../../common-platform-utils/common-playwright.js');
 const log = require('../../../utils/logger');
-
-class OfferPage {
-  
+class OfferPage extends PlaywrightActions {
   constructor(page) {
+    super();
     this.page = page;
     this.acceptAllCookiesButton = page.locator("//*[@id='onetrust-accept-btn-handler' and text()='Accept All Cookies']");
     this.newVehicleButton = page.locator("//*[@class='css-k52nb0' and text()='Pre-owned offers']");
     this.preOwnedVehicleButton = page.locator('button:has-text("Pre-owned offers")');
     this.filterButton = page.locator('button:has-text("Filter")').nth(0);
     this.viewBtn = page.locator("//*[@class='css-1p2wkou' ]//parent::button[@class='css-i96fc']");
+  }
+
+  
+  async click_FilterButton() 
+  {
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    log(`Clicking on the [Filter] button`);
+    await this.Click(this.filterButton);
+
   }
 
   async clickOnPreOwnedVehicleButton() 
@@ -20,7 +28,7 @@ class OfferPage {
       const preOwnedButton = this.preOwnedVehicleButton;
       
       log(`Clicking on the [Pre-Owned] button`);
-      await utils.Click(preOwnedButton);
+      await this.Click(preOwnedButton);
       let ariaSelected = await preOwnedButton.getAttribute('aria-selected');
      
       let attempts = 0;
@@ -28,7 +36,7 @@ class OfferPage {
       {
          log(`Pre-Owned Button Click Action Retrying...`);
          attempts++;
-         await utils.Click(preOwnedButton);
+         await this.Click(preOwnedButton);
          await this.page.waitForTimeout(2000); 
          ariaSelected = await preOwnedButton.getAttribute('aria-selected');
        }
@@ -38,33 +46,25 @@ class OfferPage {
     }
   
 
-    async click_FilterButton() 
-    {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      log(`Clicking on the [Filter] button`);
-      await utils.Click(this.filterButton);
-
-    }
-
     async applyFilter(filterText, value) 
     {
         const filterLocator = this.page.locator(`//label[contains(@class,'css-c4oe05') and normalize-space(text())='${filterText}']`);
         const checkboxLocator = this.page.locator(`//input[@type="checkbox" and @value='${value}']`);
        
         log(`Clicking on the [${filterText}] Locator`);
-        await utils.Click(filterLocator);
+        await this.Click(filterLocator);
 
         await checkboxLocator.waitFor({ state: 'visible', timeout: 60000 });
         await checkboxLocator.scrollIntoViewIfNeeded();
 
         log(`Clicking on the [${value}] checkbox`);
-        await utils.Click(checkboxLocator);
+        await this.Click(checkboxLocator);
         await this.page.waitForTimeout(3000);
         let isChecked = await checkboxLocator.isChecked();
       
         if (!isChecked) {
           log(`Clicking on the [${value}] checkbox`);
-          await utils.Click(checkboxLocator);
+          await this.Click(checkboxLocator);
 
           await this.page.waitForTimeout(500);
           isChecked = await checkboxLocator.isChecked();
@@ -96,7 +96,7 @@ class OfferPage {
       
   async clickOnViewButton() 
   {
-    await utils.Click(this.viewBtn);
+    await this.Click(this.viewBtn);
   }
   
   async getResults() 

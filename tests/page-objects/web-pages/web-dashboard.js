@@ -1,11 +1,12 @@
-
+const PlaywrightActions  = require('../../common-platform-utils/common-playwright.js');
 const { OfferPage } = require('./offer-page');
 const { HomePage } = require('./home-page');
 const { AvailableCarsPage } = require('./available-cars-page');
 
-class WebDashboard{
+class WebDashboard extends PlaywrightActions{
   constructor(page) 
   {
+    super();
     this.page = page;
     this.offerPage = new OfferPage(this.page);
     this.homePage = new HomePage(this.page);

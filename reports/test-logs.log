@@ -1,156 +1,330 @@
-[16-01-25 9:40:46 PM] [ INFO ] - =========== [ Starting the test execution ] =============
-[16-01-25 9:40:46 PM] [ INFO ] - Environment is Ready for Test execution..
-[16-01-25 9:40:46 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
-[16-01-25 9:40:46 PM] [ INFO ] - Setting up for Scenario: [check if the server is up and running via api]
-[16-01-25 9:40:46 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
-[16-01-25 9:40:48 PM] [ INFO ] - Server Status Response :
-[16-01-25 9:40:48 PM] [ INFO ] - Checking if the response status is [200]
-[16-01-25 9:40:48 PM] [ INFO ] - Status Code 200 Matches the Expected 200
-[16-01-25 9:40:48 PM] [ INFO ] - Validation in response with Actual [status] and Expected [UP]
-[16-01-25 9:40:48 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
-[16-01-25 9:40:48 PM] [ INFO ] - Setting up for Scenario: [validate the access token generation api functionality]
-[16-01-25 9:40:48 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
-[16-01-25 9:40:48 PM] [ INFO ] - Status Code 201 Matches the Expected 201
-[16-01-25 9:40:48 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
-[16-01-25 9:40:48 PM] [ INFO ] - Setting up for Scenario: [verify the api functionaliy to fetch a specific products by id]
-[16-01-25 9:40:48 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
-[16-01-25 9:40:49 PM] [ INFO ] - Server Status Response :
-[16-01-25 9:40:49 PM] [ INFO ] - Checking if the response status is [200]
-[16-01-25 9:40:49 PM] [ INFO ] - Status Code 200 Matches the Expected 200
-[16-01-25 9:40:49 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
-[16-01-25 9:40:49 PM] [ INFO ] - Setting up for Scenario: [validate the api functionality to fetch the complete list of products.]
-[16-01-25 9:40:49 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
-[16-01-25 9:40:49 PM] [ INFO ] - Featch All Product API endpoint is /products
-[16-01-25 9:40:49 PM] [ INFO ] - Checking if the response status is [200]
-[16-01-25 9:40:49 PM] [ INFO ] - Status Code 200 Matches the Expected 200
-[16-01-25 9:40:49 PM] [ INFO ] - Fetch All Products Response:
-[16-01-25 9:40:49 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
-[16-01-25 9:40:49 PM] [ INFO ] - Setting up for Scenario: [access token generation with missing or invalid client name]
-[16-01-25 9:40:49 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
-[16-01-25 9:40:49 PM] [ INFO ] - POST Request Failed:
-[16-01-25 9:40:49 PM] [ INFO ] - Error Response Data:
-[16-01-25 9:40:49 PM] [ INFO ] - Status Code 400 Matches the Expected 400
-[16-01-25 9:40:49 PM] [ INFO ] - Validating the Actual [NaN] with Expected error [Invalid or missing client name.]
-[16-01-25 9:40:49 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
-[16-01-25 9:40:49 PM] [ INFO ] - Setting up for Scenario: [fetching product by nonexistent id]
-[16-01-25 9:40:49 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
-[16-01-25 9:40:50 PM] [ INFO ] - GET Request Failed:
-[16-01-25 9:40:50 PM] [ INFO ] - Error Response Data:
-[16-01-25 9:40:50 PM] [ INFO ] - Status Code 404 Matches the Expected 404
-[16-01-25 9:40:50 PM] [ INFO ] - Validating the Actual [NaN] with Expected error [No product with id 9999999.]
-[16-01-25 9:40:50 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
-[16-01-25 9:40:50 PM] [ INFO ] - Setting up for Scenario: [fetching product with invalid id format]
-[16-01-25 9:40:50 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
-[16-01-25 9:40:50 PM] [ INFO ] - GET Request Failed:
-[16-01-25 9:40:50 PM] [ INFO ] - Error Response Data:
-[16-01-25 9:40:50 PM] [ INFO ] - Status Code 400 Matches the Expected 400
-[16-01-25 9:40:50 PM] [ INFO ] - Validating the Actual [NaN] with Expected error [The product id must be a number.]
-[16-01-25 9:40:50 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [new-cars-filter.feature] ======
-[16-01-25 9:40:50 PM] [ INFO ] - Setting up for Scenario: [verify filters for polestar polestar 3 (2025 model) with long range dual motor options]
-[16-01-25 9:40:50 PM] [ INFO ] - Launching the [chrome] Browser in [Headless] Mode.
-[16-01-25 9:40:51 PM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
-[16-01-25 9:40:53 PM] [ INFO ] - Successfully Navigated to the Homepage.
-[16-01-25 9:40:53 PM] [ INFO ] - Cookie consent dialog is not visible.
-[16-01-25 9:40:53 PM] [ INFO ] - Reloading the page and retrying...(2 retries left)
-[16-01-25 9:40:56 PM] [ INFO ] - Cookie consent dialog is visible.
-[16-01-25 9:40:56 PM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
-[16-01-25 9:40:56 PM] [ INFO ] - Accepted Cookies and Cliecking on the [View Offers] to the Homepage.
-[16-01-25 9:40:56 PM] [ INFO ] - Not Visible [View All Offers] Button.
-[16-01-25 9:40:56 PM] [ INFO ] - Successfully Clicked on the [New Vehicle Offers] and [Filter] buttons.
-[16-01-25 9:40:57 PM] [ INFO ] - Clicking on the [Filter] button
-[16-01-25 9:41:26 PM] [ INFO ] - Taking Screenshot for Failed Scenario: Verify filters for Polestar Polestar 3 (2025 Model) with Long range Dual motor options
-[16-01-25 9:41:26 PM] [ INFO ] - Closing all Active Browser Sessions...!
-[16-01-25 9:41:26 PM] [ INFO ] - Closing the Browser [Page] 
-[16-01-25 9:41:26 PM] [ INFO ] - Closing the Browser [Context] 
-[16-01-25 9:41:26 PM] [ INFO ] - Closing the Browser [Browser] 
-[16-01-25 9:41:26 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [new-cars-filter.feature] ======
-[16-01-25 9:41:26 PM] [ INFO ] - Setting up for Scenario: [verify filters for polestar polestar 3 (2025 model) with long range dual motor options]
-[16-01-25 9:41:26 PM] [ INFO ] - Launching the [chrome] Browser in [Headless] Mode.
-[16-01-25 9:41:27 PM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
-[16-01-25 9:41:28 PM] [ INFO ] - Successfully Navigated to the Homepage.
-[16-01-25 9:41:28 PM] [ INFO ] - Cookie consent dialog is not visible.
-[16-01-25 9:41:28 PM] [ INFO ] - Reloading the page and retrying...(2 retries left)
-[16-01-25 9:41:31 PM] [ INFO ] - Cookie consent dialog is visible.
-[16-01-25 9:41:31 PM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
-[16-01-25 9:41:31 PM] [ INFO ] - Accepted Cookies and Cliecking on the [View Offers] to the Homepage.
-[16-01-25 9:41:31 PM] [ INFO ] - Not Visible [View All Offers] Button.
-[16-01-25 9:41:31 PM] [ INFO ] - Successfully Clicked on the [New Vehicle Offers] and [Filter] buttons.
-[16-01-25 9:41:32 PM] [ INFO ] - Clicking on the [Filter] button
-[16-01-25 9:42:01 PM] [ INFO ] - Taking Screenshot for Failed Scenario: Verify filters for Polestar Polestar 3 (2025 Model) with Long range Dual motor options
-[16-01-25 9:42:02 PM] [ INFO ] - Closing all Active Browser Sessions...!
-[16-01-25 9:42:02 PM] [ INFO ] - Closing the Browser [Page] 
-[16-01-25 9:42:02 PM] [ INFO ] - Closing the Browser [Context] 
-[16-01-25 9:42:02 PM] [ INFO ] - Closing the Browser [Browser] 
-[16-01-25 9:42:02 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [new-cars-filter.feature] ======
-[16-01-25 9:42:02 PM] [ INFO ] - Setting up for Scenario: [verify filters for polestar polestar 3 (2025 model) with long range dual motor options]
-[16-01-25 9:42:02 PM] [ INFO ] - Launching the [chrome] Browser in [Headless] Mode.
-[16-01-25 9:42:02 PM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
-[16-01-25 9:42:07 PM] [ INFO ] - Successfully Navigated to the Homepage.
-[16-01-25 9:42:07 PM] [ INFO ] - Cookie consent dialog is not visible.
-[16-01-25 9:42:07 PM] [ INFO ] - Reloading the page and retrying...(2 retries left)
-[16-01-25 9:42:10 PM] [ INFO ] - Cookie consent dialog is visible.
-[16-01-25 9:42:10 PM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
-[16-01-25 9:42:10 PM] [ INFO ] - Accepted Cookies and Cliecking on the [View Offers] to the Homepage.
-[16-01-25 9:42:10 PM] [ INFO ] - Not Visible [View All Offers] Button.
-[16-01-25 9:42:10 PM] [ INFO ] - Successfully Clicked on the [New Vehicle Offers] and [Filter] buttons.
-[16-01-25 9:42:11 PM] [ INFO ] - Clicking on the [Filter] button
-[16-01-25 9:42:40 PM] [ INFO ] - Taking Screenshot for Failed Scenario: Verify filters for Polestar Polestar 3 (2025 Model) with Long range Dual motor options
-[16-01-25 9:42:41 PM] [ INFO ] - Closing all Active Browser Sessions...!
-[16-01-25 9:42:41 PM] [ INFO ] - Closing the Browser [Page] 
-[16-01-25 9:42:41 PM] [ INFO ] - Closing the Browser [Context] 
-[16-01-25 9:42:41 PM] [ INFO ] - Closing the Browser [Browser] 
-[16-01-25 9:42:41 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [new-cars-filter.feature] ======
-[16-01-25 9:42:41 PM] [ INFO ] - Setting up for Scenario: [verify filters for polestar polestar 2 (2025 model) with long range dual motor options]
-[16-01-25 9:42:41 PM] [ INFO ] - Launching the [chrome] Browser in [Headless] Mode.
-[16-01-25 9:42:41 PM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
-[16-01-25 9:42:45 PM] [ INFO ] - Successfully Navigated to the Homepage.
-[16-01-25 9:42:45 PM] [ INFO ] - Cookie consent dialog is not visible.
-[16-01-25 9:42:45 PM] [ INFO ] - Reloading the page and retrying...(2 retries left)
-[16-01-25 9:42:48 PM] [ INFO ] - Cookie consent dialog is visible.
-[16-01-25 9:42:48 PM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
-[16-01-25 9:42:48 PM] [ INFO ] - Accepted Cookies and Cliecking on the [View Offers] to the Homepage.
-[16-01-25 9:42:48 PM] [ INFO ] - Not Visible [View All Offers] Button.
-[16-01-25 9:42:48 PM] [ INFO ] - Successfully Clicked on the [New Vehicle Offers] and [Filter] buttons.
-[16-01-25 9:42:49 PM] [ INFO ] - Clicking on the [Filter] button
-[16-01-25 9:43:18 PM] [ INFO ] - Taking Screenshot for Failed Scenario: Verify filters for Polestar Polestar 2 (2025 Model) with Long range Dual motor options
-[16-01-25 9:43:18 PM] [ INFO ] - Closing all Active Browser Sessions...!
-[16-01-25 9:43:18 PM] [ INFO ] - Closing the Browser [Page] 
-[16-01-25 9:43:18 PM] [ INFO ] - Closing the Browser [Context] 
-[16-01-25 9:43:18 PM] [ INFO ] - Closing the Browser [Browser] 
-[16-01-25 9:43:19 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [new-cars-filter.feature] ======
-[16-01-25 9:43:19 PM] [ INFO ] - Setting up for Scenario: [verify filters for polestar polestar 2 (2025 model) with long range dual motor options]
-[16-01-25 9:43:19 PM] [ INFO ] - Launching the [chrome] Browser in [Headless] Mode.
-[16-01-25 9:43:19 PM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
-[16-01-25 9:43:21 PM] [ INFO ] - Successfully Navigated to the Homepage.
-[16-01-25 9:43:21 PM] [ INFO ] - Cookie consent dialog is not visible.
-[16-01-25 9:43:21 PM] [ INFO ] - Reloading the page and retrying...(2 retries left)
-[16-01-25 9:43:24 PM] [ INFO ] - Cookie consent dialog is visible.
-[16-01-25 9:43:24 PM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
-[16-01-25 9:43:24 PM] [ INFO ] - Accepted Cookies and Cliecking on the [View Offers] to the Homepage.
-[16-01-25 9:43:24 PM] [ INFO ] - Not Visible [View All Offers] Button.
-[16-01-25 9:43:24 PM] [ INFO ] - Successfully Clicked on the [New Vehicle Offers] and [Filter] buttons.
-[16-01-25 9:43:25 PM] [ INFO ] - Clicking on the [Filter] button
-[16-01-25 9:43:54 PM] [ INFO ] - Taking Screenshot for Failed Scenario: Verify filters for Polestar Polestar 2 (2025 Model) with Long range Dual motor options
-[16-01-25 9:43:54 PM] [ INFO ] - Closing all Active Browser Sessions...!
-[16-01-25 9:43:54 PM] [ INFO ] - Closing the Browser [Page] 
-[16-01-25 9:43:54 PM] [ INFO ] - Closing the Browser [Context] 
-[16-01-25 9:43:54 PM] [ INFO ] - Closing the Browser [Browser] 
-[16-01-25 9:43:55 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [new-cars-filter.feature] ======
-[16-01-25 9:43:55 PM] [ INFO ] - Setting up for Scenario: [verify filters for polestar polestar 2 (2025 model) with long range dual motor options]
-[16-01-25 9:43:55 PM] [ INFO ] - Launching the [chrome] Browser in [Headless] Mode.
-[16-01-25 9:43:55 PM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
-[16-01-25 9:43:59 PM] [ INFO ] - Successfully Navigated to the Homepage.
-[16-01-25 9:43:59 PM] [ INFO ] - Cookie consent dialog is not visible.
-[16-01-25 9:43:59 PM] [ INFO ] - Reloading the page and retrying...(2 retries left)
-[16-01-25 9:44:02 PM] [ INFO ] - Cookie consent dialog is visible.
-[16-01-25 9:44:02 PM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
-[16-01-25 9:44:02 PM] [ INFO ] - Accepted Cookies and Cliecking on the [View Offers] to the Homepage.
-[16-01-25 9:44:02 PM] [ INFO ] - Not Visible [View All Offers] Button.
-[16-01-25 9:44:02 PM] [ INFO ] - Successfully Clicked on the [New Vehicle Offers] and [Filter] buttons.
-[16-01-25 9:44:03 PM] [ INFO ] - Clicking on the [Filter] button
-[16-01-25 9:44:32 PM] [ INFO ] - Taking Screenshot for Failed Scenario: Verify filters for Polestar Polestar 2 (2025 Model) with Long range Dual motor options
-[16-01-25 9:44:32 PM] [ INFO ] - Closing all Active Browser Sessions...!
-[16-01-25 9:44:32 PM] [ INFO ] - Closing the Browser [Page] 
-[16-01-25 9:44:32 PM] [ INFO ] - Closing the Browser [Context] 
-[16-01-25 9:44:33 PM] [ INFO ] - Closing the Browser [Browser] 
-[16-01-25 9:44:33 PM] [ INFO ] - ============ Test execution completed ====================
+[18-01-25 9:21:43 AM] [ INFO ] - clcking on the [Midnight] filter option
+[18-01-25 9:21:43 AM] [ INFO ] - clcking on the [Space] filter option
+[18-01-25 9:21:43 AM] [ INFO ] - Successfully applied exterior filter: Midnight
+[18-01-25 9:21:43 AM] [ INFO ] - Successfully applied exterior filter: Space
+[18-01-25 9:21:43 AM] [ INFO ] - No value provided for filter: Version. Skipping.
+[18-01-25 9:21:43 AM] [ INFO ] - No value provided for filter: Packs. Skipping.
+[18-01-25 9:21:43 AM] [ INFO ] - checking the [checkbox]
+[18-01-25 9:21:43 AM] [ INFO ] - checking the [checkbox]
+[18-01-25 9:21:46 AM] [ INFO ] - Successfully Selected: [Harman Kardon premium sound]
+[18-01-25 9:21:46 AM] [ INFO ] - Successfully Selected: [Long range Dual motor]
+[18-01-25 9:21:47 AM] [ INFO ] - checking the [checkbox]
+[18-01-25 9:21:47 AM] [ INFO ] - checking the [checkbox]
+[18-01-25 9:21:50 AM] [ INFO ] - Successfully Selected: [Zinc Nappa leather]
+[18-01-25 9:21:50 AM] [ INFO ] - Successfully Selected: [Climate]
+[18-01-25 9:21:50 AM] [ INFO ] - No value provided for filter: Options. Skipping.
+[18-01-25 9:21:50 AM] [ INFO ] - checking the [checkbox]
+[18-01-25 9:21:50 AM] [ INFO ] - checking the [checkbox]
+[18-01-25 9:21:53 AM] [ INFO ] - Successfully Selected: [Slate WeaveTech]
+[18-01-25 9:21:53 AM] [ INFO ] - Successfully Selected: [20" Performance]
+[18-01-25 9:21:53 AM] [ INFO ] - Clicking on close cross button
+[18-01-25 9:21:53 AM] [ INFO ] - checking the [checkbox]
+[18-01-25 9:21:53 AM] [ INFO ] - All filters match successfully.
+[18-01-25 9:21:53 AM] [ INFO ] - Closing all Active Browser Sessions...!
+[18-01-25 9:21:53 AM] [ INFO ] - Closing the Browser [Page] 
+[18-01-25 9:21:53 AM] [ INFO ] - Closing the Browser [Context] 
+[18-01-25 9:21:53 AM] [ INFO ] - Closing the Browser [Browser] 
+[18-01-25 9:21:53 AM] [ INFO ] - ====== Executing the Scenarios from Feature: [available-cars-page.feature] ======
+[18-01-25 9:21:53 AM] [ INFO ] - Setting up for Scenario: [verify car filters with various combinations of selections]
+[18-01-25 9:21:53 AM] [ INFO ] - Launching the [chrome] Browser in [Headless] Mode.
+[18-01-25 9:21:53 AM] [ INFO ] - =========== [ Starting the test execution ] =============
+[18-01-25 9:21:53 AM] [ INFO ] - Environment is Ready for Test execution..
+[18-01-25 9:21:53 AM] [ INFO ] - ====== Executing the Scenarios from Feature: [available-cars-page.feature] ======
+[18-01-25 9:21:53 AM] [ INFO ] - Setting up for Scenario: [verify car filters with various combinations of selections]
+[18-01-25 9:21:53 AM] [ INFO ] - Launching the [chrome] Browser in [Headless] Mode.
+[18-01-25 9:21:54 AM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
+[18-01-25 9:21:54 AM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
+[18-01-25 9:21:56 AM] [ INFO ] - Successfully Selected: [20" Performance]
+[18-01-25 9:21:56 AM] [ INFO ] - Clicking on close cross button
+[18-01-25 9:21:56 AM] [ INFO ] - All filters match successfully.
+[18-01-25 9:21:56 AM] [ INFO ] - Closing all Active Browser Sessions...!
+[18-01-25 9:21:56 AM] [ INFO ] - Closing the Browser [Page] 
+[18-01-25 9:21:56 AM] [ INFO ] - Closing the Browser [Context] 
+[18-01-25 9:21:56 AM] [ INFO ] - Closing the Browser [Browser] 
+[18-01-25 9:21:56 AM] [ INFO ] - ====== Executing the Scenarios from Feature: [available-cars-page.feature] ======
+[18-01-25 9:21:56 AM] [ INFO ] - Setting up for Scenario: [verify car filters with various combinations of selections]
+[18-01-25 9:21:56 AM] [ INFO ] - Launching the [chrome] Browser in [Headless] Mode.
+[18-01-25 9:21:57 AM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
+[18-01-25 9:21:58 AM] [ INFO ] - Successfully Navigated to the Homepage.
+[18-01-25 9:21:58 AM] [ INFO ] - Cookie consent dialog is not visible.
+[18-01-25 9:21:58 AM] [ INFO ] - Reloading the page and retrying...(2 retries left)
+[18-01-25 9:21:58 AM] [ INFO ] - Successfully Navigated to the Homepage.
+[18-01-25 9:21:58 AM] [ INFO ] - Cookie consent dialog is not visible.
+[18-01-25 9:21:58 AM] [ INFO ] - Reloading the page and retrying...(2 retries left)
+[18-01-25 9:22:00 AM] [ INFO ] - Successfully Navigated to the Homepage.
+[18-01-25 9:22:00 AM] [ INFO ] - Cookie consent dialog is visible.
+[18-01-25 9:22:00 AM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
+[18-01-25 9:22:00 AM] [ INFO ] - Accepted Cookies on Homepage.
+[18-01-25 9:22:00 AM] [ INFO ] - licking on the [Shopping tools] on Homepage.
+[18-01-25 9:22:01 AM] [ INFO ] - Cookie consent dialog is visible.
+[18-01-25 9:22:01 AM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
+[18-01-25 9:22:01 AM] [ INFO ] - Accepted Cookies on Homepage.
+[18-01-25 9:22:01 AM] [ INFO ] - licking on the [Shopping tools] on Homepage.
+[18-01-25 9:22:01 AM] [ INFO ] - Cookie consent dialog is visible.
+[18-01-25 9:22:01 AM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
+[18-01-25 9:22:01 AM] [ INFO ] - Accepted Cookies on Homepage.
+[18-01-25 9:22:01 AM] [ INFO ] - licking on the [Shopping tools] on Homepage.
+[18-01-25 9:22:02 AM] [ INFO ] - Successfully clicked the "Available cars" option.
+[18-01-25 9:22:02 AM] [ INFO ] - Entering the pinocde [43213] in inputfield.
+[18-01-25 9:22:03 AM] [ INFO ] - Successfully clicked the "Available cars" option.
+[18-01-25 9:22:03 AM] [ INFO ] - Entering the pinocde [43213] in inputfield.
+[18-01-25 9:22:03 AM] [ INFO ] - Successfully clicked the "Available cars" option.
+[18-01-25 9:22:03 AM] [ INFO ] - Entering the pinocde [43213] in inputfield.
+[18-01-25 9:22:05 AM] [ INFO ] - Pressing the [Space] Key
+[18-01-25 9:22:06 AM] [ INFO ] - Pressing the [Space] Key
+[18-01-25 9:22:07 AM] [ INFO ] - Pressing the [Space] Key
+[18-01-25 9:22:42 AM] [ INFO ] - Taking Screenshot for Failed Scenario: Verify Car Filters with Various Combinations of Selections
+[18-01-25 9:22:43 AM] [ INFO ] - Closing all Active Browser Sessions...!
+[18-01-25 9:22:43 AM] [ INFO ] - Closing the Browser [Page] 
+[18-01-25 9:22:43 AM] [ INFO ] - Error Applying Exterior filter: Magnesium
+[18-01-25 9:22:43 AM] [ INFO ] - No value provided for filter: Version. Skipping.
+[18-01-25 9:22:43 AM] [ INFO ] - Closing the Browser [Context] 
+[18-01-25 9:22:43 AM] [ INFO ] - Error applying filter: Packs - Performance
+[18-01-25 9:22:43 AM] [ INFO ] - No value provided for filter: Options. Skipping.
+[18-01-25 9:22:43 AM] [ INFO ] - Error applying filter: Interior - Charcoal Nappa leather
+[18-01-25 9:22:43 AM] [ INFO ] - Error applying filter: Wheels - 20" Performance
+[18-01-25 9:22:43 AM] [ INFO ] - Closing the Browser [Browser] 
+[18-01-25 9:22:43 AM] [ INFO ] - ====== Executing the Scenarios from Feature: [available-cars-page.feature] ======
+[18-01-25 9:22:43 AM] [ INFO ] - Setting up for Scenario: [verify default filters for car details by pin code and address]
+[18-01-25 9:22:43 AM] [ INFO ] - Launching the [chrome] Browser in [Headless] Mode.
+[18-01-25 9:22:43 AM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
+[18-01-25 9:22:45 AM] [ INFO ] - Taking Screenshot for Failed Scenario: Verify Car Filters with Various Combinations of Selections
+[18-01-25 9:22:45 AM] [ INFO ] - Closing all Active Browser Sessions...!
+[18-01-25 9:22:45 AM] [ INFO ] - Closing the Browser [Page] 
+[18-01-25 9:22:45 AM] [ INFO ] - Closing the Browser [Context] 
+[18-01-25 9:22:45 AM] [ INFO ] - Closing the Browser [Browser] 
+[18-01-25 9:22:45 AM] [ INFO ] - ====== Executing the Scenarios from Feature: [available-cars-page.feature] ======
+[18-01-25 9:22:45 AM] [ INFO ] - Setting up for Scenario: [viewing more car options with details by clicking show more]
+[18-01-25 9:22:45 AM] [ INFO ] - Launching the [chrome] Browser in [Headless] Mode.
+[18-01-25 9:22:46 AM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
+[18-01-25 9:22:47 AM] [ INFO ] - Taking Screenshot for Failed Scenario: Verify Car Filters with Various Combinations of Selections
+[18-01-25 9:22:47 AM] [ INFO ] - Closing all Active Browser Sessions...!
+[18-01-25 9:22:47 AM] [ INFO ] - Closing the Browser [Page] 
+[18-01-25 9:22:47 AM] [ INFO ] - Closing the Browser [Context] 
+[18-01-25 9:22:47 AM] [ INFO ] - Closing the Browser [Browser] 
+[18-01-25 9:22:47 AM] [ INFO ] - ====== Executing the Scenarios from Feature: [new-cars-filter.feature] ======
+[18-01-25 9:22:47 AM] [ INFO ] - Setting up for Scenario: [verify filters for polestar polestar 3 (2025 model) with long range dual motor options]
+[18-01-25 9:22:47 AM] [ INFO ] - Launching the [chrome] Browser in [Headless] Mode.
+[18-01-25 9:22:47 AM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
+[18-01-25 9:22:47 AM] [ INFO ] - Taking Screenshot for Failed Scenario: Verify Car Filters with Various Combinations of Selections
+[18-01-25 9:22:47 AM] [ INFO ] - Closing all Active Browser Sessions...!
+[18-01-25 9:22:47 AM] [ INFO ] - Closing the Browser [Page] 
+[18-01-25 9:22:47 AM] [ INFO ] - Closing the Browser [Context] 
+[18-01-25 9:22:47 AM] [ INFO ] - Closing the Browser [Browser] 
+[18-01-25 9:22:47 AM] [ INFO ] - ====== Executing the Scenarios from Feature: [new-cars-filter.feature] ======
+[18-01-25 9:22:47 AM] [ INFO ] - Setting up for Scenario: [verify filters for polestar polestar 2 (2025 model) with long range dual motor options]
+[18-01-25 9:22:47 AM] [ INFO ] - Launching the [chrome] Browser in [Headless] Mode.
+[18-01-25 9:22:48 AM] [ INFO ] - Successfully Navigated to the Homepage.
+[18-01-25 9:22:48 AM] [ INFO ] - Cookie consent dialog is not visible.
+[18-01-25 9:22:48 AM] [ INFO ] - Reloading the page and retrying...(2 retries left)
+[18-01-25 9:22:48 AM] [ INFO ] - Successfully Navigated to the Homepage.
+[18-01-25 9:22:48 AM] [ INFO ] - Cookie consent dialog is not visible.
+[18-01-25 9:22:48 AM] [ INFO ] - Reloading the page and retrying...(2 retries left)
+[18-01-25 9:22:48 AM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
+[18-01-25 9:22:50 AM] [ INFO ] - Successfully Navigated to the Homepage.
+[18-01-25 9:22:50 AM] [ INFO ] - Cookie consent dialog is not visible.
+[18-01-25 9:22:50 AM] [ INFO ] - Reloading the page and retrying...(2 retries left)
+[18-01-25 9:22:50 AM] [ INFO ] - Cookie consent dialog is visible.
+[18-01-25 9:22:50 AM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
+[18-01-25 9:22:50 AM] [ INFO ] - Accepted Cookies on Homepage.
+[18-01-25 9:22:50 AM] [ INFO ] - licking on the [Shopping tools] on Homepage.
+[18-01-25 9:22:50 AM] [ INFO ] - Successfully Navigated to the Homepage.
+[18-01-25 9:22:50 AM] [ INFO ] - Cookie consent dialog is not visible.
+[18-01-25 9:22:50 AM] [ INFO ] - Reloading the page and retrying...(2 retries left)
+[18-01-25 9:22:51 AM] [ INFO ] - Cookie consent dialog is visible.
+[18-01-25 9:22:51 AM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
+[18-01-25 9:22:51 AM] [ INFO ] - Accepted Cookies on Homepage.
+[18-01-25 9:22:51 AM] [ INFO ] - licking on the [Shopping tools] on Homepage.
+[18-01-25 9:22:52 AM] [ INFO ] - Cookie consent dialog is visible.
+[18-01-25 9:22:52 AM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
+[18-01-25 9:22:52 AM] [ INFO ] - Accepted Cookies and Cliecking on the [View Offers] to the Homepage.
+[18-01-25 9:22:53 AM] [ INFO ] - Successfully clicked the "Available cars" option.
+[18-01-25 9:22:53 AM] [ INFO ] - Entering the pinocde [43213] in inputfield.
+[18-01-25 9:22:53 AM] [ INFO ] - Successfully clicked the "Available cars" option.
+[18-01-25 9:22:53 AM] [ INFO ] - Entering the pinocde [43213] in inputfield.
+[18-01-25 9:22:53 AM] [ INFO ] - Cookie consent dialog is visible.
+[18-01-25 9:22:53 AM] [ INFO ] - Clicked on [View All Offers] button
+[18-01-25 9:22:53 AM] [ INFO ] - Error clicking on New Vehicle Button:
+[18-01-25 9:22:53 AM] [ INFO ] - Taking Screenshot for Failed Scenario: Verify filters for Polestar Polestar 3 (2025 Model) with Long range Dual motor options
+[18-01-25 9:22:53 AM] [ INFO ] - Closing all Active Browser Sessions...!
+[18-01-25 9:22:53 AM] [ INFO ] - Closing the Browser [Page] 
+[18-01-25 9:22:53 AM] [ INFO ] - Closing the Browser [Context] 
+[18-01-25 9:22:53 AM] [ INFO ] - Closing the Browser [Browser] 
+[18-01-25 9:22:53 AM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
+[18-01-25 9:22:53 AM] [ INFO ] - Accepted Cookies and Cliecking on the [View Offers] to the Homepage.
+[18-01-25 9:22:53 AM] [ INFO ] - ====== Executing the Scenarios from Feature: [preowned-cars-filter.feature] ======
+[18-01-25 9:22:53 AM] [ INFO ] - Setting up for Scenario: [verify filters for polestar pre-owned polestar 2 (2024 model) with all options.]
+[18-01-25 9:22:53 AM] [ INFO ] - Launching the [chrome] Browser in [Headless] Mode.
+[18-01-25 9:22:54 AM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
+[18-01-25 9:22:54 AM] [ INFO ] - Clicked on [View All Offers] button
+[18-01-25 9:22:54 AM] [ INFO ] - Error clicking on New Vehicle Button:
+[18-01-25 9:22:54 AM] [ INFO ] - Taking Screenshot for Failed Scenario: Verify filters for Polestar Polestar 2 (2025 Model) with Long range Dual motor options
+[18-01-25 9:22:54 AM] [ INFO ] - Closing all Active Browser Sessions...!
+[18-01-25 9:22:54 AM] [ INFO ] - Closing the Browser [Page] 
+[18-01-25 9:22:54 AM] [ INFO ] - Closing the Browser [Context] 
+[18-01-25 9:22:54 AM] [ INFO ] - Closing the Browser [Browser] 
+[18-01-25 9:22:54 AM] [ INFO ] - ====== Executing the Scenarios from Feature: [preowned-cars-filter.feature] ======
+[18-01-25 9:22:54 AM] [ INFO ] - Setting up for Scenario: [verify filters for polestar pre-owned polestar 2 (2023 model) with all options.]
+[18-01-25 9:22:54 AM] [ INFO ] - Launching the [chrome] Browser in [Headless] Mode.
+[18-01-25 9:22:55 AM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
+[18-01-25 9:22:56 AM] [ INFO ] - Successfully Navigated to the Homepage.
+[18-01-25 9:22:56 AM] [ INFO ] - Cookie consent dialog is not visible.
+[18-01-25 9:22:56 AM] [ INFO ] - Reloading the page and retrying...(2 retries left)
+[18-01-25 9:22:57 AM] [ INFO ] - Successfully Navigated to the Homepage.
+[18-01-25 9:22:57 AM] [ INFO ] - Cookie consent dialog is not visible.
+[18-01-25 9:22:57 AM] [ INFO ] - Reloading the page and retrying...(2 retries left)
+[18-01-25 9:22:57 AM] [ INFO ] - Pressing the [Space] Key
+[18-01-25 9:22:58 AM] [ INFO ] - Pressing the [Space] Key
+[18-01-25 9:22:58 AM] [ INFO ] - Cookie consent dialog is visible.
+[18-01-25 9:22:59 AM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
+[18-01-25 9:22:59 AM] [ INFO ] - Accepted Cookies and Cliecking on the [View Offers] button.
+[18-01-25 9:22:59 AM] [ INFO ] - Clicked on [View All Offers] button
+[18-01-25 9:22:59 AM] [ INFO ] - Clicking on the [Pre-Owned] button
+[18-01-25 9:22:59 AM] [ INFO ] - Pre-Owned Button Click Action Retrying...
+[18-01-25 9:23:00 AM] [ INFO ] - Cookie consent dialog is visible.
+[18-01-25 9:23:00 AM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
+[18-01-25 9:23:00 AM] [ INFO ] - Accepted Cookies and Cliecking on the [View Offers] button.
+[18-01-25 9:23:01 AM] [ INFO ] - Clicked on [View All Offers] button
+[18-01-25 9:23:01 AM] [ INFO ] - Clicking on the [Pre-Owned] button
+[18-01-25 9:23:01 AM] [ INFO ] - Pre-Owned Button Click Action Retrying...
+[18-01-25 9:23:02 AM] [ INFO ] - Pre-Owned Button Click Action Retrying...
+[18-01-25 9:23:04 AM] [ INFO ] - Clicking on the [Filter] button
+[18-01-25 9:23:05 AM] [ INFO ] - Clicking on the [Car] Locator
+[18-01-25 9:23:05 AM] [ INFO ] - Clicking on the [Filter] button
+[18-01-25 9:23:05 AM] [ INFO ] - Clicking on the [Car] Locator
+[18-01-25 9:23:06 AM] [ INFO ] - Clicking on the [Polestar 2] checkbox
+[18-01-25 9:23:07 AM] [ INFO ] - Clicking on the [Polestar 2] checkbox
+[18-01-25 9:23:07 AM] [ INFO ] - Clicking on valid Suggestion
+[18-01-25 9:23:08 AM] [ INFO ] - Clicking on valid Suggestion
+[18-01-25 9:23:08 AM] [ INFO ] - Clicked on Continue Arrow
+[18-01-25 9:23:08 AM] [ INFO ] - Clicking on the [Show More] button
+[18-01-25 9:23:08 AM] [ INFO ] - Clicked on Continue Arrow
+[18-01-25 9:23:09 AM] [ INFO ] - Checked for value :[Polestar 2]
+[18-01-25 9:23:09 AM] [ INFO ] - Applying Filter :
+ - [Car] : [Polestar 2]
+[18-01-25 9:23:09 AM] [ INFO ] - Clicking on the [Model year] Locator
+[18-01-25 9:23:10 AM] [ INFO ] - Clicking on the [2023] checkbox
+[18-01-25 9:23:10 AM] [ INFO ] - Checked for value :[Polestar 2]
+[18-01-25 9:23:10 AM] [ INFO ] - Applying Filter :
+ - [Car] : [Polestar 2]
+[18-01-25 9:23:10 AM] [ INFO ] - Clicking on the [Model year] Locator
+[18-01-25 9:23:10 AM] [ INFO ] - Default Filter Model : [Polestar 2]
+[18-01-25 9:23:10 AM] [ INFO ] - Vlidated Expected Car Modle [Polestar 2] with Actual [Polestar 2] Car Model
+[18-01-25 9:23:10 AM] [ INFO ] - Clicking on the [2024] checkbox
+[18-01-25 9:23:13 AM] [ INFO ] - Checked for value :[2023]
+[18-01-25 9:23:13 AM] [ INFO ] - Applying Filter :
+ - [Model year] : [2023]
+[18-01-25 9:23:13 AM] [ INFO ] - Clicking on the [Powertrain] Locator
+[18-01-25 9:23:13 AM] [ INFO ] - ModelYears:, [7], Powertrains: [7] , Prices: [7]
+[18-01-25 9:23:13 AM] [ INFO ] - Closing all Active Browser Sessions...!
+[18-01-25 9:23:13 AM] [ INFO ] - Closing the Browser [Page] 
+[18-01-25 9:23:13 AM] [ INFO ] - Closing the Browser [Context] 
+[18-01-25 9:23:13 AM] [ INFO ] - Closing the Browser [Browser] 
+[18-01-25 9:23:13 AM] [ INFO ] - ====== Executing the Scenarios from Feature: [preowned-cars-filter.feature] ======
+[18-01-25 9:23:13 AM] [ INFO ] - Setting up for Scenario: [verify filters for polestar pre-owned polestar 2 (2022 model) with all options.]
+[18-01-25 9:23:13 AM] [ INFO ] - Launching the [chrome] Browser in [Headless] Mode.
+[18-01-25 9:23:13 AM] [ INFO ] - Clicking on the [All] checkbox
+[18-01-25 9:23:13 AM] [ INFO ] - Checked for value :[2024]
+[18-01-25 9:23:13 AM] [ INFO ] - Applying Filter :
+ - [Model year] : [2024]
+[18-01-25 9:23:13 AM] [ INFO ] - Clicking on the [Powertrain] Locator
+[18-01-25 9:23:14 AM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
+[18-01-25 9:23:14 AM] [ INFO ] - Clicking on the [All] checkbox
+[18-01-25 9:23:16 AM] [ INFO ] - Successfully Navigated to the Homepage.
+[18-01-25 9:23:16 AM] [ INFO ] - Cookie consent dialog is not visible.
+[18-01-25 9:23:16 AM] [ INFO ] - Reloading the page and retrying...(2 retries left)
+[18-01-25 9:23:16 AM] [ INFO ] - ModelYears:, [5], Powertrains: [5] , Prices: [5]
+[18-01-25 9:23:16 AM] [ INFO ] - Closing all Active Browser Sessions...!
+[18-01-25 9:23:16 AM] [ INFO ] - Closing the Browser [Page] 
+[18-01-25 9:23:16 AM] [ INFO ] - Closing the Browser [Context] 
+[18-01-25 9:23:16 AM] [ INFO ] - Closing the Browser [Browser] 
+[18-01-25 9:23:16 AM] [ INFO ] - ====== Executing the Scenarios from Feature: [preowned-cars-filter.feature] ======
+[18-01-25 9:23:16 AM] [ INFO ] - Setting up for Scenario: [verify filters for polestar pre-owned polestar 2 (2021 model) with all options.]
+[18-01-25 9:23:16 AM] [ INFO ] - Launching the [chrome] Browser in [Headless] Mode.
+[18-01-25 9:23:17 AM] [ INFO ] - Checked for value :[All]
+[18-01-25 9:23:17 AM] [ INFO ] - Applying Filter :
+ - [Powertrain] : [All]
+[18-01-25 9:23:17 AM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
+[18-01-25 9:23:17 AM] [ INFO ] - I clicked on [View] button.
+[18-01-25 9:23:17 AM] [ INFO ] - Found results :
+[18-01-25 9:23:17 AM] [ INFO ] - Validation passed: All results contain "Polestar 2 Certified Pre-owned".
+[18-01-25 9:23:17 AM] [ INFO ] - Closing all Active Browser Sessions...!
+[18-01-25 9:23:17 AM] [ INFO ] - Closing the Browser [Page] 
+[18-01-25 9:23:17 AM] [ INFO ] - Closing the Browser [Context] 
+[18-01-25 9:23:17 AM] [ INFO ] - Closing the Browser [Browser] 
+[18-01-25 9:23:17 AM] [ INFO ] - ============ Test execution completed ====================
+[18-01-25 9:23:17 AM] [ INFO ] - Checked for value :[All]
+[18-01-25 9:23:17 AM] [ INFO ] - Applying Filter :
+ - [Powertrain] : [All]
+[18-01-25 9:23:17 AM] [ INFO ] - I clicked on [View] button.
+[18-01-25 9:23:17 AM] [ INFO ] - Found results :
+[18-01-25 9:23:17 AM] [ INFO ] - Validation passed: All results contain "Polestar 2 Certified Pre-owned".
+[18-01-25 9:23:17 AM] [ INFO ] - Closing all Active Browser Sessions...!
+[18-01-25 9:23:17 AM] [ INFO ] - Closing the Browser [Page] 
+[18-01-25 9:23:17 AM] [ INFO ] - Closing the Browser [Context] 
+[18-01-25 9:23:17 AM] [ INFO ] - Closing the Browser [Browser] 
+[18-01-25 9:23:17 AM] [ INFO ] - ============ Test execution completed ====================
+[18-01-25 9:23:18 AM] [ INFO ] - Cookie consent dialog is visible.
+[18-01-25 9:23:18 AM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
+[18-01-25 9:23:18 AM] [ INFO ] - Accepted Cookies and Cliecking on the [View Offers] button.
+[18-01-25 9:23:19 AM] [ INFO ] - Clicked on [View All Offers] button
+[18-01-25 9:23:19 AM] [ INFO ] - Clicking on the [Pre-Owned] button
+[18-01-25 9:23:19 AM] [ INFO ] - Pre-Owned Button Click Action Retrying...
+[18-01-25 9:23:20 AM] [ INFO ] - Successfully Navigated to the Homepage.
+[18-01-25 9:23:20 AM] [ INFO ] - Cookie consent dialog is not visible.
+[18-01-25 9:23:20 AM] [ INFO ] - Reloading the page and retrying...(2 retries left)
+[18-01-25 9:23:23 AM] [ INFO ] - Clicking on the [Filter] button
+[18-01-25 9:23:23 AM] [ INFO ] - Cookie consent dialog is visible.
+[18-01-25 9:23:23 AM] [ INFO ] - Clicking on the [Car] Locator
+[18-01-25 9:23:23 AM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
+[18-01-25 9:23:23 AM] [ INFO ] - Accepted Cookies and Cliecking on the [View Offers] button.
+[18-01-25 9:23:24 AM] [ INFO ] - Clicked on [View All Offers] button
+[18-01-25 9:23:24 AM] [ INFO ] - Clicking on the [Pre-Owned] button
+[18-01-25 9:23:24 AM] [ INFO ] - Pre-Owned Button Click Action Retrying...
+[18-01-25 9:23:24 AM] [ INFO ] - Clicking on the [Polestar 2] checkbox
+[18-01-25 9:23:26 AM] [ INFO ] - Pre-Owned Button Click Action Retrying...
+[18-01-25 9:23:28 AM] [ INFO ] - Checked for value :[Polestar 2]
+[18-01-25 9:23:28 AM] [ INFO ] - Applying Filter :
+ - [Car] : [Polestar 2]
+[18-01-25 9:23:28 AM] [ INFO ] - Clicking on the [Model year] Locator
+[18-01-25 9:23:28 AM] [ INFO ] - Clicking on the [2022] checkbox
+[18-01-25 9:23:29 AM] [ INFO ] - Clicking on the [Filter] button
+[18-01-25 9:23:30 AM] [ INFO ] - Clicking on the [Car] Locator
+[18-01-25 9:23:31 AM] [ INFO ] - Clicking on the [Polestar 2] checkbox
+[18-01-25 9:23:31 AM] [ INFO ] - Checked for value :[2022]
+[18-01-25 9:23:31 AM] [ INFO ] - Applying Filter :
+ - [Model year] : [2022]
+[18-01-25 9:23:31 AM] [ INFO ] - Clicking on the [Powertrain] Locator
+[18-01-25 9:23:32 AM] [ INFO ] - Clicking on the [All] checkbox
+[18-01-25 9:23:34 AM] [ INFO ] - Checked for value :[Polestar 2]
+[18-01-25 9:23:34 AM] [ INFO ] - Applying Filter :
+ - [Car] : [Polestar 2]
+[18-01-25 9:23:34 AM] [ INFO ] - Clicking on the [Model year] Locator
+[18-01-25 9:23:35 AM] [ INFO ] - Clicking on the [2021] checkbox
+[18-01-25 9:23:35 AM] [ INFO ] - Checked for value :[All]
+[18-01-25 9:23:35 AM] [ INFO ] - Applying Filter :
+ - [Powertrain] : [All]
+[18-01-25 9:23:35 AM] [ INFO ] - I clicked on [View] button.
+[18-01-25 9:23:35 AM] [ INFO ] - Found results :
+[18-01-25 9:23:35 AM] [ INFO ] - Validation passed: All results contain "Polestar 2 Certified Pre-owned".
+[18-01-25 9:23:35 AM] [ INFO ] - Closing all Active Browser Sessions...!
+[18-01-25 9:23:35 AM] [ INFO ] - Closing the Browser [Page] 
+[18-01-25 9:23:35 AM] [ INFO ] - Closing the Browser [Context] 
+[18-01-25 9:23:35 AM] [ INFO ] - Closing the Browser [Browser] 
+[18-01-25 9:23:35 AM] [ INFO ] - ============ Test execution completed ====================
+[18-01-25 9:23:38 AM] [ INFO ] - Checked for value :[2021]
+[18-01-25 9:23:38 AM] [ INFO ] - Applying Filter :
+ - [Model year] : [2021]
+[18-01-25 9:23:38 AM] [ INFO ] - Clicking on the [Powertrain] Locator
+[18-01-25 9:23:39 AM] [ INFO ] - Clicking on the [All] checkbox
+[18-01-25 9:23:42 AM] [ INFO ] - Checked for value :[All]
+[18-01-25 9:23:42 AM] [ INFO ] - Applying Filter :
+ - [Powertrain] : [All]
+[18-01-25 9:23:42 AM] [ INFO ] - I clicked on [View] button.
+[18-01-25 9:23:42 AM] [ INFO ] - Found results :
+[18-01-25 9:23:42 AM] [ INFO ] - Validation passed: All results contain "Polestar 2 Certified Pre-owned".
+[18-01-25 9:23:42 AM] [ INFO ] - Closing all Active Browser Sessions...!
+[18-01-25 9:23:42 AM] [ INFO ] - Closing the Browser [Page] 
+[18-01-25 9:23:42 AM] [ INFO ] - Closing the Browser [Context] 
+[18-01-25 9:23:42 AM] [ INFO ] - Closing the Browser [Browser] 
+[18-01-25 9:23:42 AM] [ INFO ] - ============ Test execution completed ====================

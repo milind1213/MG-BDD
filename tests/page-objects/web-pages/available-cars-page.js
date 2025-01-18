@@ -1,10 +1,10 @@
-const utils  = require('../../common-platform-utils/common-playwright.js');
+const PlaywrightActions  = require('../../common-platform-utils/common-playwright.js');
 const log = require('../../../utils/logger');
 
-class AvailableCarsPage {
-  
+class AvailableCarsPage extends PlaywrightActions {
   constructor(page) 
   {
+    super();
     this.page = page;
     this.pincodeInput = page.locator('.css-d38uju'); 
     this.addressSuggestions = page.locator("//*[@class='css-1f6i4lf']//button");
@@ -30,20 +30,20 @@ class AvailableCarsPage {
   async clickOnFilter()
   {
     log("Clicking on Filter Button");
-    await utils.Click(this.filterButton);
+    await this.Click(this.filterButton);
     this.page.waitForTimeout(5000);
   }
 
   async clickResultButton()
   {
     log("Clicking on Result Button");
-    await utils.scrollIntoViewAndClick(this.resultsButton);
+    await this.scrollIntoViewAndClick(this.resultsButton);
   }
 
   async closeFilter()
   {
     log("Clicking on Result Button");
-    await utils.scrollIntoViewAndClick(this.closeFilterBtn);
+    await this.scrollIntoViewAndClick(this.closeFilterBtn);
     await this.page.waitForSelector('.css-15llhoi span:nth-child(1)', { state: 'visible' });
   }
 
@@ -54,13 +54,13 @@ class AvailableCarsPage {
         await checkBoxLocator.scrollIntoViewIfNeeded();
         
         log("checking the [checkbox]");
-        await utils.Click(checkBoxLocator);
+        await this.Click(checkBoxLocator);
 
         await this.page.waitForTimeout(3000); 
         let isChecked = await checkBoxLocator.isChecked();
         if (!isChecked) {
             log("checking the [checkbox]");
-            await utils.Click(checkBoxLocator); 
+            await this.Click(checkBoxLocator); 
 
             await this.page.waitForTimeout(2000);
             isChecked = await checkBoxLocator.isChecked();
@@ -85,7 +85,7 @@ class AvailableCarsPage {
       await exteriorLocator.scrollIntoViewIfNeeded(); 
       
       log(`clcking on the [${value}] filter option`);
-      await utils.Click(exteriorLocator); 
+      await this.Click(exteriorLocator); 
 
       await this.page.waitForSelector('button[aria-pressed="true"]', { timeout: 10000 });
       log(`Successfully applied exterior filter: ${value}`);
@@ -99,20 +99,20 @@ class AvailableCarsPage {
   async closeFilter()
   {
     log("Clicking on close cross button");
-    await utils.Click(this.closeFilterBtn);
+    await this.Click(this.closeFilterBtn);
   }
 
 
   async applySortFilter(option) 
   {
-    await utils.Click(this.sortDefaultFilter);
+    await this.Click(this.sortDefaultFilter);
     await this.page.waitForTimeout(1000);
     const filterOptionLocator = this.page.locator(`//*[@id='sort-by-list']//button[contains(text(),'${option}')]`);
     const isOptionVisible = await filterOptionLocator.isVisible();
     if (isOptionVisible) 
     {
         log(`Clicking on sort filter: [${option}]`);
-        await utils.Click(filterOptionLocator);
+        await this.Click(filterOptionLocator);
         await this.page.waitForTimeout(3000);
     } else {
         throw new Error(`Sort filter option [${option}] not found`);
@@ -135,13 +135,13 @@ class AvailableCarsPage {
   async clickShowMore()
   {
     log(`Clicking on the [Show More] button`);
-     await utils.scrollIntoViewAndClick(this.showMoreButton);
+     await this.scrollIntoViewAndClick(this.showMoreButton);
      await this.page.waitForTimeout(3000);
   }
   
   async clickContiunWithAddressButton()
   {
-    await utils.Click(this.selectedRetailerButton);
+    await this.Click(this.selectedRetailerButton);
     log("Clicked on Continue Arrow");
   }
 
@@ -161,12 +161,12 @@ class AvailableCarsPage {
   async clickMyLocationButton()
   {
     log(`Clicking on the [Use My location] button`);
-     await utils.Click(this.useMyLocationButton);
+     await this.Click(this.useMyLocationButton);
   }
 
   async locationErrorText() 
   {
-     const errorText = await utils.getText(this.page, '.css-3ak29v');
+     const errorText = await this.getText(this.page, '.css-3ak29v');
      log(`Location Error :`,errorText);
      return errorText; 
   }
@@ -175,7 +175,7 @@ class AvailableCarsPage {
   async enterPinCodeAndSelectAddress(pinCode) 
   {
     log(`Entering the pinocde [${pinCode}] in inputfield.`);
-    await utils.Fill(this.pincodeInput,pinCode);
+    await this.Fill(this.pincodeInput,pinCode);
     
     log(`Pressing the [Space] Key`);
     await this.pincodeInput.press('Space');
@@ -187,7 +187,7 @@ class AvailableCarsPage {
     if (!suggestion.includes('No result available'||'Loading')) 
     {
        log('Clicking on valid Suggestion');
-       await utils.Click(this.addressSuggestions.nth(0));
+       await this.Click(this.addressSuggestions.nth(0));
        return; 
     } else {
        log("Not Found Suggestions");
@@ -196,7 +196,7 @@ class AvailableCarsPage {
 
   async getTitleText()
   {
-    const avalableCarsText = await utils.getText(this.avalableCarsTextLoc);
+    const avalableCarsText = await this.getText(this.avalableCarsTextLoc);
     return avalableCarsText;
   }
 

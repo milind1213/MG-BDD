@@ -1,4 +1,4 @@
-const utils = {
+class PlaywrightActions {
  
   async Click(locator) 
   {
@@ -9,7 +9,7 @@ const utils = {
       console.error(`Failed to click the element: ${locator}, error: ${error.message}`);
       throw error; 
     }
-  },
+  }
 
   async doubleClick(locator) 
   {
@@ -20,7 +20,7 @@ const utils = {
        console.error(`Failed to double-click the element: ${locator}, error: ${error.message}`);
        throw error;  
      }
-  },
+  }
 
   async ClickWithForce(locator, forceClick = true) {
     try {
@@ -30,7 +30,7 @@ const utils = {
       console.error(`Failed to click the element: ${locator}, error: ${error.message}`);
       throw error;  
     }
-  },
+  }
 
   async scrollIntoViewAndClick(locator) 
   {
@@ -42,7 +42,7 @@ const utils = {
       console.error(`Failed to click on element: ${locator}, error: ${error.message}`);
       throw error;
     }
-  },
+  }
 
   async scrollClickText(page, textVal) 
   {
@@ -51,7 +51,7 @@ const utils = {
     await page.locator(locator).scrollIntoViewIfNeeded();
     await page.locator(locator).click();
     await page.waitForTimeout(2000);
-  },
+  }
 
   async clickWithRetries(locator, retries = 3) 
   {
@@ -67,7 +67,7 @@ const utils = {
         }
     }
     throw new Error(`Failed to click after ${retries} attempts`);
-},
+}
 
   async Fill(locator, text) 
   {
@@ -79,7 +79,7 @@ const utils = {
       console.error(`Failed to Enter Value : ${locator}, error: ${error.message}`);
       throw error;
     }
-  },
+  }
 
   async clearAndFill(page, locator, text) 
   {
@@ -90,7 +90,7 @@ const utils = {
     } catch (error) {
         console.error(`Failed to clear and send keys to element [${locator}]`);
     }
-},
+}
 
 async refresh(page) 
 {
@@ -99,7 +99,7 @@ async refresh(page)
   } catch (error) {
       console.error("Failed to refresh the page.");
   }
-},
+}
 
 async getText(page, locator, timeout = 5000) 
 {
@@ -111,7 +111,7 @@ async getText(page, locator, timeout = 5000)
     console.error(`Error fetching text from element [${locator}]:`, error.message);
     return null;
   }
-},
+}
 
 async getTexts(page, locator, timeout = 5000) 
 {
@@ -124,7 +124,7 @@ async getTexts(page, locator, timeout = 5000)
     console.error(`Error fetching texts from elements [${locator}]:`, error.message);
     return [];
   }
-},
+}
 
 async getAttribute(page, locator,attribute) 
 {
@@ -135,7 +135,7 @@ async getAttribute(page, locator,attribute)
       console.error(`Failed to get attribute [${attribute}] from [${locator}]`);
       return "null";
   }
-},
+}
 
 
 async isLocatorTextDisplayed(page, textVal) 
@@ -146,7 +146,7 @@ async isLocatorTextDisplayed(page, textVal)
   } catch (error) {
       return false;
   }
-},
+}
 
 async isTextInPage(page, text) 
 {
@@ -157,7 +157,7 @@ async isTextInPage(page, text)
     console.error(`Failed to check if text is in page: ${text}, error: ${error.message}`);
     return false;
   }
-},
+}
 
   async waitLocaterVisibility(locator, timeout = 10000) 
   {
@@ -167,7 +167,7 @@ async isTextInPage(page, text)
       console.error(`Failed to wait for element visibility: ${locator}, error: ${error.message}`);
       throw error;
     }
-  },
+  }
 
   async waitForLocatorClickable(locator, timeout = 5000) 
   {
@@ -178,7 +178,7 @@ async isTextInPage(page, text)
       console.error(`Failed to wait for element to be clickable: ${locator}, error: ${error.message}`);
       throw error;
     }
-  },
+  }
 
   async waitForLocatorPresence(locator, timeout = 5000) 
   {
@@ -188,7 +188,7 @@ async isTextInPage(page, text)
       console.error(`Failed to wait for element presence: ${locator}, error: ${error.message}`);
       throw error;
     }
-  },
+  }
 
   async waitForLocatorDisplay(page, locator, timeout = 30000) 
   {
@@ -197,7 +197,7 @@ async isTextInPage(page, text)
     } catch (error) {
         console.error(`Waited for element [${locator}] for ${timeout/1000} seconds`);
     }
-  },
+  }
 
   
 async isLocatorDisplayed(page, locator) 
@@ -210,7 +210,7 @@ async isLocatorDisplayed(page, locator)
       console.error(`Failed to check visibility of element [${locator}]`);
       return false;
   }
-},
+}
 
   async isLocatorPresent(locator) 
   {
@@ -221,14 +221,14 @@ async isLocatorDisplayed(page, locator)
       console.error(`Failed to check if element is present: ${locator}, error: ${error.message}`);
       return false;
     }
-  },
+  }
 
 
   async isSelectorEnabled(page, selector) 
  {
     const element = await page.$(selector);
     return await element.isEnabled();
- },
+ }
 
 
   async selectDropdownOptionByText(locator, optionText) 
@@ -240,7 +240,7 @@ async isLocatorDisplayed(page, locator)
       console.error(`Failed to select option from dropdown: ${optionText}, error: ${error.message}`);
       throw error;
     }
-  },
+  }
 
   async scrollUpto(page, locator) 
   {
@@ -250,13 +250,13 @@ async isLocatorDisplayed(page, locator)
     } catch (error) {
         console.error(`Failed to scroll to element [${locator}]`);
     }
-  },
+  }
 
   async switchToTab(page, tabNo) 
   {
     const pages = await page.context().pages();
     await pages[tabNo].bringToFront();
-  },
+  }
 
   async switchBackToParentWindowAndCloseChild(page) 
   {
@@ -269,14 +269,14 @@ async isLocatorDisplayed(page, locator)
     }
     await parentPage.bringToFront();
     console.log("Switched back to parent window");
-},
+}
 
 async scrollDownTillLast(page) 
 {
   await page.evaluate(() => {
       window.scrollBy(0, document.body.scrollHeight);
   });
-},
+}
 
 async pressBack(page, times) 
 {
@@ -284,7 +284,7 @@ async pressBack(page, times)
   {
       await page.goBack();
   }
-},
+}
 
 async uploadFile(page, locator, filePath) 
 {
@@ -296,14 +296,14 @@ async uploadFile(page, locator, filePath)
   } catch (error) {
       console.error(`File upload failed: ${error.message}`);
   }
-},
+}
 
 async getBrowserConsoleLogs(page) 
 {
   const logs = [];
   page.on('console', msg => logs.push(msg.text()));
   return logs;
-},
+}
 
 async handleAlert(page, action = 'accept') 
 {
@@ -314,23 +314,23 @@ async handleAlert(page, action = 'accept')
           await dialog.dismiss();
       }
   });
-},
+}
 
 async setCookie(page, cookie)
 {
   await page.context().addCookies([cookie]);
-},
+}
 
 async getCookies(page) 
 {
   return await page.context().cookies();
-},
+}
 
 async hoverOverElement(page, selector) 
 {
   const element = await page.$(selector);
   await element.hover();
-},
+}
 
 async waitLocaotorToContainText(page, selector, text, timeout = 5000) 
 {
@@ -345,21 +345,21 @@ async waitLocaotorToContainText(page, selector, text, timeout = 5000)
   } catch (e) {
       console.error(`Failed to find element with text "${text}"`);
   }
-},
+}
 
 async switchToIframe(page, iframeSelector) 
 {
   const iframeElement = await page.$(iframeSelector);
   const iframe = await iframeElement.contentFrame();
   return iframe;
-},
+}
 
 async getLocatorPosition(page, selector) 
 {
   const element = await page.$(selector);
   const box = await element.boundingBox();
   return box;
-},
+}
 
 async selectDropdown(page, selector, option) 
 {
@@ -377,7 +377,7 @@ async selectDropdown(page, selector, option)
      } catch (error) {
          console.error(`Error selecting dropdown option: ${error.message}`);
      }
-},
+}
 
 
 async highlightLocator(locator) 
@@ -388,4 +388,4 @@ async highlightLocator(locator)
 }
 
 };
-module.exports = utils;
+module.exports = PlaywrightActions;

@@ -18,8 +18,8 @@
       "json:reports/cucumber-report.json",
       "summary"
     ],
-    "retry":2,
+    "retry":0,
     "timeout": 60000,
-    "parallel":1
+    "parallel":4
   }
 }

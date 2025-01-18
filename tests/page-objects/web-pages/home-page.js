@@ -1,10 +1,10 @@
-const utils  = require('../../common-platform-utils/common-playwright.js');
+const PlaywrightActions  = require('../../common-platform-utils/common-playwright.js');
 const log = require('../../../utils/logger');
 
-class HomePage {
+class HomePage extends PlaywrightActions {
   constructor(page) {
+    super();
     this.page = page;
-    
     this.buttons = { 
     accept: this.page.locator('#onetrust-accept-btn-handler'),
     reject: this.page.locator('#onetrust-reject-all-handler')};
@@ -22,8 +22,8 @@ class HomePage {
   async clickHeader(header) 
   {
     const headerLocator = this.page.locator(".css-1lfoa71", { hasText: header });
-    await utils.waitLocaterVisibility(headerLocator);
-    await utils.Click(headerLocator); 
+    await this.waitLocaterVisibility(headerLocator);
+    await this.Click(headerLocator); 
   }
 
   async clickShoppingToolOption(option) {
@@ -67,7 +67,7 @@ class HomePage {
   {
     if (await this.viewAllOffersButton.isVisible()) 
     {
-        await utils.Click(this.viewAllOffersButton);
+        await this.Click(this.viewAllOffersButton);
         log("Clicked on [View All Offers] button");
      } else {
         log("Not Visible [View All Offers] Button.");
@@ -91,7 +91,7 @@ class HomePage {
          log("Cookie consent dialog is visible.");
         if (await button.isVisible())
         {
-           await utils.Click(button);
+           await this.Click(button);
            log(`Clicked successfully on ['${action.charAt(0).toUpperCase() + action.slice(1)} All Cookies]' button`);
            return;
          } else {
