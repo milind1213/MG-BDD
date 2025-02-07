@@ -6,7 +6,8 @@
     "test:web": "npx cucumber-js --tags @web --config config-directory/cucumber.json && node generate-report.js || node generate-report.js",
     "test:api": "npx cucumber-js --tags @api --parallel 1 --config config-directory/cucumber.json && node generate-report.js || node generate-report.js",
     "test:all": "npx cucumber-js --config config-directory/cucumber.json  && node generate-report.js || node generate-report.js ./tests/features",
-    "test:sanity": "npx cucumber-js --tags @sanity --config config-directory/cucumber.json && node generate-report.js || node generate-report.js"
+    "test:sanity": "npx cucumber-js --tags @sanity --config config-directory/cucumber.json && node generate-report.js || node generate-report.js",
+    "test:k6": "k6 run tests/performance/k6-test.js"
   },
   "keywords": [],
   "author": "Milind G",

@@ -20,6 +20,6 @@
     ],
     "retry":2,
     "timeout": 60000,
-    "parallel":4
+    "parallel":1
   }
 }

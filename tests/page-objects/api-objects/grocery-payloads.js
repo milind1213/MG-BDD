@@ -1,9 +1,8 @@
 class GroceryPayloads {
-
   static generateTimestamp() {
     return Date.now();
   }
-  
+
   static generateToken(clientName) {
     const timestamp = this.generateTimestamp();
     return {
@@ -30,5 +29,4 @@ class GroceryPayloads {
   }
 }
 
-
-module.exports = { GroceryPayloads };
+module.exports = GroceryPayloads;

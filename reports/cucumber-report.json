@@ -4,195 +4,6 @@
     "elements": [
       {
         "description": "",
-        "id": "groceries-api-test-suite;validate-the-access-token-generation-api-functionality",
-        "keyword": "Scenario",
-        "line": 14,
-        "name": "Validate the Access token Generation API functionality",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1386899
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 7,
-            "name": "The Grocery baseURL is initialized",
-            "match": {
-              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:12"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 7361199
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 15,
-            "name": "I create a token for client \"TestClient\"",
-            "match": {
-              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:42"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4485000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 16,
-            "name": "I send a POST request to \"/api-clients\"",
-            "match": {
-              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:78"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3873108899
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 17,
-            "name": "I should receive a 201 status code",
-            "match": {
-              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:46"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4912400
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 18,
-            "name": "The response should contain \"accessToken\"",
-            "match": {
-              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:50"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 6897100
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 568599
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@sanity",
-            "line": 1
-          },
-          {
-            "name": "@api",
-            "line": 1
-          }
-        ],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "groceries-api-test-suite;check-if-the-server-is-up-and-running-via-api",
-        "keyword": "Scenario",
-        "line": 9,
-        "name": "Check if the server is up and running via API",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1567300
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 7,
-            "name": "The Grocery baseURL is initialized",
-            "match": {
-              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:12"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 5118699
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 10,
-            "name": "I send a GET request to the endpoint \"/status\".",
-            "match": {
-              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:17"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4312073599
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 11,
-            "name": "The response status code should be 200.",
-            "match": {
-              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:30"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4957099
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 12,
-            "name": "The response body should have \"status\" as \"UP\".",
-            "match": {
-              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:35"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 9522100
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 533300
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@sanity",
-            "line": 1
-          },
-          {
-            "name": "@api",
-            "line": 1
-          }
-        ],
-        "type": "scenario"
-      },
-      {
-        "description": "",
         "id": "groceries-api-test-suite;verify-the-api-functionaliy-to-fetch-a-specific-products-by-id",
         "keyword": "Scenario",
         "line": 20,
@@ -203,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1554399
+              "duration": 2457499
             }
           },
           {
@@ -216,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 7118399
+              "duration": 10058099
             }
           },
           {
@@ -229,7 +40,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3201631600
+              "duration": 2783798599
             }
           },
           {
@@ -242,7 +53,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4275200
+              "duration": 6531600
             }
           },
           {
@@ -255,7 +66,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5526499
+              "duration": 3730999
             }
           },
           {
@@ -263,7 +74,109 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 354699
+              "duration": 317900
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@sanity",
+            "line": 1
+          },
+          {
+            "name": "@api",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "groceries-api-test-suite;validate-the-access-token-generation-api-functionality",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "Validate the Access token Generation API functionality",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1963199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "The Grocery baseURL is initialized",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 807800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 15,
+            "name": "I create a token for client \"TestClient\"",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:42"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 565399,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'generateToken')\n    at World.<anonymous> (C:\\Users\\milind.ghongade\\Documents\\MG-BDD\\tests\\step-definitions\\api-steps\\grocery-apis.step.js:43:29)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "I send a POST request to \"/api-clients\"",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:78"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "I should receive a 201 status code",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:46"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "The response should contain \"accessToken\"",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:50"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 470100
             }
           }
         ],
@@ -291,7 +204,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1991399
+              "duration": 1790300
             }
           },
           {
@@ -304,7 +217,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 7880699
+              "duration": 745399
             }
           },
           {
@@ -317,7 +230,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3428399
+              "duration": 6169099
             }
           },
           {
@@ -330,7 +243,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3895448300
+              "duration": 2763535000
             }
           },
           {
@@ -343,7 +256,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 6226300
+              "duration": 3467700
             }
           },
           {
@@ -356,7 +269,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 8923200
+              "duration": 6784899
             }
           },
           {
@@ -364,7 +277,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 2822999
+              "duration": 421699
             }
           }
         ],
@@ -392,7 +305,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 3453800
+              "duration": 2171300
             }
           },
           {
@@ -405,7 +318,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1324800
+              "duration": 1444000
             }
           },
           {
@@ -417,8 +330,9 @@
               "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:42"
             },
             "result": {
-              "status": "passed",
-              "duration": 3684900
+              "status": "failed",
+              "duration": 799500,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'generateToken')\n    at World.<anonymous> (C:\\Users\\milind.ghongade\\Documents\\MG-BDD\\tests\\step-definitions\\api-steps\\grocery-apis.step.js:43:29)"
             }
           },
           {
@@ -430,8 +344,8 @@
               "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:78"
             },
             "result": {
-              "status": "passed",
-              "duration": 1285369200
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -443,8 +357,8 @@
               "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:87"
             },
             "result": {
-              "status": "passed",
-              "duration": 64189000
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -456,8 +370,8 @@
               "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:91"
             },
             "result": {
-              "status": "passed",
-              "duration": 12533399
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -465,7 +379,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 316499
+              "duration": 358400
             }
           }
         ],
@@ -493,7 +407,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 3114100
+              "duration": 1848100
             }
           },
           {
@@ -506,7 +420,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1879500
+              "duration": 1101400
             }
           },
           {
@@ -519,7 +433,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 730985799
+              "duration": 2680361900
             }
           },
           {
@@ -532,7 +446,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 7160599
+              "duration": 2922000
             }
           },
           {
@@ -545,7 +459,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 41083900
+              "duration": 8011300
             }
           },
           {
@@ -553,7 +467,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 231999
+              "duration": 137099
             }
           }
         ],
@@ -581,7 +495,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1783200
+              "duration": 4691799
             }
           },
           {
@@ -594,7 +508,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 962000
+              "duration": 1735099
             }
           },
           {
@@ -607,7 +521,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 691910899
+              "duration": 315652000
             }
           },
           {
@@ -620,7 +534,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 7696100
+              "duration": 4949300
             }
           },
           {
@@ -633,7 +547,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10408600
+              "duration": 8016399
             }
           },
           {
@@ -641,7 +555,95 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 139299
+              "duration": 334399
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@sanity",
+            "line": 1
+          },
+          {
+            "name": "@api",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "groceries-api-test-suite;check-if-the-server-is-up-and-running-via-api",
+        "keyword": "Scenario",
+        "line": 9,
+        "name": "Check if the server is up and running via API",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1166100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "The Grocery baseURL is initialized",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 821300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "I send a GET request to the endpoint \"/status\".",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 912470000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "The response status code should be 200.",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11420799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "The response body should have \"status\" as \"UP\".",
+            "match": {
+              "location": "tests\\step-definitions\\api-steps\\grocery-apis.step.js:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 18665699
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 231899
             }
           }
         ],
@@ -679,17 +681,17 @@
     "elements": [
       {
         "description": "",
-        "id": "verify-filter-functionality-for-polestar-offers;verify-filters-for-polestar-polestar-3-(2025-model)-with-long-range-dual-motor-options",
+        "id": "verify-filter-functionality-for-polestar-offers;verify-filters-for-polestar-polestar-2-(2025-model)-with-long-range-dual-motor-options",
         "keyword": "Scenario Outline",
-        "line": 21,
-        "name": "Verify filters for Polestar Polestar 3 (2025 Model) with Long range Dual motor options",
+        "line": 22,
+        "name": "Verify filters for Polestar Polestar 2 (2025 Model) with Long range Dual motor options",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1062936200
+              "duration": 2399488199
             }
           },
           {
@@ -702,7 +704,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4694446599
+              "duration": 4928572900
             }
           },
           {
@@ -715,7 +717,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5511188299
+              "duration": 4920422899
             }
           },
           {
@@ -728,20 +730,20 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1546513200
+              "duration": 1259263100
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 13,
-            "name": "I click on the \"Car\" filter and select the checkbox for \"Polestar 3\"",
+            "name": "I click on the \"Car\" filter and select the checkbox for \"Polestar 2\"",
             "match": {
               "location": "tests\\step-definitions\\web-steps\\new-cars-filter.steps.js:29"
             },
             "result": {
               "status": "passed",
-              "duration": 4809228699
+              "duration": 4543363100
             }
           },
           {
@@ -754,7 +756,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3742068299
+              "duration": 3755488399
             }
           },
           {
@@ -767,7 +769,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3699508200
+              "duration": 3641560799
             }
           },
           {
@@ -780,20 +782,20 @@
             },
             "result": {
               "status": "passed",
-              "duration": 220025700
+              "duration": 181056700
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 17,
-            "name": "the results should match the filter criteria \"Polestar 3\"",
+            "name": "the results should match the filter criteria \"Polestar 2 Long range Dual\"",
             "match": {
               "location": "tests\\step-definitions\\web-steps\\new-cars-filter.steps.js:40"
             },
             "result": {
               "status": "passed",
-              "duration": 44540899
+              "duration": 36363600
             }
           },
           {
@@ -801,7 +803,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 176787499
+              "duration": 109966700
             }
           }
         ],
@@ -819,17 +821,17 @@
       },
       {
         "description": "",
-        "id": "verify-filter-functionality-for-polestar-offers;verify-filters-for-polestar-polestar-2-(2025-model)-with-long-range-dual-motor-options",
+        "id": "verify-filter-functionality-for-polestar-offers;verify-filters-for-polestar-polestar-3-(2025-model)-with-long-range-dual-motor-options",
         "keyword": "Scenario Outline",
-        "line": 22,
-        "name": "Verify filters for Polestar Polestar 2 (2025 Model) with Long range Dual motor options",
+        "line": 21,
+        "name": "Verify filters for Polestar Polestar 3 (2025 Model) with Long range Dual motor options",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 911817099
+              "duration": 368790800
             }
           },
           {
@@ -842,7 +844,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4382009500
+              "duration": 2353543499
             }
           },
           {
@@ -855,7 +857,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5651968800
+              "duration": 3407751000
             }
           },
           {
@@ -868,20 +870,20 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1439028099
+              "duration": 1234781000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 13,
-            "name": "I click on the \"Car\" filter and select the checkbox for \"Polestar 2\"",
+            "name": "I click on the \"Car\" filter and select the checkbox for \"Polestar 3\"",
             "match": {
               "location": "tests\\step-definitions\\web-steps\\new-cars-filter.steps.js:29"
             },
             "result": {
               "status": "passed",
-              "duration": 4765524700
+              "duration": 4535252499
             }
           },
           {
@@ -894,7 +896,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3830016700
+              "duration": 3762066699
             }
           },
           {
@@ -907,7 +909,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3734742200
+              "duration": 3732234399
             }
           },
           {
@@ -920,20 +922,20 @@
             },
             "result": {
               "status": "passed",
-              "duration": 230902900
+              "duration": 180079900
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 17,
-            "name": "the results should match the filter criteria \"Polestar 2 Long range Dual\"",
+            "name": "the results should match the filter criteria \"Polestar 3\"",
             "match": {
               "location": "tests\\step-definitions\\web-steps\\new-cars-filter.steps.js:40"
             },
             "result": {
               "status": "passed",
-              "duration": 27671699
+              "duration": 19464600
             }
           },
           {
@@ -941,7 +943,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 243177400
+              "duration": 104947599
             }
           }
         ],

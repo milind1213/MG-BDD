@@ -62,7 +62,7 @@ How To Run The Test Suites :
 To Run Web Tests Only : npm run test:web
 To Run API Tests Only : npm run test:api
 To Execute all tests (web and API) : npn run test:all
-
+To Execute Performance (K6) Tests Only : npm run test:k6
 How to Run Tests in Parallel
 To enable parallel execution:
 Open the cucumber.json configuration file.
