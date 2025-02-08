@@ -1,116 +1,118 @@
-[08-02-25 7:56:01 PM] [ INFO ] - =========== [ Starting the test execution ] =============
-[08-02-25 7:56:01 PM] [ INFO ] - Environment is Ready for Test execution..
-[08-02-25 7:56:01 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
-[08-02-25 7:56:01 PM] [ INFO ] - Setting up for Scenario: [check if the server is up and running via api]
-[08-02-25 7:56:01 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
-[08-02-25 7:56:05 PM] [ INFO ] - Server Status Response :
-[08-02-25 7:56:05 PM] [ INFO ] - Checking if the response status is [200]
-[08-02-25 7:56:05 PM] [ INFO ] - Status Code 200 Matches the Expected 200
-[08-02-25 7:56:05 PM] [ INFO ] - Validation in response with Actual [status] and Expected [UP]
-[08-02-25 7:56:05 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
-[08-02-25 7:56:05 PM] [ INFO ] - Setting up for Scenario: [validate the access token generation api functionality]
-[08-02-25 7:56:05 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
-[08-02-25 7:56:06 PM] [ INFO ] - Status Code 201 Matches the Expected 201
-[08-02-25 7:56:06 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
-[08-02-25 7:56:06 PM] [ INFO ] - Setting up for Scenario: [verify the api functionaliy to fetch a specific products by id]
-[08-02-25 7:56:06 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
-[08-02-25 7:56:06 PM] [ INFO ] - Server Status Response :
-[08-02-25 7:56:06 PM] [ INFO ] - Checking if the response status is [200]
-[08-02-25 7:56:06 PM] [ INFO ] - Status Code 200 Matches the Expected 200
-[08-02-25 7:56:06 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
-[08-02-25 7:56:06 PM] [ INFO ] - Setting up for Scenario: [validate the api functionality to fetch the complete list of products.]
-[08-02-25 7:56:06 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
-[08-02-25 7:56:06 PM] [ INFO ] - Featch All Product API endpoint is /products
-[08-02-25 7:56:07 PM] [ INFO ] - Checking if the response status is [200]
-[08-02-25 7:56:07 PM] [ INFO ] - Status Code 200 Matches the Expected 200
-[08-02-25 7:56:07 PM] [ INFO ] - Fetch All Products Response:
-[08-02-25 7:56:07 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
-[08-02-25 7:56:07 PM] [ INFO ] - Setting up for Scenario: [access token generation with missing or invalid client name]
-[08-02-25 7:56:07 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
-[08-02-25 7:56:07 PM] [ INFO ] - POST Request Failed:
-[08-02-25 7:56:07 PM] [ INFO ] - Error Response Data:
-[08-02-25 7:56:07 PM] [ INFO ] - Status Code 400 Matches the Expected 400
-[08-02-25 7:56:07 PM] [ INFO ] - Validating the Actual [NaN] with Expected error [Invalid or missing client name.]
-[08-02-25 7:56:07 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
-[08-02-25 7:56:07 PM] [ INFO ] - Setting up for Scenario: [fetching product by nonexistent id]
-[08-02-25 7:56:07 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
-[08-02-25 7:56:08 PM] [ INFO ] - GET Request Failed:
-[08-02-25 7:56:08 PM] [ INFO ] - Error Response Data:
-[08-02-25 7:56:08 PM] [ INFO ] - Status Code 404 Matches the Expected 404
-[08-02-25 7:56:08 PM] [ INFO ] - Validating the Actual [NaN] with Expected error [No product with id 9999999.]
-[08-02-25 7:56:08 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
-[08-02-25 7:56:08 PM] [ INFO ] - Setting up for Scenario: [fetching product with invalid id format]
-[08-02-25 7:56:08 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
-[08-02-25 7:56:08 PM] [ INFO ] - GET Request Failed:
-[08-02-25 7:56:08 PM] [ INFO ] - Error Response Data:
-[08-02-25 7:56:08 PM] [ INFO ] - Status Code 400 Matches the Expected 400
-[08-02-25 7:56:08 PM] [ INFO ] - Validating the Actual [NaN] with Expected error [The product id must be a number.]
-[08-02-25 7:56:08 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [new-cars-filter.feature] ======
-[08-02-25 7:56:08 PM] [ INFO ] - Setting up for Scenario: [verify filters for polestar polestar 3 (2025 model) with long range dual motor options]
-[08-02-25 7:56:08 PM] [ INFO ] - Launching the [chrome] Browser in [Headed] Mode.
-[08-02-25 7:56:09 PM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
-[08-02-25 7:56:12 PM] [ INFO ] - Successfully Navigated to the Homepage.
-[08-02-25 7:56:12 PM] [ INFO ] - Cookie consent dialog is not visible.
-[08-02-25 7:56:12 PM] [ INFO ] - Reloading the page and retrying...(2 retries left)
-[08-02-25 7:56:14 PM] [ INFO ] - Cookie consent dialog is visible.
-[08-02-25 7:56:14 PM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
-[08-02-25 7:56:14 PM] [ INFO ] - Accepted Cookies and Cliecking on the [View Offers] to the Homepage.
-[08-02-25 7:56:15 PM] [ INFO ] - Clicked on [View All Offers] button
-[08-02-25 7:56:15 PM] [ INFO ] - Successfully Clicked on the [New Vehicle Offers] and [Filter] buttons.
-[08-02-25 7:56:16 PM] [ INFO ] - Clicking on the [Filter] button
-[08-02-25 7:56:16 PM] [ INFO ] - Clicking on the [Car] Locator
-[08-02-25 7:56:18 PM] [ INFO ] - Clicking on the [Polestar 3] checkbox
-[08-02-25 7:56:21 PM] [ INFO ] - Checked for value :[Polestar 3]
-[08-02-25 7:56:21 PM] [ INFO ] - Applying Filter :
+[08-02-25 7:59:40 PM] [ INFO ] - =========== [ Starting the test execution ] =============
+[08-02-25 7:59:40 PM] [ INFO ] - Environment is Ready for Test execution..
+[08-02-25 7:59:40 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
+[08-02-25 7:59:40 PM] [ INFO ] - Setting up for Scenario: [check if the server is up and running via api]
+[08-02-25 7:59:40 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
+[08-02-25 7:59:42 PM] [ INFO ] - Server Status Response :
+[08-02-25 7:59:42 PM] [ INFO ] - Checking if the response status is [200]
+[08-02-25 7:59:42 PM] [ INFO ] - Status Code 200 Matches the Expected 200
+[08-02-25 7:59:42 PM] [ INFO ] - Validation in response with Actual [status] and Expected [UP]
+[08-02-25 7:59:42 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
+[08-02-25 7:59:42 PM] [ INFO ] - Setting up for Scenario: [validate the access token generation api functionality]
+[08-02-25 7:59:42 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
+[08-02-25 7:59:43 PM] [ INFO ] - Status Code 201 Matches the Expected 201
+[08-02-25 7:59:43 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
+[08-02-25 7:59:43 PM] [ INFO ] - Setting up for Scenario: [verify the api functionaliy to fetch a specific products by id]
+[08-02-25 7:59:43 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
+[08-02-25 7:59:43 PM] [ INFO ] - Server Status Response :
+[08-02-25 7:59:43 PM] [ INFO ] - Checking if the response status is [200]
+[08-02-25 7:59:43 PM] [ INFO ] - Status Code 200 Matches the Expected 200
+[08-02-25 7:59:43 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
+[08-02-25 7:59:43 PM] [ INFO ] - Setting up for Scenario: [validate the api functionality to fetch the complete list of products.]
+[08-02-25 7:59:43 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
+[08-02-25 7:59:43 PM] [ INFO ] - Featch All Product API endpoint is /products
+[08-02-25 7:59:43 PM] [ INFO ] - Checking if the response status is [200]
+[08-02-25 7:59:43 PM] [ INFO ] - Status Code 200 Matches the Expected 200
+[08-02-25 7:59:43 PM] [ INFO ] - Fetch All Products Response:
+[08-02-25 7:59:43 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
+[08-02-25 7:59:43 PM] [ INFO ] - Setting up for Scenario: [access token generation with missing or invalid client name]
+[08-02-25 7:59:43 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
+[08-02-25 7:59:44 PM] [ INFO ] - POST Request Failed:
+[08-02-25 7:59:44 PM] [ INFO ] - Error Response Data:
+[08-02-25 7:59:44 PM] [ INFO ] - Status Code 400 Matches the Expected 400
+[08-02-25 7:59:44 PM] [ INFO ] - Validating the Actual [NaN] with Expected error [Invalid or missing client name.]
+[08-02-25 7:59:44 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
+[08-02-25 7:59:44 PM] [ INFO ] - Setting up for Scenario: [fetching product by nonexistent id]
+[08-02-25 7:59:44 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
+[08-02-25 7:59:44 PM] [ INFO ] - GET Request Failed:
+[08-02-25 7:59:44 PM] [ INFO ] - Error Response Data:
+[08-02-25 7:59:44 PM] [ INFO ] - Status Code 404 Matches the Expected 404
+[08-02-25 7:59:44 PM] [ INFO ] - Validating the Actual [NaN] with Expected error [No product with id 9999999.]
+[08-02-25 7:59:44 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
+[08-02-25 7:59:44 PM] [ INFO ] - Setting up for Scenario: [fetching product with invalid id format]
+[08-02-25 7:59:44 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
+[08-02-25 7:59:45 PM] [ INFO ] - GET Request Failed:
+[08-02-25 7:59:45 PM] [ INFO ] - Error Response Data:
+[08-02-25 7:59:45 PM] [ INFO ] - Status Code 400 Matches the Expected 400
+[08-02-25 7:59:45 PM] [ INFO ] - Validating the Actual [NaN] with Expected error [The product id must be a number.]
+[08-02-25 7:59:45 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [new-cars-filter.feature] ======
+[08-02-25 7:59:45 PM] [ INFO ] - Setting up for Scenario: [verify filters for polestar polestar 3 (2025 model) with long range dual motor options]
+[08-02-25 7:59:45 PM] [ INFO ] - Launching the [chrome] Browser in [Headed] Mode.
+[08-02-25 7:59:46 PM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
+[08-02-25 7:59:48 PM] [ INFO ] - Successfully Navigated to the Homepage.
+[08-02-25 7:59:48 PM] [ INFO ] - Cookie consent dialog is not visible.
+[08-02-25 7:59:48 PM] [ INFO ] - Reloading the page and retrying...(2 retries left)
+[08-02-25 7:59:51 PM] [ INFO ] - Cookie consent dialog is visible.
+[08-02-25 7:59:51 PM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
+[08-02-25 7:59:51 PM] [ INFO ] - Accepted Cookies and Cliecking on the [View Offers] to the Homepage.
+[08-02-25 7:59:51 PM] [ INFO ] - Clicked on [View All Offers] button
+[08-02-25 7:59:51 PM] [ INFO ] - Successfully Clicked on the [New Vehicle Offers] and [Filter] buttons.
+[08-02-25 7:59:52 PM] [ INFO ] - Clicking on the [Filter] button
+[08-02-25 7:59:53 PM] [ INFO ] - Clicking on the [Car] Locator
+[08-02-25 7:59:54 PM] [ INFO ] - Clicking on the [Polestar 3] checkbox
+[08-02-25 7:59:57 PM] [ INFO ] - Checked for value :[Polestar 3]
+[08-02-25 7:59:57 PM] [ INFO ] - Applying Filter :
  - [Car] : [Polestar 3]
-[08-02-25 7:56:21 PM] [ INFO ] - Clicking on the [Model year] Locator
-[08-02-25 7:56:21 PM] [ INFO ] - Clicking on the [2025] checkbox
-[08-02-25 7:56:24 PM] [ INFO ] - Checked for value :[2025]
-[08-02-25 7:56:24 PM] [ INFO ] - Applying Filter :
+[08-02-25 7:59:57 PM] [ INFO ] - Clicking on the [Model year] Locator
+[08-02-25 7:59:58 PM] [ INFO ] - Clicking on the [2025] checkbox
+[08-02-25 8:00:01 PM] [ INFO ] - Checked for value :[2025]
+[08-02-25 8:00:01 PM] [ INFO ] - Applying Filter :
  - [Model year] : [2025]
-[08-02-25 7:56:24 PM] [ INFO ] - Clicking on the [Powertrain] Locator
-[08-02-25 7:56:25 PM] [ INFO ] - Clicking on the [Long range Dual motor] checkbox
-[08-02-25 7:56:28 PM] [ INFO ] - Checked for value :[Long range Dual motor]
-[08-02-25 7:56:28 PM] [ INFO ] - Applying Filter :
+[08-02-25 8:00:01 PM] [ INFO ] - Clicking on the [Powertrain] Locator
+[08-02-25 8:00:01 PM] [ INFO ] - Clicking on the [Long range Dual motor] checkbox
+[08-02-25 8:00:04 PM] [ INFO ] - Checked for value :[Long range Dual motor]
+[08-02-25 8:00:04 PM] [ INFO ] - Applying Filter :
  - [Powertrain] : [Long range Dual motor]
-[08-02-25 7:56:28 PM] [ INFO ] - I clicked on [View] button.
-[08-02-25 7:56:28 PM] [ INFO ] - Found results :
-[08-02-25 7:56:28 PM] [ INFO ] - Validation passed: All results contain [Polestar 3].
-[08-02-25 7:56:28 PM] [ INFO ] - Closing all Active Browser Sessions...!
-[08-02-25 7:56:28 PM] [ INFO ] - Closing the Browser [Page] 
-[08-02-25 7:56:28 PM] [ INFO ] - Closing the Browser [Context] 
-[08-02-25 7:56:28 PM] [ INFO ] - Closing the Browser [Browser] 
-[08-02-25 7:56:29 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [new-cars-filter.feature] ======
-[08-02-25 7:56:29 PM] [ INFO ] - Setting up for Scenario: [verify filters for polestar polestar 2 (2025 model) with long range dual motor options]
-[08-02-25 7:56:29 PM] [ INFO ] - Launching the [chrome] Browser in [Headed] Mode.
-[08-02-25 7:56:30 PM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
-[08-02-25 7:56:32 PM] [ INFO ] - Successfully Navigated to the Homepage.
-[08-02-25 7:56:32 PM] [ INFO ] - Cookie consent dialog is visible.
-[08-02-25 7:56:32 PM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
-[08-02-25 7:56:32 PM] [ INFO ] - Accepted Cookies and Cliecking on the [View Offers] to the Homepage.
-[08-02-25 7:56:33 PM] [ INFO ] - Clicked on [View All Offers] button
-[08-02-25 7:56:33 PM] [ INFO ] - Successfully Clicked on the [New Vehicle Offers] and [Filter] buttons.
-[08-02-25 7:56:34 PM] [ INFO ] - Clicking on the [Filter] button
-[08-02-25 7:56:34 PM] [ INFO ] - Clicking on the [Car] Locator
-[08-02-25 7:56:35 PM] [ INFO ] - Clicking on the [Polestar 2] checkbox
-[08-02-25 7:56:39 PM] [ INFO ] - Checked for value :[Polestar 2]
-[08-02-25 7:56:39 PM] [ INFO ] - Applying Filter :
+[08-02-25 8:00:05 PM] [ INFO ] - I clicked on [View] button.
+[08-02-25 8:00:05 PM] [ INFO ] - Found results :
+[08-02-25 8:00:05 PM] [ INFO ] - Validation passed: All results contain [Polestar 3].
+[08-02-25 8:00:05 PM] [ INFO ] - Closing all Active Browser Sessions...!
+[08-02-25 8:00:05 PM] [ INFO ] - Closing the Browser [Page] 
+[08-02-25 8:00:05 PM] [ INFO ] - Closing the Browser [Context] 
+[08-02-25 8:00:05 PM] [ INFO ] - Closing the Browser [Browser] 
+[08-02-25 8:00:05 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [new-cars-filter.feature] ======
+[08-02-25 8:00:05 PM] [ INFO ] - Setting up for Scenario: [verify filters for polestar polestar 2 (2025 model) with long range dual motor options]
+[08-02-25 8:00:05 PM] [ INFO ] - Launching the [chrome] Browser in [Headed] Mode.
+[08-02-25 8:00:06 PM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
+[08-02-25 8:00:08 PM] [ INFO ] - Successfully Navigated to the Homepage.
+[08-02-25 8:00:08 PM] [ INFO ] - Cookie consent dialog is not visible.
+[08-02-25 8:00:08 PM] [ INFO ] - Reloading the page and retrying...(2 retries left)
+[08-02-25 8:00:11 PM] [ INFO ] - Cookie consent dialog is visible.
+[08-02-25 8:00:11 PM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
+[08-02-25 8:00:11 PM] [ INFO ] - Accepted Cookies and Cliecking on the [View Offers] to the Homepage.
+[08-02-25 8:00:12 PM] [ INFO ] - Clicked on [View All Offers] button
+[08-02-25 8:00:12 PM] [ INFO ] - Successfully Clicked on the [New Vehicle Offers] and [Filter] buttons.
+[08-02-25 8:00:13 PM] [ INFO ] - Clicking on the [Filter] button
+[08-02-25 8:00:13 PM] [ INFO ] - Clicking on the [Car] Locator
+[08-02-25 8:00:14 PM] [ INFO ] - Clicking on the [Polestar 2] checkbox
+[08-02-25 8:00:18 PM] [ INFO ] - Checked for value :[Polestar 2]
+[08-02-25 8:00:18 PM] [ INFO ] - Applying Filter :
  - [Car] : [Polestar 2]
-[08-02-25 7:56:39 PM] [ INFO ] - Clicking on the [Model year] Locator
-[08-02-25 7:56:39 PM] [ INFO ] - Clicking on the [2025] checkbox
-[08-02-25 7:56:42 PM] [ INFO ] - Checked for value :[2025]
-[08-02-25 7:56:42 PM] [ INFO ] - Applying Filter :
+[08-02-25 8:00:18 PM] [ INFO ] - Clicking on the [Model year] Locator
+[08-02-25 8:00:18 PM] [ INFO ] - Clicking on the [2025] checkbox
+[08-02-25 8:00:21 PM] [ INFO ] - Checked for value :[2025]
+[08-02-25 8:00:21 PM] [ INFO ] - Applying Filter :
  - [Model year] : [2025]
-[08-02-25 7:56:42 PM] [ INFO ] - Clicking on the [Powertrain] Locator
-[08-02-25 7:56:43 PM] [ INFO ] - Clicking on the [Long range Dual motor] checkbox
-[08-02-25 7:56:46 PM] [ INFO ] - Checked for value :[Long range Dual motor]
-[08-02-25 7:56:46 PM] [ INFO ] - Applying Filter :
+[08-02-25 8:00:21 PM] [ INFO ] - Clicking on the [Powertrain] Locator
+[08-02-25 8:00:22 PM] [ INFO ] - Clicking on the [Long range Dual motor] checkbox
+[08-02-25 8:00:25 PM] [ INFO ] - Checked for value :[Long range Dual motor]
+[08-02-25 8:00:25 PM] [ INFO ] - Applying Filter :
  - [Powertrain] : [Long range Dual motor]
-[08-02-25 7:56:46 PM] [ INFO ] - I clicked on [View] button.
-[08-02-25 7:56:46 PM] [ INFO ] - Found results :
-[08-02-25 7:56:46 PM] [ INFO ] - Validation passed: All results contain [Polestar 2 Long range Dual].
-[08-02-25 7:56:46 PM] [ INFO ] - Closing all Active Browser Sessions...!
-[08-02-25 7:56:46 PM] [ INFO ] - Closing the Browser [Page] 
-[08-02-25 7:56:46 PM] [ INFO ] - Closing the Browser [Context] 
-[08-02-25 7:56:46 PM] [ INFO ] - Closing the Browser [Browser] 
-[08-02-25 7:56:47 PM] [ INFO ] - ============ Test execution completed ====================
+[08-02-25 8:00:25 PM] [ INFO ] - I clicked on [View] button.
+[08-02-25 8:00:25 PM] [ INFO ] - Found results :
+[08-02-25 8:00:25 PM] [ INFO ] - Validation passed: All results contain [Polestar 2 Long range Dual].
+[08-02-25 8:00:25 PM] [ INFO ] - Closing all Active Browser Sessions...!
+[08-02-25 8:00:25 PM] [ INFO ] - Closing the Browser [Page] 
+[08-02-25 8:00:25 PM] [ INFO ] - Closing the Browser [Context] 
+[08-02-25 8:00:25 PM] [ INFO ] - Closing the Browser [Browser] 
+[08-02-25 8:00:26 PM] [ INFO ] - ============ Test execution completed ====================
