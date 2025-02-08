@@ -1,275 +1,116 @@
-[08-02-25 5:43:53 PM] [ INFO ] - =========== [ Starting the test execution ] =============
-[08-02-25 5:43:53 PM] [ INFO ] - Environment is Ready for Test execution..
-[08-02-25 5:43:53 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [available-cars-page.feature] ======
-[08-02-25 5:43:53 PM] [ INFO ] - Setting up for Scenario: [verify 'sort by' filters functionality]
-[08-02-25 5:43:53 PM] [ INFO ] - Launching the [chrome] Browser in [Headed] Mode.
-[08-02-25 5:43:54 PM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
-[08-02-25 5:43:59 PM] [ INFO ] - Successfully Navigated to the Homepage.
-[08-02-25 5:43:59 PM] [ INFO ] - Cookie consent dialog is not visible.
-[08-02-25 5:43:59 PM] [ INFO ] - Reloading the page and retrying...(2 retries left)
-[08-02-25 5:44:02 PM] [ INFO ] - Cookie consent dialog is visible.
-[08-02-25 5:44:03 PM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
-[08-02-25 5:44:03 PM] [ INFO ] - Accepted Cookies on Homepage.
-[08-02-25 5:44:03 PM] [ INFO ] - licking on the [Shopping tools] on Homepage.
-[08-02-25 5:44:04 PM] [ INFO ] - Successfully clicked the "Available cars" option.
-[08-02-25 5:44:04 PM] [ INFO ] - Entering the pinocde [43213] in inputfield.
-[08-02-25 5:44:08 PM] [ INFO ] - Pressing the [Space] Key
-[08-02-25 5:44:18 PM] [ INFO ] - Clicking on valid Suggestion
-[08-02-25 5:44:19 PM] [ INFO ] - Clicked on Continue Arrow
-[08-02-25 5:44:20 PM] [ INFO ] - Vlidated Expected default filter [Quickest delivery] with Actual [Quickest delivery]
-[08-02-25 5:44:22 PM] [ INFO ] - Clicking on sort filter: [High to low]
-[08-02-25 5:44:28 PM] [ INFO ] - Taking Screenshot for Failed Scenario: Verify 'Sort By' filters functionality
-[08-02-25 5:44:28 PM] [ INFO ] - Closing all Active Browser Sessions...!
-[08-02-25 5:44:28 PM] [ INFO ] - Closing the Browser [Page] 
-[08-02-25 5:44:28 PM] [ INFO ] - Closing the Browser [Context] 
-[08-02-25 5:44:28 PM] [ INFO ] - Closing the Browser [Browser] 
-[08-02-25 5:44:29 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [available-cars-page.feature] ======
-[08-02-25 5:44:29 PM] [ INFO ] - Setting up for Scenario: [verify 'sort by' filters functionality]
-[08-02-25 5:44:29 PM] [ INFO ] - Launching the [chrome] Browser in [Headed] Mode.
-[08-02-25 5:44:31 PM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
-[08-02-25 5:44:35 PM] [ INFO ] - Successfully Navigated to the Homepage.
-[08-02-25 5:44:35 PM] [ INFO ] - Cookie consent dialog is not visible.
-[08-02-25 5:44:35 PM] [ INFO ] - Reloading the page and retrying...(2 retries left)
-[08-02-25 5:44:37 PM] [ INFO ] - Cookie consent dialog is visible.
-[08-02-25 5:44:38 PM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
-[08-02-25 5:44:38 PM] [ INFO ] - Accepted Cookies on Homepage.
-[08-02-25 5:44:38 PM] [ INFO ] - licking on the [Shopping tools] on Homepage.
-[08-02-25 5:44:40 PM] [ INFO ] - Successfully clicked the "Available cars" option.
-[08-02-25 5:44:40 PM] [ INFO ] - Entering the pinocde [43213] in inputfield.
-[08-02-25 5:44:46 PM] [ INFO ] - Pressing the [Space] Key
-[08-02-25 5:44:56 PM] [ INFO ] - Clicking on valid Suggestion
-[08-02-25 5:44:57 PM] [ INFO ] - Clicked on Continue Arrow
-[08-02-25 5:44:58 PM] [ INFO ] - Vlidated Expected default filter [Quickest delivery] with Actual [Quickest delivery]
-[08-02-25 5:45:00 PM] [ INFO ] - Clicking on sort filter: [Low to high]
-[08-02-25 5:45:06 PM] [ INFO ] - Vlidated Actual Displying order [ascending] with Expected displaying [ascending] order
-[08-02-25 5:45:06 PM] [ INFO ] - Closing all Active Browser Sessions...!
-[08-02-25 5:45:06 PM] [ INFO ] - Closing the Browser [Page] 
-[08-02-25 5:45:06 PM] [ INFO ] - Closing the Browser [Context] 
-[08-02-25 5:45:06 PM] [ INFO ] - Closing the Browser [Browser] 
-[08-02-25 5:45:07 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [available-cars-page.feature] ======
-[08-02-25 5:45:07 PM] [ INFO ] - Setting up for Scenario: [verify car filters with various combinations of selections]
-[08-02-25 5:45:07 PM] [ INFO ] - Launching the [chrome] Browser in [Headed] Mode.
-[08-02-25 5:45:08 PM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
-[08-02-25 5:45:12 PM] [ INFO ] - Successfully Navigated to the Homepage.
-[08-02-25 5:45:12 PM] [ INFO ] - Cookie consent dialog is not visible.
-[08-02-25 5:45:12 PM] [ INFO ] - Reloading the page and retrying...(2 retries left)
-[08-02-25 5:45:15 PM] [ INFO ] - Cookie consent dialog is visible.
-[08-02-25 5:45:15 PM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
-[08-02-25 5:45:15 PM] [ INFO ] - Accepted Cookies on Homepage.
-[08-02-25 5:45:15 PM] [ INFO ] - licking on the [Shopping tools] on Homepage.
-[08-02-25 5:45:18 PM] [ INFO ] - Successfully clicked the "Available cars" option.
-[08-02-25 5:45:18 PM] [ INFO ] - Entering the pinocde [43213] in inputfield.
-[08-02-25 5:45:21 PM] [ INFO ] - Pressing the [Space] Key
-[08-02-25 5:45:31 PM] [ INFO ] - Clicking on valid Suggestion
-[08-02-25 5:45:32 PM] [ INFO ] - Clicked on Continue Arrow
-[08-02-25 5:45:32 PM] [ INFO ] - Clicking on Filter Button
-[08-02-25 5:45:35 PM] [ INFO ] - clcking on the [Storm] filter option
-[08-02-25 5:45:35 PM] [ INFO ] - Successfully applied exterior filter: Storm
-[08-02-25 5:45:35 PM] [ INFO ] - checking the [checkbox]
-[08-02-25 5:45:38 PM] [ INFO ] - Successfully Selected: [Long range Dual motor]
-[08-02-25 5:45:38 PM] [ INFO ] - checking the [checkbox]
-[08-02-25 5:45:42 PM] [ INFO ] - Successfully Selected: [Performance]
-[08-02-25 5:45:42 PM] [ INFO ] - checking the [checkbox]
-[08-02-25 5:45:45 PM] [ INFO ] - Successfully Selected: [Harman Kardon premium sound]
-[08-02-25 5:45:45 PM] [ INFO ] - checking the [checkbox]
-[08-02-25 5:45:48 PM] [ INFO ] - Successfully Selected: [Charcoal WeaveTech]
-[08-02-25 5:45:48 PM] [ INFO ] - checking the [checkbox]
-[08-02-25 5:45:52 PM] [ INFO ] - Successfully Selected: [20" Performance]
-[08-02-25 5:45:52 PM] [ INFO ] - Clicking on close cross button
-[08-02-25 5:45:52 PM] [ INFO ] - All filters match successfully.
-[08-02-25 5:45:52 PM] [ INFO ] - Closing all Active Browser Sessions...!
-[08-02-25 5:45:52 PM] [ INFO ] - Closing the Browser [Page] 
-[08-02-25 5:45:52 PM] [ INFO ] - Closing the Browser [Context] 
-[08-02-25 5:45:52 PM] [ INFO ] - Closing the Browser [Browser] 
-[08-02-25 5:45:53 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [available-cars-page.feature] ======
-[08-02-25 5:45:53 PM] [ INFO ] - Setting up for Scenario: [verify car filters with various combinations of selections]
-[08-02-25 5:45:53 PM] [ INFO ] - Launching the [chrome] Browser in [Headed] Mode.
-[08-02-25 5:45:54 PM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
-[08-02-25 5:45:58 PM] [ INFO ] - Successfully Navigated to the Homepage.
-[08-02-25 5:45:58 PM] [ INFO ] - Cookie consent dialog is not visible.
-[08-02-25 5:45:58 PM] [ INFO ] - Reloading the page and retrying...(2 retries left)
-[08-02-25 5:46:01 PM] [ INFO ] - Cookie consent dialog is visible.
-[08-02-25 5:46:01 PM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
-[08-02-25 5:46:01 PM] [ INFO ] - Accepted Cookies on Homepage.
-[08-02-25 5:46:01 PM] [ INFO ] - licking on the [Shopping tools] on Homepage.
-[08-02-25 5:46:03 PM] [ INFO ] - Successfully clicked the "Available cars" option.
-[08-02-25 5:46:03 PM] [ INFO ] - Entering the pinocde [43213] in inputfield.
-[08-02-25 5:46:06 PM] [ INFO ] - Pressing the [Space] Key
-[08-02-25 5:46:16 PM] [ INFO ] - Clicking on valid Suggestion
-[08-02-25 5:46:17 PM] [ INFO ] - Clicked on Continue Arrow
-[08-02-25 5:46:17 PM] [ INFO ] - Clicking on Filter Button
-[08-02-25 5:46:19 PM] [ INFO ] - No value provided for filter: Exterior. Skipping.
-[08-02-25 5:46:20 PM] [ INFO ] - checking the [checkbox]
-[08-02-25 5:46:24 PM] [ INFO ] - Successfully Selected: [Long range Dual motor]
-[08-02-25 5:46:24 PM] [ INFO ] - checking the [checkbox]
-[08-02-25 5:46:27 PM] [ INFO ] - Successfully Selected: [Performance]
-[08-02-25 5:46:27 PM] [ INFO ] - checking the [checkbox]
-[08-02-25 5:46:31 PM] [ INFO ] - Successfully Selected: [Harman Kardon premium sound]
-[08-02-25 5:46:31 PM] [ INFO ] - checking the [checkbox]
-[08-02-25 5:46:34 PM] [ INFO ] - Successfully Selected: [Charcoal Nappa leather]
-[08-02-25 5:46:34 PM] [ INFO ] - checking the [checkbox]
-[08-02-25 5:46:37 PM] [ INFO ] - Successfully Selected: [20" Performance]
-[08-02-25 5:46:37 PM] [ INFO ] - Clicking on close cross button
-[08-02-25 5:46:38 PM] [ INFO ] - All filters match successfully.
-[08-02-25 5:46:38 PM] [ INFO ] - Closing all Active Browser Sessions...!
-[08-02-25 5:46:38 PM] [ INFO ] - Closing the Browser [Page] 
-[08-02-25 5:46:38 PM] [ INFO ] - Closing the Browser [Context] 
-[08-02-25 5:46:38 PM] [ INFO ] - Closing the Browser [Browser] 
-[08-02-25 5:46:38 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [available-cars-page.feature] ======
-[08-02-25 5:46:38 PM] [ INFO ] - Setting up for Scenario: [verify car filters with various combinations of selections]
-[08-02-25 5:46:38 PM] [ INFO ] - Launching the [chrome] Browser in [Headed] Mode.
-[08-02-25 5:46:40 PM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
-[08-02-25 5:46:44 PM] [ INFO ] - Successfully Navigated to the Homepage.
-[08-02-25 5:46:44 PM] [ INFO ] - Cookie consent dialog is not visible.
-[08-02-25 5:46:44 PM] [ INFO ] - Reloading the page and retrying...(2 retries left)
-[08-02-25 5:46:47 PM] [ INFO ] - Cookie consent dialog is visible.
-[08-02-25 5:46:47 PM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
-[08-02-25 5:46:47 PM] [ INFO ] - Accepted Cookies on Homepage.
-[08-02-25 5:46:47 PM] [ INFO ] - licking on the [Shopping tools] on Homepage.
-[08-02-25 5:46:49 PM] [ INFO ] - Successfully clicked the "Available cars" option.
-[08-02-25 5:46:49 PM] [ INFO ] - Entering the pinocde [43213] in inputfield.
-[08-02-25 5:46:53 PM] [ INFO ] - Pressing the [Space] Key
-[08-02-25 5:47:04 PM] [ INFO ] - Clicking on valid Suggestion
-[08-02-25 5:47:05 PM] [ INFO ] - Clicked on Continue Arrow
-[08-02-25 5:47:05 PM] [ INFO ] - Clicking on Filter Button
-[08-02-25 5:47:08 PM] [ INFO ] - clcking on the [Space] filter option
-[08-02-25 5:47:08 PM] [ INFO ] - Successfully applied exterior filter: Space
-[08-02-25 5:47:08 PM] [ INFO ] - No value provided for filter: Version. Skipping.
-[08-02-25 5:47:08 PM] [ INFO ] - No value provided for filter: Packs. Skipping.
-[08-02-25 5:47:08 PM] [ INFO ] - checking the [checkbox]
-[08-02-25 5:47:11 PM] [ INFO ] - Successfully Selected: [Harman Kardon premium sound]
-[08-02-25 5:47:11 PM] [ INFO ] - checking the [checkbox]
-[08-02-25 5:47:14 PM] [ INFO ] - Successfully Selected: [Slate WeaveTech]
-[08-02-25 5:47:15 PM] [ INFO ] - checking the [checkbox]
-[08-02-25 5:47:18 PM] [ INFO ] - Successfully Selected: [20" Performance]
-[08-02-25 5:47:18 PM] [ INFO ] - Clicking on close cross button
-[08-02-25 5:47:18 PM] [ INFO ] - All filters match successfully.
-[08-02-25 5:47:18 PM] [ INFO ] - Closing all Active Browser Sessions...!
-[08-02-25 5:47:18 PM] [ INFO ] - Closing the Browser [Page] 
-[08-02-25 5:47:18 PM] [ INFO ] - Closing the Browser [Context] 
-[08-02-25 5:47:18 PM] [ INFO ] - Closing the Browser [Browser] 
-[08-02-25 5:47:19 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [available-cars-page.feature] ======
-[08-02-25 5:47:19 PM] [ INFO ] - Setting up for Scenario: [verify car filters with various combinations of selections]
-[08-02-25 5:47:19 PM] [ INFO ] - Launching the [chrome] Browser in [Headed] Mode.
-[08-02-25 5:47:21 PM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
-[08-02-25 5:47:24 PM] [ INFO ] - Successfully Navigated to the Homepage.
-[08-02-25 5:47:24 PM] [ INFO ] - Cookie consent dialog is not visible.
-[08-02-25 5:47:24 PM] [ INFO ] - Reloading the page and retrying...(2 retries left)
-[08-02-25 5:47:27 PM] [ INFO ] - Cookie consent dialog is visible.
-[08-02-25 5:47:28 PM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
-[08-02-25 5:47:28 PM] [ INFO ] - Accepted Cookies on Homepage.
-[08-02-25 5:47:28 PM] [ INFO ] - licking on the [Shopping tools] on Homepage.
-[08-02-25 5:47:30 PM] [ INFO ] - Successfully clicked the "Available cars" option.
-[08-02-25 5:47:30 PM] [ INFO ] - Entering the pinocde [43213] in inputfield.
-[08-02-25 5:47:33 PM] [ INFO ] - Pressing the [Space] Key
-[08-02-25 5:47:44 PM] [ INFO ] - Clicking on valid Suggestion
-[08-02-25 5:47:45 PM] [ INFO ] - Clicked on Continue Arrow
-[08-02-25 5:47:45 PM] [ INFO ] - Clicking on Filter Button
-[08-02-25 5:47:48 PM] [ INFO ] - clcking on the [Midnight] filter option
-[08-02-25 5:47:48 PM] [ INFO ] - Successfully applied exterior filter: Midnight
-[08-02-25 5:47:48 PM] [ INFO ] - checking the [checkbox]
-[08-02-25 5:47:51 PM] [ INFO ] - Successfully Selected: [Long range Dual motor]
-[08-02-25 5:47:52 PM] [ INFO ] - checking the [checkbox]
-[08-02-25 5:47:55 PM] [ INFO ] - Successfully Selected: [Climate]
-[08-02-25 5:47:55 PM] [ INFO ] - No value provided for filter: Options. Skipping.
-[08-02-25 5:47:55 PM] [ INFO ] - checking the [checkbox]
-[08-02-25 5:47:58 PM] [ INFO ] - Successfully Selected: [Slate WeaveTech]
-[08-02-25 5:47:58 PM] [ INFO ] - checking the [checkbox]
-[08-02-25 5:48:01 PM] [ INFO ] - Successfully Selected: [20" Performance]
-[08-02-25 5:48:01 PM] [ INFO ] - Clicking on close cross button
-[08-02-25 5:48:02 PM] [ INFO ] - All filters match successfully.
-[08-02-25 5:48:02 PM] [ INFO ] - Closing all Active Browser Sessions...!
-[08-02-25 5:48:02 PM] [ INFO ] - Closing the Browser [Page] 
-[08-02-25 5:48:02 PM] [ INFO ] - Closing the Browser [Context] 
-[08-02-25 5:48:02 PM] [ INFO ] - Closing the Browser [Browser] 
-[08-02-25 5:48:03 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [available-cars-page.feature] ======
-[08-02-25 5:48:03 PM] [ INFO ] - Setting up for Scenario: [verify car filters with various combinations of selections]
-[08-02-25 5:48:03 PM] [ INFO ] - Launching the [chrome] Browser in [Headed] Mode.
-[08-02-25 5:48:04 PM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
-[08-02-25 5:48:08 PM] [ INFO ] - Successfully Navigated to the Homepage.
-[08-02-25 5:48:08 PM] [ INFO ] - Cookie consent dialog is not visible.
-[08-02-25 5:48:08 PM] [ INFO ] - Reloading the page and retrying...(2 retries left)
-[08-02-25 5:48:11 PM] [ INFO ] - Cookie consent dialog is visible.
-[08-02-25 5:48:11 PM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
-[08-02-25 5:48:11 PM] [ INFO ] - Accepted Cookies on Homepage.
-[08-02-25 5:48:11 PM] [ INFO ] - licking on the [Shopping tools] on Homepage.
-[08-02-25 5:48:14 PM] [ INFO ] - Successfully clicked the "Available cars" option.
-[08-02-25 5:48:14 PM] [ INFO ] - Entering the pinocde [43213] in inputfield.
-[08-02-25 5:48:17 PM] [ INFO ] - Pressing the [Space] Key
-[08-02-25 5:48:28 PM] [ INFO ] - Clicking on valid Suggestion
-[08-02-25 5:48:29 PM] [ INFO ] - Clicked on Continue Arrow
-[08-02-25 5:48:29 PM] [ INFO ] - Clicking on Filter Button
-[08-02-25 5:48:32 PM] [ INFO ] - clcking on the [Vapour] filter option
-[08-02-25 5:48:32 PM] [ INFO ] - Successfully applied exterior filter: Vapour
-[08-02-25 5:48:32 PM] [ INFO ] - No value provided for filter: Version. Skipping.
-[08-02-25 5:48:32 PM] [ INFO ] - checking the [checkbox]
-[08-02-25 5:48:36 PM] [ INFO ] - Successfully Selected: [Pilot]
-[08-02-25 5:48:36 PM] [ INFO ] - checking the [checkbox]
-[08-02-25 5:48:39 PM] [ INFO ] - Successfully Selected: [Harman Kardon premium sound]
-[08-02-25 5:48:39 PM] [ INFO ] - checking the [checkbox]
-[08-02-25 5:48:42 PM] [ INFO ] - Successfully Selected: [Slate WeaveTech]
-[08-02-25 5:48:42 PM] [ INFO ] - No value provided for filter: Wheels. Skipping.
-[08-02-25 5:48:42 PM] [ INFO ] - Clicking on close cross button
-[08-02-25 5:48:43 PM] [ INFO ] - All filters match successfully.
-[08-02-25 5:48:43 PM] [ INFO ] - Closing all Active Browser Sessions...!
-[08-02-25 5:48:43 PM] [ INFO ] - Closing the Browser [Page] 
-[08-02-25 5:48:43 PM] [ INFO ] - Closing the Browser [Context] 
-[08-02-25 5:48:43 PM] [ INFO ] - Closing the Browser [Browser] 
-[08-02-25 5:48:43 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [available-cars-page.feature] ======
-[08-02-25 5:48:43 PM] [ INFO ] - Setting up for Scenario: [verify car filters with various combinations of selections]
-[08-02-25 5:48:43 PM] [ INFO ] - Launching the [chrome] Browser in [Headed] Mode.
-[08-02-25 5:48:45 PM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
-[08-02-25 5:48:49 PM] [ INFO ] - Successfully Navigated to the Homepage.
-[08-02-25 5:48:49 PM] [ INFO ] - Cookie consent dialog is not visible.
-[08-02-25 5:48:49 PM] [ INFO ] - Reloading the page and retrying...(2 retries left)
-[08-02-25 5:48:52 PM] [ INFO ] - Cookie consent dialog is visible.
-[08-02-25 5:48:52 PM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
-[08-02-25 5:48:52 PM] [ INFO ] - Accepted Cookies on Homepage.
-[08-02-25 5:48:52 PM] [ INFO ] - licking on the [Shopping tools] on Homepage.
-[08-02-25 5:48:54 PM] [ INFO ] - Successfully clicked the "Available cars" option.
-[08-02-25 5:48:54 PM] [ INFO ] - Entering the pinocde [43213] in inputfield.
-[08-02-25 5:48:58 PM] [ INFO ] - Pressing the [Space] Key
-[08-02-25 5:49:08 PM] [ INFO ] - Clicking on valid Suggestion
-[08-02-25 5:49:09 PM] [ INFO ] - Clicked on Continue Arrow
-[08-02-25 5:49:09 PM] [ INFO ] - Clicking on Filter Button
-[08-02-25 5:49:11 PM] [ INFO ] - clcking on the [Storm] filter option
-[08-02-25 5:49:12 PM] [ INFO ] - Successfully applied exterior filter: Storm
-[08-02-25 5:49:12 PM] [ INFO ] - checking the [checkbox]
-[08-02-25 5:49:15 PM] [ INFO ] - Successfully Selected: [Long range Dual motor]
-[08-02-25 5:49:15 PM] [ INFO ] - checking the [checkbox]
-[08-02-25 5:49:18 PM] [ INFO ] - Successfully Selected: [Performance]
-[08-02-25 5:49:18 PM] [ INFO ] - No value provided for filter: Options. Skipping.
-[08-02-25 5:49:18 PM] [ INFO ] - checking the [checkbox]
-[08-02-25 5:49:22 PM] [ INFO ] - Successfully Selected: [Charcoal Nappa leather]
-[08-02-25 5:49:22 PM] [ INFO ] - No value provided for filter: Wheels. Skipping.
-[08-02-25 5:49:22 PM] [ INFO ] - Clicking on close cross button
-[08-02-25 5:49:22 PM] [ INFO ] - All filters match successfully.
-[08-02-25 5:49:22 PM] [ INFO ] - Closing all Active Browser Sessions...!
-[08-02-25 5:49:22 PM] [ INFO ] - Closing the Browser [Page] 
-[08-02-25 5:49:22 PM] [ INFO ] - Closing the Browser [Context] 
-[08-02-25 5:49:22 PM] [ INFO ] - Closing the Browser [Browser] 
-[08-02-25 5:49:23 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [available-cars-page.feature] ======
-[08-02-25 5:49:23 PM] [ INFO ] - Setting up for Scenario: [verify default filters for car details by pin code and address]
-[08-02-25 5:49:23 PM] [ INFO ] - Launching the [chrome] Browser in [Headed] Mode.
-[08-02-25 5:49:24 PM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
-[08-02-25 5:49:28 PM] [ INFO ] - Successfully Navigated to the Homepage.
-[08-02-25 5:49:28 PM] [ INFO ] - Cookie consent dialog is not visible.
-[08-02-25 5:49:28 PM] [ INFO ] - Reloading the page and retrying...(2 retries left)
-[08-02-25 5:49:31 PM] [ INFO ] - Cookie consent dialog is visible.
-[08-02-25 5:49:31 PM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
-[08-02-25 5:49:31 PM] [ INFO ] - Accepted Cookies on Homepage.
-[08-02-25 5:49:31 PM] [ INFO ] - licking on the [Shopping tools] on Homepage.
-[08-02-25 5:49:33 PM] [ INFO ] - Successfully clicked the "Available cars" option.
-[08-02-25 5:49:33 PM] [ INFO ] - Entering the pinocde [43213] in inputfield.
-[08-02-25 5:49:37 PM] [ INFO ] - Pressing the [Space] Key
-[08-02-25 5:49:48 PM] [ INFO ] - Clicking on valid Suggestion
-[08-02-25 5:49:49 PM] [ INFO ] - Clicked on Continue Arrow
-[08-02-25 5:49:50 PM] [ INFO ] - Default Filter Model : [Polestar 2]
-[08-02-25 5:49:50 PM] [ INFO ] - Vlidated Expected Car Modle [Polestar 2] with Actual [Polestar 2] Car Model
-[08-02-25 5:49:56 PM] [ INFO ] - ModelYears:, [6], Powertrains: [0] , Prices: [0]
-[08-02-25 5:49:56 PM] [ INFO ] - Taking Screenshot for Failed Scenario: Verify Default Filters for Car Details by Pin Code and Address
-[08-02-25 5:49:56 PM] [ INFO ] - Closing all Active Browser Sessions...!
-[08-02-25 5:49:56 PM] [ INFO ] - Closing the Browser [Page] 
-[08-02-25 5:49:56 PM] [ INFO ] - Closing the Browser [Context] 
-[08-02-25 5:49:57 PM] [ INFO ] - Closing the Browser [Browser] 
-[08-02-25 5:49:57 PM] [ INFO ] - ============ Test execution completed ====================
+[08-02-25 7:56:01 PM] [ INFO ] - =========== [ Starting the test execution ] =============
+[08-02-25 7:56:01 PM] [ INFO ] - Environment is Ready for Test execution..
+[08-02-25 7:56:01 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
+[08-02-25 7:56:01 PM] [ INFO ] - Setting up for Scenario: [check if the server is up and running via api]
+[08-02-25 7:56:01 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
+[08-02-25 7:56:05 PM] [ INFO ] - Server Status Response :
+[08-02-25 7:56:05 PM] [ INFO ] - Checking if the response status is [200]
+[08-02-25 7:56:05 PM] [ INFO ] - Status Code 200 Matches the Expected 200
+[08-02-25 7:56:05 PM] [ INFO ] - Validation in response with Actual [status] and Expected [UP]
+[08-02-25 7:56:05 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
+[08-02-25 7:56:05 PM] [ INFO ] - Setting up for Scenario: [validate the access token generation api functionality]
+[08-02-25 7:56:05 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
+[08-02-25 7:56:06 PM] [ INFO ] - Status Code 201 Matches the Expected 201
+[08-02-25 7:56:06 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
+[08-02-25 7:56:06 PM] [ INFO ] - Setting up for Scenario: [verify the api functionaliy to fetch a specific products by id]
+[08-02-25 7:56:06 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
+[08-02-25 7:56:06 PM] [ INFO ] - Server Status Response :
+[08-02-25 7:56:06 PM] [ INFO ] - Checking if the response status is [200]
+[08-02-25 7:56:06 PM] [ INFO ] - Status Code 200 Matches the Expected 200
+[08-02-25 7:56:06 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
+[08-02-25 7:56:06 PM] [ INFO ] - Setting up for Scenario: [validate the api functionality to fetch the complete list of products.]
+[08-02-25 7:56:06 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
+[08-02-25 7:56:06 PM] [ INFO ] - Featch All Product API endpoint is /products
+[08-02-25 7:56:07 PM] [ INFO ] - Checking if the response status is [200]
+[08-02-25 7:56:07 PM] [ INFO ] - Status Code 200 Matches the Expected 200
+[08-02-25 7:56:07 PM] [ INFO ] - Fetch All Products Response:
+[08-02-25 7:56:07 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
+[08-02-25 7:56:07 PM] [ INFO ] - Setting up for Scenario: [access token generation with missing or invalid client name]
+[08-02-25 7:56:07 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
+[08-02-25 7:56:07 PM] [ INFO ] - POST Request Failed:
+[08-02-25 7:56:07 PM] [ INFO ] - Error Response Data:
+[08-02-25 7:56:07 PM] [ INFO ] - Status Code 400 Matches the Expected 400
+[08-02-25 7:56:07 PM] [ INFO ] - Validating the Actual [NaN] with Expected error [Invalid or missing client name.]
+[08-02-25 7:56:07 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
+[08-02-25 7:56:07 PM] [ INFO ] - Setting up for Scenario: [fetching product by nonexistent id]
+[08-02-25 7:56:07 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
+[08-02-25 7:56:08 PM] [ INFO ] - GET Request Failed:
+[08-02-25 7:56:08 PM] [ INFO ] - Error Response Data:
+[08-02-25 7:56:08 PM] [ INFO ] - Status Code 404 Matches the Expected 404
+[08-02-25 7:56:08 PM] [ INFO ] - Validating the Actual [NaN] with Expected error [No product with id 9999999.]
+[08-02-25 7:56:08 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [grocery-apis.feature] ======
+[08-02-25 7:56:08 PM] [ INFO ] - Setting up for Scenario: [fetching product with invalid id format]
+[08-02-25 7:56:08 PM] [ INFO ] - The base API URL is set to:[https://simple-grocery-store-api.glitch.me]
+[08-02-25 7:56:08 PM] [ INFO ] - GET Request Failed:
+[08-02-25 7:56:08 PM] [ INFO ] - Error Response Data:
+[08-02-25 7:56:08 PM] [ INFO ] - Status Code 400 Matches the Expected 400
+[08-02-25 7:56:08 PM] [ INFO ] - Validating the Actual [NaN] with Expected error [The product id must be a number.]
+[08-02-25 7:56:08 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [new-cars-filter.feature] ======
+[08-02-25 7:56:08 PM] [ INFO ] - Setting up for Scenario: [verify filters for polestar polestar 3 (2025 model) with long range dual motor options]
+[08-02-25 7:56:08 PM] [ INFO ] - Launching the [chrome] Browser in [Headed] Mode.
+[08-02-25 7:56:09 PM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
+[08-02-25 7:56:12 PM] [ INFO ] - Successfully Navigated to the Homepage.
+[08-02-25 7:56:12 PM] [ INFO ] - Cookie consent dialog is not visible.
+[08-02-25 7:56:12 PM] [ INFO ] - Reloading the page and retrying...(2 retries left)
+[08-02-25 7:56:14 PM] [ INFO ] - Cookie consent dialog is visible.
+[08-02-25 7:56:14 PM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
+[08-02-25 7:56:14 PM] [ INFO ] - Accepted Cookies and Cliecking on the [View Offers] to the Homepage.
+[08-02-25 7:56:15 PM] [ INFO ] - Clicked on [View All Offers] button
+[08-02-25 7:56:15 PM] [ INFO ] - Successfully Clicked on the [New Vehicle Offers] and [Filter] buttons.
+[08-02-25 7:56:16 PM] [ INFO ] - Clicking on the [Filter] button
+[08-02-25 7:56:16 PM] [ INFO ] - Clicking on the [Car] Locator
+[08-02-25 7:56:18 PM] [ INFO ] - Clicking on the [Polestar 3] checkbox
+[08-02-25 7:56:21 PM] [ INFO ] - Checked for value :[Polestar 3]
+[08-02-25 7:56:21 PM] [ INFO ] - Applying Filter :
+ - [Car] : [Polestar 3]
+[08-02-25 7:56:21 PM] [ INFO ] - Clicking on the [Model year] Locator
+[08-02-25 7:56:21 PM] [ INFO ] - Clicking on the [2025] checkbox
+[08-02-25 7:56:24 PM] [ INFO ] - Checked for value :[2025]
+[08-02-25 7:56:24 PM] [ INFO ] - Applying Filter :
+ - [Model year] : [2025]
+[08-02-25 7:56:24 PM] [ INFO ] - Clicking on the [Powertrain] Locator
+[08-02-25 7:56:25 PM] [ INFO ] - Clicking on the [Long range Dual motor] checkbox
+[08-02-25 7:56:28 PM] [ INFO ] - Checked for value :[Long range Dual motor]
+[08-02-25 7:56:28 PM] [ INFO ] - Applying Filter :
+ - [Powertrain] : [Long range Dual motor]
+[08-02-25 7:56:28 PM] [ INFO ] - I clicked on [View] button.
+[08-02-25 7:56:28 PM] [ INFO ] - Found results :
+[08-02-25 7:56:28 PM] [ INFO ] - Validation passed: All results contain [Polestar 3].
+[08-02-25 7:56:28 PM] [ INFO ] - Closing all Active Browser Sessions...!
+[08-02-25 7:56:28 PM] [ INFO ] - Closing the Browser [Page] 
+[08-02-25 7:56:28 PM] [ INFO ] - Closing the Browser [Context] 
+[08-02-25 7:56:28 PM] [ INFO ] - Closing the Browser [Browser] 
+[08-02-25 7:56:29 PM] [ INFO ] - ====== Executing the Scenarios from Feature: [new-cars-filter.feature] ======
+[08-02-25 7:56:29 PM] [ INFO ] - Setting up for Scenario: [verify filters for polestar polestar 2 (2025 model) with long range dual motor options]
+[08-02-25 7:56:29 PM] [ INFO ] - Launching the [chrome] Browser in [Headed] Mode.
+[08-02-25 7:56:30 PM] [ INFO ] - Navigating to URL: [https://www.polestar.com/us]
+[08-02-25 7:56:32 PM] [ INFO ] - Successfully Navigated to the Homepage.
+[08-02-25 7:56:32 PM] [ INFO ] - Cookie consent dialog is visible.
+[08-02-25 7:56:32 PM] [ INFO ] - Clicked successfully on ['Accept All Cookies]' button
+[08-02-25 7:56:32 PM] [ INFO ] - Accepted Cookies and Cliecking on the [View Offers] to the Homepage.
+[08-02-25 7:56:33 PM] [ INFO ] - Clicked on [View All Offers] button
+[08-02-25 7:56:33 PM] [ INFO ] - Successfully Clicked on the [New Vehicle Offers] and [Filter] buttons.
+[08-02-25 7:56:34 PM] [ INFO ] - Clicking on the [Filter] button
+[08-02-25 7:56:34 PM] [ INFO ] - Clicking on the [Car] Locator
+[08-02-25 7:56:35 PM] [ INFO ] - Clicking on the [Polestar 2] checkbox
+[08-02-25 7:56:39 PM] [ INFO ] - Checked for value :[Polestar 2]
+[08-02-25 7:56:39 PM] [ INFO ] - Applying Filter :
+ - [Car] : [Polestar 2]
+[08-02-25 7:56:39 PM] [ INFO ] - Clicking on the [Model year] Locator
+[08-02-25 7:56:39 PM] [ INFO ] - Clicking on the [2025] checkbox
+[08-02-25 7:56:42 PM] [ INFO ] - Checked for value :[2025]
+[08-02-25 7:56:42 PM] [ INFO ] - Applying Filter :
+ - [Model year] : [2025]
+[08-02-25 7:56:42 PM] [ INFO ] - Clicking on the [Powertrain] Locator
+[08-02-25 7:56:43 PM] [ INFO ] - Clicking on the [Long range Dual motor] checkbox
+[08-02-25 7:56:46 PM] [ INFO ] - Checked for value :[Long range Dual motor]
+[08-02-25 7:56:46 PM] [ INFO ] - Applying Filter :
+ - [Powertrain] : [Long range Dual motor]
+[08-02-25 7:56:46 PM] [ INFO ] - I clicked on [View] button.
+[08-02-25 7:56:46 PM] [ INFO ] - Found results :
+[08-02-25 7:56:46 PM] [ INFO ] - Validation passed: All results contain [Polestar 2 Long range Dual].
+[08-02-25 7:56:46 PM] [ INFO ] - Closing all Active Browser Sessions...!
+[08-02-25 7:56:46 PM] [ INFO ] - Closing the Browser [Page] 
+[08-02-25 7:56:46 PM] [ INFO ] - Closing the Browser [Context] 
+[08-02-25 7:56:46 PM] [ INFO ] - Closing the Browser [Browser] 
+[08-02-25 7:56:47 PM] [ INFO ] - ============ Test execution completed ====================

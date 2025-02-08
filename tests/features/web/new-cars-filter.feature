@@ -1,4 +1,4 @@
-
+@sanity @web
 Feature: Verify Filter Functionality for Polestar Offers
   As a user of the Polestar website
   I want to apply filters to new vehicle offers
