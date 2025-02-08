@@ -1,16 +1,13 @@
 class GroceryPayloads {
-  static generateTimestamp() {
-    return Date.now();
-  }
 
   static generateToken(clientName) {
-    const timestamp = this.generateTimestamp();
+    const timestamp = Date.now(); 
     return {
       clientName: clientName || `Client_${timestamp}`,
       clientEmail: `test_${timestamp}@example.com`,
     };
   }
-
+  
   static addItem(productId = 4643) {
     return { productId };
   }

@@ -12,8 +12,8 @@ class AvailableCarsPage extends PlaywrightActions {
     this.currentRetailerLocator = page.locator("//span[@class='css-xalb5k' and contains(text(),'Polestar')]");
     this.selectedRetailerButton = page.locator("//*[@class='css-14olvoq']//*[@class='css-45r56c']");
     this.availableCarsModelYears = page.locator('.css-1lbhuek .css-zyxx5a'); 
-    this.availableCarsPrices = page.locator('.css-1srzivb');
-    this.availableCarsPowertrains =page.locator("//*[@class='css-1srzivb']//ancestor::div[@class='css-1vz7d2x']//h2"); 
+    this.availableCarsPrices = page.locator('.css-1ar9meh .css-xalb5k'); 
+    this.availableCarsPowertrains =page.locator(".css-e7u0kg .css-xalb5k"); 
     this.changeRaitailerFilterBtn = page.locator(".css-1bc8lfl .css-45r56c");
     this.allRetailers = page.locator(".css-lz82b3 .css-45r56c");
     this.avalableCarsTextLoc = page.locator("//*[@class='css-s1jl81' and text()='Available cars.']");

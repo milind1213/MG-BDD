@@ -92,12 +92,13 @@ Then("I verify the default sort {string} filter applied",async function (default
 
 Then('I Apply Price {string} Filter the Cars Display should be {string} Sorted order', async function(priceFilter, expectedOrder) {
     await availableCarsPage.applySortFilter(priceFilter);
+    await this.page.waitForTimeout(3000);
     prices = await availableCarsPage.availableCarsPrices.all();
     const priceTexts = await Promise.all(prices.map(async (el) => await el.textContent()));
     const priceNumbers = priceTexts.map((price) =>parseInt(price.replace(/[$,]/g, ""), 10));
     const actualorder = config.checkOrder(priceNumbers);
     expect(actualorder).toBe(expectedOrder); 
-    log(`Vlidated Expected Displying order [${expectedOrder}] with Actual displaying [${actualorder}] order`);
+    log(`Vlidated Actual Displying order [${actualorder}] with Expected displaying [${expectedOrder}] order`);
   }
 );
 

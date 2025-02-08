@@ -3,7 +3,8 @@ const { expect } = require("@playwright/test");
 const axios = require("axios");
 const ApiUtils = require("../../common-platform-utils/common-rest.js");
 const config = require("../../common-platform-utils/common-constants.js");
-const {GroceryPayloads} = require("../../page-objects/api-objects/grocery-payloads.js");
+const GroceryPayloads = require("../../page-objects/api-objects/grocery-payloads.js");
+
 const log = require('../../../utils/logger');
 
 let response,savedToken,endPoint,itemId,payload = {};

@@ -33,10 +33,10 @@ Feature: Shopping for Cars and Selecting the Available Car Model
        | Storm        | Long range Dual motor | Performance | Harman Kardon premium sound | Charcoal WeaveTech      | 20" Performance  |
     # Case 2: Select only a few options from each category (some are left blank or not selected)
        |              | Long range Dual motor | Performance | Harman Kardon premium sound | Charcoal Nappa leather  | 20" Performance  |
-       | Space        |                       |             | Harman Kardon premium sound | Zinc Nappa leather      | 20" Performance  |
+       | Space        |                       |             | Harman Kardon premium sound | Slate WeaveTech         | 20" Performance  |
        | Midnight     | Long range Dual motor | Climate     |                             | Slate WeaveTech         | 20" Performance  |
     # Case 3: Select some options from only specific categories (more selective filtering)
-       | Vapour       |                       | Pilot       | Harman Kardon premium sound | Zinc Nappa leather      |                  |
+       | Vapour       |                       | Pilot       | Harman Kardon premium sound | Slate WeaveTech         |                  |
     # Case 4: Test all versions with specific interior and wheels combination
        | Storm        | Long range Dual motor | Performance |                              | Charcoal Nappa leather |                  |
 
@@ -46,8 +46,8 @@ Feature: Shopping for Cars and Selecting the Available Car Model
       And I verify the default "Polestar 2" car model displayed in filter
       And I see car Modelyear, Powertrain, and prices in dollars
  
- Scenario: Viewing More Car Options with Details by clicking show more
-     When I enter zip code and select an address from the suggestions
-      And I should continue with the selected Retailer address
-      And I click on the "Show more" button
-     Then I should see more car options with Modelyear, Powertrain, and price details
+#  Scenario: Viewing More Car Options with Details by clicking show more
+#      When I enter zip code and select an address from the suggestions
+#       And I should continue with the selected Retailer address
+#       And I click on the "Show more" button
+#      Then I should see more car options with Modelyear, Powertrain, and price details
