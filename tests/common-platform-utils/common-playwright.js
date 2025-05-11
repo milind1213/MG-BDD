@@ -22,6 +22,7 @@ class PlaywrightActions {
      }
   }
 
+  
   async ClickWithForce(locator, forceClick = true) {
     try {
       await this.highlightLocator(locator);

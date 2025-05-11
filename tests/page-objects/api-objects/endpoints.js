@@ -5,6 +5,6 @@ export const ENDPOINTS = {
   PRODUCTS: '/products/4643',
   PRODUCT: '/products',
   INVALID_PRODUCT_ID: '/products/9999999',
-  USERS:'/users';
+  USERS:'/users'
 };
 

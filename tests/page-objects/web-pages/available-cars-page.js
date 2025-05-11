@@ -94,8 +94,7 @@ class AvailableCarsPage extends PlaywrightActions {
       log(`Error Applying Exterior filter: ${value}`, error);
    }
   }
-
-
+  
   async closeFilter()
   {
     log("Clicking on close cross button");
