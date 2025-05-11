@@ -15,18 +15,18 @@ class WebDashboard extends PlaywrightActions{
 
   getAvailableCarsPage() 
   {
-    return this.availableCarsPage;
+     return this.availableCarsPage;
   }
 
   getOfferPage() 
   {
-    return this.offerPage;
+     return this.offerPage;
   }
   
   getHomePage()
   {
-    return this.homePage;
-  }
+     return this.homePage;
+  } 
 }
 
 module.exports = { WebDashboard };
